@@ -1,7 +1,8 @@
 # 一問一答の難易度 d（1〜3）と重要度 i（3〜5）を、授業の作りから付け直す。
 #   python3 rate.py ../app/source.html ../app/source.html bakumatsu kindai ...
-# i：まとめ（point）の太字かつ「入試ではこう出る」に出る＝5、どちらか一方か point 本文に出る＝4、それ以外＝3
-# d：深掘り欄だけに出る（教科書外）＝3、i=5＝1、それ以外＝2。ただし問題文が数字・順番・人名の組み合わせを問うものは1段上げる。
+# i：まとめ（point）と「入試ではこう出る」の両方に出る＝5、どちらか一方に出る＝4、それ以外＝3
+# d：「難関＋」の囲み（教科書外）だけに出る＝3、i=5＝1、それ以外＝2。問題文が年・数などの数字を問うものは1段上げる。
+#   （「まとめにも入試欄にも出ない語＝難しい」とすると基本語まで3になるので、そうしない）
 import json,re,sys
 src,out=sys.argv[1],sys.argv[2]; ids=sys.argv[3:]
 s=open(src,encoding='utf-8').read()
@@ -24,8 +25,11 @@ for p in packs:
         if not pts:  # まとめの枠がない古い授業は、本文の太字で代用する
             pb=any(mk in plain(b) for b in re.findall(r'<b>([\s\S]*?)</b>',h))
         pp=any(mk in plain(x) for x in pts); nn=any(mk in plain(x) for x in ny)
-        inl=mk in plain(h)
-        i=5 if (pb and nn) else 4 if (pb or nn or pp) else 3
+        deeps=re.findall(r"<div class='deep'>[\s\S]*?</div>",h)
+        main=h
+        for x in deeps: main=main.replace(x,'')
+        inl=mk in plain(main)  # 難関＋の囲みを除いた本文に出るか
+        i=5 if ((pb or pp) and nn) else 4 if (pb or nn or pp) else 3
         if not inl: d,i=3,3
         else:
             d=1 if i==5 else 2
