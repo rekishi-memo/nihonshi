@@ -14,7 +14,7 @@ for p in packs:
             h=re.sub(r"(?:<span class='kw'>)?(?:<ruby>)?大都(?:<rt>[^<]*</rt></ruby>)?(?:</span>)?市","大都市",h)
             h=re.sub(r"島<span class='kw'>((?:<ruby>)?原城(?:<rt>[^<]*</rt></ruby>)?)</span>",lambda mm:"島"+re.sub(r'<rt>[^<]*</rt>|</?ruby>','',mm.group(1)),h)
             h=re.sub(r"狗<span class='kw'>((?:<ruby>)?奴国(?:<rt>[^<]*</rt></ruby>)?)</span>",lambda mm:"狗"+re.sub(r'<rt>[^<]*</rt>|</?ruby>','',mm.group(1)),h)
-            h=re.sub(r"([使念鳴事書旅図学会博])<ruby>館<rt>やかた</rt></ruby>",r"\1館",h)  # 公使館・記念館などは「かん」
+            h=re.sub(r"([使念鳴事書旅図学会博物])<ruby>館<rt>やかた</rt></ruby>",r"\1館",h)  # 公使館・記念館などは「かん」
             l[k]=h
 from inline_deep import convert  # 深掘りを授業の流れの中に移す
 for _p in packs:
