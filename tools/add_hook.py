@@ -13,10 +13,12 @@ for p in packs:
         d=HOOK.get(p['id'],{}).get(l['no'])
         if not d: continue
         h=l['html']
-        if plain(h).startswith(plain(d['q'])[:20]): continue
-        h="<p>"+d['q']+"</p>"+h
-        ans="<p>"+d['a']+"</p>"
+        key0=plain(d.get('q') or d.get('a') or d.get('pt'))[:20]
+        if key0 in plain(h) and (not d.get('q') or plain(h).startswith(key0)): continue
+        if d.get('q'): h="<p>"+d['q']+"</p>"+h
+        ans=("<p>"+d['a']+"</p>") if d.get('a') else ""
         pt=("<div class='point'>"+d['pt']+"</div>") if d.get('pt') and "class='point'" not in h else ""
+        if not (ans or pt): continue
         for key in ("<div class='point'>","<div class='nyushi'>"):
             i=h.find(key)
             if i>=0: h=h[:i]+ans+pt+h[i:]; break
