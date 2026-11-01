@@ -16,6 +16,9 @@ for p in packs:
             h=re.sub(r"狗<span class='kw'>((?:<ruby>)?奴国(?:<rt>[^<]*</rt></ruby>)?)</span>",lambda mm:"狗"+re.sub(r'<rt>[^<]*</rt>|</?ruby>','',mm.group(1)),h)
             h=re.sub(r"([使念鳴事書旅図学会博])<ruby>館<rt>やかた</rt></ruby>",r"\1館",h)  # 公使館・記念館などは「かん」
             l[k]=h
+from inline_deep import convert  # 深掘りを授業の流れの中に移す
+for _p in packs:
+    for _l in _p['lessons']: convert(_l)
 p=[x for x in packs if x['id']==pid][0]
 bad=[]
 for q in p['quiz']:
