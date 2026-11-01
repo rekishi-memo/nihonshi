@@ -277,7 +277,7 @@ for c in cloze: ans+=re.findall(r'\[\[([^\]]+)\]\]',c['text'])
 pl=''.join(re.sub(r'\[\[[^\]]+\]\]','□',c['text']) for c in cloze)
 print('cloze',len(ans),'dup',[a for a in set(ans) if ans.count(a)>1],'leak',[a for a in set(ans) if a in pl],'overlap',[(a,b) for a in set(ans) for b in set(ans) if a!=b and a in b])
 
-pack={"id":"taisen","title":"近代⑧（第二次世界大戦）","subtitle":"日中戦争・戦時統制・三国同盟・太平洋戦争・敗戦","order":5.3,
+pack={"id":"taisen","title":"近代⑨（第二次世界大戦）","subtitle":"日中戦争・戦時統制・三国同盟・太平洋戦争・敗戦","order":5.3,
 "range":"第二次世界大戦 ── 日中戦争、戦時統制と文化、三国同盟、太平洋戦争、国民生活の崩壊、敗戦まで（教科書 p.311〜324）",
 "timeline":timeline,"lessons":lessons,"quiz":quiz,"terms":terms,"goro":goro,"ronjutsu":ronj,"cloze":cloze,"figures":figures}
 s=open(src,encoding='utf-8').read()

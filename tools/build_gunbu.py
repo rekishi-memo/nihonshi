@@ -229,7 +229,7 @@ for c in cloze: ans+=re.findall(r'\[\[([^\]]+)\]\]',c['text'])
 pl=''.join(re.sub(r'\[\[[^\]]+\]\]','□',c['text']) for c in cloze)
 print('cloze',len(ans),'dup',[a for a in set(ans) if ans.count(a)>1],'leak',[a for a in set(ans) if a in pl],'overlap',[(a,b) for a in set(ans) for b in set(ans) if a!=b and a in b])
 
-pack={"id":"gunbu","title":"近代⑦（軍部の台頭）","subtitle":"満洲事変・政党内閣の崩壊・高橋財政・思想弾圧・二・二六事件","order":5.2,
+pack={"id":"gunbu","title":"近代⑧（軍部の台頭）","subtitle":"満洲事変・政党内閣の崩壊・高橋財政・思想弾圧・二・二六事件","order":5.2,
 "range":"軍部の台頭 ── 満洲事変から、政党内閣の崩壊、高橋財政、転向と天皇機関説事件、二・二六事件と近衛内閣の成立まで（教科書 p.305〜310）",
 "timeline":timeline,"lessons":lessons,"quiz":quiz,"terms":terms,"goro":goro,"ronjutsu":ronj,"cloze":cloze,"figures":figures}
 
