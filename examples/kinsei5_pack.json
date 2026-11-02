@@ -1,0 +1,1203 @@
+{
+ "id": "kinsei5",
+ "title": "近世⑤（幕政の安定と経済の発展）",
+ "subtitle": "家綱・綱吉・正徳の政治・農業と諸産業・交通・三都",
+ "order": 3.4,
+ "range": "幕政の安定と経済の発展 ── 文治政治への転換・元禄時代・正徳の政治・農業と諸産業・交通・貨幣と三都",
+ "timeline": [
+  {
+   "y": "1651",
+   "t": "家綱が4代将軍・慶安の変"
+  },
+  {
+   "y": "1657",
+   "t": "明暦の大火"
+  },
+  {
+   "y": "1663",
+   "t": "武家諸法度（寛文令）・殉死の禁止"
+  },
+  {
+   "y": "1664",
+   "t": "寛文印知"
+  },
+  {
+   "y": "1671・72",
+   "t": "河村瑞賢が東廻り・西廻り海運を整備"
+  },
+  {
+   "y": "1673",
+   "t": "三井が江戸に越後屋呉服店を開く"
+  },
+  {
+   "y": "1680",
+   "t": "綱吉が5代将軍"
+  },
+  {
+   "y": "1683",
+   "t": "武家諸法度（天和令）"
+  },
+  {
+   "y": "1684",
+   "t": "服忌令"
+  },
+  {
+   "y": "1685",
+   "t": "生類憐みの令（〜20年あまり）"
+  },
+  {
+   "y": "1695",
+   "t": "元禄小判の発行"
+  },
+  {
+   "y": "1697",
+   "t": "宮崎安貞『農業全書』"
+  },
+  {
+   "y": "1701",
+   "t": "赤穂事件（翌年討ち入り）"
+  },
+  {
+   "y": "1707",
+   "t": "富士山の大噴火（宝永）"
+  },
+  {
+   "y": "1709",
+   "t": "家宣が6代将軍・正徳の政治（新井白石）"
+  },
+  {
+   "y": "1714",
+   "t": "正徳小判"
+  },
+  {
+   "y": "1715",
+   "t": "海舶互市新例"
+  }
+ ],
+ "lessons": [
+  {
+   "no": "01",
+   "navTitle": "家綱の政治（武断から文治へ）",
+   "title": "主人個人ではなく、主人の家に仕える",
+   "unitLink": "幕政の安定",
+   "theme": "慶安の変と末期養子の禁止の緩和、殉死の禁止、寛文印知。諸藩では儒者を顧問にした藩政の刷新が進んだ。",
+   "html": "<p>1651年4月、3代将軍<span class='kw'><ruby>徳川家光<rt>とくがわいえみつ</rt></ruby></span>が亡くなり、8月、子の<span class='kw'><ruby>徳川家綱<rt>とくがわいえつな</rt></ruby></span>が<b>11歳</b>で4代将軍になった。幼い将軍だ。でも、<ruby>幕府<rt>ばくふ</rt></ruby>はもうびくともしなかった。幕府の機構は整えられ、家綱の叔父で会津藩主の<span class='kw'><ruby>保科正之<rt>ほしなまさゆき</rt></ruby></span>や、<span class='kw'><ruby>譜代<rt>ふだい</rt></ruby></span>大名たちが支えたので、社会の秩序は安定しつつあった。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>家綱を支えた人</b>　家綱の叔父で会津藩主の<span class='kw'><ruby>保科正之<rt>ほしなまさゆき</rt></ruby></span>が政治を補佐した。<span class='kw'><ruby>末期養子<rt>まつごようし</rt></ruby></span>の禁止の緩和は、50歳未満の大名に認めるものだった。</div><p>1662年には、台湾を拠点に清に抵抗していた<ruby>鄭成功<rt>ていせいこう</rt></ruby>（国姓爺）が亡くなり、明の亡命政権も滅んで、清は安定した王朝になった。長く戦乱の続いた中国に新しい秩序が生まれ、東アジア全体に平和が訪れた。日本国内でも、<span class='kw'><ruby>島原の乱<rt>しまばらのらん</rt></ruby></span>を最後に、戦乱はとっくに絶えていた。</p><p>平和が続く中で、大きな政治の課題になったのは何か。<b>戦乱を待ち望む<span class='kw'><ruby>牢人<rt>ろうにん</rt></ruby></span>や、秩序におさまらない「<span class='kw'><ruby>かぶき者<rt>かぶきもの</rt></ruby></span>」</b>への対策だった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世②で、関ヶ原のあと<span class='kw'>西軍</span>の大名93家が<b><span class='kw'><ruby>改易<rt>かいえき</rt></ruby></span></b>され、<span class='kw'><ruby>福島正則<rt>ふくしままさのり</rt></ruby></span>のような大名も<span class='kw'><ruby>武家諸法度<rt>ぶけしょはっと</rt></ruby></span>違反で<span class='kw'>改易</span>された、と言ったよね。大名家がつぶれるたびに、その家来たちは主人を失った<b><span class='kw'>牢人</span></b>になる。家光の時代までに、<span class='kw'>牢人</span>は全国にあふれていた。仕事もなく、「もう一度戦がおきれば手柄をたてられる」と考える者もいた。</div><p>1651年7月、兵学者の<span class='kw'>由井（比）正雪</span>が<span class='kw'>牢人</span>を集めて幕府を倒そうとする事件がおこった（<span class='kw'><ruby>慶安の変<rt>けいあんのへん</rt></ruby></span>）。これに驚いた幕府は、大名の<b><span class='kw'><ruby>末期養子<rt>まつごようし</rt></ruby></span>の禁止</b>をゆるめた。<span class='kw'>末期養子</span>とは、跡継ぎのいない大名が死にぎわに急いで養子を願い出ることで、それまではほとんど認められず、そのせいで大名家がつぶれて<span class='kw'>牢人</span>が増えていた。これを、50歳未満の大名に限って認めたのだ。<span class='kw'>牢人</span>の増加を元から止めようとしたわけだ。一方で、江戸に住む<span class='kw'>牢人</span>や<span class='kw'>かぶき者</span>の取り締まりも強めた。1657年の<span class='kw'><ruby>明暦の大火<rt>めいれきのたいか</rt></ruby></span>で江戸は大きな被害を受けたが、そこからも復興をはたした。</p><details class='qcheck'><summary><span class='qmk'>？</span><span>幕府が<span class='kw'>末期養子</span>の禁止をゆるめたのはなぜ？</span><span class='tp'>タップで確認</span></summary><div class='qa'>跡継ぎのいない大名家がつぶれる（<span class='kw'>改易</span>）たびに、家来が<b><span class='kw'>牢人</span></b>になって増えていたから。<span class='kw'>慶安の変</span>で<span class='kw'>牢人</span>の危険を思い知った幕府は、大名家の断絶を減らして、<span class='kw'>牢人</span>の増加を元から止めようとした。</div></details><p>1663年、成人した家綱は、代がわりの<span class='kw'>武家諸法度</span>（<span class='kw'><ruby>寛文令<rt>かんぶんれい</rt></ruby></span>）を出し、あわせて<span class='kw'><ruby>殉死<rt>じゅんし</rt></ruby>の禁止</span>を命じた。主人が死んでも家来は後を追って死んではならず、跡継ぎの新しい主人に仕えることを義務づけたのだ。これで、<b>主人の家が代々主人であり続け、家来は主人個人ではなく主人の家に仕える</b>という主従の関係がはっきりした。家来が仕えるのは「人」ではなく「家」。だから、家来が主人を倒してとってかわる<span class='kw'><ruby>下剋上<rt>げこくじょう</rt></ruby></span>は、もうおこらなくなった。翌1664年には、すべての大名に<span class='kw'><ruby>領知宛行状<rt>りょうちあてがいじょう</rt></ruby></span>を出して将軍の権威を確かめ（寛文印知）、<span class='kw'><ruby>幕領<rt>ばくりょう</rt></ruby></span>では一斉に検地をおこなって、幕府の財政収入の安定もはかった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>中世⑤・⑥で、家来が主人をしのいでのし上がる<b><span class='kw'>下剋上</span></b>の時代を見てきたよね。<span class='kw'><ruby>守護代<rt>しゅごだい</rt></ruby></span>や<span class='kw'><ruby>国人<rt>こくじん</rt></ruby></span>が<span class='kw'><ruby>守護<rt>しゅご</rt></ruby></span>をしのぎ、<span class='kw'><ruby>北条早雲<rt>ほうじょうそううん</rt></ruby></span>や<span class='kw'><ruby>毛利元就<rt>もうりもとなり</rt></ruby></span>のような<span class='kw'><ruby>戦国大名<rt>せんごくだいみょう</rt></ruby></span>が生まれた。その<span class='kw'>下剋上</span>に、最終的にふたをしたのが、この「<b>家に仕える</b>」という考え方だ。<span class='kw'>殉死の禁止</span>は、その象徴だった。</div><p>一方、諸藩でも、平和が続いて<span class='kw'><ruby>軍役<rt>ぐんやく</rt></ruby></span>の負担が軽くなったことや、寛永の<ruby>飢饉<rt>ききん</rt></ruby>（近世④）が転機となって、藩政の安定と領内の経済の発展がはかられるようになった。藩主は有能な家臣を補佐役にして支配の機構を整え、治水工事や新田開発で農業生産を高めて財政の安定をはかった。ただし、<span class='kw'><ruby>参勤交代<rt>さんきんこうたい</rt></ruby></span>や手伝<span class='kw'><ruby>普請<rt>ふしん</rt></ruby></span>などの支出から、藩の財政に必ずしもゆとりは生まれなかった。</p><p>いくつかの藩では、藩主が儒者を顧問にして藩政の立て直しをはかった。岡山藩の<span class='kw'><ruby>池田光政<rt>いけだみつまさ</rt></ruby></span>は、庶民も学べる郷校の<span class='kw'><ruby>閑谷学校<rt>しずたにがっこう</rt></ruby></span>を設け、陽明学者の<span class='kw'><ruby>熊沢蕃山<rt>くまざわばんざん</rt></ruby></span>をまねいて重く用い、蕃山は花畠教場を設けた。会津藩の<span class='kw'>保科正之</span>は<span class='kw'><ruby>山崎闇斎<rt>やまざきあんさい</rt></ruby></span>に<span class='kw'><ruby>朱子学<rt>しゅしがく</rt></ruby></span>を学んだ。<span class='kw'><ruby>水戸<rt>みと</rt></ruby></span>藩の<span class='kw'><ruby>徳川光圀<rt>とくがわみつくに</rt></ruby></span>は江戸に<span class='kw'><ruby>彰考館<rt>しょうこうかん</rt></ruby></span>を設けて『<span class='kw'><ruby>大日本史<rt>だいにほんし</rt></ruby></span>』の編纂を始め、明から亡命してきた朱舜水を学問にあたらせた。加賀藩の<span class='kw'><ruby>前田綱紀<rt>まえだつなのり</rt></ruby></span>は、<span class='kw'>朱子学</span>者の<span class='kw'><ruby>木下順庵<rt>きのしたじゅんあん</rt></ruby></span>らをまねいて学問の振興をはかった。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>名君と儒者</b>　岡山藩主<ruby>池田光政<rt>いけだみつまさ</rt></ruby>は<span class='kw'><ruby>熊沢蕃山<rt>くまざわばんざん</rt></ruby></span>を用い、庶民も学べる<span class='kw'><ruby>閑谷学校<rt>しずたにがっこう</rt></ruby></span>を開いた。<span class='kw'><ruby>水戸<rt>みと</rt></ruby></span>藩主<ruby>徳川光圀<rt>とくがわみつくに</rt></ruby>は明から亡命した<ruby>朱舜水<rt>しゅしゅんすい</rt></ruby>を招き、『<ruby>大日本史<rt>だいにほんし</rt></ruby>』の編纂を始めた。加賀藩主<ruby>前田綱紀<rt>まえだつなのり</rt></ruby>は<span class='kw'><ruby>木下順庵<rt>きのしたじゅんあん</rt></ruby></span>らを招いた。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>4代家綱の政治</b>は「<span class='kw'>牢人</span>対策」と「家への<span class='kw'><ruby>奉公<rt>ほうこう</rt></ruby></span>」がキーワード。<b><span class='kw'>慶安の変</span>（1651・<ruby>由井正雪<rt>ゆいしょうせつ</rt></ruby>）→ <span class='kw'>末期養子の禁止の緩和</span>（50歳未満）</b>、<b>寛文令（1663）＋<span class='kw'>殉死の禁止</span></b>、<b>寛文印知（1664）</b>。藩主と儒者の組み合わせは頻出：<b>池田光政（岡山）＝<span class='kw'>閑谷学校</span>・<span class='kw'>熊沢蕃山</span>／<span class='kw'>保科正之</span>（会津）＝<span class='kw'>山崎闇斎</span>／徳川光圀（<span class='kw'>水戸</span>）＝<span class='kw'>彰考館</span>・大日本史・朱舜水／前田綱紀（加賀）＝<span class='kw'>木下順庵</span></b>。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 家綱の時代</div><div class='vs'><div class='vh'><span>年</span><span>できごと</span></div><div class='vr'><span>1651</span><span>慶安の変（由井正雪）→ 末期養子の禁止を緩和</span></div><div class='vr'><span>1657</span><span>明暦の大火</span></div><div class='vr'><span>1663</span><span>武家諸法度（寛文令）・殉死の禁止</span></div><div class='vr'><span>1664</span><span>寛文印知（全大名に領知宛行状）</span></div></div><div style='height:8px'></div><div class='vs'><div class='vh'><span>藩主</span><span>儒者・事業</span></div><div class='vr'><span>池田光政（岡山）</span><span>閑谷学校・熊沢蕃山</span></div><div class='vr'><span>保科正之（会津）</span><span>山崎闇斎</span></div><div class='vr'><span>徳川光圀（水戸）</span><span>彰考館・大日本史・朱舜水</span></div><div class='vr'><span>前田綱紀（加賀）</span><span>木下順庵</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "02",
+   "navTitle": "綱吉の政治（元禄時代）",
+   "title": "刀より、礼儀と忠孝",
+   "unitLink": "幕政の安定",
+   "theme": "天和令で「忠孝・礼儀」へ。湯島聖堂、生類憐みの令、服忌令。財政悪化に元禄小判で対応し、物価が上がった。",
+   "html": "<p>17世紀後半、政治の安定と経済の発展を背景に、<span class='kw'><ruby>徳川綱吉<rt>とくがわつなよし</rt></ruby></span>が5代将軍になった。元禄年間（1688〜1704年）を中心とする綱吉の時代を<span class='kw'><ruby>元禄時代<rt>げんろくじだい</rt></ruby></span>とも呼ぶ。綱吉の政治は、はじめ<span class='kw'><ruby>大老<rt>たいろう</rt></ruby></span>の<span class='kw'><ruby>堀田正俊<rt>ほったまさとし</rt></ruby></span>が補佐したが、正俊が暗殺されたあとは、<ruby>側用人<rt>そばようにん</rt></ruby>の<span class='kw'><ruby>柳沢吉保<rt>やなぎさわよしやす</rt></ruby></span>がこれにかわった。側用人とは、将軍のそばに仕えて、将軍の命令を<span class='kw'><ruby>老中<rt>ろうじゅう</rt></ruby></span>に伝える役職だ。</p><p>1683年、綱吉の代がわりの<span class='kw'><ruby>武家諸法度<rt>ぶけしょはっと</rt></ruby></span>（<span class='kw'><ruby>天和令<rt>てんなれい</rt></ruby></span>）が出された。その第1条は、<span class='kw'><ruby>元和令<rt>げんなれい</rt></ruby></span>以来の「文武<span class='kw'><ruby>弓馬の道<rt>きゅうばのみち</rt></ruby></span>、専ら相嗜むべき事」（学問と武芸の道に、ひたすらはげめ）から、「<b>文武忠孝を励し、礼儀を正すべき事</b>」に改められた。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>天和令<rt>てんなれい</rt></ruby></span></b>　1683年の<span class='kw'><ruby>武家諸法度<rt>ぶけしょはっと</rt></ruby></span>（<span class='kw'>天和令</span>）は、第1条を「文武<span class='kw'><ruby>弓馬の道<rt>きゅうばのみち</rt></ruby></span>」から「文武忠孝を励し、礼儀を正すべき事」に改めた。<span class='kw'><ruby>湯島聖堂<rt>ゆしませいどう</rt></ruby></span>の建設後、<ruby>林鳳岡<rt>はやしほうこう</rt></ruby>（信篤）が<ruby>大学頭<rt>だいがくのかみ</rt></ruby>に任じられた。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世②で、<span class='kw'>元和令</span>（1615）と<span class='kw'><ruby>寛永令<rt>かんえいれい</rt></ruby></span>（1635）の<span class='kw'>武家諸法度</span>を見たよね。どちらも第1条は「<b>文武<span class='kw'>弓馬の道</span></b>」、つまり武士は武芸にはげめ、だった。<span class='kw'>天和令</span>ではそれが「<b>忠孝と礼儀</b>」にかわった。戦がなくなった時代に武士に求められるのは、もう戦う力ではない。主君への忠、親への孝、そして礼儀による秩序だ。</div><p>これは、武士に、主君への忠、父祖への孝、そして礼儀による秩序をまず第一に求めたものだった。この、いわゆる<span class='kw'><ruby>文治主義<rt>ぶんちしゅぎ</rt></ruby></span>の考えは儒教に裏づけられたもので、綱吉は<span class='kw'><ruby>木下順庵<rt>きのしたじゅんあん</rt></ruby></span>に学び、<span class='kw'><ruby>湯島聖堂<rt>ゆしませいどう</rt></ruby></span>を建てて、<span class='kw'><ruby>林信篤<rt>はやしのぶあつ</rt></ruby></span>（鳳岡）を<span class='kw'><ruby>大学頭<rt>だいがくのかみ</rt></ruby></span>に任じ、儒教を重んじた。</p><p>礼儀で秩序を保つという考えから、天皇・朝廷への政策も改めた。霊元天皇の悲願だった<ruby>大嘗会<rt>だいじょうえ</rt></ruby>（天皇の即位後に初めておこなう大きな収穫祭）の再興などの朝廷の儀式をいくつか復活させ、<span class='kw'><ruby>禁裏御料<rt>きんりごりょう</rt></ruby></span>（天皇家の領地）を増やして、朝廷と<ruby>幕府<rt>ばくふ</rt></ruby>の協調関係を築いた。1687年に大嘗会が221年ぶりに、1694年に賀茂葵祭が192年ぶりに復活している。</p><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b><span class='kw'>赤穂事件</span>と「忠臣蔵」。</b>この時期は、朝廷の使いを江戸で迎える儀式もいっそう重んじられた。その儀式の担当を命じられていた赤穂藩主の浅野長矩が、1701年、儀礼の指導役だった高家の吉良義央に、江戸城の中で斬りつけた。浅野は即日切腹させられ、浅野家は<span class='kw'><ruby>改易<rt>かいえき</rt></ruby></span>された。翌年、浅野家の旧家臣たちが吉良の屋敷に討ち入って仇をとった。この<span class='kw'>赤穂事件</span>は、のちに<span class='kw'><ruby>人形浄瑠璃<rt>にんぎょうじょうるり</rt></ruby></span>や歌舞伎の『仮名手本忠臣蔵』として大人気になる。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>天和令</span>の第1条は、何から何へ変わった？</span><span class='tp'>タップで確認</span></summary><div class='qa'>「<b>文武<span class='kw'>弓馬の道</span></b>、専ら相嗜むべき事」から、「<b>文武忠孝を励し、礼儀を正すべき事</b>」へ。武力よりも、儒教の忠孝と礼儀による秩序を武士に求めたのだ（<span class='kw'>文治主義</span>）。</div></details><p>綱吉は仏教にも深く帰依し、1685年から20年あまりにわたって<span class='kw'><ruby>生類憐みの令<rt>しょうるいあわれみのれい</rt></ruby></span>を出して、あらゆる生き物の殺生を禁じ、捨て子の保護なども命じた。この法令で庶民は迷惑をこうむったが、とくに犬を大切に扱ったことから、野犬が減った。また神道の影響から、1684年に、近親者が死んだときに喪に服したり忌引きをしたりする日数を定めた<span class='kw'><ruby>服忌令<rt>ぶっきれい</rt></ruby></span>を出し、死や血を忌みきらう風潮をつくり出した。その結果、死んだ牛馬を片づける<span class='kw'>かわた</span>などの仕事は、社会に欠かせない役割をはたしながらも、穢れの考えと結びつけて見られるようになり、差別意識が強まった。</p><p>こうして、<b>武力によって相手を殺傷することで地位を上げようとする、戦国時代以来の価値観</b>は、<span class='kw'><ruby>かぶき者<rt>かぶきもの</rt></ruby></span>ともども完全に否定された。武力にかわって重んじられたのは、身分格式であり、儀礼の知識であり、役人としての事務能力だった。</p><p>綱吉の時代は、幕府の財政も転換期を迎えた。比較的豊かだった<ruby>佐渡<rt>さど</rt></ruby>金山などの鉱山で金銀の産出量が減り、収入が減った。そのうえ、<span class='kw'><ruby>明暦の大火<rt>めいれきのたいか</rt></ruby></span>のあとの江戸城と市街の再建の費用、続く元禄の寺社造営の費用が大きな支出増になり、幕府の財政は悪化した。</p><p>そこで勘定吟味役（のちに<span class='kw'><ruby>勘定奉行<rt>かんじょうぶぎょう</rt></ruby></span>）の<span class='kw'><ruby>荻原重秀<rt>おぎわらしげひで</rt></ruby></span>は、収入を増やす方法として<b>貨幣の改鋳</b>を進言し、綱吉はこれを採用した。金の含有率を減らした質の悪い<span class='kw'><ruby>元禄小判<rt>げんろくこばん</rt></ruby></span>を発行して、幕府は大きな利益（<span class='kw'><ruby>出目<rt>でめ</rt></ruby></span>）をあげた。<span class='kw'><ruby>慶長小判<rt>けいちょうこばん</rt></ruby></span>に84%含まれていた金を、<span class='kw'>元禄小判</span>では57%に減らしたのだ。でも、貨幣の値打ちが下がったので物価が上がり、人々の暮らしは苦しくなった。さらに1707年には富士山が大噴火し（宝永の噴火）、駿河・<ruby>相模<rt>さがみ</rt></ruby>などの国々に、降ってきた砂による大きな被害をもたらした。幕府は被災地の復興のため、全国に「諸国高役金」を、<span class='kw'><ruby>石高<rt>こくだか</rt></ruby></span>100石につき2両の割合でとることを命じ、約49万両が幕府に納められた。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>綱吉の側近と財政</b>　<ruby>側用人<rt>そばようにん</rt></ruby>の<span class='kw'><ruby>柳沢吉保<rt>やなぎさわよしやす</rt></ruby></span>が政治を動かした。<ruby>勘定吟味役<rt>かんじょうぎんみやく</rt></ruby>（のち<span class='kw'><ruby>勘定奉行<rt>かんじょうぶぎょう</rt></ruby></span>）の<span class='kw'><ruby>荻原重秀<rt>おぎわらしげひで</rt></ruby></span>は、金の含有量を減らした<span class='kw'><ruby>元禄小判<rt>げんろくこばん</rt></ruby></span>を発行して差益（<span class='kw'><ruby>出目<rt>でめ</rt></ruby></span>）を得た。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>綱吉の政治</b>の組み合わせ。<b><span class='kw'>天和令</span>（1683）＝第1条「文武忠孝を励し、礼儀を正すべき事」</b>（<span class='kw'>元和令</span>・<span class='kw'>寛永令</span>の「文武<span class='kw'>弓馬の道</span>」から変化）、<b>側用人＝<span class='kw'>柳沢吉保</span></b>、<b><span class='kw'>湯島聖堂</span>・<span class='kw'>林信篤</span>（鳳岡）が大学頭</b>、<b><span class='kw'>生類憐みの令</span>（1685〜）</b>、<b><span class='kw'>服忌令</span>（1684）</b>、<b><span class='kw'>元禄小判</span>＝<span class='kw'>荻原重秀</span>の改鋳・金の含有率84%→57%・物価騰貴</b>。教科書の問い「<span class='kw'>天和令</span>から幕府の統治理念はどう変化したか」＝<b>武断（武力）から文治（儒教の忠孝・礼儀による秩序）へ</b>。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 武家諸法度 第1条の変化</div><div class='vs'><div class='vh'><span>法令</span><span>第1条</span></div><div class='vr'><span>元和令（1615）・寛永令（1635）</span><span>文武弓馬の道、専ら相嗜むべき事</span></div><div class='vr'><span>天和令（1683）</span><span>文武忠孝を励し、礼儀を正すべき事</span></div></div><div style='height:8px'></div><div class='vs'><div class='vh'><span>小判</span><span>内容</span></div><div class='vr'><span>慶長小判</span><span>金の含有率84%</span></div><div class='vr'><span>元禄小判（荻原重秀）</span><span>57%に下げて出目を得る→物価騰貴</span></div><div class='vr'><span>正徳小判（新井白石）</span><span>慶長小判と同じ質に戻す</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "03",
+   "navTitle": "正徳の政治",
+   "title": "将軍個人より、将軍の地位を",
+   "unitLink": "幕政の安定",
+   "theme": "新井白石と間部詮房。閑院宮家、通信使の待遇と「日本国王」、正徳小判、そして海舶互市新例。",
+   "html": "<p>綱吉が亡くなると、6代将軍の<span class='kw'><ruby>徳川家宣<rt>とくがわいえのぶ</rt></ruby></span>は<span class='kw'><ruby>生類憐みの令<rt>しょうるいあわれみのれい</rt></ruby></span>をやめ、<span class='kw'><ruby>柳沢吉保<rt>やなぎさわよしやす</rt></ruby></span>をしりぞけて、<span class='kw'><ruby>朱子学<rt>しゅしがく</rt></ruby></span>者の<span class='kw'><ruby>新井白石<rt>あらいはくせき</rt></ruby></span>と、<ruby>側用人<rt>そばようにん</rt></ruby>の<span class='kw'><ruby>間部詮房<rt>まなべあきふさ</rt></ruby></span>を信頼して、政治の立て直しをはかった。この政治を<span class='kw'><ruby>正徳の政治<rt>しょうとくのせいじ</rt></ruby></span>という。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>新井白石<rt>あらいはくせき</rt></ruby></span>の著作</b>　白石は、歴史書『<ruby>読史余論<rt>とくしよろん</rt></ruby>』、イタリア人<span class='kw'><ruby>宣教師<rt>せんきょうし</rt></ruby></span><ruby>シドッチ<rt>しどっち</rt></ruby>の尋問をもとにした『<ruby>西洋紀聞<rt>せいようきぶん</rt></ruby>』『<ruby>采覧異言<rt>さいらんいげん</rt></ruby>』、自伝『<ruby>折たく柴の記<rt>おりたくしばのき</rt></ruby>』を著した。</div><p>ところが家宣は在職わずか3年あまりで亡くなり、あとを継いだ7代将軍の<span class='kw'><ruby>徳川家継<rt>とくがわいえつぐ</rt></ruby></span>はまだ<b>3歳</b>だった。そのため、引き続き白石らが<ruby>幕府<rt>ばくふ</rt></ruby>の政治を担った。</p><p>幼い将軍が続く中で、白石は、<b>将軍個人の人柄よりも、将軍という地位とその権威を高める</b>ことに力を入れた。3歳の将軍に、個人としての威厳を求めるのは無理だからだ。そこで白石は、天皇家との結びつきを強めた。宮家（親王家）は伏見・桂・有栖川の3家しかなく、多くの皇子・皇女は出家して<span class='kw'><ruby>門跡<rt>もんぜき</rt></ruby></span>寺院に入っていたので、幕府が費用を出して、特例として新しく<span class='kw'><ruby>閑院宮家<rt>かんいんのみやけ</rt></ruby></span>をつくった。また家継と、2歳の皇女との婚約をまとめた。一目で序列がわかるように衣服の制度を整えるなど、家格や身分の秩序も重んじた。</p><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>新井白石</span>が、朝鮮の国書で将軍を「<span class='kw'>日本国王</span>」と書かせたねらいは？</span><span class='tp'>タップで確認</span></summary><div class='qa'>「大君」は国王より低い意味をもつとされたので、それをきらい、<b>日本を代表する権力者</b>としての将軍の地位をはっきりさせようとした。幼い将軍が続く中で、将軍という地位そのものの権威を高めたかったのだ。</div></details><p><span class='kw'><ruby>朝鮮通信使<rt>ちょうせんつうしんし</rt></ruby></span>が、家宣の将軍就任を祝うためにやってきたときには、それまでの使節への待遇が丁重すぎたとして簡素にした。さらに、朝鮮から日本あての国書で、それまで将軍のことを「<b>日本国大君殿下</b>」と書いていたのを、「<b><span class='kw'><ruby>日本国王<rt>にほんこくおう</rt></ruby></span></b>」に改めさせ、日本を代表する権力者としての将軍の地位をはっきりさせた。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世③で、<span class='kw'>朝鮮通信使</span>は江戸時代を通じて12回来日し、新しい将軍の就任を祝う使節だった、と言ったよね。そして中世④で、<span class='kw'><ruby>足利義満<rt>あしかがよしみつ</rt></ruby></span>は明の皇帝から「<b><span class='kw'>日本国王</span></b>」と呼ばれ、将軍は明への文書に「<span class='kw'>日本国王</span>臣源」と書いた。「国王」は、外国から見た日本の代表者の称号だ。白石は、朝鮮に対して将軍をその「国王」とはっきり呼ばせたかったのだ。</div><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b>「大君」と「国王」、どちらが偉い？</b>白石が「大君」をきらったのは、朝鮮では「大君」が、国王より低い王子などの称号として使われていたからだといわれる。将軍の地位を下に見られてはたまらない、というわけだ。ところが8代将軍の吉宗は、「祖先が決めたことを大事にする」という方針から、もとの「大君」に戻させた。将軍の呼び方ひとつで、政権の考え方の違いが見えるのだ。</div><p>財政の面では、白石は、金の含有率を下げた<span class='kw'><ruby>元禄小判<rt>げんろくこばん</rt></ruby></span>をやめ、以前の<span class='kw'><ruby>慶長小判<rt>けいちょうこばん</rt></ruby></span>と同じ質の<span class='kw'><ruby>正徳小判<rt>しょうとくこばん</rt></ruby></span>をつくって、物価の上昇をおさえようとした。しかし、ふたたび貨幣を交換させたことは、かえって社会の混乱を引きおこした。</p><p>また長崎貿易では、たくさんの金銀が海外に流れ出ていた。白石は、江戸時代の初めから日本がもっていた<b>金の4分の1、銀の4分の3</b>が、貿易で海外に流出したと推計した。そこで1715年、<span class='kw'><ruby>海舶互市新例<rt>かいはくごししんれい</rt></ruby></span>（長崎新令・正徳新令）を出して、貿易の額を制限した。清船は年間30隻・銀高6000貫、オランダ船は2隻・銀高3000貫に限ったのだ。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>海舶互市新例<rt>かいはくごしんれい</rt></ruby></span>の中身</b>　1715年の<span class='kw'>海舶互市新例</span>（<ruby>長崎新令<rt>ながさきしんれい</rt></ruby>・<ruby>正徳新令<rt>しょうとくしんれい</rt></ruby>）は、清船を年30隻・<ruby>銀高<rt>ぎんだか</rt></ruby>6000貫、オランダ船を年2隻・銀高3000貫に制限し、金銀の流出をおさえた。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世③の長崎貿易で、1685年に輸入額を制限し（オランダ船3000貫・清船6000貫）、1688年には清船を<b>年<span class='kw'>70隻</span></b>に限った、と言ったよね。そのとき「この金・銀の流出をどう止めるかという問題は、<span class='kw'>新井白石</span>の<span class='kw'>正徳の政治</span>でもう一度出てくる」と予告した。その答えが<b><span class='kw'>海舶互市新例</span></b>だ。清船は<span class='kw'>70隻</span>からさらに<b>30隻</b>に減らされた。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b><span class='kw'>正徳の政治</span></b>＝<b>6代家宣・7代家継、<span class='kw'>新井白石</span>（<span class='kw'>朱子学</span>者）・<span class='kw'>間部詮房</span>（側用人）</b>。政策＝<b><span class='kw'>閑院宮家</span>の創設・<span class='kw'>朝鮮通信使</span>の待遇の簡素化と国書の「<span class='kw'>日本国王</span>」への変更・<span class='kw'>正徳小判</span>（<span class='kw'>慶長小判</span>と同質）・<span class='kw'>海舶互市新例</span>（1715・清船30隻・銀6000貫／オランダ船2隻・銀3000貫）</b>。「白石は<span class='kw'>元禄小判</span>の質をさらに下げた」は誤り。教科書の問い「<span class='kw'><ruby>元禄時代<rt>げんろくじだい</rt></ruby></span>や<span class='kw'>正徳の政治</span>が、それ以前と比べて画期的なのはどこか」＝<b>武力ではなく儒教にもとづく礼儀・身分秩序で支配する文治政治へ転換し、将軍の権威を儀礼や朝廷との関係で高めたこと</b>。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 長崎貿易の制限の移り変わり</div><div class='vs'><div class='vh'><span>年</span><span>制限</span></div><div class='vr'><span>1685</span><span>輸入額を制限（オランダ船3000貫・清船6000貫）</span></div><div class='vr'><span>1688</span><span>清船を年70隻に</span></div><div class='vr'><span>1715 海舶互市新例</span><span>清船30隻・銀6000貫／オランダ船2隻・銀3000貫</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "04",
+   "navTitle": "農業の発展",
+   "title": "耕地は164万町歩から297万町歩へ",
+   "unitLink": "経済の発展",
+   "theme": "備中鍬・千歯扱・唐箕・踏車、金肥、農業全書。商品作物が広がり、村は全国市場に巻きこまれていった。",
+   "html": "<p>17世紀後半からの100年のあいだに、小規模な経営を土台にした農業や手工業を中心に、生産力は大きく発展した。<ruby>三都<rt>さんと</rt></ruby>（江戸・大坂・京都）を中心に全国を結ぶ陸上・水上の交通網も整えられ、それらを土台に、社会・経済・文化は成熟していった。</p><p>まず農業の技術。鉄製の農具では、田を深く耕す<span class='kw'><ruby>備中鍬<rt>びっちゅうぐわ</rt></ruby></span>、稲の脱穀をする<span class='kw'><ruby>千歯扱<rt>せんばこき</rt></ruby></span>、穀物の粒をより分ける<span class='kw'><ruby>千石簁<rt>せんごくどおし</rt></ruby></span>、もみ殻やくずを風で吹きわける<span class='kw'><ruby>唐箕<rt>とうみ</rt></ruby></span>、田に水をくみ上げる<span class='kw'><ruby>踏車<rt>ふみぐるま</rt></ruby></span>などが考え出され、村々に広まった。<span class='kw'>千歯扱</span>は、それまでの<ruby>扱箸<rt>こきばし</rt></ruby>（2本の竹で穂をしごく道具）にかわったもので、脱穀の手間を一気に減らした。ただし、大型の農具を使う大規模な農法は発達しなかった。あくまで、小さな家族の経営で、手間をかけて収穫を増やす農業だったのだ。</p><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b>「後家倒し」と呼ばれた<span class='kw'>千歯扱</span>。</b><span class='kw'>千歯扱</span>は、櫛のような鉄の歯に稲の穂をはさんで引くと、一気にもみが落ちる便利な道具だった。それまで脱穀は、夫を亡くした女性（後家）などが扱箸を使っておこなう仕事で、大事な収入源になっていた。ところが<span class='kw'>千歯扱</span>が広まると、その仕事がなくなってしまった。そこで<span class='kw'>千歯扱</span>は「後家倒し」とも呼ばれたといわれる。</div><p>肥料では、耕地の開発が進んで<span class='kw'><ruby>刈敷<rt>かりしき</rt></ruby></span>が足りなくなる中で、都市の周辺では<span class='kw'><ruby>下肥<rt>しもごえ</rt></ruby></span>が、綿などの商品作物の生産が発達したところでは、遠くから運ばれる<span class='kw'><ruby>干鰯<rt>ほしか</rt></ruby></span>・〆粕・油粕・糠などが、お金で買う<span class='kw'><ruby>金肥<rt>きんぴ</rt></ruby></span>として広まった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世④で、近世前期の肥料は<b><span class='kw'>刈敷</span>と<span class='kw'>厩肥</span></b>が基本だった。それが、耕地が2倍近くに広がって山野が減ると、<span class='kw'>刈敷</span>が足りなくなる。そこで<b>買う肥料</b>（<span class='kw'>金肥</span>）が登場した。とくに干鰯は、九十九里浜などでとれた<ruby>鰯<rt>いわし</rt></ruby>を干したもので、綿作には欠かせない肥料になった。農業が、お金と市場に結びついていくのだ。</div><p>農業の技術を教える農書も広まった。17世紀前半にはもう、新しい栽培技術や農業の知識を説く『清良記』が書かれ、17世紀末には日本で最初の体系的な農書として、<span class='kw'><ruby>宮崎安貞<rt>みやざきやすさだ</rt></ruby></span>の『<span class='kw'><ruby>農業全書<rt>のうぎょうぜんしょ</rt></ruby></span>』が著された。19世紀に入ると、<span class='kw'><ruby>大蔵永常<rt>おおくらながつね</rt></ruby></span>の『農具便利論』『広益国産考』などが刊行された。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>農書</b>　<span class='kw'><ruby>宮崎安貞<rt>みやざきやすさだ</rt></ruby></span>の『<span class='kw'><ruby>農業全書<rt>のうぎょうぜんしょ</rt></ruby></span>』（1697年）は日本最初の体系的な農書。19世紀には<span class='kw'><ruby>大蔵永常<rt>おおくらながつね</rt></ruby></span>が『<ruby>広益国産考<rt>こうえきこくさんこう</rt></ruby>』『<ruby>農具便利論<rt>のうぐべんりろん</rt></ruby>』を著した。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>金肥</span>が広まったのはなぜ？</span><span class='tp'>タップで確認</span></summary><div class='qa'>新田開発で耕地が広がり、山野が減って<b><span class='kw'>刈敷</span>が不足した</b>から。とくに綿などの商品作物をつくる地域では、遠くから運ばれる干鰯・〆粕・油粕などを買って使うようになった。</div></details><p>新田開発や技術の革新で、農業の生産高は大きく増えた。田畑の面積は、江戸時代の初めの164万町歩から、18世紀の初めには<b>297万町歩</b>（1町歩は約1ha）に広がり、<ruby>幕府<rt>ばくふ</rt></ruby>や藩の<span class='kw'><ruby>年貢<rt>ねんぐ</rt></ruby></span>収入も大きく増えた。</p><p>幕府や藩は、<span class='kw'>年貢</span>米を都市で売って貨幣の収入を得ることにつとめ、また商品作物の生産をすすめて、税の収入を増やそうとした。17世紀末に<ruby>全国市場<rt>ぜんこくしじょう</rt></ruby>ができ、三都や<span class='kw'><ruby>城下町<rt>じょうかまち</rt></ruby></span>などの都市が発達すると、都市の住民を中心に、武士以外でも消費の需要が多様になり、それに応じて商品の生産が各地で活発になった。こうした商品の取引は、<span class='kw'>城下町</span>や<span class='kw'>在郷町</span>の<span class='kw'><ruby>問屋<rt>といや</rt></ruby></span>や市場を通じておこなわれ、村々はしだいに遠くの地域との商品の流通に巻きこまれていった。</p><p>村々では、地主たちが余った米を商品として売り、一般の百姓たちも、桑・麻・綿・菜種・<ruby>楮<rt>こうぞ</rt></ruby>・野菜・たばこ・茶・果物などを商品作物としてつくり、お金を得る機会が増えた。そして、それぞれの風土に合った特産品が、藩などのすすめのもとで全国各地に生まれた。<ruby>出羽<rt>でわ</rt></ruby>村山（最上）地方の<span class='kw'><ruby>紅花<rt>べにばな</rt></ruby></span>、駿河・山城<span class='kw'>宇治</span>の茶、<ruby>備後<rt>びんご</rt></ruby>の<span class='kw'><ruby>藺草<rt>いぐさ</rt></ruby></span>、<ruby>阿波<rt>あわ</rt></ruby>の<span class='kw'><ruby>藍玉<rt>あいだま</rt></ruby></span>、薩摩（<span class='kw'><ruby>琉球<rt>りゅうきゅう</rt></ruby></span>）の<span class='kw'>黒砂糖</span>、<ruby>越前<rt>えちぜん</rt></ruby>の奉書紙、甲斐の葡萄、<span class='kw'><ruby>紀伊<rt>きい</rt></ruby></span>の蜜柑などだ。</p><!--jm:kinsei5-04--><div class='viz jm'><div class='viz-cap'>地図 ── 各地の商品作物</div><div class='mapwrap'><svg viewBox='149.5 468.4 766.1 626.7' width='100%' role='img' aria-label='各地の商品作物'><defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'><path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs><rect x='149.5' y='468.4' width='766.1' height='626.7' style='fill:#0F1626;'/><use href='#jpmap'/><circle cx='835' cy='558.8' r='7.4' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='835' y1='558.8' x2='890.8' y2='544.9' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='717.6' cy='803.5' r='7.4' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='717.6' y1='803.5' x2='731.5' y2='863.9' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='555.2' cy='805.4' r='7.4' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='555.2' y1='805.4' x2='541.3' y2='745.1' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='392.2' cy='830.9' r='7.4' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='392.2' y1='830.9' x2='387.5' y2='770.5' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='468.6' cy='862' r='7.4' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='468.6' y1='862' x2='487.1' y2='917.7' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='230.7' cy='1029.8' r='7.4' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='230.7' y1='1029.8' x2='286.4' y2='1048.3' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='890.8' cy='544.9' r='19.7' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='890.8' y='553.7' text-anchor='middle' style='fill:#10141C;font-size:25.5px;font-weight:800;font-family:system-ui,sans-serif;'>1</text><circle cx='731.5' cy='863.9' r='19.7' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='731.5' y='872.7' text-anchor='middle' style='fill:#10141C;font-size:25.5px;font-weight:800;font-family:system-ui,sans-serif;'>2</text><circle cx='541.3' cy='745.1' r='19.7' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='541.3' y='753.9' text-anchor='middle' style='fill:#10141C;font-size:25.5px;font-weight:800;font-family:system-ui,sans-serif;'>3</text><circle cx='387.5' cy='770.5' r='19.7' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='387.5' y='779.4' text-anchor='middle' style='fill:#10141C;font-size:25.5px;font-weight:800;font-family:system-ui,sans-serif;'>4</text><circle cx='487.1' cy='917.7' r='19.7' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='487.1' y='926.6' text-anchor='middle' style='fill:#10141C;font-size:25.5px;font-weight:800;font-family:system-ui,sans-serif;'>5</text><circle cx='286.4' cy='1048.3' r='19.7' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='286.4' y='1057.2' text-anchor='middle' style='fill:#10141C;font-size:25.5px;font-weight:800;font-family:system-ui,sans-serif;'>6</text></svg></div><ol class='jm-leg c2'><li><b>1</b><span>紅花（出羽村山）</span></li><li><b>2</b><span>茶（駿河）</span></li><li><b>3</b><span>茶（山城宇治）</span></li><li><b>4</b><span>藺草（備後）</span></li><li><b>5</b><span>藍玉（阿波）</span></li><li><b>6</b><span>黒砂糖（薩摩・琉球）</span></li></ol></div><!--/jm--><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>千歯扱<rt>せんばこき</rt></ruby></span>と商品作物</b>　<span class='kw'>千歯扱</span>は脱穀の効率を大きく上げ、それまで脱穀の仕事をしていた未亡人の仕事を奪ったことから「<ruby>後家倒し<rt>ごけだおし</rt></ruby>」ともよばれた。桑・漆・茶・<ruby>楮<rt>こうぞ</rt></ruby>の<ruby>四木<rt>しぼく</rt></ruby>、麻・<ruby>藍<rt>あい</rt></ruby>・<span class='kw'><ruby>紅花<rt>べにばな</rt></ruby></span>の<ruby>三草<rt>さんそう</rt></ruby>が代表的な商品作物だった。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世④で、幕府は百姓が<b>貨幣経済にあまり巻きこまれないように</b>して、商品作物を自由につくることを制限した（<span class='kw'>田畑勝手作りの禁</span>）、と言ったよね。でも現実はその逆に進んだ。幕府や藩自身が、<span class='kw'>年貢</span>米を売り、商品作物をすすめて、お金を手に入れようとしたからだ。<b>百姓をお金から遠ざけたい幕府が、自分ではお金を必要とした</b>。この矛盾が、18世紀以降の幕府を悩ませていく。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>農具と用途</b>は写真問題の定番。<b><span class='kw'>備中鍬</span>＝深耕・荒おこし／<span class='kw'>千歯扱</span>＝脱穀（扱箸にかわる）／<span class='kw'>千石簁</span>＝穀粒の選別／<span class='kw'>唐箕</span>＝もみ殻・くずを風で選別／<span class='kw'>踏車</span>＝揚水（竜骨車にかわる）</b>。農書＝<b><span class='kw'>宮崎安貞</span>『<span class='kw'>農業全書</span>』（17世紀末・最初の体系的農書）／<span class='kw'>大蔵永常</span>『農具便利論』『広益国産考』（19世紀）</b>。特産品＝<b>出羽村山の<span class='kw'>紅花</span>・阿波の<span class='kw'>藍玉</span>・備後の藺草</b>。<span class='kw'>金肥</span>＝<b>干鰯・〆粕・油粕・糠</b>。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 農具と用途</div><div class='vs'><div class='vh'><span>農具</span><span>用途</span></div><div class='vr'><span>備中鍬</span><span>田の深耕・荒おこし</span></div><div class='vr'><span>千歯扱</span><span>脱穀（扱箸にかわる）</span></div><div class='vr'><span>千石簁</span><span>穀粒の選別</span></div><div class='vr'><span>唐箕</span><span>もみ殻・くずを風で選別</span></div><div class='vr'><span>踏車</span><span>揚水（竜骨車にかわる）</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "05",
+   "navTitle": "諸産業の発達",
+   "title": "海と畑が、肥料でつながる",
+   "unitLink": "経済の発展",
+   "theme": "干鰯・鰊・捕鯨・俵物、入浜塩田、西陣と桐生、有田の磁器、灘の酒と野田・銚子の醤油。",
+   "html": "<p>農業以外の産業も、大きく発達した。</p><p>林業では、火事の多かった江戸などの都市で材木の需要が大きく、17世紀末には、飛騨や<span class='kw'><ruby>紀伊<rt>きい</rt></ruby></span>の材木商人の中から、<ruby>陸奥<rt>むつ</rt></ruby>・<ruby>出羽<rt>でわ</rt></ruby>や蝦夷地で山林の伐採を請け負う者が現れ、木材を江戸や京都で売って巨額の利益をあげた。また<span class='kw'>紀伊</span>の熊野や<ruby>伊豆<rt>いず</rt></ruby>・<ruby>下総<rt>しもうさ</rt></ruby>などでは高級な炭がつくられ、<ruby>三都<rt>さんと</rt></ruby>や<span class='kw'><ruby>城下町<rt>じょうかまち</rt></ruby></span>向けの商品として大量に売られた。木工の道具や漆塗りの技術が広まって、木の器や日用品もたくさんつくられた。</p><p>漁業では、漁法が改良され、沿岸部の漁場の開発が進んだ。とくに<span class='kw'><ruby>鰯<rt>いわし</rt></ruby></span>や<span class='kw'><ruby>鰊<rt>にしん</rt></ruby></span>は、<span class='kw'><ruby>干鰯<rt>ほしか</rt></ruby></span>や〆粕などに加工され、綿作などの商品作物の生産に欠かせない肥料として、上方をはじめ各地に出荷された。このほか、瀬戸内海の鯛や<ruby>土佐<rt>とさ</rt></ruby>の鰹などの釣漁、網や銛を使う<span class='kw'>紀伊</span>・土佐・<span class='kw'><ruby>肥前<rt>ひぜん</rt></ruby></span>・<ruby>長門<rt>ながと</rt></ruby>などの<span class='kw'><ruby>捕鯨<rt>ほげい</rt></ruby></span>も見られた。17世紀末以降、銅にかわる中国（清）向けのおもな輸出品として、<span class='kw'>俵物</span>（干し鮑・いりこ・ふかひれ）や昆布の需要が高まると、それを手に入れるために、蝦夷地や陸奥で漁業がさかんになった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>授業04で出てきた<b>干鰯</b>は、ここで漁業の側から見るとこうなる。房総（九十九里浜）などでとれた鰯や、蝦夷地でとれた鰊が肥料に加工され、上方の綿畑に運ばれる。<b>海の産業と畑の産業が、肥料でつながっていた</b>のだ。そして近世④の<b><span class='kw'>俵物</span></b>が、銅にかわる中国向けの輸出品になって、蝦夷地の漁業を大きくしていく（近世⑥の田沼の政治へ）。</div><p>塩業では、高度な土木の技術が必要な<span class='kw'><ruby>入浜塩田<rt>いりはまえんでん</rt></ruby></span>が発達し、瀬戸内海の沿岸をはじめ各地で塩がつくられた。<span class='kw'>入浜塩田</span>は、堤防で囲んだ砂浜に潮の満ち引きを利用して海水を引きこみ、砂に塩分をつけて、それを集めて煮つめる方法だ。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>中世⑤で、室町時代の塩づくりには、ほとんど人の手を加えない<b><span class='kw'><ruby>揚浜<rt>あげはま</rt></ruby></span></b>のほかに、潮の満ち引きを利用して海水を引きこむ<b><span class='kw'><ruby>古式入浜<rt>こしきいりはま</rt></ruby></span></b>があり、「のちの<span class='kw'>入浜塩田</span>」と言ったよね。それが江戸時代には、高度な土木技術でつくる本格的な<b><span class='kw'>入浜塩田</span></b>になった。とくに瀬戸内海の赤穂などの塩は有名だ。</div><details class='qcheck'><summary><span class='qmk'>？</span><span>蝦夷地や陸奥で漁業がさかんになったきっかけは？</span><span class='tp'>タップで確認</span></summary><div class='qa'>17世紀末以降、<b>銅にかわる中国（清）向けの輸出品</b>として、<span class='kw'>俵物</span>（干し鮑・いりこ・ふかひれ）や昆布の需要が高まったから。</div></details><p>織物では、河内の<span class='kw'><ruby>木綿<rt>もめん</rt></ruby></span>、近江の麻、奈良の晒（麻をさらして白くした布）などの名産が各地に生まれた。絹や紬は農村でも多くつくられたが、高度な技術を必要とする金襴・緞子などの高級品は、京都の<span class='kw'><ruby>西陣<rt>にしじん</rt></ruby></span>で高機を使って独占的に織られていた。しかし18世紀の中ごろには、<ruby>上野<rt>こうずけ</rt></ruby>の<span class='kw'><ruby>桐生<rt>きりゅう</rt></ruby></span>をはじめ、各地で高級な<span class='kw'>絹織物</span>がつくられるようになった。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>特産物の産地</b>　<span class='kw'><ruby>入浜塩田<rt>いりはまえんでん</rt></ruby></span>は瀬戸内の<ruby>赤穂<rt>あこう</rt></ruby>などで発達した。<span class='kw'>絹織物</span>は京都の<span class='kw'><ruby>西陣<rt>にしじん</rt></ruby></span>が<ruby>高機<rt>たかばた</rt></ruby>で高級品をつくり、<span class='kw'><ruby>桐生<rt>きりゅう</rt></ruby></span>・<ruby>足利<rt>あしかが</rt></ruby>にも技術が広まった。<span class='kw'><ruby>肥前<rt>ひぜん</rt></ruby></span>の<span class='kw'><ruby>有田焼<rt>ありたやき</rt></ruby></span>（<ruby>伊万里焼<rt>いまりやき</rt></ruby>）では<span class='kw'><ruby>酒井田柿右衛門<rt>さかいだかきえもん</rt></ruby></span>が<span class='kw'><ruby>赤絵<rt>あかえ</rt></ruby></span>を完成させた。</div><p><ruby>陶磁器<rt>とうじき</rt></ruby>は、秀吉の朝鮮侵略のときに朝鮮から連れてこられた陶工とともに伝わった技術が広まり、まず九州・中国地方でさかんになった。<span class='kw'>肥前</span>の<span class='kw'><ruby>有田<rt>ありた</rt></ruby></span>では、佐賀藩の保護のもとで17世紀前半から磁器がつくられ、長崎貿易のおもな輸出品になった。その後、<ruby>尾張<rt>おわり</rt></ruby>の瀬戸や美濃の多治見などでも生産が活発になり、各地で陶磁器がたくさんつくられた。<span class='kw'>城下町</span>の近くでは、安い素焼や瓦が大量につくられた。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>近世③の<span class='kw'><ruby>寛永期の文化<rt>かんえいきのぶんか</rt></ruby></span>で、朝鮮人陶工の技術で<b><span class='kw'><ruby>有田焼<rt>ありたやき</rt></ruby></span></b>が生まれ、<b><span class='kw'><ruby>酒井田柿右衛門<rt>さかいだかきえもん</rt></ruby></span></b>が<span class='kw'><ruby>赤絵<rt>あかえ</rt></ruby></span>を完成させた、と言ったよね。その有田の磁器は、長崎から<b>オランダ<span class='kw'><ruby>東インド会社<rt>ひがしいんどがいしゃ</rt></ruby></span></b>を通じてヨーロッパにまで輸出された（伊万里焼とも呼ばれる）。ヨーロッパの王侯貴族のあいだでは、日本の磁器が高級品として大人気になったのだ。</div><p>醸造業では、伏見や灘で名酒が生まれ、各地に造り<ruby>酒屋<rt>さかや</rt></ruby>が発達した。また、西日本で早くからつくられていた醤油は、その後、関東の<span class='kw'><ruby>野田<rt>のだ</rt></ruby></span>や<span class='kw'><ruby>銚子<rt>ちょうし</rt></ruby></span>をはじめ全国でたくさんつくられはじめ、鰹節などとともに、日本の食文化の形成に大きな役割をはたした。</p><!--jm:kinsei5-05--><div class='viz jm'><div class='viz-cap'>地図 ── 諸産業の特産地（入浜塩田は瀬戸内海の沿岸に広がった）</div><div class='mapwrap'><svg viewBox='153.3 611.8 746.9 382.5' width='100%' role='img' aria-label='諸産業の特産地'><defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'><path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs><rect x='153.3' y='611.8' width='746.9' height='382.5' style='fill:#0F1626;'/><use href='#jpmap'/><circle cx='551.7' cy='794.6' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='551.7' y1='794.6' x2='511' y2='740.2' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='774.7' cy='703' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='774.7' y1='703' x2='743' y2='648.7' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='543.1' cy='823.6' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='543.1' y1='823.6' x2='484.2' y2='846.3' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='557.5' cy='819.8' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='557.5' y1='819.8' x2='607.3' y2='851.5' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='185.4' cy='914.4' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='185.4' y1='914.4' x2='171.8' y2='855.5' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='635.2' cy='783.7' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='635.2' y1='783.7' x2='657.8' y2='838' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='520.9' cy='816.5' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='520.9' y1='816.5' x2='466.5' y2='857.2' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='870.5' cy='754.8' r='7.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.3;'/><line x1='870.5' y1='754.8' x2='879.6' y2='809.1' style='stroke:#D4BD82;stroke-width:2.3;'/><circle cx='511' cy='740.2' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='511' y='748.8' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>1</text><circle cx='743' cy='648.7' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='743' y='657.3' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>2</text><circle cx='484.2' cy='846.3' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='484.2' y='854.9' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>3</text><circle cx='607.3' cy='851.5' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='607.3' y='860.1' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>4</text><circle cx='171.8' cy='855.5' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='171.8' y='864.1' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>5</text><circle cx='657.8' cy='838' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='657.8' y='846.6' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>6</text><circle cx='466.5' cy='857.2' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='466.5' y='865.8' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>7</text><circle cx='879.6' cy='809.1' r='19.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.2;'/><text x='879.6' y='817.7' text-anchor='middle' style='fill:#10141C;font-size:24.9px;font-weight:800;font-family:system-ui,sans-serif;'>8</text></svg></div><ol class='jm-leg c2'><li><b>1</b><span>西陣（京都）── 高級絹織物</span></li><li><b>2</b><span>桐生（上野）── 絹織物</span></li><li><b>3</b><span>河内 ── 木綿</span></li><li><b>4</b><span>奈良 ── 晒</span></li><li><b>5</b><span>有田（肥前）── 磁器</span></li><li><b>6</b><span>瀬戸（尾張）── 陶磁器</span></li><li><b>7</b><span>伏見・灘 ── 酒</span></li><li><b>8</b><span>野田・銚子 ── 醤油</span></li></ol></div><!--/jm--><div class='deep'><span class='bx-tag'>難関＋</span><b>醸造業</b>　酒は<ruby>摂津<rt>せっつ</rt></ruby>の<ruby>灘<rt>なだ</rt></ruby>・<ruby>伊丹<rt>いたみ</rt></ruby>や<ruby>伏見<rt>ふしみ</rt></ruby>、醤油は<ruby>下総<rt>しもうさ</rt></ruby>の<span class='kw'><ruby>野田<rt>のだ</rt></ruby></span>・<ruby>銚子<rt>ちょうし</rt></ruby>が名産地となった。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>産地と特産品</b>の組み合わせは地図問題で出る。<b>酒＝伏見・灘（<ruby>摂津<rt>せっつ</rt></ruby>）／醤油＝<span class='kw'>野田</span>・銚子（下総）／高級<span class='kw'>絹織物</span>＝<span class='kw'>西陣</span>（京都）・<span class='kw'>桐生</span>（上野）／<span class='kw'>木綿</span>＝河内／麻＝近江・奈良晒／磁器＝有田（<span class='kw'>肥前</span>・佐賀藩）・瀬戸（尾張）／塩＝<span class='kw'>入浜塩田</span>（瀬戸内海）／鰹節＝土佐・薩摩</b>。「<span class='kw'>入浜塩田</span>は室町時代に完成した」は誤り。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── おもな特産品</div><div class='vs'><div class='vh'><span>品目</span><span>産地</span></div><div class='vr'><span>酒</span><span>伏見・灘</span></div><div class='vr'><span>醤油</span><span>野田・銚子</span></div><div class='vr'><span>高級絹織物</span><span>西陣・桐生</span></div><div class='vr'><span>木綿・麻</span><span>河内木綿・近江麻・奈良晒</span></div><div class='vr'><span>磁器</span><span>有田・瀬戸</span></div><div class='vr'><span>塩</span><span>瀬戸内海の入浜塩田</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "06",
+   "navTitle": "交通の整備と発達",
+   "title": "街道と海で、全国がつながる",
+   "unitLink": "経済の発展",
+   "theme": "五街道と宿駅・関所・助郷、角倉了以の河川、河村瑞賢の東廻り・西廻り海運、菱垣廻船と樽廻船。",
+   "html": "<p>陸上の交通の整備は、豊臣政権の全国統一の中で始まり、それを引き継いだ<span class='kw'><ruby>江戸幕府<rt>えどばくふ</rt></ruby></span>によって、江戸・大坂・京都を中心に、各地の<span class='kw'><ruby>城下町<rt>じょうかまち</rt></ruby></span>をつなぐ全国的な街道の網の目が完成した。</p><p>とくに、<ruby>三都<rt>さんと</rt></ruby>を結ぶ<span class='kw'>東海道</span>をはじめ、中山道・甲州道中・日光道中・奥州道中の<span class='kw'><ruby>五街道<rt>ごかいどう</rt></ruby></span>は、江戸の<span class='kw'><ruby>日本橋<rt>にほんばし</rt></ruby></span>を起点とする幹線道路として<ruby>幕府<rt>ばくふ</rt></ruby>の直轄の下に置かれ、17世紀半ばから<span class='kw'><ruby>道中奉行<rt>どうちゅうぶぎょう</rt></ruby></span>によって管理された。また、脇街道（脇往還）と呼ばれる主要な道路も全国で整えられた（伊勢街道・北国街道・中国街道・長崎街道など）。これらの街道には多くの<span class='kw'><ruby>宿駅<rt>しゅくえき</rt></ruby></span>が置かれ、一里塚や橋・渡し場・関所などの施設も整えられた。<span class='kw'>東海道</span>には<ruby>品川<rt>しながわ</rt></ruby>から<ruby>大津<rt>おおつ</rt></ruby>までに53の宿があった（<span class='kw'>東海道</span>五十三次）。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>五街道<rt>ごかいどう</rt></ruby></span>と関所</b>　<span class='kw'>五街道</span>は<span class='kw'>東海道</span>・<span class='kw'><ruby>中山道<rt>なかせんどう</rt></ruby></span>・<ruby>甲州道中<rt>こうしゅうどうちゅう</rt></ruby>・<ruby>日光道中<rt>にっこうどうちゅう</rt></ruby>・<ruby>奥州道中<rt>おうしゅうどうちゅう</rt></ruby>で、<span class='kw'><ruby>道中奉行<rt>どうちゅうぶぎょう</rt></ruby></span>が管理した。<ruby>箱根<rt>はこね</rt></ruby>や<ruby>新居<rt>あらい</rt></ruby>の関所では「<span class='kw'><ruby>入り鉄砲に出女<rt>いりでっぽうにでおんな</rt></ruby></span>」がきびしく調べられた。</div><p>おもな関所は、<span class='kw'>東海道</span>の<span class='kw'><ruby>箱根<rt>はこね</rt></ruby></span>・新居、中山道の碓氷・<ruby>木曽<rt>きそ</rt></ruby>福島などにあった。関所では手形を見せることが求められ、とくに関東の関所では「<span class='kw'><ruby>入鉄砲に出女<rt>いりでっぽうにでおんな</rt></ruby></span>」をきびしく取り締まった。</p><!--jm:kinsei5-06a--><div class='viz jm'><div class='viz-cap'>地図 ── 五街道とおもな関所（線の位置はおおよそ）</div><div class='mapwrap'><svg viewBox='534.7 627.8 326.9 214.8' width='100%' role='img' aria-label='五街道とおもな関所'><defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'><path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs><rect x='534.7' y='627.8' width='326.9' height='214.8' style='fill:#0F1626;'/><use href='#jpmap'/><text x='691.3' y='833.5' text-anchor='middle' style='fill:#8E9AB8;font-size:10.9px;letter-spacing:.1em;'>東海道</text><text x='644.5' y='731.7' text-anchor='middle' style='fill:#8E9AB8;font-size:10.9px;letter-spacing:.1em;'>中山道</text><text x='751.8' y='742.3' text-anchor='middle' style='fill:#8E9AB8;font-size:10.9px;letter-spacing:.1em;'>甲州道中</text><text x='769.1' y='683.5' text-anchor='middle' style='fill:#8E9AB8;font-size:10.9px;letter-spacing:.1em;'>日光道中</text><text x='838.3' y='680.7' text-anchor='middle' style='fill:#8E9AB8;font-size:10.9px;letter-spacing:.1em;'>奥州道中</text><path d='M803.8 756.2 L765.6 785.8 L758.1 789.8 L750.7 794.6 L717.6 803.5 L677.1 821.6 L666.5 822.6 L624.7 789.8 L610.3 794.3 L596.2 808.2 L565 795.7 L558.7 796.9 L553 796' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:2.6;'/><path d='M803.8 756.2 L794.6 739.4 L754.1 708.8 L735.1 705.3 L728.8 705.8 L696.6 724.1 L672.4 740.5 L661.1 765.2 L596.5 772.4 L565 795.7' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#7FB3D5;stroke-width:2.6;'/><path d='M803.8 756.2 L775.5 756.7 L728.2 755.2 L696.6 724.1' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:2.6;'/><path d='M803.8 756.2 L798.5 723.8 L809.1 693.4 L791.1 679.2' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#7FB3D5;stroke-width:2.6;'/><path d='M809.1 693.4 L828.8 653.2' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:2.6;'/><circle cx='803.8' cy='756.2' r='3.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:1;'/><line x1='803.8' y1='756.2' x2='825.6' y2='768.1' style='stroke:#D4BD82;stroke-width:1;'/><circle cx='758.1' cy='789.8' r='3.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:1;'/><line x1='758.1' y1='789.8' x2='762.1' y2='813.6' style='stroke:#D4BD82;stroke-width:1;'/><circle cx='666.5' cy='822.6' r='3.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:1;'/><line x1='666.5' y1='822.6' x2='662.5' y2='846.4' style='stroke:#D4BD82;stroke-width:1;'/><circle cx='735.1' cy='705.3' r='3.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:1;'/><line x1='735.1' y1='705.3' x2='721.2' y2='681.5' style='stroke:#D4BD82;stroke-width:1;'/><circle cx='672.4' cy='740.5' r='3.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:1;'/><line x1='672.4' y1='740.5' x2='646.7' y2='734.5' style='stroke:#D4BD82;stroke-width:1;'/><circle cx='553' cy='796' r='3.2' style='fill:#E07A5F;stroke:#0F1626;stroke-width:1;'/><line x1='553' y1='796' x2='570.9' y2='774.2' style='stroke:#D4BD82;stroke-width:1;'/><circle cx='825.6' cy='768.1' r='8.4' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.4;'/><text x='825.6' y='771.9' text-anchor='middle' style='fill:#10141C;font-size:10.9px;font-weight:800;font-family:system-ui,sans-serif;'>1</text><circle cx='762.1' cy='813.6' r='8.4' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.4;'/><text x='762.1' y='817.4' text-anchor='middle' style='fill:#10141C;font-size:10.9px;font-weight:800;font-family:system-ui,sans-serif;'>2</text><circle cx='662.5' cy='846.4' r='8.4' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.4;'/><text x='662.5' y='850.2' text-anchor='middle' style='fill:#10141C;font-size:10.9px;font-weight:800;font-family:system-ui,sans-serif;'>3</text><circle cx='721.2' cy='681.5' r='8.4' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.4;'/><text x='721.2' y='685.3' text-anchor='middle' style='fill:#10141C;font-size:10.9px;font-weight:800;font-family:system-ui,sans-serif;'>4</text><circle cx='646.7' cy='734.5' r='8.4' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.4;'/><text x='646.7' y='738.3' text-anchor='middle' style='fill:#10141C;font-size:10.9px;font-weight:800;font-family:system-ui,sans-serif;'>5</text><circle cx='570.9' cy='774.2' r='8.4' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.4;'/><text x='570.9' y='778' text-anchor='middle' style='fill:#10141C;font-size:10.9px;font-weight:800;font-family:system-ui,sans-serif;'>6</text></svg></div><ol class='jm-leg c2'><li><b>1</b><span>日本橋（江戸）── 起点</span></li><li><b>2</b><span>箱根の関所</span></li><li><b>3</b><span>新居の関所</span></li><li><b>4</b><span>碓氷の関所</span></li><li><b>5</b><span>木曽福島の関所</span></li><li><b>6</b><span>京都（三条大橋）</span></li></ol></div><!--/jm--><div class='recall'><span class='bx-tag'>ここで思い出そう</span>中世⑤で、室町時代の幕府・寺社・<ruby>公家<rt>くげ</rt></ruby>が交通の要所に関所をつくり、<b>通行料（<span class='kw'><ruby>関銭<rt>せきせん</rt></ruby></span>）</b>をとったので流通の邪魔になった、と言ったよね。<span class='kw'><ruby>戦国大名<rt>せんごくだいみょう</rt></ruby></span>や信長は、それを<b>廃止</b>した。江戸時代の関所は、それとはまったく目的が違う。お金をとるためではなく、<b>江戸に<span class='kw'><ruby>鉄砲<rt>てっぽう</rt></ruby></span>が入ってくること（反乱の準備）</b>と、<b>江戸に住まわせている大名の妻子が逃げ出すこと</b>を見張るための、<b>治安と監視</b>のための関所だった。</div><p>陸上の交通では、幕府の役人や大名・<span class='kw'><ruby>旗本<rt>はたもと</rt></ruby></span>などの公用の通行（御用通行）がいちばん優先され、使う人や馬は、ただか、一般の半額ほどの賃銭で集められた。これを<span class='kw'><ruby>伝馬役<rt>てんまやく</rt></ruby></span>と呼び、おもに<span class='kw'>宿駅</span>の町人・百姓や近くの村々の百姓が負担させられた。17世紀中ごろからは、<span class='kw'>東海道</span>の各<span class='kw'>宿駅</span>に人足100人・馬100疋を常に置かせるのが原則になった。御用通行のときに<span class='kw'>宿駅</span>の<span class='kw'>伝馬</span>役を補うために人馬を出させられる村々を<span class='kw'><ruby>助郷<rt>すけごう</rt></ruby></span>、その負担を<span class='kw'>助郷</span>役という。<span class='kw'>宿駅</span>には<span class='kw'><ruby>問屋場<rt>といやば</rt></ruby></span>が置かれ、<span class='kw'><ruby>問屋<rt>といや</rt></ruby></span>や<span class='kw'><ruby>年寄<rt>としより</rt></ruby></span>・帳付などの宿役人が、<span class='kw'>伝馬</span>役の取りしきりや、公用の書状・荷物を次の宿へ送りつぐ仕事（継飛脚）にあたった。<span class='kw'>宿駅</span>には、大名らが泊まる<span class='kw'><ruby>本陣<rt>ほんじん</rt></ruby></span>・脇<span class='kw'>本陣</span>、旅行者のための<span class='kw'><ruby>旅籠屋<rt>はたごや</rt></ruby></span>が設けられた。</p><details class='qcheck'><summary><span class='qmk'>？</span><span>江戸時代の関所は、中世の関所と何が違う？</span><span class='tp'>タップで確認</span></summary><div class='qa'>中世の関所は<b>通行料（<span class='kw'>関銭</span>）をとる</b>ためのもので、流通の邪魔になった。江戸時代の関所は、<b><span class='kw'>入鉄砲に出女</span></b>を見張る<b>治安・監視</b>のためのものだった。</div></details><p>近世の中ごろになると、<span class='kw'><ruby>参勤交代<rt>さんきんこうたい</rt></ruby></span>や幕府・大名の荷物だけでなく、商人の荷物も陸路でいっそう活発に運ばれるようになった。一般の庶民の寺社参詣などの旅もさかんになり、各地で<span class='kw'>宿駅</span>が発達した。また飛脚による通信の制度が整い（大名飛脚、そして町人の町飛脚）、全国の情報が早く正確に伝わるようになった。中部地方では、馬や牛を使って商品を長い距離運ぶ<span class='kw'><ruby>中馬<rt>ちゅうま</rt></ruby></span>が発達した。ただし、遠くを結ぶ馬車は発達しなかった。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>通信</b>　<ruby>幕府<rt>ばくふ</rt></ruby>の<ruby>継飛脚<rt>つぎびきゃく</rt></ruby>、大名の<ruby>大名飛脚<rt>だいみょうびきゃく</rt></ruby>、町人の<ruby>町飛脚<rt>まちびきゃく</rt></ruby>が手紙や荷物を運んだ。</div><p>大量の物資を安く運ぶには、陸路より、海や川・湖の水上交通が向いていた。まず17世紀の初めから、川の舟運が整えられた。京都の豪商<span class='kw'><ruby>角倉了以<rt>すみのくらりょうい</rt></ruby></span>は、鴨川・富士川を整え、高瀬川などを掘って水路を開いた。大きな川では、山で伐り出された材木が筏に組まれて送り出された。利根川・<ruby>信濃<rt>しなの</rt></ruby>川などの川や、<span class='kw'><ruby>琵琶湖<rt>びわこ</rt></ruby></span>・霞ヶ浦などの湖では、高瀬舟などを使った舟運が発達し、陸上交通と舟運の結び目として、<span class='kw'><ruby>河岸<rt>かし</rt></ruby></span>と呼ばれる<span class='kw'><ruby>港町<rt>みなとまち</rt></ruby></span>が各地につくられた。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>水運の開発</b>　<span class='kw'><ruby>角倉了以<rt>すみのくらりょうい</rt></ruby></span>は<ruby>富士川<rt>ふじかわ</rt></ruby>・<ruby>高瀬川<rt>たかせがわ</rt></ruby>などを開いた。<span class='kw'><ruby>河村瑞賢<rt>かわむらずいけん</rt></ruby></span>は1671年に<ruby>東廻り航路<rt>ひがしまわりこうろ</rt></ruby>、1672年に<ruby>西廻り航路<rt>にしまわりこうろ</rt></ruby>を整備した。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span><b><span class='kw'>角倉了以</span></b>は、近世③で<span class='kw'><ruby>朱印船<rt>しゅいんせん</rt></ruby></span>を出した京都の商人、近世④で<b><span class='kw'>初期豪商</span></b>として出てきた人だ。海外との貿易でもうけた資金と技術を、今度は国内の川の開発に注いだ。<span class='kw'>朱印船</span>の商人が、日本の川を変えたのだ。</div><p>海上交通では、17世紀前半に、大型の帆船を使った<span class='kw'><ruby>菱垣廻船<rt>ひがきかいせん</rt></ruby></span>などが、大坂から江戸へいろいろな商品を運びはじめた。17世紀後半になると、江戸の商人<span class='kw'><ruby>河村瑞賢<rt>かわむらずいけん</rt></ruby></span>が、<ruby>出羽<rt>でわ</rt></ruby>の酒田を起点として江戸に至る<span class='kw'><ruby>東廻り海運<rt>ひがしまわりかいうん</rt></ruby></span>と、大坂に至る<span class='kw'><ruby>西廻り海運<rt>にしまわりかいうん</rt></ruby></span>のルートを整え、江戸と大坂を中心とする全国規模の海上交通網を完成させた。これらのルートの途中には、<span class='kw'>港町</span>が発達した。</p><!--jm:kinsei5-06b--><div class='viz jm'><div class='viz-cap'>地図 ── 東廻り海運・西廻り海運（南海路（赤い矢印）＝大坂から江戸へ、菱垣廻船・樽廻船）</div><div class='mapwrap'><svg viewBox='137.8 267.5 914.7 767.6' width='100%' role='img' aria-label='東廻り海運・西廻り海運'><defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'><path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs><rect x='137.8' y='267.5' width='914.7' height='767.6' style='fill:#0F1626;'/><use href='#jpmap'/><text x='513.3' y='652.2' text-anchor='middle' style='fill:#8E9AB8;font-size:30.5px;letter-spacing:.1em;'>西廻り海運</text><text x='934.9' y='644.5' text-anchor='middle' style='fill:#8E9AB8;font-size:30.5px;letter-spacing:.1em;'>東廻り海運</text><text x='652.2' y='900.3' text-anchor='middle' style='fill:#8E9AB8;font-size:30.5px;letter-spacing:.1em;'>南海路</text><path d='M802 524.8 L781.6 560.7 L707 597.6 L638.2 613.3 L601 637.1 L571.2 697.1 L528.1 735 L459.1 743.5 L383.6 744.7 L315 771.1 L265.9 816 L250.7 861.4 L279.7 863 L330 861.1 L392.5 841.6 L467.6 826.2 L524.2 824.5 L533.6 820.5' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#7FB3D5;stroke-width:6.1;stroke-dasharray:16.6 11.1;'/><path d='M802 524.8 L788.7 474.9 L799.6 410.8 L813.7 350.4 L869.9 334.3 L914.7 360.9 L926 429.3 L946.5 487.3 L929.5 558.3 L886.5 599.9 L888.2 664.4 L877 714.2 L878.2 760.8 L845.1 817 L810.3 808.7 L803.3 783.4 L804 762' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#7FB3D5;stroke-width:6.1;stroke-dasharray:16.6 11.1;'/><path d='M530.5 824.7 L506.5 866.9 L545.3 907.5 L620.1 877.7 L669.5 843.5 L744.9 835.2 L794.6 811.8 L802 783.4' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:6.7;stroke-dasharray:16.6 11.1;' marker-end='url(#jm-ah)'/><circle cx='802' cy='524.8' r='8.9' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.8;'/><line x1='802' y1='524.8' x2='730' y2='508.2' style='stroke:#D4BD82;stroke-width:2.8;'/><circle cx='803.8' cy='756.2' r='8.9' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.8;'/><line x1='803.8' y1='756.2' x2='737.3' y2='783.9' style='stroke:#D4BD82;stroke-width:2.8;'/><circle cx='533.6' cy='820.5' r='8.9' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.8;'/><line x1='533.6' y1='820.5' x2='522.5' y2='887' style='stroke:#D4BD82;stroke-width:2.8;'/><circle cx='250.7' cy='861.4' r='8.9' style='fill:#E07A5F;stroke:#0F1626;stroke-width:2.8;'/><line x1='250.7' y1='861.4' x2='184.2' y2='878' style='stroke:#D4BD82;stroke-width:2.8;'/><circle cx='730' cy='508.2' r='23.6' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.9;'/><text x='730' y='518.7' text-anchor='middle' style='fill:#10141C;font-size:30.5px;font-weight:800;font-family:system-ui,sans-serif;'>1</text><circle cx='737.3' cy='783.9' r='23.6' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.9;'/><text x='737.3' y='794.5' text-anchor='middle' style='fill:#10141C;font-size:30.5px;font-weight:800;font-family:system-ui,sans-serif;'>2</text><circle cx='522.5' cy='887' r='23.6' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.9;'/><text x='522.5' y='897.5' text-anchor='middle' style='fill:#10141C;font-size:30.5px;font-weight:800;font-family:system-ui,sans-serif;'>3</text><circle cx='184.2' cy='878' r='23.6' style='fill:#D4BD82;stroke:#0F1626;stroke-width:3.9;'/><text x='184.2' y='888.5' text-anchor='middle' style='fill:#10141C;font-size:30.5px;font-weight:800;font-family:system-ui,sans-serif;'>4</text></svg></div><ol class='jm-leg c2'><li><b>1</b><span>酒田（出羽）── 起点</span></li><li><b>2</b><span>江戸</span></li><li><b>3</b><span>大坂</span></li><li><b>4</b><span>下関</span></li></ol></div><!--/jm--><p>18世紀前半になると、大坂と江戸のあいだでは、酒を運ぶ<span class='kw'><ruby>樽廻船<rt>たるかいせん</rt></ruby></span>が新たに運航を始めた。<span class='kw'>樽廻船</span>は荷積みの期間が短く、酒以外の商品も上積み荷物として安く運んだので、<span class='kw'>菱垣廻船</span>とのあいだで競争をくり返した。これらは定期的に運航され、大坂から<span class='kw'><ruby>木綿<rt>もめん</rt></ruby></span>・油・酒などの「下り荷」を江戸へ大量に運んだ。その後、<span class='kw'>菱垣廻船</span>は衰え、近世の後期には<span class='kw'>樽廻船</span>が圧倒的に有利になった。一方、18世紀末ごろからは、日本海の<span class='kw'><ruby>北前船<rt>きたまえぶね</rt></ruby></span>や<ruby>尾張<rt>おわり</rt></ruby>の内海船など、遠くの地域を結ぶ船が各地で発達した。</p><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b>「くだらない」は、下ってこないもの？</b>上方から江戸に運ばれてくる酒や<span class='kw'>木綿</span>などの上等な品物は「下り物」と呼ばれた（都のある上方から「下ってくる」品物だから）。これに対して、江戸の近くでつくられた品物は質が落ちるとして、「下らない物」と呼ばれたという。ここから「くだらない」（つまらない）という言葉が生まれた、という説がある。本当かどうかはわからないが、上方の品物がどれほど高級品とされていたかがよくわかる話だ。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>交通</b>は「誰が・何を整えたか」で出る。<b><span class='kw'>五街道</span>＝日本橋起点・<span class='kw'>道中奉行</span>が管理（17世紀半ば〜）</b>、<b>関所＝箱根・新居・碓氷など「<span class='kw'>入鉄砲に出女</span>」</b>、<b><span class='kw'>伝馬</span>役・<span class='kw'>助郷</span>役（<span class='kw'>宿駅</span>の補助）・<span class='kw'>問屋</span>場・<span class='kw'>本陣</span></b>。水運＝<b><span class='kw'>角倉了以</span>（鴨川・富士川・高瀬川）</b>、<b><span class='kw'>河村瑞賢</span>（<span class='kw'>東廻り海運</span>・<span class='kw'>西廻り海運</span>、出羽酒田起点）</b>。廻船＝<b><span class='kw'>菱垣廻船</span>（17世紀前半〜）→ <span class='kw'>樽廻船</span>（18世紀前半〜・のち優位）</b>、<b><span class='kw'>北前船</span>（18世紀末〜・日本海）</b>。「<span class='kw'>西廻り海運</span>は<span class='kw'>角倉了以</span>が整備」は誤り（<b><span class='kw'>河村瑞賢</span></b>）。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 江戸時代の交通</div><div class='vs'><div class='vh'><span>項目</span><span>内容</span></div><div class='vr'><span>五街道</span><span>東海道・中山道・甲州道中・日光道中・奥州道中（日本橋起点・道中奉行）</span></div><div class='vr'><span>関所</span><span>箱根・新居・碓氷・木曽福島など「入鉄砲に出女」</span></div><div class='vr'><span>河村瑞賢</span><span>東廻り海運・西廻り海運（出羽酒田起点）</span></div><div class='vr'><span>廻船</span><span>菱垣廻船→樽廻船、日本海の北前船</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "07",
+   "navTitle": "貨幣・金融と三都・商業",
+   "title": "天下の台所と、将軍のお膝元",
+   "unitLink": "経済の発展",
+   "theme": "三貨と両替商、江戸・大坂・京都の三都、十組問屋と二十四組問屋、越後屋の「現金かけねなし」、堂島の米市場。",
+   "html": "<p>全国で通用するお金を安定して供給することは、<ruby>幕府<rt>ばくふ</rt></ruby>の大事な役割だった。</p><p>同じ規格・品質の金貨・銀貨は、<span class='kw'><ruby>徳川家康<rt>とくがわいえやす</rt></ruby></span>が1600年ごろから<span class='kw'><ruby>金座<rt>きんざ</rt></ruby></span>・<span class='kw'><ruby>銀座<rt>ぎんざ</rt></ruby></span>で大量につくらせた<b><span class='kw'><ruby>慶長金銀<rt>けいちょうきんぎん</rt></ruby></span></b>が、日本で最初とされる。<span class='kw'>金座</span>は江戸と京都に置かれ、<span class='kw'><ruby>後藤庄三郎<rt>ごとうしょうざぶろう</rt></ruby></span>のもとで<span class='kw'><ruby>小判<rt>こばん</rt></ruby></span>・<span class='kw'><ruby>一分金<rt>いちぶきん</rt></ruby></span>などの<span class='kw'><ruby>計数貨幣<rt>けいすうかへい</rt></ruby></span>（枚数で数えて使うお金）がつくられた。<span class='kw'>銀座</span>ははじめ伏見・<span class='kw'><ruby>駿府<rt>すんぷ</rt></ruby></span>に置かれ、のちに京都・江戸に移されて、<span class='kw'><ruby>丁銀<rt>ちょうぎん</rt></ruby></span>や<span class='kw'><ruby>豆板銀<rt>まめいたぎん</rt></ruby></span>などの<span class='kw'><ruby>秤量貨幣<rt>ひょうりょうかへい</rt></ruby></span>（重さを量って使うお金）がつくられた。銭（銅銭）は、近世の初めは輸入銭や質の悪いものがまざって不安定だったが、寛永期に、江戸と近江坂本をはじめ全国10か所ほどに<span class='kw'><ruby>銭座<rt>ぜにざ</rt></ruby></span>を開かせ、<span class='kw'><ruby>寛永通宝<rt>かんえいつうほう</rt></ruby></span>を大量につくらせた。こうして17世紀の中ごろまでに、<b>金・銀・銭の<span class='kw'><ruby>三貨<rt>さんか</rt></ruby></span></b>が全国にいきわたり、商品の流通の飛躍的な発展を支えた。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>中世⑤で、室町時代の人々は<span class='kw'><ruby>宋銭<rt>そうせん</rt></ruby></span>や<span class='kw'><ruby>明銭<rt>みんせん</rt></ruby></span>（<b><span class='kw'><ruby>永楽通宝<rt>えいらくつうほう</rt></ruby></span></b>）を使ったが、質の悪い<b><span class='kw'><ruby>私鋳銭<rt>しちゅうせん</rt></ruby></span></b>も出回り、良い銭だけを選ぶ<b><span class='kw'><ruby>撰銭<rt>えりぜに</rt></ruby></span></b>で取引がまとまらなかった、と言ったよね。幕府や<span class='kw'><ruby>戦国大名<rt>せんごくだいみょう</rt></ruby></span>が<span class='kw'><ruby>撰銭令<rt>えりぜにれい</rt></ruby></span>を何度出しても解決しなかった。それを最終的に解決したのが、国内で統一してつくった<b><span class='kw'>寛永通宝</span></b>だった。日本の銭が、ようやく日本でつくられるようになったのだ（古代の<ruby>皇朝<rt>こうちょう</rt></ruby><ruby>十二銭<rt>じゅうにせん</rt></ruby>以来のこと）。</div><p>ただし、東日本ではおもに金貨が（<span class='kw'><ruby>金遣い<rt>きんづかい</rt></ruby></span>）、西日本ではおもに銀貨が（<span class='kw'><ruby>銀遣い<rt>ぎんづかい</rt></ruby></span>）、取引やお金の計算の中心とされた。しかも<span class='kw'>三貨</span>の交換の比率は相場によって変わるなど、貨幣の制度は、1871年の<span class='kw'><ruby>新貨条例<rt>しんかじょうれい</rt></ruby></span>まで統一されなかった。また17世紀後半から、各藩は<span class='kw'><ruby>藩札<rt>はんさつ</rt></ruby></span>を発行しはじめ、領内で流通させて<span class='kw'>三貨</span>の不足を補った（福井藩が1660年代に出したものが早い例）。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>金遣い<rt>きんづかい</rt></ruby></span>と<span class='kw'><ruby>銀遣い<rt>ぎんづかい</rt></ruby></span></b>　江戸を中心とする東日本は金貨、大坂を中心とする西日本は銀貨がおもに使われた（江戸の<span class='kw'>金遣い</span>・上方の<span class='kw'>銀遣い</span>）。</div><p>お金の流通は、<ruby>三都<rt>さんと</rt></ruby>や各地の<span class='kw'><ruby>城下町<rt>じょうかまち</rt></ruby></span>の<span class='kw'><ruby>両替商<rt>りょうがえしょう</rt></ruby></span>によって進められた。<span class='kw'>両替商</span>は、<span class='kw'>三貨</span>のあいだの両替や、銀の重さを量ることを商売とした。なかでも大坂や江戸の<span class='kw'><ruby>本両替<rt>ほんりょうがえ</rt></ruby></span>などの有力な<span class='kw'>両替商</span>は、公金の出し入れや<span class='kw'><ruby>為替<rt>かわせ</rt></ruby></span>・貸付などの仕事をおこない、幕府や藩の財政を支えた。三都で呉服店とともに<span class='kw'>両替商</span>を始めて成功した<span class='kw'><ruby>三井<rt>みつい</rt></ruby></span>や、大坂の<span class='kw'><ruby>鴻池<rt>こうのいけ</rt></ruby></span>・天王寺屋・<ruby>平野<rt>ひらの</rt></ruby>屋、江戸の三谷・鹿島屋などがとくに有名だった。</p><details class='qcheck'><summary><span class='qmk'>？</span><span>大坂の<span class='kw'>蔵物</span>と<span class='kw'>納屋物</span>の違いは？</span><span class='tp'>タップで確認</span></summary><div class='qa'><b><span class='kw'>蔵物</span></b>＝諸藩が<span class='kw'>蔵屋敷</span>に送った<span class='kw'>年貢</span>米や特産物で、蔵元を通じて売られた。<b><span class='kw'>納屋物</span></b>＝各地の産地から送られてきた民間の商品。</div></details><p>農業や諸産業の発達で、各地の<span class='kw'>城下町</span>や<span class='kw'><ruby>港町<rt>みなとまち</rt></ruby></span>を中心に、全国を結ぶ商品流通の市場ができた。これを<span class='kw'><ruby>全国市場<rt>ぜんこくしじょう</rt></ruby></span>と呼ぶ。その要である江戸・大坂・京都の<span class='kw'>三都</span>は、17世紀後半までに、世界でも有数の大都市に成長した。</p><p>「将軍のお膝元」である<span class='kw'>江戸</span>には、幕府の施設や全国の大名の屋敷（藩邸）、<span class='kw'><ruby>旗本<rt>はたもと</rt></ruby></span>・<span class='kw'><ruby>御家人<rt>ごけにん</rt></ruby></span>の屋敷が集まり、家臣やその家族、<ruby>武家<rt>ぶけ</rt></ruby><span class='kw'><ruby>奉公人<rt>ほうこうにん</rt></ruby></span>などがたくさん住んだ。町人地にも多くの町が密集し、いろいろな商人・職人や日用（日雇い）らが集まって、江戸は<b>日本最大の消費都市</b>になった。18世紀前半には、<span class='kw'><ruby>町方<rt>まちかた</rt></ruby></span>の人口だけで約50万人、武家や寺社の人口を加えると100万人前後に達したと考えられている。</p><p><span class='kw'>大坂</span>は「<b>天下の台所</b>」ともいわれ、西日本を中心に全国の物資が集まる大商業都市だった。西日本や日本海側の諸藩は<span class='kw'><ruby>蔵屋敷<rt>くらやしき</rt></ruby></span>を大坂に置き、領内の<span class='kw'><ruby>年貢<rt>ねんぐ</rt></ruby></span>米や特産物（<span class='kw'><ruby>蔵物<rt>くらもの</rt></ruby></span>）を、<span class='kw'><ruby>蔵元<rt>くらもと</rt></ruby></span>と呼ばれる商人を通じて売り、お金を手に入れた（代金の出し入れにあたる者を<span class='kw'><ruby>掛屋<rt>かけや</rt></ruby></span>という）。また各地の産地から送られてくる民間の商品（<span class='kw'><ruby>納屋物<rt>なやもの</rt></ruby></span>）もさかんに取引され、江戸をはじめ全国に出荷された。幕府は<span class='kw'><ruby>大坂城代<rt>おおさかじょうだい</rt></ruby></span>や大坂<span class='kw'><ruby>町奉行<rt>まちぶぎょう</rt></ruby></span>を置いて、大坂や西日本を支配する要とした。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>蔵屋敷<rt>くらやしき</rt></ruby></span>と<ruby>札差<rt>ふださし</rt></ruby></b>　諸藩は大坂などに<span class='kw'>蔵屋敷</span>を置き、<span class='kw'><ruby>年貢<rt>ねんぐ</rt></ruby></span>米などの<span class='kw'><ruby>蔵物<rt>くらもの</rt></ruby></span>を<ruby>蔵元<rt>くらもと</rt></ruby>・<span class='kw'><ruby>掛屋<rt>かけや</rt></ruby></span>に売りさばかせた。江戸では札差が<span class='kw'><ruby>旗本<rt>はたもと</rt></ruby></span>・<span class='kw'><ruby>御家人<rt>ごけにん</rt></ruby></span>の<span class='kw'><ruby>蔵米<rt>くらまい</rt></ruby></span>を換金し、金融業も営んだ。</div><p><span class='kw'>京都</span>には、古代以来、天皇家や<ruby>公家<rt>くげ</rt></ruby>が住み、市中や近くには寺院の<span class='kw'><ruby>本山<rt>ほんざん</rt></ruby></span>・本寺や本社がたくさんあった。幕府は朝廷の権威を利用し、全国の寺社や宗教を統制するために、京都の支配を重んじた。また京都には、呉服屋・<span class='kw'>両替商</span>などの大商人の本拠が多く、<span class='kw'><ruby>西陣<rt>にしじん</rt></ruby></span>織や京染・京焼などの高度な技術の手工業も発達した。幕府は<span class='kw'><ruby>京都所司代<rt>きょうとしょしだい</rt></ruby></span>や京都<span class='kw'>町奉行</span>に、朝廷・公家・寺社の統制や、畿内とまわりの国々の支配にあたらせた。</p><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>三都の役割</b>は論述の定番。<b>江戸＝将軍のお膝元・最大の消費都市（100万人前後）</b>、<b>大坂＝天下の台所・<span class='kw'>蔵屋敷</span>で<span class='kw'>蔵物</span>（<span class='kw'>年貢</span>米・特産物）と<span class='kw'>納屋物</span>（民間の商品）を取引</b>、<b>京都＝天皇・公家・<span class='kw'>本山</span>の都・<span class='kw'>西陣</span>織など高級手工業</b>。<span class='kw'>三貨</span>＝<b>金（<span class='kw'>計数貨幣</span>・<span class='kw'>小判</span>・<span class='kw'>金座</span>・<span class='kw'>後藤庄三郎</span>）・銀（<span class='kw'>秤量貨幣</span>・<span class='kw'>丁銀</span>・<span class='kw'>豆板銀</span>・<span class='kw'>銀座</span>）・銭（<span class='kw'>寛永通宝</span>・<span class='kw'>銭座</span>）</b>、<b>東の<span class='kw'>金遣い</span>・西の<span class='kw'>銀遣い</span></b>。「銀貨は枚数で数える<span class='kw'>計数貨幣</span>」は誤り。</div><p>17世紀末に全国市場が確立し、海運がさかんになると、江戸の<span class='kw'><ruby>十組問屋<rt>とくみどいや</rt></ruby></span>や大坂の<span class='kw'><ruby>二十四組問屋<rt>にじゅうしくみどいや</rt></ruby></span>のように、江戸・大坂間の荷物の運送の安全や、海難事故の損害の共同の補償、流通の独占をめざして、いろいろな職種からなる<span class='kw'><ruby>問屋<rt>といや</rt></ruby></span><ruby>仲間<rt>なかま</rt></ruby>の連合組織がつくられた。呉服・<span class='kw'><ruby>木綿<rt>もめん</rt></ruby></span>などを扱う大商人の中には、<span class='kw'>三井</span>家のように<span class='kw'>両替商</span>も兼ね、三都や各地の<span class='kw'>城下町</span>に店をもつ者も現れた。<span class='kw'>三井</span>家は、1673年に江戸に<span class='kw'>越後屋</span>呉服店を開き、「<b>現金（銀）かけねなし</b>」（つけ払いでなく現金で、値段の交渉なしの定価販売）という新しい商法で大成功した。都市の<span class='kw'>問屋</span>の中には、<span class='kw'>豪農</span>と手を組んで農村の商品の生産や流通を取りしきり、産地の百姓に資金や原料を貸して、農村の織物業などを家内工業として組織する動きも現れた（<span class='kw'><ruby>問屋制家内工業<rt>といやせいかないこうぎょう</rt></ruby></span>、近世⑥へ）。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>商人の組織と<ruby>越後<rt>えちご</rt></ruby>屋</b>　江戸では1694年に<span class='kw'><ruby>十組問屋<rt>とくみどいや</rt></ruby></span>が結成され、大坂でも<span class='kw'><ruby>二十四組問屋<rt>にじゅうよくみどいや</rt></ruby></span>が成立した。<span class='kw'><ruby>三井高利<rt>みついたかとし</rt></ruby></span>は1673年に<span class='kw'><ruby>越後屋呉服店<rt>えちごやごふくてん</rt></ruby></span>を開き、「現金かけ値なし」の商法で成功した。<ruby>堂島<rt>どうじま</rt></ruby>の米市場は1730年に<ruby>幕府<rt>ばくふ</rt></ruby>に公認された。</div><p>18世紀前半になると、都市部では、<span class='kw'>問屋</span>や仲買以外の商人や職人の仲間・組合も広く公認され、商人や職人の経済活動は、幕府や藩の力でも左右できないほど、自律的で強いものに成長した。また、生産地と都市の<span class='kw'>問屋</span>・仲買との売買の場である<b>卸売市場</b>が三都や<span class='kw'>城下町</span>に発達し、都市と農村を結ぶ経済の心臓部の役割をはたした。大坂では<span class='kw'><ruby>堂島の米市場<rt>どうじまのこめいちば</rt></ruby></span>、雑喉場の魚市場、天満の青物市場、江戸では<ruby>日本橋<rt>にほんばし</rt></ruby>の魚市場、神田の青物市場などがよく知られる。</p><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b><span class='kw'>堂島の米市場</span>は、世界最初の先物取引？</b>大坂の<span class='kw'>堂島の米市場</span>では、大名の<span class='kw'><ruby>蔵米<rt>くらまい</rt></ruby></span>が取引された。ここでは、実際の米をやりとりする取引のほかに、将来の米の値段を予想して売り買いする帳簿上の取引もおこなわれていた。これは、のちに世界中に広まる「先物取引」のしくみの、もっとも早い例の一つだといわれている。江戸時代の大坂の商人たちは、とても進んだ金融のしくみを使いこなしていたのだ。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 三都と三貨</div><div class='vs'><div class='vh'><span>都市</span><span>役割</span></div><div class='vr'><span>江戸</span><span>将軍のお膝元・最大の消費都市</span></div><div class='vr'><span>大坂</span><span>天下の台所・蔵屋敷・蔵物と納屋物</span></div><div class='vr'><span>京都</span><span>朝廷・本山・西陣織など高級手工業</span></div></div><div style='height:8px'></div><div class='vs'><div class='vh'><span>三貨</span><span>内容</span></div><div class='vr'><span>金貨</span><span>計数貨幣・小判・一分金（金座・後藤庄三郎）・東日本の金遣い</span></div><div class='vr'><span>銀貨</span><span>秤量貨幣・丁銀・豆板銀（銀座）・西日本の銀遣い</span></div><div class='vr'><span>銭</span><span>寛永通宝（銭座）</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  }
+ ],
+ "quiz": [
+  {
+   "id": 1,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "11歳で4代将軍となった人物は？",
+   "a": "徳川家綱",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 2,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "家綱を補佐した叔父の会津藩主は？",
+   "a": "保科正之",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 3,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "1651年に兵学者由井正雪がおこした事件は？",
+   "a": "慶安の変",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 4,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "慶安の変ののち、50歳未満の大名に認められるようになったものは？",
+   "a": "末期養子",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 5,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "1657年に江戸で大きな被害を出した火災は？",
+   "a": "明暦の大火",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 6,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "1663年の武家諸法度とあわせて禁じられたものは？",
+   "a": "殉死",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 7,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "岡山藩主池田光政が設けた郷校は？",
+   "a": "閑谷学校",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 8,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "池田光政にまねかれた陽明学者は？",
+   "a": "熊沢蕃山",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 9,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "保科正之に朱子学を講じた儒者は？",
+   "a": "山崎闇斎",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 10,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "徳川光圀が江戸に設け、『大日本史』を編纂させた機関は？",
+   "a": "彰考館",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 11,
+   "unit": "幕政の安定",
+   "link": "01",
+   "q": "前田綱紀にまねかれた朱子学者は？",
+   "a": "木下順庵",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 12,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "大老堀田正俊の暗殺後、綱吉に重用された側用人は？",
+   "a": "柳沢吉保",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 13,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "1683年に出された綱吉の代の武家諸法度は？",
+   "a": "天和令",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 14,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "綱吉が建てた孔子をまつる施設は？",
+   "a": "湯島聖堂",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 15,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "綱吉に大学頭に任じられた儒者は？",
+   "a": "林信篤",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 16,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "1685年から20年あまり出された、生き物の殺生を禁じた法令は？",
+   "a": "生類憐みの令",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 17,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "1684年に出された、喪に服す日数などを定めた法令は？",
+   "a": "服忌令",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 18,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "1701年の刃傷事件に始まり、翌年の討ち入りに至った事件は？",
+   "a": "赤穂事件",
+   "exp": "",
+   "d": 2,
+   "i": 4,
+   "f": 4
+  },
+  {
+   "id": 19,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "元禄小判の発行を進言した勘定吟味役は？",
+   "a": "荻原重秀",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 20,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "6代将軍となり、新井白石を登用したのは？",
+   "a": "徳川家宣",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 21,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "新井白石とともに正徳の政治を担った側用人は？",
+   "a": "間部詮房",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 22,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "幕府が費用を献じて創設させた宮家は？",
+   "a": "閑院宮家",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 23,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "新井白石が慶長小判と同質に戻した小判は？",
+   "a": "正徳小判",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 24,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "1715年に長崎貿易の額を制限した法令は？",
+   "a": "海舶互市新例",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 25,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "田の深耕に用いた鍬は？",
+   "a": "備中鍬",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 26,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "扱箸にかわった脱穀具は？",
+   "a": "千歯扱",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 27,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "穀粒の選別に用いた道具は？",
+   "a": "千石簁",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 28,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "風を起こしてもみ殻やくずを選別した道具は？",
+   "a": "唐箕",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 29,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "竜骨車にかわった小型の揚水具は？",
+   "a": "踏車",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 30,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "干鰯・〆粕・油粕など、購入する肥料を何という？",
+   "a": "金肥",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 31,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "17世紀末に著された日本最初の体系的な農書は？",
+   "a": "農業全書",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 32,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "『農業全書』の著者は？",
+   "a": "宮崎安貞",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 33,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "『広益国産考』の著者は？",
+   "a": "大蔵永常",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 34,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "出羽村山地方の特産品は？",
+   "a": "紅花",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 35,
+   "unit": "経済の発展",
+   "link": "04",
+   "q": "阿波の特産品は？",
+   "a": "藍玉",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 36,
+   "unit": "経済の発展",
+   "link": "05",
+   "q": "堤防で囲んだ砂浜に潮を引きこむ製塩法は？",
+   "a": "入浜塩田",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 37,
+   "unit": "経済の発展",
+   "link": "05",
+   "q": "京都で高機を用いて高級絹織物を独占的に織った地は？",
+   "a": "西陣",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 38,
+   "unit": "経済の発展",
+   "link": "05",
+   "q": "18世紀中頃から高級絹織物を生産した上野の地は？",
+   "a": "桐生",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 39,
+   "unit": "経済の発展",
+   "link": "05",
+   "q": "下総の醤油の代表的な産地を一つ答えよ。",
+   "a": "野田",
+   "exp": "",
+   "d": 2,
+   "i": 4,
+   "f": 4
+  },
+  {
+   "id": 40,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "江戸の日本橋を起点とする5つの幹線道路は？",
+   "a": "五街道",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 41,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "五街道を管理した役職は？",
+   "a": "道中奉行",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 42,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "関東の関所でとくに取り締まられたものは？",
+   "a": "入鉄砲に出女",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 43,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "宿駅の伝馬役を補うため人馬を徴発された村々は？",
+   "a": "助郷",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 44,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "大名らが宿泊した宿駅の施設は？",
+   "a": "本陣",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 45,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "中部地方で発達した、馬で商品を長距離運送する輸送業者は？",
+   "a": "中馬",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 46,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "鴨川・富士川を整備し、高瀬川を開削した京都の豪商は？",
+   "a": "角倉了以",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 47,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "東廻り海運・西廻り海運を整備した江戸の商人は？",
+   "a": "河村瑞賢",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 48,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "18世紀前半から大坂・江戸間で酒などを運んだ廻船は？",
+   "a": "樽廻船",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 49,
+   "unit": "経済の発展",
+   "link": "06",
+   "q": "18世紀末頃から日本海で活躍した廻船は？",
+   "a": "北前船",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 50,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "小判などを鋳造した金座を統轄した人物は？",
+   "a": "後藤庄三郎",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 51,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "重さを量って使う銀貨のような貨幣を何という？",
+   "a": "秤量貨幣",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 52,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "寛永期から大量に鋳造された銭貨は？",
+   "a": "寛永通宝",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 53,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "西日本でおもに銀貨を用いたことを何という？",
+   "a": "銀遣い",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 54,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "諸藩が発行し領内で流通させた紙幣は？",
+   "a": "藩札",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 55,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "大坂に置かれ、諸藩が年貢米や特産物を販売した施設は？",
+   "a": "蔵屋敷",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 56,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "蔵屋敷で取引された年貢米・特産物を何という？",
+   "a": "蔵物",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 57,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "各地の産地から送られた民間の商品を何という？",
+   "a": "納屋物",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 58,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "蔵屋敷で代金の出納にあたった商人は？",
+   "a": "掛屋",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 59,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "江戸の問屋仲間の連合組織は？",
+   "a": "十組問屋",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 60,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "大坂の問屋仲間の連合組織は？",
+   "a": "二十四組問屋",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 61,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "「現金かけねなし」の商法で知られる三井家の店は？",
+   "a": "越後屋",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 62,
+   "unit": "経済の発展",
+   "link": "07",
+   "q": "大坂の大名の蔵米を取引した米市場は？",
+   "a": "堂島の米市場",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 63,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "3歳で7代将軍となった人物は？",
+   "a": "徳川家継",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 64,
+   "unit": "幕政の安定",
+   "link": "03",
+   "q": "6代家宣・7代家継の時代に新井白石らがおこなった政治は？",
+   "a": "正徳の政治",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 65,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "1680年に5代将軍となった人物は？",
+   "a": "徳川綱吉",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 66,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "綱吉の治世を中心とする時代を何という？",
+   "a": "元禄時代",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 67,
+   "unit": "幕政の安定",
+   "link": "02",
+   "q": "儒教に裏づけられた、礼儀による秩序を重んじる考え方は？",
+   "a": "文治主義",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  }
+ ],
+ "ronjutsu": [
+  {
+   "q": "17世紀後半から18世紀初めにかけて、幕府の政治はどのように変化したか。4代家綱から正徳の政治までを例に説明せよ。",
+   "hint": "武断政治から文治政治へ。",
+   "points": [
+    "<b>慶安の変</b>を機に<b>末期養子の禁止を緩和</b>し、牢人の増加を防いだ",
+    "1663年に<b>殉死を禁止</b>し、家臣は主人個人ではなく<b>主人の家に仕える</b>主従関係を明確にした",
+    "綱吉は<b>天和令</b>で第1条を「文武忠孝・礼儀」に改め、儒教にもとづく<b>文治主義</b>を進めた",
+    "新井白石は閑院宮家の創設や朝鮮通信使の国書の改定などで、<b>将軍の地位と権威</b>を高めた"
+   ],
+   "chars": "200〜250字",
+   "level": "難易度 ★★★（最重要）",
+   "comment": "「武力による支配から、儒教の礼儀・身分秩序による支配へ」という軸で書く。"
+  },
+  {
+   "q": "綱吉の時代に幕府財政が悪化した原因と、幕府のとった対策、その影響を説明せよ。",
+   "hint": "収入減と支出増、改鋳。",
+   "points": [
+    "<b>佐渡金山など鉱山の金銀産出の減少</b>で収入が減った",
+    "<b>明暦の大火後の再建費</b>や<b>元禄期の寺社造営費</b>で支出が増えた",
+    "勘定吟味役<b>荻原重秀</b>の進言で、金の含有率を下げた<b>元禄小判</b>を発行し、出目を得た",
+    "貨幣価値の下落で<b>物価が騰貴</b>し、人々の生活を圧迫した（のち新井白石が正徳小判で質を戻す）"
+   ],
+   "chars": "150〜200字",
+   "level": "難易度 ★★",
+   "comment": "原因（収入減＋支出増）→対策（改鋳）→影響（物価騰貴）の順で。"
+  },
+  {
+   "q": "17世紀後半に全国市場が成立した背景と、三都の役割を説明せよ。",
+   "hint": "生産・交通・貨幣、そして江戸・大坂・京都。",
+   "points": [
+    "新田開発と農業技術の進歩、商品作物・特産品の生産で<b>商品生産が拡大</b>した",
+    "<b>五街道</b>や<b>東廻り・西廻り海運</b>、菱垣廻船・樽廻船などで全国の交通網が整った",
+    "<b>三貨</b>が全国にいきわたり、両替商が流通を支えた",
+    "江戸は<b>最大の消費都市</b>、大坂は蔵屋敷が集まる<b>天下の台所</b>、京都は朝廷・本山と高級手工業の都市として全国市場の要となった"
+   ],
+   "chars": "200〜250字",
+   "level": "難易度 ★★★",
+   "comment": "生産・交通・貨幣の3つの条件を並べてから、三都の役割をそれぞれ一言で。"
+  }
+ ],
+ "terms": [
+  {
+   "term": "末期養子の禁止の緩和",
+   "reading": "まつごようしのきんしのかんわ",
+   "tag": "家綱",
+   "desc": "慶安の変後、50歳未満の大名に末期養子を認め、牢人の増加を防いだ。"
+  },
+  {
+   "term": "殉死の禁止",
+   "reading": "じゅんしのきんし",
+   "tag": "家綱",
+   "desc": "1663年。家臣は主人の家に仕えるものとされ、下剋上がなくなった。"
+  },
+  {
+   "term": "天和令",
+   "reading": "てんなれい",
+   "tag": "綱吉",
+   "desc": "1683年の武家諸法度。第1条を「文武忠孝を励し、礼儀を正すべき事」に。"
+  },
+  {
+   "term": "生類憐みの令",
+   "reading": "しょうるいあわれみのれい",
+   "tag": "綱吉",
+   "desc": "1685年から20年あまり。生き物の殺生を禁じ、捨て子の保護も命じた。"
+  },
+  {
+   "term": "元禄小判",
+   "reading": "げんろくこばん",
+   "tag": "財政",
+   "desc": "荻原重秀の改鋳。金の含有率を84%から57%に下げ、物価騰貴をまねいた。"
+  },
+  {
+   "term": "海舶互市新例",
+   "reading": "かいはくごししんれい",
+   "tag": "正徳",
+   "desc": "1715年。清船30隻・銀6000貫、オランダ船2隻・銀3000貫に制限。"
+  },
+  {
+   "term": "閑院宮家",
+   "reading": "かんいんのみやけ",
+   "tag": "正徳",
+   "desc": "新井白石の進言で幕府が費用を献じて創設した宮家。"
+  },
+  {
+   "term": "金肥",
+   "reading": "きんぴ",
+   "tag": "農業",
+   "desc": "干鰯・〆粕・油粕・糠など購入する肥料。"
+  },
+  {
+   "term": "農業全書",
+   "reading": "のうぎょうぜんしょ",
+   "tag": "農業",
+   "desc": "宮崎安貞。17世紀末の日本最初の体系的農書。"
+  },
+  {
+   "term": "入浜塩田",
+   "reading": "いりはまえんでん",
+   "tag": "産業",
+   "desc": "潮の干満を利用して海水を引きこむ製塩法。瀬戸内海で発達。"
+  },
+  {
+   "term": "助郷",
+   "reading": "すけごう",
+   "tag": "交通",
+   "desc": "宿駅の伝馬役を補うため人馬を徴発された村々。"
+  },
+  {
+   "term": "西廻り海運",
+   "reading": "にしまわりかいうん",
+   "tag": "交通",
+   "desc": "河村瑞賢が整備した、出羽酒田から大坂に至る航路。"
+  },
+  {
+   "term": "樽廻船",
+   "reading": "たるかいせん",
+   "tag": "交通",
+   "desc": "18世紀前半から大坂・江戸間を運航。のち菱垣廻船より優位に。"
+  },
+  {
+   "term": "秤量貨幣",
+   "reading": "ひょうりょうかへい",
+   "tag": "貨幣",
+   "desc": "重さを量って使う貨幣。丁銀・豆板銀など銀貨。"
+  },
+  {
+   "term": "蔵屋敷",
+   "reading": "くらやしき",
+   "tag": "三都",
+   "desc": "諸藩が大坂などに置き、蔵物を蔵元を通じて販売した。"
+  },
+  {
+   "term": "十組問屋",
+   "reading": "とくみどいや",
+   "tag": "商業",
+   "desc": "江戸の問屋仲間の連合組織。大坂は二十四組問屋。"
+  }
+ ],
+ "goro": [
+  {
+   "phrase": "池田光政＝閑谷学校・熊沢蕃山／保科正之＝山崎闇斎／徳川光圀＝彰考館・朱舜水／前田綱紀＝木下順庵",
+   "ans": "まとめ ── 儒者を招いた藩主",
+   "note": ""
+  },
+  {
+   "phrase": "慶長小判（84%）→ 元禄小判（57%・荻原重秀）→ 正徳小判（慶長と同質・新井白石）",
+   "ans": "まとめ ── 小判の移り変わり（この順）",
+   "note": ""
+  },
+  {
+   "phrase": "備中鍬（深耕）・千歯扱（脱穀）・千石簁（選別）・唐箕（風選）・踏車（揚水）",
+   "ans": "まとめ ── 農具と用途",
+   "note": ""
+  }
+ ],
+ "figures": {
+  "title": "17世紀後半〜18世紀初めの将軍と側近",
+  "nodes": [
+   {
+    "id": "ietsuna",
+    "name": "徳川家綱",
+    "role": "4代将軍",
+    "x": 20,
+    "y": 8
+   },
+   {
+    "id": "hoshina",
+    "name": "保科正之",
+    "role": "叔父・会津藩主",
+    "x": 70,
+    "y": 8
+   },
+   {
+    "id": "tsunayoshi",
+    "name": "徳川綱吉",
+    "role": "5代将軍",
+    "x": 20,
+    "y": 36
+   },
+   {
+    "id": "yanagisawa",
+    "name": "柳沢吉保",
+    "role": "側用人",
+    "x": 70,
+    "y": 28
+   },
+   {
+    "id": "ogiwara",
+    "name": "荻原重秀",
+    "role": "勘定吟味役",
+    "x": 70,
+    "y": 46
+   },
+   {
+    "id": "ienobu",
+    "name": "徳川家宣",
+    "role": "6代将軍",
+    "x": 20,
+    "y": 64
+   },
+   {
+    "id": "hakuseki",
+    "name": "新井白石",
+    "role": "朱子学者",
+    "x": 70,
+    "y": 64
+   },
+   {
+    "id": "manabe",
+    "name": "間部詮房",
+    "role": "側用人",
+    "x": 70,
+    "y": 82
+   },
+   {
+    "id": "ietsugu",
+    "name": "徳川家継",
+    "role": "7代将軍（3歳）",
+    "x": 20,
+    "y": 88
+   }
+  ],
+  "links": [
+   {
+    "from": "hoshina",
+    "to": "ietsuna",
+    "label": "補佐",
+    "kind": "mentor"
+   },
+   {
+    "from": "yanagisawa",
+    "to": "tsunayoshi",
+    "label": "側用人",
+    "kind": "ally"
+   },
+   {
+    "from": "ogiwara",
+    "to": "tsunayoshi",
+    "label": "改鋳を進言",
+    "kind": "ally"
+   },
+   {
+    "from": "hakuseki",
+    "to": "ienobu",
+    "label": "正徳の政治",
+    "kind": "mentor"
+   },
+   {
+    "from": "manabe",
+    "to": "ienobu",
+    "label": "側用人",
+    "kind": "ally"
+   },
+   {
+    "from": "ienobu",
+    "to": "ietsugu",
+    "label": "子",
+    "kind": "mentor"
+   }
+  ],
+  "dramas": [
+   {
+    "tag": "ミニドラマ",
+    "title": "なぜ、刀より礼儀なのか？",
+    "cast": "徳川綱吉 × 柳沢吉保 × かぶき者",
+    "lines": [
+     {
+      "who": "かぶき者",
+      "say": "おれたちは戦国の世なら一番槍で出世できたんだ。派手な格好で暴れて何が悪い。いつか戦がおきれば、また腕で成り上がってやるよ。"
+     },
+     {
+      "who": "徳川綱吉",
+      "say": "その考えはもう通らぬ。武家諸法度の第1条も書きかえた。「文武弓馬の道」ではなく「文武忠孝を励し、礼儀を正すべき事」だ（天和令）。主君に忠、親に孝、そして礼儀。これが今の武士の道だ。"
+     },
+     {
+      "who": "柳沢吉保",
+      "say": "上様は湯島聖堂を建て、林信篤どのを大学頭にされました。生き物を殺すなとのお触れ（生類憐みの令）も、喪に服す日数の決まり（服忌令）も出ております。人を斬って出世する時代は、もう終わったのです。"
+     },
+     {
+      "who": "かぶき者",
+      "say": "犬を大事にしろ、喪に服せ、礼儀を正せ……。戦がなくなると、武士は役人になっちまうのか。"
+     }
+    ]
+   }
+  ]
+ },
+ "cloze": [
+  {
+   "title": "文治政治への転換",
+   "text": "1651年に3代将軍が死去すると、子の[[徳川家綱]]が11歳で将軍となり、叔父で会津藩主の[[保科正之]]らがこれを補佐した。同年、兵学者による[[慶安の変]]がおこると、幕府は大名の[[末期養子]]の禁止を緩和して牢人の増加を防いだ。1663年には代がわりの武家諸法度とあわせて[[殉死]]を禁じ、家臣は主人個人ではなく主人の家に仕えるべきことを明らかにした。諸藩でも儒者を顧問とする藩政の刷新がはかられ、岡山藩主の池田光政は郷校の[[閑谷学校]]を設けて[[熊沢蕃山]]を重く用い、水戸藩主の徳川光圀は江戸に[[彰考館]]を設けて歴史書の編纂を始めた。5代将軍綱吉は、大老の暗殺後に側用人の[[柳沢吉保]]を重用した。1683年の武家諸法度（[[天和令]]）では、第1条が「文武忠孝を励し、礼儀を正すべき事」に改められた。綱吉は孔子をまつる[[湯島聖堂]]を建て、[[林信篤]]を大学頭に任じた。また20年あまりにわたって[[生類憐みの令]]を出し、近親者の死に際して喪に服す日数を定めた[[服忌令]]も出した。財政の悪化に対しては、勘定吟味役[[荻原重秀]]の進言で質を落とした小判を発行したが、物価の騰貴をまねいた。6代将軍家宣のもとで朱子学者の[[新井白石]]と側用人の[[間部詮房]]が政治を主導し、幕府が費用を献じて[[閑院宮家]]を創設させた。白石は1715年に[[海舶互市新例]]を出して長崎貿易の額を制限した。"
+  },
+  {
+   "title": "農業と諸産業の発達",
+   "text": "17世紀後半以降、農具が改良され、田の深耕には[[備中鍬]]、脱穀には扱箸にかわって[[千歯扱]]、穀粒の選別には[[千石簁]]や[[唐箕]]、揚水には[[踏車]]が用いられた。耕地の開発で刈敷が不足すると、干鰯・〆粕・油粕などの[[金肥]]が商品作物の生産地で広まった。17世紀末には[[宮崎安貞]]が日本最初の体系的な農書である『[[農業全書]]』を著した。田畑の面積は江戸時代初めの164万町歩から、18世紀初めには[[297万町歩]]に拡大した。各地には特産品が生まれ、出羽村山地方の[[紅花]]、阿波の[[藍玉]]、備後の藺草などが知られた。塩業では潮の干満を利用して海水を引きこむ[[入浜塩田]]が瀬戸内海沿岸などで発達した。高級絹織物は京都の[[西陣]]で独占的に織られていたが、18世紀中頃には上野の[[桐生]]などでも生産されるようになった。醸造業では伏見や灘の酒、関東の[[野田]]や銚子の醤油が知られた。"
+  },
+  {
+   "title": "交通・貨幣と三都",
+   "text": "江戸の日本橋を起点とする[[五街道]]は幕府の直轄とされ、17世紀半ばから[[道中奉行]]が管理した。関東の関所では「[[入鉄砲に出女]]」がきびしく取り締まられた。宿駅の伝馬役を補うために人馬を徴発された村々を[[助郷]]と呼び、宿駅には大名らが泊まる[[本陣]]が置かれた。水上交通では、京都の豪商[[角倉了以]]が鴨川や富士川を整備し、江戸の商人[[河村瑞賢]]は出羽酒田を起点とする東廻り海運・西廻り海運を整えた。大坂・江戸間では17世紀前半から菱垣廻船が、18世紀前半からは酒を運ぶ[[樽廻船]]が運航し、18世紀末頃から日本海では[[北前船]]が活躍した。貨幣では、金座で[[後藤庄三郎]]のもと小判などの計数貨幣が、銀座で丁銀・豆板銀などの[[秤量貨幣]]がつくられ、寛永期には[[寛永通宝]]が大量に鋳造された。東日本の金遣い、西日本の[[銀遣い]]の違いがあり、諸藩は[[藩札]]も発行した。「天下の台所」と呼ばれた大坂には諸藩の[[蔵屋敷]]が置かれ、年貢米や特産物である[[蔵物]]が蔵元を通じて販売された。江戸の[[十組問屋]]や大坂の[[二十四組問屋]]のような問屋仲間の連合組織もつくられ、三井家の[[越後屋]]は「現金かけねなし」の商法で成功した。"
+  }
+ ]
+}

@@ -1,0 +1,1243 @@
+{
+ "id": "kodai4",
+ "title": "古代④（平安初期）",
+ "subtitle": "平安遷都〜弘仁貞観文化",
+ "order": 1.85,
+ "range": "平安遷都 ── 桓武・嵯峨の改革と弘仁・貞観文化",
+ "timeline": [
+  {
+   "y": "784",
+   "t": "桓武天皇、長岡京に遷都（→藤原種継暗殺・早良親王）"
+  },
+  {
+   "y": "792",
+   "t": "軍団・兵士を廃止、健児を採用"
+  },
+  {
+   "y": "794",
+   "t": "平安京に遷都（山背→山城）"
+  },
+  {
+   "y": "802",
+   "t": "坂上田村麻呂、胆沢城を築き阿弖流為を服属"
+  },
+  {
+   "y": "803",
+   "t": "志波城を築造"
+  },
+  {
+   "y": "805",
+   "t": "徳政相論 → 蝦夷征討と平安京造営を停止"
+  },
+  {
+   "y": "810",
+   "t": "薬子の変、蔵人頭を設置（藤原冬嗣）"
+  },
+  {
+   "y": "804",
+   "t": "最澄・空海が入唐（→天台宗・真言宗）"
+  },
+  {
+   "y": "9世紀",
+   "t": "弘仁・貞観文化（唐風・密教）",
+   "ref": true
+  }
+ ],
+ "lessons": [
+  {
+   "no": "01",
+   "navTitle": "長岡京・平安京への遷都",
+   "title": "奈良を離れて、やり直す",
+   "unitLink": "桓武天皇",
+   "theme": "仏教政治の弊害を改めるため、桓武天皇は長岡京へ。種継暗殺と早良親王の怨霊をへて、794年に平安京へ移った。",
+   "html": "<div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③の最後で、<span class='kw'>道鏡</span>が退けられたあと、天武系にかわって<span class='kw'>天智天皇</span>の孫の<b><span class='kw'>光仁天皇</span></b>が立ち、「律令政治と国家財政の立て直し」をめざした、と言ったよね。ここからが、その続きだ。</div><p><span class='kw'>光仁天皇</span>は、行政や財政のむだを省き、民衆の負担を軽くするなど、政治の立て直しにつとめた。781年に<span class='kw'>光仁天皇</span>は亡くなるが、その直前に、渡来系の氏族の血を引く<span class='kw'><ruby>高野新笠<rt>たかののにいがさ</rt></ruby></span>とのあいだに生まれた息子が即位した。<span class='kw'><ruby>桓武天皇<rt>かんむてんのう</rt></ruby></span>だ。</p><div class='deep'><span class='bx-tag'>難関＋</span>桓武が遷都した最大の動機は、政治に介入する奈良の大寺院から離れ、天皇権力を立て直すことだった。</div><p>父の政策を受け継いだ<span class='kw'>桓武天皇</span>は、<b>仏教が政治に口を出す弊害</b>を改め、天皇の権力を強めるために、784年に<span class='kw'>平城京</span>から山背国の<span class='kw'><ruby>長岡京<rt>ながおかきょう</rt></ruby></span>に都を移した。</p><!--jm:kodai4-01--><div class='viz jm'><div class='viz-cap'>地図 ── 平城京から長岡京・平安京へ</div><div class='mapwrap'><svg viewBox='510 763.1 87.3 85.2' width='100%' role='img' aria-label='平城京から長岡京・平安京へ'><defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'><path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs><rect x='510' y='763.1' width='87.3' height='85.2' style='fill:#263250;'/><path d='M480 820.1 L504.6 820.6 L512.2 821.2 L517.1 818.5 L524 815.9 L530.3 817.5 L532.3 820.4 L534.9 824.1 L534.4 826.9 L531.9 830.4 L528.9 833.9 L524.6 838.8 L519.7 842.2 L515.3 844.2 L510.4 847.6 L509.8 874.1 L481.5 873.2Z' style='fill:#0F1626;stroke:#A88E4E;stroke-width:0.3;stroke-linejoin:round;'/><path d='M506.6 823.9 L502.3 828.8 L498 834.3 L493.1 839.2 L488.3 846.2 L485.9 851.9 L490.4 854.9 L496.6 852.2 L499.6 845.1 L501.3 839.5 L504.3 833.1 L507.3 826.8Z' style='fill:#263250;stroke:#A88E4E;stroke-width:0.3;stroke-linejoin:round;'/><path d='M621 793.2 L610.9 794.3 L607.3 801.4 L605 809.2 L601.5 818.4 L604.3 827.1 L613.9 834.5 L621.5 836.2 L632 829.4 L637.5 823.9 L646.9 819.9 L650.6 816.4 L644.8 812.6 L634.1 811.6 L627.6 807.1 L629.9 820.7 L623.5 816.9 L621.4 809.7 L622.4 800.4Z' style='fill:#0F1626;stroke:#A88E4E;stroke-width:0.3;stroke-linejoin:round;'/><path d='M624.2 842 L632 829.4 L650.2 827.1 L669 824.2 L687.9 823.3 L706.9 829 L708.1 873.4 L624.9 870.7Z' style='fill:#0F1626;stroke:#A88E4E;stroke-width:0.3;stroke-linejoin:round;'/><path d='M497.1 750.5 L516.1 756.1 L527.6 762.2 L538.3 761.2 L550.8 760.9 L563.3 754.1 L570.1 750.7 L567.4 743.5 L565.7 729.1 L571.4 704.2 L495.7 701.8Z' style='fill:#0F1626;stroke:#A88E4E;stroke-width:0.3;stroke-linejoin:round;'/><path d='M577.3 759.6 L580.5 764 L583.8 769.1 L583.3 774.1 L580.9 779 L576.7 784.6 L571.7 788.8 L566.2 792.9 L563.1 796.4 L561.3 798.4 L559.4 796.2 L560.5 792 L564.1 786.4 L567 777.9 L569.4 770.8 L572.3 764.4Z' style='fill:#0F1626;stroke:#A88E4E;stroke-width:0.3;stroke-linejoin:round;'/><text x='572.1' y='779.5' text-anchor='middle' style='fill:#8E9AB8;font-size:2.9px;letter-spacing:.1em;'>琵琶湖</text><text x='521.4' y='835.1' text-anchor='middle' style='fill:#8E9AB8;font-size:2.9px;letter-spacing:.1em;'>大阪湾</text><path d='M554.9 817.6 L550.1 803.8' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:0.6;stroke-dasharray:1.6 1.1;' marker-end='url(#jm-ah)'/><path d='M549.4 800.2 L551.8 797.4' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:0.6;stroke-dasharray:1.6 1.1;' marker-end='url(#jm-ah)'/><circle cx='554.9' cy='819' r='0.8' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.3;'/><line x1='554.9' y1='819' x2='548.6' y2='822.7' style='stroke:#D4BD82;stroke-width:0.3;'/><circle cx='548.8' cy='801.6' r='0.8' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.3;'/><line x1='548.8' y1='801.6' x2='541.9' y2='803.2' style='stroke:#D4BD82;stroke-width:0.3;'/><circle cx='552.4' cy='796' r='0.8' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.3;'/><line x1='552.4' y1='796' x2='546.1' y2='792.3' style='stroke:#D4BD82;stroke-width:0.3;'/><circle cx='548.6' cy='822.7' r='2.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:0.4;'/><text x='548.6' y='823.7' text-anchor='middle' style='fill:#10141C;font-size:2.9px;font-weight:800;font-family:system-ui,sans-serif;'>1</text><circle cx='541.9' cy='803.2' r='2.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:0.4;'/><text x='541.9' y='804.2' text-anchor='middle' style='fill:#10141C;font-size:2.9px;font-weight:800;font-family:system-ui,sans-serif;'>2</text><circle cx='546.1' cy='792.3' r='2.2' style='fill:#D4BD82;stroke:#0F1626;stroke-width:0.4;'/><text x='546.1' y='793.3' text-anchor='middle' style='fill:#10141C;font-size:2.9px;font-weight:800;font-family:system-ui,sans-serif;'>3</text></svg></div><ol class='jm-leg c1'><li><b>1</b><span>平城京（710〜784）── 大寺院が集まる奈良盆地</span></li><li><b>2</b><span>長岡京（784〜794）── 淀川の水運に近い</span></li><li><b>3</b><span>平安京（794〜）── 山背国（のち山城国）</span></li></ol></div><!--/jm--><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③の<span class='kw'>称徳天皇</span>と<span class='kw'>道鏡</span>を思い出そう。僧が<span class='kw'><ruby>太政大臣<rt>だいじょうだいじん</rt></ruby></span>禅師・法王になり、天皇の位までねらった（<span class='kw'>宇佐八幡神託事件</span>）。奈良には東大寺・<span class='kw'><ruby>興福寺<rt>こうふくじ</rt></ruby></span>などの大寺院がずらりと並び、その力は政治にまで入りこんでいた。だから<span class='kw'>桓武天皇</span>は、<b>大寺院のある奈良から離れたかった</b>。実際、<span class='kw'>長岡京</span>・<span class='kw'><ruby>平安京<rt>へいあんきょう</rt></ruby></span>への遷都では、南都（奈良）の大寺院を新しい都に移さなかった（授業07）。</div><p>ところが785年、天皇の腹心で、<span class='kw'>長岡京</span>の造営を引っぱっていた<span class='kw'><ruby>藤原種継<rt>ふじわらのたねつぐ</rt></ruby></span>が暗殺されてしまう。その首謀者とされたのが、皇太子の<span class='kw'><ruby>早良親王<rt>さわらしんのう</rt></ruby></span>（<span class='kw'>桓武天皇</span>の弟）だった。<span class='kw'>早良親王</span>は地位を追われ、親王と関係の深かった大伴氏・佐伯氏など旧い豪族の人々も処罰された。</p><p>親王は、自分で食事を絶って亡くなった。するとそのあと、<span class='kw'>桓武天皇</span>の母や皇后が次々と亡くなるなどの不幸が続き、<b><span class='kw'>早良親王</span>の<span class='kw'><ruby>怨霊<rt>おんりょう</rt></ruby></span></b>のしわざだとされた。この<span class='kw'>怨霊</span>の問題と、<span class='kw'>長岡京</span>の完成の遅れが、ふたたびの遷都の理由とされている。そして794年、都は<span class='kw'>平安京</span>に移され、山背国も山城国と改められた。この<span class='kw'>平安京</span>への遷都から、<span class='kw'><ruby>源頼朝<rt>みなもとのよりとも</rt></ruby></span>が<span class='kw'>鎌倉</span>に<ruby>幕府<rt>ばくふ</rt></ruby>を開くまでの約400年間を<span class='kw'>平安時代</span>という。</p><div class='deep'><span class='bx-tag'>難関＋</span><span class='kw'>長岡京</span>を捨てて<span class='kw'>平安京</span>へ再遷都した直接の理由は、<span class='kw'>藤原種継</span>の暗殺と<span class='kw'>早良親王</span>の<span class='kw'>怨霊</span>への恐れ、そして<span class='kw'>長岡京</span>造営の難航だったとされる。</div><div class='deep'><span class='bx-tag'>難関＋</span><b>整理のツボ</b>　「仏教政治からの脱却」が遷都の大方針。784<span class='kw'>長岡京</span>→794<span class='kw'>平安京</span>の流れと、<span class='kw'>藤原種継</span>・<span class='kw'>早良親王</span>（<span class='kw'>怨霊</span>）をセットで。蝦夷は<span class='kw'>坂上田村麻呂</span>・<span class='kw'>阿弖流為</span>・<span class='kw'>胆沢城</span>(802)で。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>桓武天皇</span>が、<span class='kw'>平城京</span>から都を移したかった理由は？</span><span class='tp'>タップで確認</span></summary><div class='qa'><b>仏教政治の弊害を改め、天皇の権力を強めるため</b>。奈良の大寺院の力が政治に入りこんでいた（<span class='kw'>道鏡</span>など）ので、大寺院のない新しい都で政治をやり直したかった。だから南都の大寺院は<span class='kw'>新京</span>に移さなかった。</div></details><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b><span class='kw'>怨霊</span>がこわくて、都を移した。</b>今の感覚では「たたりがこわいから引っ越す」なんて信じられないけれど、当時の人々は本気だった。<span class='kw'>桓武天皇</span>はのちに、<span class='kw'>早良親王</span>に「崇道天皇」という天皇の称号まで贈って、霊をなぐさめている。この「恨みを残して死んだ人の霊がたたる」という考え方は、このあと古代⑤の<b><span class='kw'><ruby>菅原道真<rt>すがわらのみちざね</rt></ruby></span></b>の<span class='kw'>怨霊</span>騒ぎや<b><span class='kw'><ruby>御霊信仰<rt>ごりょうしんこう</rt></ruby></span></b>へと、どんどんふくらんでいく。</div><p><span class='kw'>平安京</span>は東西約4.5km、南北約5.2kmで、つくりは<span class='kw'>平城京</span>によく似ている。でも、低湿地の多い西の右京はのちにさびれ、東の左京と、鴨川の東の洛東がにぎわった。</p><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span>遷都の流れは<b>「理由」とセット</b>で。<b><span class='kw'>長岡京</span>（784）</b>＝仏教政治の弊害を改め天皇権力を強化、<b><span class='kw'>平安京</span>（794）</b>＝<span class='kw'>藤原種継</span>暗殺事件と<span class='kw'>早良親王</span>の<span class='kw'>怨霊</span>・<span class='kw'>長岡京</span>造営の遅れ。教科書の問い「<span class='kw'>平城京</span>から<span class='kw'>長岡京</span>・<span class='kw'>平安京</span>へと遷都された理由」はこの二段階で答える。<span class='kw'>桓武天皇</span>の母＝<b><span class='kw'>高野新笠</span>（渡来系氏族）</b>。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 二度の遷都</div><div class='vflow'><div class='vstep'>平城京</div><div class='vto'><b>→</b><span>784</span></div><div class='vstep'>長岡京<br>種継暗殺・早良親王</div><div class='vto'><b>→</b><span>794</span></div><div class='vstep'>平安京</div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "02",
+   "navTitle": "蝦夷との戦い",
+   "title": "30年の戦争と、その終わり",
+   "unitLink": "桓武天皇",
+   "theme": "伊治呰麻呂の反乱、阿弖流為の抵抗、坂上田村麻呂の胆沢城。徳政相論で、戦争と都づくりはついに止められた。",
+   "html": "<p>東北地方では、奈良時代に律令国家が北へ北へと支配を広げていた。<ruby>陸奥<rt>むつ</rt></ruby>の側では<span class='kw'>多賀城</span>を出発点に北上しながら城柵を設けていき、<ruby>出羽<rt>でわ</rt></ruby>の側では<span class='kw'>秋田城</span>を拠点に日本海沿いに勢力をのばした（古代③）。城柵は、全体を取り囲む外郭の中に、政庁を中心として役所や倉庫を置いた施設で、軍事施設というより<b>役所</b>としての性格が強く、まわりには関東地方の農民などを<span class='kw'>柵戸</span>として移り住ませて、一帯の開発を進めた。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③の授業03で、<span class='kw'>多賀城</span>・<span class='kw'>秋田城</span>と、蝦夷に対する「従う者は優遇、逆らう者は武力で」という二面の政策を見たよね。そして「古代④で<span class='kw'><ruby>坂上田村麻呂<rt>さかのうえのたむらまろ</rt></ruby></span>の<span class='kw'><ruby>胆沢城<rt>いさわじょう</rt></ruby></span>・<span class='kw'><ruby>志波城<rt>しわじょう</rt></ruby></span>へと進んでいく」と予告した。その戦いが、ここで本格的に始まる。</div><p>ところが780年、<span class='kw'>光仁天皇</span>の時代に、朝廷に従っていた蝦夷の豪族<span class='kw'><ruby>伊治呰麻呂<rt>これはりのあざまろ</rt></ruby></span>が反乱をおこし、一時は<span class='kw'>多賀城</span>を攻め落として焼き払うほどの大きな戦いに発展した。このころから東北地方では、<b>30年以上</b>にわたって戦争が続いた。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>戦いの経過</b>　780年、蝦夷の豪族<span class='kw'><ruby>伊治呰麻呂<rt>これはりのあざまろ</rt></ruby></span>が反乱をおこして<span class='kw'><ruby>多賀城<rt>たがじょう</rt></ruby></span>を焼いた。789年には<ruby>紀古佐美<rt>きのこさみ</rt></ruby>の軍が<span class='kw'><ruby>阿弖流為<rt>あてるい</rt></ruby></span>に大敗した。802年、<span class='kw'>阿弖流為</span>は<ruby>母礼<rt>もれ</rt></ruby>とともに<span class='kw'><ruby>坂上田村麻呂<rt>さかのうえのたむらまろ</rt></ruby></span>に降伏し、京で処刑された。</div><p><span class='kw'><ruby>桓武天皇<rt>かんむてんのう</rt></ruby></span>の789年には、<span class='kw'><ruby>紀古佐美<rt>きのこさみ</rt></ruby></span>を征東大使として大軍を進め、北上川の中流の胆沢地方の蝦夷を制圧しようとしたが、蝦夷の族長<span class='kw'><ruby>阿弖流為<rt>あてるい</rt></ruby></span>の活躍で、政府軍が大敗する事件もおこった。</p><p>その後、<span class='kw'><ruby>征夷大将軍<rt>せいいたいしょうぐん</rt></ruby></span>となった<span class='kw'>坂上田村麻呂</span>は、802年、胆沢の地に<span class='kw'>胆沢城</span>を築いて<span class='kw'>阿弖流為</span>を従わせ、さらに翌年、北上川の上流に<span class='kw'>志波城</span>を築いて、東北経営の前線基地にした。これにともなって、<span class='kw'>多賀城</span>に置かれていた<span class='kw'><ruby>鎮守府<rt>ちんじゅふ</rt></ruby></span>は<span class='kw'>胆沢城</span>に移された。日本海の側でも蝦夷の服属が進み、米代川の流域まで律令国家の支配がおよぶようになった。従った蝦夷は、<span class='kw'><ruby>俘囚<rt>ふしゅう</rt></ruby></span>として関東より西の各地に移住させられた。のち<span class='kw'><ruby>嵯峨天皇<rt>さがてんのう</rt></ruby></span>のときには文室綿麻呂が送られ、最後の城柵である徳丹城が築かれた。</p><!--jm:kodai4-02--><div class='viz jm'><div class='viz-cap'>地図 ── 蝦夷との戦いと城柵（矢印＝支配が北へ広がった向き）</div><div class='mapwrap'><svg viewBox='706.1 329 254.2 323.5' width='100%' role='img' aria-label='蝦夷との戦いと城柵'><defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'><path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs><rect x='706.1' y='329' width='254.2' height='323.5' style='fill:#0F1626;'/><use href='#jpmap'/><text x='908.9' y='496.8' text-anchor='middle' style='fill:#8E9AB8;font-size:8.5px;letter-spacing:.1em;'>北上川</text><path d='M891.6 553.5 L893.8 517.8 L887.4 467.4' style='fill:none;stroke-linejoin:round;stroke-linecap:round;stroke:#E07A5F;stroke-width:1.8;stroke-dasharray:4.6 3.1;' marker-end='url(#jm-ah)'/><circle cx='876.3' cy='570.2' r='2.5' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.8;'/><line x1='876.3' y1='570.2' x2='896.3' y2='574.8' style='stroke:#D4BD82;stroke-width:0.8;'/><circle cx='878.6' cy='538.8' r='2.5' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.8;'/><line x1='878.6' y1='538.8' x2='857' y2='538.8' style='stroke:#D4BD82;stroke-width:0.8;'/><circle cx='882.9' cy='511.7' r='2.5' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.8;'/><line x1='882.9' y1='511.7' x2='902.9' y2='514.8' style='stroke:#D4BD82;stroke-width:0.8;'/><circle cx='879.9' cy='472.2' r='2.5' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.8;'/><line x1='879.9' y1='472.2' x2='900' y2='466' style='stroke:#D4BD82;stroke-width:0.8;'/><circle cx='815.5' cy='465.8' r='2.5' style='fill:#E07A5F;stroke:#0F1626;stroke-width:0.8;'/><line x1='815.5' y1='465.8' x2='794' y2='465.8' style='stroke:#D4BD82;stroke-width:0.8;'/><circle cx='896.3' cy='574.8' r='6.5' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.1;'/><text x='896.3' y='577.8' text-anchor='middle' style='fill:#10141C;font-size:8.5px;font-weight:800;font-family:system-ui,sans-serif;'>1</text><circle cx='857' cy='538.8' r='6.5' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.1;'/><text x='857' y='541.7' text-anchor='middle' style='fill:#10141C;font-size:8.5px;font-weight:800;font-family:system-ui,sans-serif;'>2</text><circle cx='902.9' cy='514.8' r='6.5' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.1;'/><text x='902.9' y='517.7' text-anchor='middle' style='fill:#10141C;font-size:8.5px;font-weight:800;font-family:system-ui,sans-serif;'>3</text><circle cx='900' cy='466' r='6.5' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.1;'/><text x='900' y='469' text-anchor='middle' style='fill:#10141C;font-size:8.5px;font-weight:800;font-family:system-ui,sans-serif;'>4</text><circle cx='794' cy='465.8' r='6.5' style='fill:#D4BD82;stroke:#0F1626;stroke-width:1.1;'/><text x='794' y='468.7' text-anchor='middle' style='fill:#10141C;font-size:8.5px;font-weight:800;font-family:system-ui,sans-serif;'>5</text></svg></div><ol class='jm-leg c1'><li><b>1</b><span>多賀城 ── 780年、伊治呰麻呂に焼かれる</span></li><li><b>2</b><span>伊治城（宮城）── 伊治呰麻呂の乱の舞台</span></li><li><b>3</b><span>胆沢城（802年・岩手）── のちに鎮守府を多賀城から移す</span></li><li><b>4</b><span>志波城（803年・岩手）── いちばん北の前線</span></li><li><b>5</b><span>秋田城（出羽）</span></li></ol></div><!--/jm--><div class='deep'><span class='bx-tag'>難関＋</span><b>城柵の北上</b>　802年に<span class='kw'><ruby>胆沢城<rt>いさわじょう</rt></ruby></span>を築いて<span class='kw'><ruby>鎮守府<rt>ちんじゅふ</rt></ruby></span>を<span class='kw'>多賀城</span>から移し、803年には<span class='kw'><ruby>志波城<rt>しわじょう</rt></ruby></span>を築いた。811年には<ruby>文室綿麻呂<rt>ふんやのわたまろ</rt></ruby>が遠征して、一連の戦いはひとまず終わった。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>坂上田村麻呂</span>が<span class='kw'>胆沢城</span>を築いたあと、<span class='kw'>鎮守府</span>はどこからどこへ移された？</span><span class='tp'>タップで確認</span></summary><div class='qa'><b><span class='kw'>多賀城</span>から<span class='kw'>胆沢城</span>へ</b>。支配の最前線が、それだけ北へ動いたということだ。</div></details><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b><span class='kw'>阿弖流為</span>は、許されなかった。</b>田村麻呂に降伏した<span class='kw'>阿弖流為</span>は、副将の母礼とともに都へ連れてこられた。田村麻呂は「二人を東北に帰して、蝦夷をまとめさせたほうがいい」と命を助けるよう願ったが、貴族たちは聞き入れず、二人は処刑されたと伝えられる。今では、京都の清水寺（田村麻呂が開いたと伝わる寺）の境内に、<span class='kw'>阿弖流為</span>と母礼の碑が建てられている。</div><p>しかし、東北での戦いと<span class='kw'><ruby>平安京<rt>へいあんきょう</rt></ruby></span>の造営という<b>二大政策</b>は、国の財政にも民衆にも大きな負担になった。そこで805年、<span class='kw'>桓武天皇</span>は<span class='kw'><ruby>徳政相論<rt>とくせいそうろん</rt></ruby></span>と呼ばれる議論の場を設けた。<span class='kw'><ruby>藤原緒嗣<rt>ふじわらのおつぐ</rt></ruby></span>は「天下の民を苦しめているのは、軍事と造作（都づくり）だ」と批判し、二大政策を続けるべきだとする<span class='kw'><ruby>菅野真道<rt>すがののまみち</rt></ruby></span>と論争した。<span class='kw'>桓武天皇</span>は緒嗣の意見を取り入れ、蝦夷との戦争と<span class='kw'>平安京</span>の造営を、ともに打ち切った。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>徳政相論<rt>とくせいそうろん</rt></ruby></span></b>　805年、<span class='kw'><ruby>藤原緒嗣<rt>ふじわらのおつぐ</rt></ruby></span>が「天下の民が苦しむのは軍事と<ruby>造作<rt>ぞうさく</rt></ruby>（都づくり）だ」と主張し、<span class='kw'><ruby>菅野真道<rt>すがののまみち</rt></ruby></span>が反対したが、<span class='kw'><ruby>桓武天皇<rt>かんむてんのう</rt></ruby></span>は緒嗣の意見をとって両方を中止した。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span>「<span class='kw'>征夷大将軍</span>」という役職、どこかで聞いたよね。そう、中世②の<b><span class='kw'><ruby>源頼朝<rt>みなもとのよりとも</rt></ruby></span></b>、中世④の<b><span class='kw'><ruby>足利尊氏<rt>あしかがたかうじ</rt></ruby></span></b>、近世②の<b><span class='kw'><ruby>徳川家康<rt>とくがわいえやす</rt></ruby></span></b>だ。もともとは、<span class='kw'>坂上田村麻呂</span>のように<b>蝦夷を討つための臨時の将軍</b>だった。それが<span class='kw'>頼朝</span>以後、<ruby>武家<rt>ぶけ</rt></ruby>政権のトップを示す肩書きになっていく。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span>蝦夷との戦いは<b>人と城柵の組み合わせ</b>で出る。<b><span class='kw'>伊治呰麻呂</span>（780・<span class='kw'>多賀城</span>を焼く）</b>、<b>紀古佐美（789・<span class='kw'>阿弖流為</span>に大敗）</b>、<b><span class='kw'>坂上田村麻呂</span>（802 <span class='kw'>胆沢城</span>・803 <span class='kw'>志波城</span>、<span class='kw'>鎮守府</span>を<span class='kw'>多賀城</span>→<span class='kw'>胆沢城</span>）</b>、<b>文室綿麻呂（嵯峨のとき・徳丹城）</b>。<span class='kw'>徳政相論</span>＝<b>805年・<span class='kw'>藤原緒嗣</span>（停止を主張）× <span class='kw'>菅野真道</span>（継続を主張）</b>。「<span class='kw'>菅野真道</span>の意見が採用された」は誤り。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 蝦夷との戦いの流れ</div><div class='vflow'><div class='vstep'>780<br>伊治呰麻呂の反乱<br>多賀城が焼かれる</div><div class='vto'><b>→</b></div><div class='vstep'>789<br>紀古佐美が<br>阿弖流為に大敗</div><div class='vto'><b>→</b></div><div class='vstep'>802 胆沢城（坂上田村麻呂）<br>鎮守府を胆沢城へ</div><div class='vto'><b>→</b></div><div class='vstep'>803 志波城</div><div class='vto'><b>→</b></div><div class='vstep'>805 徳政相論<br>戦争と造都を停止</div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "03",
+   "navTitle": "桓武天皇の地方政治の改革",
+   "title": "負担を減らして、逃がさない",
+   "unitLink": "桓武天皇",
+   "theme": "勘解由使で国司を監督し、健児で兵士の負担をなくした。班田は一紀一班、出挙と雑徭も減らしたが、偽籍は止まらなかった。",
+   "html": "<p><span class='kw'><ruby>桓武天皇<rt>かんむてんのう</rt></ruby></span>は、長い在位のあいだに天皇の権威を確立し、積極的に政治改革を進めた。</p><p>まず、国の財政が悪くなった原因の、<b>地方政治のゆるみ</b>をなくそうとした。増えていた定員外の<span class='kw'>国司</span>や<span class='kw'><ruby>郡司<rt>ぐんじ</rt></ruby></span>をなくし、新たに<span class='kw'><ruby>勘解由使<rt>かげゆし</rt></ruby></span>を置いて、<span class='kw'>国司</span>が交替するときの事務の引き継ぎをきびしく監督させた。<span class='kw'>国司</span>が任期を終えるとき、在任中の税の取り立てや国の財産の管理に問題がなければ、新しい<span class='kw'>国司</span>から前の<span class='kw'>国司</span>に<span class='kw'><ruby>解由状<rt>げゆじょう</rt></ruby></span>という文書が渡される。<span class='kw'>勘解由使</span>は、この<span class='kw'>解由状</span>を審査する役人だ。<span class='kw'>勘解由使</span>のように、律令に定められていない新しい官職を<span class='kw'><ruby>令外官<rt>りょうげのかん</rt></ruby></span>という。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>整理のツボ</b>　桓武＝「律令再建の改革者」。<span class='kw'>勘解由使</span>・<span class='kw'>健児</span>(792)・<span class='kw'>一紀一班</span>、そして<span class='kw'>徳政相論</span>(805)＝二大事業の停止。<span class='kw'>令外官</span>という言葉も要チェック。</div><p>軍事の面では、唐の衰えなどで東アジアの緊張がゆるんだことを受けて、792年に、東北や九州などの地域をのぞいて、軍団と兵士を廃止した。かわりに、<span class='kw'>郡司</span>の子どもや有力な農民の志願による、少数精鋭の<span class='kw'><ruby>健児<rt>こんでい</rt></ruby></span>を採用した。<span class='kw'>健児</span>は国の大小や軍事の必要に応じて、国ごとに20〜200人の人数が決められ、60日交替で<ruby>国府<rt>こくふ</rt></ruby>の警備や国内の治安を守った。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代②の兵役を思い出そう。<span class='kw'>正丁</span>3〜4人に1人の割合で兵士がとられ、武器も食料も自分持ち。家族の働き手をとられる、民衆にとってとても大きな負担だった。それを、東北や九州などをのぞいてやめ、<b>志願の少数精鋭</b>に切りかえたのが<span class='kw'>健児</span>だ。<span class='kw'>白村江の戦い</span>のあとの緊張（古代②）がゆるんだからこそ、できた改革だった。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>健児</span>が置かれたのに、東北や九州で軍団が残されたのはなぜ？</span><span class='tp'>タップで確認</span></summary><div class='qa'>東北は<b>蝦夷との戦い</b>が続いており、九州は<b>外国（大陸）への備え</b>の要地だったから。東アジアの緊張がゆるんだ地域から、兵士の負担をなくしていったのだ。</div></details><p>民衆の暮らしの面でも手を打った。8世紀後半から9世紀になると、農民のあいだで貧富の差が広がり、有力な農民も貧しい農民も、浮浪・逃亡などいろいろな手段で負担をのがれようとした。そして<ruby>戸籍<rt>こせき</rt></ruby>には、兵役・労役・税を負担する成人男性を避けて、負担の少ない女性などの登録を増やす、うその記載（<span class='kw'><ruby>偽籍<rt>ぎせき</rt></ruby></span>）が目立つようになった。こうして政府の農民の把握は実際とあわなくなり、手続きの面倒さもあって、<span class='kw'><ruby>班田収授<rt>はんでんしゅうじゅ</rt></ruby></span>を実施することはしだいに難しくなった。</p><p><span class='kw'>桓武天皇</span>は<span class='kw'>班田収授</span>を続けるため、6年に1回だった<span class='kw'><ruby>班田<rt>はんでん</rt></ruby></span>の期間を、12年に1回に改めた（<span class='kw'><ruby>一紀一班<rt>いっきいっぱん</rt></ruby></span>）。また、<span class='kw'><ruby>公出挙<rt>くすいこ</rt></ruby></span>の利率を5割から3割に下げ、<ruby>雑徭<rt>ぞうよう</rt></ruby>の日数を年60日から30日に減らすなど、負担を軽くして農民の生活を守ろうとした。しかし効果はなく、9世紀には<span class='kw'>班田</span>が何十年もとどこおるようになり、農民のあいだの格差も止められなかった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代②の民衆の負担では、<b><span class='kw'><ruby>出挙<rt>すいこ</rt></ruby></span>＝利息5割</b>、<b>雑徭＝年60日以下</b>だった。<span class='kw'>桓武天皇</span>は、それを<b>3割</b>と<b>30日</b>に減らした。負担を軽くして、農民を逃がさないようにしたかったのだ。そして古代③の最後で「民衆は戸籍をごまかしたり、逃げたりするようになる」と予告した。その「ごまかし」が<b><span class='kw'>偽籍</span></b>だ。古代⑤では、この<span class='kw'>偽籍</span>が当たり前になり、902年の<span class='kw'><ruby>延喜の荘園整理令<rt>えんぎのしょうえんせいりれい</rt></ruby></span>を最後に<span class='kw'>班田</span>は実施されなくなる。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><span class='kw'>桓武天皇</span>の改革は<b>「何を・どう変えたか」</b>の数字で出る。<b><span class='kw'>勘解由使</span></b>＝<span class='kw'>国司</span>交替の監督（<span class='kw'>解由状</span>の審査）・<span class='kw'>令外官</span>、<b><span class='kw'>健児</span></b>＝792年・<span class='kw'>郡司</span>の子弟や有力農民の志願・軍団の廃止（東北・九州などを除く）、<b><span class='kw'>一紀一班</span></b>＝<span class='kw'>班田</span>を12年に1回、<b><span class='kw'>公出挙</span>の利率5割→3割</b>、<b>雑徭60日→30日</b>。「<span class='kw'>健児</span>は東北地方にも置かれ、軍団は全国で廃止」は誤り。</div><div class='deep'><span class='bx-tag'>難関＋</span><span class='kw'>徳政相論</span>は、桓武の二大事業を続けるか止めるかの論争だった。<span class='kw'>藤原緒嗣</span>は「天下の民を苦しめているのは軍事（蝦夷征討）と造作（<span class='kw'>平安京</span>造営）だ」と主張し、<span class='kw'>菅野真道</span>は継続を主張した。</div><div class='deep'><span class='bx-tag'>難関＋</span>桓武は緒嗣の意見を採り、両事業を停止した。民衆の疲弊を認めた、重い決断だった。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 桓武の三つの改革</div><div class='vrow'><div class='vnode'><span class='vt'>地方</span><span class='vs2'>勘解由使</span></div><div class='vnode'><span class='vt'>軍事</span><span class='vs2'>軍団廃止→健児(792)</span></div><div class='vnode'><span class='vt'>負担軽減</span><span class='vs2'>一紀一班・公出挙3割</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "04",
+   "navTitle": "平城太上天皇の変と嵯峨天皇",
+   "title": "二つの頂点と、北家の登場",
+   "unitLink": "嵯峨天皇",
+   "theme": "上皇と天皇の対立の中で蔵人頭が生まれ、藤原冬嗣が浮上した。検非違使や三代格式で、律令は現実に合わせて手直しされた。",
+   "html": "<p><span class='kw'><ruby>桓武天皇<rt>かんむてんのう</rt></ruby></span>の積極的な改革の方針は、次の<span class='kw'><ruby>平城天皇<rt>へいぜいてんのう</rt></ruby></span>・<span class='kw'><ruby>嵯峨天皇<rt>さがてんのう</rt></ruby></span>にも受け継がれた。平城天皇は役所の統廃合を大胆に進めて、財政の負担を軽くしようとした。</p><p><span class='kw'>嵯峨天皇</span>も即位すると改革に取りかかったが、810年、<span class='kw'>平城京</span>にもう一度都を移そうとする兄の<b><span class='kw'>平城太上天皇</span></b>と対立し、「二所朝廷」（朝廷が二つある状態）と呼ばれる政治の混乱がおこった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③の授業05で、<span class='kw'>孝謙太上天皇</span>と<span class='kw'>淳仁天皇</span>が対立したとき、「奈良時代には、位をゆずったあとの太上天皇も、天皇と同じ権力や権威をもっていた」と言ったよね。そして「平安時代の初めにも、同じ形の対立がおこる」と予告した。それがこれだ。天皇と<ruby>上皇<rt>じょうこう</rt></ruby>、<b>二つの頂点</b>がぶつかった。</div><p>結局、<span class='kw'>嵯峨天皇</span>の側がすばやく兵を動かして、太上天皇を出家に追いこんだ。太上天皇にかわいがられていた<span class='kw'><ruby>藤原薬子<rt>ふじわらのくすこ</rt></ruby></span>は自殺し、薬子の兄の<span class='kw'><ruby>藤原仲成<rt>ふじわらのなかなり</rt></ruby></span>は射殺された（<span class='kw'><ruby>平城太上天皇の変<rt>へいぜいだいじょうてんのうのへん</rt></ruby></span>、<span class='kw'>薬子の変</span>ともいう）。</p><p>この対立のとき、天皇の命令をすばやく<span class='kw'><ruby>太政官<rt>だいじょうかん</rt></ruby></span>の組織に伝えるために、天皇の秘書官長として<span class='kw'><ruby>蔵人頭<rt>くろうどのとう</rt></ruby></span>が設けられ、<span class='kw'><ruby>藤原冬嗣<rt>ふじわらのふゆつぐ</rt></ruby></span>らが任命された。その役所が<span class='kw'><ruby>蔵人所<rt>くろうどどころ</rt></ruby></span>で、所属する蔵人たちは、やがて天皇の側近として宮廷で重要な役割をはたすようになった。また<span class='kw'>嵯峨天皇</span>は、<span class='kw'><ruby>平安京<rt>へいあんきょう</rt></ruby></span>の中の警察にあたる<span class='kw'><ruby>検非違使<rt>けびいし</rt></ruby></span>を設けた。<span class='kw'>検非違使</span>も、のちには裁判までおこなうようになるなど、京の統治を担う重要な職になっていった。</p><div class='deep'><span class='bx-tag'>難関＋</span><span class='kw'>令外官</span>は、<span class='kw'>大宝律令</span>の規定の外で、必要に応じて新設された官職だ。<span class='kw'>勘解由使</span>（<span class='kw'>国司</span>の監督）、<span class='kw'>蔵人頭</span>（天皇の機密を扱う秘書官長）、<span class='kw'>検非違使</span>（警察・裁判）など。</div><div class='deep'><span class='bx-tag'>難関＋</span>律令の枠そのものは変えずに現実へ対応する“継ぎ足し”であり、のちに<span class='kw'>蔵人所</span>や<span class='kw'>検非違使</span>は、政治の中枢や京の統治を担う重職になっていった。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>蔵人頭</span>は、どんな必要から生まれた？</span><span class='tp'>タップで確認</span></summary><div class='qa'><span class='kw'>平城太上天皇</span>と<span class='kw'>嵯峨天皇</span>が対立したとき、天皇の命令を<b>すばやく、確実に</b><span class='kw'>太政官</span>に伝える必要があったから。上皇側に情報がもれないよう、天皇直属の秘書官長を置いた。</div></details><div class='recall'><span class='bx-tag'>ここで思い出そう</span>ここで出てきた<b><span class='kw'>藤原冬嗣</span></b>は、藤原<b>北家</b>の人だ。古代③で、<span class='kw'>藤原不比等</span>の4人の息子が南家・北家・式家・京家に分かれたよね。奈良時代は南家（仲麻呂）や式家（広嗣・百川）が目立ったが、<span class='kw'>平城太上天皇の変</span>で式家の仲成・薬子が倒れ、かわりに天皇の信頼を得た北家の冬嗣が浮かび上がる。ここから、北家の天下が始まる（古代⑤の<span class='kw'><ruby>良房<rt>よしふさ</rt></ruby></span>・<span class='kw'><ruby>基経<rt>もとつね</rt></ruby></span>・<span class='kw'>道長</span>へ）。</div><p><span class='kw'>嵯峨天皇</span>のもとでは、法の整備も進められた。律令ができたあと、社会の変化に合わせて出された法令を、律令を補ったり修正したりする<span class='kw'>格</span>と、実際に運用するための細かい決まりの<span class='kw'>式</span>に分けて整理し、<span class='kw'><ruby>弘仁格式<rt>こうにんきゃくしき</rt></ruby></span>がつくられた。役所の仕事を、現実に合わせてやりやすくするためのものだ。このあと<span class='kw'>貞観格式</span>・<span class='kw'><ruby>延喜格<rt>えんぎきゃく</rt></ruby></span>式もつくられ、あわせて<span class='kw'><ruby>三代格式<rt>さんだいきゃくしき</rt></ruby></span>という。今に伝わっているのは、格は三代の格を集めた『類聚三代格』、式は『<span class='kw'><ruby>延喜式<rt>えんぎしき</rt></ruby></span>』だ。また833年には、令の解釈を公式に統一した『<span class='kw'><ruby>令義解<rt>りょうのぎげ</rt></ruby></span>』が<span class='kw'>清原夏野</span>らによって、9世紀後半には法律家たちの注釈を集めた『<span class='kw'><ruby>令集解<rt>りょうのしゅうげ</rt></ruby></span>』が惟宗直本によって編まれた。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>整理のツボ</b>　嵯峨＝「<span class='kw'>薬子の変</span>＋<span class='kw'>令外官</span>＋格式」。<span class='kw'>蔵人頭</span>(<span class='kw'>藤原冬嗣</span>)・<span class='kw'>検非違使</span>、<span class='kw'>三代格式</span>(弘仁・貞観・延喜)、<span class='kw'>令義解</span>(公式)／<span class='kw'>令集解</span>(私的)の対で。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b><span class='kw'><ruby>令外官<rt>りょうげのかん</rt></ruby></span></b>は「誰が・何のために」の組み合わせで出る。<b><span class='kw'><ruby>勘解由使<rt>かげゆし</rt></ruby></span>＝桓武・<span class='kw'>国司</span>交替の監督</b>、<b><span class='kw'>蔵人頭</span>＝嵯峨・<span class='kw'>平城太上天皇の変</span>のとき・天皇の秘書官長（<span class='kw'>藤原冬嗣</span>）</b>、<b><span class='kw'>検非違使</span>＝嵯峨・京の警察（のち裁判も）</b>、<b><span class='kw'><ruby>征夷大将軍<rt>せいいたいしょうぐん</rt></ruby></span>＝<span class='kw'><ruby>坂上田村麻呂<rt>さかのうえのたむらまろ</rt></ruby></span></b>。法典は<b>格＝補足・修正法、式＝施行細則</b>の区別と、<b><span class='kw'>令義解</span>＝公式の解釈（<span class='kw'>清原夏野</span>）／<span class='kw'>令集解</span>＝私的な注釈集（惟宗直本）</b>の区別が狙われる。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 薬子の変と新設の役所</div><div class='vflow'><div class='vstep'>平城太上天皇<br>＋藤原薬子</div><div class='vto'><b>×</b><span>対立810</span></div><div class='vstep'>嵯峨天皇<br>勝利</div><div class='vto'><b>→</b><span>新設</span></div><div class='vstep'>蔵人頭・検非違使</div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "05",
+   "navTitle": "9世紀の地方と貴族社会",
+   "title": "それぞれが自分の財布を持つ",
+   "unitLink": "嵯峨天皇",
+   "theme": "公営田・官田の直営、勅旨田、院宮王臣家の土地集積。国家の財布から、それぞれの財源へ。寄進地系荘園の出発点。",
+   "html": "<p>調・庸などが納められなくなって、中央の国の財政を保つのが難しくなると、政府は税の取り立てにかかわる<span class='kw'>国司</span>・<span class='kw'><ruby>郡司<rt>ぐんじ</rt></ruby></span>たちの不正や怠けの取り締まりを強めた。</p><p>それだけでは足りないので、政府は直接もうける方法も考えた。823年には<ruby>大宰府<rt>だざいふ</rt></ruby>の管内に<span class='kw'><ruby>公営田<rt>くえいでん</rt></ruby></span>、879年には畿内に官田（<span class='kw'><ruby>元慶官田<rt>がんぎょうかんでん</rt></ruby></span>）を設け、<b>有力な農民を使った直営方式</b>で収益をあげようとした。人に税をかけて集めるのが難しくなったので、国が自分で田を経営して、収穫を直接手に入れようとしたのだ。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>国の直営田</b>　823年に<ruby>大宰府<rt>だざいふ</rt></ruby>管内で<span class='kw'><ruby>公営田<rt>くえいでん</rt></ruby></span>、879年に畿内で<span class='kw'><ruby>元慶官田<rt>がんぎょうかんでん</rt></ruby></span>が設けられ、国が直接経営して財源を確保しようとした。天皇の勅旨によって開発された<span class='kw'><ruby>勅旨田<rt>ちょくしでん</rt></ruby></span>も増えた。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代②の律令の税は、<b>人</b>にかける税（調・庸・<ruby>雑徭<rt>ぞうよう</rt></ruby>）が中心だった。<ruby>戸籍<rt>こせき</rt></ruby>で一人ひとりを把握して、人数分の税をとる。ところが<span class='kw'><ruby>偽籍<rt>ぎせき</rt></ruby></span>や浮浪・逃亡で、人の把握がうまくいかなくなった（授業03）。そこで政府は、<b>人から土地へ</b>と、税をとる相手を少しずつ切りかえていく。<span class='kw'>公営田</span>・官田は、その最初の動きだ。この流れは古代⑤で、土地（名）を単位に税をとる<b><span class='kw'><ruby>負名<rt>ふみょう</rt></ruby></span></b>のしくみへとつながっていく。</div><p>でも、官田は諸司田に分けられて、各役所が自分で使える独自の財源になってしまった。役人たちも自分の墾田を増やして、国の財政に頼らなくなっていった。天皇にも、公費で開墾した<span class='kw'><ruby>勅旨田<rt>ちょくしでん</rt></ruby></span>があり、皇族にも天皇から与えられた賜田があって、それぞれ独自の財源にされた。</p><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>公営田</span>・官田が「直営方式」をとったのはなぜ？</span><span class='tp'>タップで確認</span></summary><div class='qa'><span class='kw'>偽籍</span>や浮浪・逃亡で、戸籍にもとづいて<b>人から税をとる</b>ことが難しくなったから。国が有力農民を使って<b>田を直接経営し、収穫を手に入れる</b>ほうが確実だった。</div></details><p>そして、天皇と近い関係にあって<span class='kw'><ruby>院宮王臣家<rt>いんぐうおうしんけ</rt></ruby></span>と呼ばれた、少数の皇族や貴族は、私的にたくさんの土地を集めて、国の財政を圧迫しながら勢力をふるうようになった。下級の役人たちは、進んで<span class='kw'>院宮王臣家</span>の従者（<span class='kw'><ruby>家人<rt>けにん</rt></ruby></span>）になろうとし、<span class='kw'>国司</span>に対抗する地方の有力な農民たちも、保護を求めて、やはり<span class='kw'>院宮王臣家</span>の勢力の下に入っていった。</p><div class='deep'><span class='bx-tag'>難関＋</span><b><span class='kw'><ruby>院宮王臣家<rt>いんぐうおうしんけ</rt></ruby></span></b>　院（<ruby>上皇<rt>じょうこう</rt></ruby>）・宮（皇后・皇太子など）・王臣家（皇族や上級貴族）をまとめて<span class='kw'>院宮王臣家</span>といい、地方の有力者と結んで土地を集めた。</div><div class='deep'><span class='bx-tag'>難関＋</span><b><ruby>意見封事十二箇条<rt>いけんふうじじゅうにかじょう</rt></ruby></b>　914年、<ruby>三善清行<rt>みよしきよゆき</rt></ruby>は<span class='kw'><ruby>醍醐天皇<rt>だいごてんのう</rt></ruby></span>に「意見封事十二箇条」を出し、<ruby>備中国<rt>びっちゅうのくに</rt></ruby><ruby>邇磨郷<rt>にまのごう</rt></ruby>の人口が激減した例をあげて、律令の地方支配の崩壊を訴えた。</div><div class='point'>9世紀の変化をひとことで言うと、<b>「国家」というひとつの財布から、それぞれが自分の財布を持つ時代へ</b>。役所は諸司田、天皇は<span class='kw'>勅旨田</span>、皇族は賜田、有力な貴族は私的な土地。国の財政に頼らず、みんなが自分の財源を持ちはじめた。そして地方の有力な農民は、<span class='kw'>国司</span>ではなく、<span class='kw'>院宮王臣家</span>という<b>有力者の保護</b>を求めるようになる。この「有力者に頼る」動きが、古代⑤の<b><span class='kw'><ruby>寄進地系荘園<rt>きしんちけいしょうえん</rt></ruby></span></b>の出発点になる。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span>9世紀の財源は<b>「誰の・何の田か」</b>の区別。<b><span class='kw'>公営田</span>＝823年・大宰府管内</b>、<b><span class='kw'>元慶官田</span>＝879年・畿内</b>（どちらも有力農民を使った直営）、<b>諸司田＝各官庁の財源</b>、<b><span class='kw'>勅旨田</span>＝天皇・公費で開墾</b>、<b>賜田＝皇族へ</b>。<span class='kw'>院宮王臣家</span>＝<b>天皇に近い少数の皇族・貴族</b>。「<span class='kw'>公営田</span>は畿内に置かれた」は誤り（<b>大宰府管内</b>）。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 9世紀の財源の変化</div><div class='vs'><div class='vh'><span>田・勢力</span><span>内容</span></div><div class='vr'><span>公営田（823）</span><span>大宰府管内・有力農民で直営</span></div><div class='vr'><span>元慶官田（879）</span><span>畿内・有力農民で直営→諸司田に分割</span></div><div class='vr'><span>勅旨田</span><span>天皇・公費で開墾</span></div><div class='vr'><span>賜田</span><span>天皇から皇族へ</span></div><div class='vr'><span>院宮王臣家</span><span>少数の皇族・貴族が私的に土地を集積</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "06",
+   "navTitle": "唐風文化と学問",
+   "title": "文章は、国をおさめる大事業",
+   "unitLink": "弘仁貞観文化",
+   "theme": "文章経国の思想のもと、勅撰漢詩集が次々と編まれた。大学別曹や綜芸種智院もつくられ、漢文は貴族のものになった。",
+   "html": "<p>平安遷都から9世紀の末ごろまでの文化を、<span class='kw'><ruby>嵯峨天皇<rt>さがてんのう</rt></ruby></span>・<span class='kw'><ruby>清和天皇<rt>せいわてんのう</rt></ruby></span>のときの年号から<span class='kw'><ruby>弘仁・貞観文化<rt>こうにん・じょうがんぶんか</rt></ruby></span>という。この時代には、<span class='kw'><ruby>平安京<rt>へいあんきょう</rt></ruby></span>で貴族を中心にした<b>唐風の文化</b>が発展した。</p><p>キーワードは<span class='kw'><ruby>文章経国<rt>もんじょうけいこく</rt></ruby></span>だ。「文章（すぐれた文学）は、国をおさめる大事業だ」という考え方で、文芸を中心にして国家の繁栄をめざす思想が広まり、宮廷では漢文学が大いに栄えた。<span class='kw'>嵯峨天皇</span>はとくに唐風を重んじ、平安宮の建物に唐風の名前をつけ、唐風の儀式や作法を取り入れて宮廷の儀式を整えた。また、文学や学問にすぐれた文人貴族を政治に取り立てて、国の経営に参加させる方針をとった。</p><div class='deep'><span class='bx-tag'>難関＋</span><span class='kw'>文章経国</span>＝「文芸は国家を治め栄えさせる基」という思想のもとで、漢詩文の才能が官人の評価や登用に直結した。だから貴族はこぞって漢文学を磨いた。</div><p>こうして、天皇の命令でつくる<b><ruby>勅撰<rt>ちょくせん</rt></ruby>漢詩集</b>が次々に編まれた。814年の『<span class='kw'><ruby>凌雲集<rt>りょううんしゅう</rt></ruby></span>』、818年の『<span class='kw'><ruby>文華秀麗集<rt>ぶんかしゅうれいしゅう</rt></ruby></span>』、827年の『<span class='kw'><ruby>経国集<rt>けいこくしゅう</rt></ruby></span>』の3つだ（「<span class='kw'>経国集</span>」の名前は、まさに<span class='kw'>文章経国</span>から来ている）。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>整理のツボ</b>　弘仁貞観＝唐風・漢文学。<span class='kw'>勅撰漢詩集</span>(<span class='kw'>凌雲集</span>→<span class='kw'>文華秀麗集</span>→<span class='kw'>経国集</span>)、<span class='kw'>三筆</span>(嵯峨・<span class='kw'>空海</span>・<span class='kw'>橘逸勢</span>)、<span class='kw'>大学別曹</span>／<span class='kw'>綜芸種智院</span>(<span class='kw'>空海</span>)。「漢→かな」の伏線も意識。</div><details class='qcheck'><summary><span class='qmk'>？</span><span>「<span class='kw'>文章経国</span>」とは、どういう考え方？</span><span class='tp'>タップで確認</span></summary><div class='qa'><b>すぐれた文章（文学）は、国をおさめる大事業だ</b>という考え方。だから漢詩文の才能がある文人貴族が政治に取り立てられ、<span class='kw'>勅撰漢詩集</span>が次々につくられた。</div></details><p>教養として漢詩文をつくることが重んじられたので、漢文学がさかんになり、漢字の文化になれた貴族たちは、漢文を自分のものとして使いこなすようになった。<b>漢字を完全に自分のものにしたからこそ、それを崩して日本独自のかな文字をつくれた</b>。このことが、のちの<span class='kw'><ruby>国風文化<rt>こくふうぶんか</rt></ruby></span>（古代⑤）の前提になった。</p><div class='deep'><span class='bx-tag'>難関＋</span>皮肉なことに、この漢字文化の徹底的な習熟が、やがてかな文字を生み、女性たちが担う<span class='kw'>国風文化</span>（『<span class='kw'>源氏物語</span>』など）へとつながっていく。</div><p>有名な文人には、<span class='kw'>嵯峨天皇</span>・<span class='kw'><ruby>空海<rt>くうかい</rt></ruby></span>・小野篁・<span class='kw'><ruby>菅原道真<rt>すがわらのみちざね</rt></ruby></span>らがいる。<span class='kw'>空海</span>は、漢詩文のつくり方についての評論『文鏡秘府論』や、詩文集『性霊集』などで、すぐれた文才を示した。<span class='kw'>菅原道真</span>も詩文集『菅家文草』を著した。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>ここで出てきた<b><span class='kw'>菅原道真</span></b>は、古代⑤の主役の一人だ。学問の家に生まれ、漢詩文の才能で、<span class='kw'><ruby>宇多天皇<rt>うだてんのう</rt></ruby></span>に重く用いられて<span class='kw'><ruby>右大臣<rt>うだいじん</rt></ruby></span>にまでのぼる。まさに「<span class='kw'>文章経国</span>」の時代が生んだ政治家だった。そして、その才能ゆえに<span class='kw'><ruby>藤原時平<rt>ふじわらのときひら</rt></ruby></span>にねたまれ、<ruby>大宰府<rt>だざいふ</rt></ruby>に流されて<span class='kw'><ruby>怨霊<rt>おんりょう</rt></ruby></span>になる（古代⑤）。</div><p>大学での学問も重んじられ、とくに儒教を学ぶ明経道や、中国の歴史や文学を学ぶ<span class='kw'><ruby>紀伝道<rt>きでんどう</rt></ruby></span>（文章道）がさかんになった。有力な貴族は、一族の子どもの教育のために、大学の寄宿舎にあたる<span class='kw'><ruby>大学別曹<rt>だいがくべっそう</rt></ruby></span>を設けた。和気氏の<span class='kw'>弘文院</span>、藤原氏の<span class='kw'><ruby>勧学院<rt>かんがくいん</rt></ruby></span>、在原氏や皇族の奨学院、橘氏の<ruby>学館院<rt>がっかんいん</rt></ruby>などが知られる。学生たちは学費の支給を受け、本を使いながら大学で学んだ。一方、<span class='kw'>空海</span>がつくった<span class='kw'><ruby>綜芸種智院<rt>しゅげいしゅちいん</rt></ruby></span>は、<b>庶民</b>にも教育の門を開いたことで知られる。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③の<span class='kw'>天平文化</span>の授業で、大学では明経道・明法道などを学び、「のちに9世紀には、漢文と歴史を学ぶ<b><span class='kw'>紀伝道</span></b>が生まれる」と予告したよね。その<span class='kw'>紀伝道</span>がここで大きくなる。<span class='kw'>文章経国</span>の時代だから、中国の歴史と文学を学ぶ学問が一番の花形になったのだ。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b><span class='kw'>勅撰漢詩集</span>の3つ</b>は順番で出る。<b><span class='kw'>凌雲集</span>（814）→ <span class='kw'>文華秀麗集</span>（818）→ <span class='kw'>経国集</span>（827）</b>。<span class='kw'>大学別曹</span>は<b><span class='kw'>弘文院</span>＝和気氏、<span class='kw'>勧学院</span>＝藤原氏、奨学院＝在原氏・皇族、学館院＝橘氏</b>の組み合わせ。<span class='kw'>綜芸種智院</span>＝<b><span class='kw'>空海</span>・庶民にも開かれた</b>。<span class='kw'>空海</span>の著作＝<b>文鏡秘府論・性霊集・<span class='kw'><ruby>三教指帰<rt>さんごうしいき</rt></ruby></span></b>、<span class='kw'>菅原道真</span>＝<b>菅家文草</b>。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 弘仁・貞観の学芸</div><div class='vrow'><div class='vnode'><span class='vt'>漢文学</span><span class='vs2'>勅撰漢詩集</span></div><div class='vnode'><span class='vt'>書</span><span class='vs2'>三筆</span></div><div class='vnode'><span class='vt'>学問</span><span class='vs2'>大学別曹・綜芸種智院</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "07",
+   "navTitle": "最澄と空海",
+   "title": "山に開いた、新しい仏教",
+   "unitLink": "弘仁貞観文化",
+   "theme": "最澄は天台宗と大乗戒壇、空海は真言宗と密教。南都から離れた新しい仏教は、山の中に寺を開いた。",
+   "html": "<p>奈良時代の後半には、仏教が政治に深く入りこんで弊害もあった。だから<span class='kw'><ruby>長岡京<rt>ながおかきょう</rt></ruby></span>・<span class='kw'><ruby>平安京<rt>へいあんきょう</rt></ruby></span>への遷都では、南都（奈良）の大寺院を新しい都に移さず、<span class='kw'><ruby>桓武天皇<rt>かんむてんのう</rt></ruby></span>や<span class='kw'><ruby>嵯峨天皇<rt>さがてんのう</rt></ruby></span>は、<span class='kw'><ruby>最澄<rt>さいちょう</rt></ruby></span>・<span class='kw'><ruby>空海<rt>くうかい</rt></ruby></span>らの<b>新しい仏教</b>を支持した。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③の<span class='kw'>天平文化</span>②で、仏教の政治化をきらって、<b>大寺院を離れ、山林にこもって修行する僧たち</b>が現れ、「やがて新しい平安仏教の母体となっていった」と予告したよね。その代表が、この二人だ。二人とも、都の大寺院ではなく、<b>山</b>に寺を開く。</div><p>近江出身の<span class='kw'>最澄</span>は、近江<span class='kw'>国分寺</span>や<span class='kw'>比叡山</span>で学んだあと、804年の<span class='kw'><ruby>遣唐使<rt>けんとうし</rt></ruby></span>にしたがって唐に渡り、天台の教えを受けて帰国し、<span class='kw'><ruby>天台宗<rt>てんだいしゅう</rt></ruby></span>を開いた。<span class='kw'>最澄</span>は、それまでの東大寺の戒壇での受戒の制度にあきたらず、新しく独自の<b><span class='kw'>大乗戒壇</span></b>をつくろうとした。これは南都の諸宗の激しい反発をまねいたが、<span class='kw'>最澄</span>は『<span class='kw'><ruby>顕戒論<rt>けんかいろん</rt></ruby></span>』を著して反論し、その死後、ようやく<span class='kw'>大乗戒壇</span>の設立が認められた。これを受けて、<span class='kw'>最澄</span>が<span class='kw'>比叡山</span>に開いていた小さなお堂は<span class='kw'><ruby>延暦寺<rt>えんりゃくじ</rt></ruby></span>の名を与えられ、<span class='kw'>平安京</span>を守る寺、さらには仏教の学問の中心地として発展していった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③で、正式なお坊さんになるための受戒は、<span class='kw'>鑑真</span>が伝えた作法で、<b>東大寺・筑紫<ruby>観世<rt>かんぜ</rt></ruby>音寺・<ruby>下野<rt>しもつけ</rt></ruby><span class='kw'>薬師寺</span></b>の三戒壇でおこなう、と言ったよね。つまり、お坊さんになりたければ、南都の仏教のルールに従うしかなかった。<span class='kw'>最澄</span>の<span class='kw'>大乗戒壇</span>は、<b>その独占を破る</b>ものだった。南都が猛反発したのは当然だ。</div><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b><span class='kw'>延暦寺</span>は、<span class='kw'>鎌倉</span>仏教の「母校」。</b><span class='kw'>延暦寺</span>は、のちの<span class='kw'><ruby>浄土教<rt>じょうどきょう</rt></ruby></span>の源信（古代⑤）や、<span class='kw'>鎌倉</span>新仏教の開祖たちの多くが学んだ場所だ。中世③の<span class='kw'><ruby>法然<rt>ほうねん</rt></ruby></span>・<span class='kw'><ruby>親鸞<rt>しんらん</rt></ruby></span>・<span class='kw'><ruby>栄西<rt>えいさい</rt></ruby></span>・<span class='kw'><ruby>道元<rt>どうげん</rt></ruby></span>・<span class='kw'><ruby>日蓮<rt>にちれん</rt></ruby></span>は、みんな若いころに<span class='kw'>比叡山</span>で<span class='kw'>天台宗</span>を学んでいる。<span class='kw'>比叡山</span>で学んだあとに、「これでは救われない」と山を下りて、新しい教えを開いたのだ。<span class='kw'>最澄</span>の<span class='kw'>延暦寺</span>は、日本の仏教の大学のような場所だった。</div><details class='qcheck'><summary><span class='qmk'>？</span><span><span class='kw'>最澄</span>の<span class='kw'>大乗戒壇</span>の設立に、南都の諸宗が猛反発したのはなぜ？</span><span class='tp'>タップで確認</span></summary><div class='qa'>それまで正式な僧になるための受戒は、<b>東大寺など南都側の戒壇</b>でしかできなかった。<span class='kw'>大乗戒壇</span>ができれば、<span class='kw'>比叡山</span>で独自に僧を生み出せるので、<b>南都の独占が崩れる</b>からだ。</div></details><p><span class='kw'><ruby>讃岐<rt>さぬき</rt></ruby></span>出身の<span class='kw'>空海</span>は、都に上って大学などで学んだが、儒教・道教に対する仏教の優位を論じた『<span class='kw'><ruby>三教指帰<rt>さんごうしいき</rt></ruby></span>』を著して、仏教の道に進んだ。804年に唐に渡り、長安の青龍寺で高僧の恵果から<b><span class='kw'><ruby>密教<rt>みっきょう</rt></ruby></span></b>を学んで、2年後に帰国したあと、<span class='kw'><ruby>紀伊<rt>きい</rt></ruby></span>の<span class='kw'>高野山</span>に<span class='kw'><ruby>金剛峯寺<rt>こんごうぶじ</rt></ruby></span>を建てて、<span class='kw'><ruby>真言宗<rt>しんごんしゅう</rt></ruby></span>を開いた。また、<span class='kw'>空海</span>が<span class='kw'>嵯峨天皇</span>から与えられた<span class='kw'>平安京</span>の<span class='kw'><ruby>教王護国寺<rt>きょうおうごこくじ</rt></ruby></span>（東寺）も、都にある<span class='kw'>密教</span>の根本道場になった。</p><p>では、<span class='kw'>密教</span>とは何か。<ruby>釈迦<rt>しゃか</rt></ruby>の教えを経典から学び、修行して悟りを開こうとする<b><span class='kw'><ruby>顕教<rt>けんぎょう</rt></ruby></span></b>に対して、<b>秘密の呪法</b>の伝授や習得によって悟りを開こうとするのが<span class='kw'>密教</span>だ。真言とは「<span class='kw'><ruby>大日如来<rt>だいにちにょらい</rt></ruby></span>の真実の言葉」という意味で、その奥深さを指して「密」教と呼ばれた。</p><p><span class='kw'>密教</span>は、<span class='kw'>最澄</span>の後継者で、のちに唐に渡った<span class='kw'><ruby>円仁<rt>えんにん</rt></ruby></span>・<span class='kw'><ruby>円珍<rt>えんちん</rt></ruby></span>によって、<span class='kw'>天台宗</span>にも本格的に取り入れられた。<span class='kw'>真言宗</span>の<span class='kw'>密教</span>を<span class='kw'>東密</span>、<span class='kw'>天台宗</span>の<span class='kw'>密教</span>を<span class='kw'>台密</span>と呼ぶ。<span class='kw'>円仁</span>が838年に唐に渡り、847年に帰国するまでの日々の記録が『<span class='kw'><ruby>入唐求法巡礼行記<rt>にっとうぐほうじゅんれいこうき</rt></ruby></span>』だ。10世紀末以降、<span class='kw'>延暦寺</span>に拠る<span class='kw'>円仁</span>の流れは<span class='kw'><ruby>山門派<rt>さんもんは</rt></ruby></span>、<span class='kw'><ruby>園城寺<rt>おんじょうじ</rt></ruby></span>（<span class='kw'><ruby>三井寺<rt>みいでら</rt></ruby></span>）に拠る<span class='kw'>円珍</span>の流れは<span class='kw'><ruby>寺門派<rt>じもんは</rt></ruby></span>と呼ばれ、たがいに対立した。</p><div class='deep'><span class='bx-tag'>難関＋</span><b>整理のツボ</b>　<span class='kw'>最澄</span>＝<span class='kw'>天台宗</span>・<span class='kw'>延暦寺</span>・<span class='kw'>大乗戒壇</span>、<span class='kw'>空海</span>＝<span class='kw'>真言宗</span>・<span class='kw'>金剛峯寺</span>・東寺。<span class='kw'>密教</span>(<span class='kw'>東密</span>・<span class='kw'>台密</span>、<span class='kw'>円仁</span><span class='kw'>円珍</span>)・<span class='kw'>加持祈祷</span>・<span class='kw'>現世利益</span>。<span class='kw'>修験道</span>もここから。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><b>2026年の慶應商で、『<span class='kw'>入唐求法巡礼行記</span>』が出題された</b>（このアプリの対策メモでは未カバーだった語句）。<span class='kw'>円仁</span>＝<b>838年入唐・<span class='kw'>入唐求法巡礼行記</span>・<span class='kw'>山門派</span>（<span class='kw'>延暦寺</span>）</b>、<span class='kw'>円珍</span>＝<b><span class='kw'>寺門派</span>（<span class='kw'>園城寺</span>＝<span class='kw'>三井寺</span>）</b>。<span class='kw'>最澄</span>＝<b><span class='kw'>天台宗</span>・<span class='kw'>延暦寺</span>・<span class='kw'>顕戒論</span>・<span class='kw'>大乗戒壇</span></b>、<span class='kw'>空海</span>＝<b><span class='kw'>真言宗</span>・<span class='kw'>金剛峯寺</span>（<span class='kw'>高野山</span>）・<span class='kw'>教王護国寺</span>（東寺）・<span class='kw'>三教指帰</span></b>。中世①の<span class='kw'><ruby>僧兵<rt>そうへい</rt></ruby></span>の<span class='kw'><ruby>強訴<rt>ごうそ</rt></ruby></span>で出てきた「<b><span class='kw'><ruby>山法師<rt>やまほうし</rt></ruby></span>（<span class='kw'>延暦寺</span>）と奈良法師（<span class='kw'><ruby>興福寺<rt>こうふくじ</rt></ruby></span>）</b>」の<span class='kw'>延暦寺</span>は、ここで生まれた。</div><div class='deep'><span class='bx-tag'>難関＋</span><span class='kw'>密教</span>は、<span class='kw'>加持祈祷</span>という神秘的な儀式で、病気平癒や出世、安産など“この世の願い”（<span class='kw'>現世利益</span>）にこたえると説いた。来世の救いより目の前の幸福を求める皇族・貴族の心をつかんだのだ。</div><div class='deep'><span class='bx-tag'>難関＋</span>山深い寺で修行する点も、平地の大寺院を構えた奈良仏教との大きな違いだった。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 最澄と空海</div><div class='vs'><div class='vh'><span>最澄</span><span>空海</span></div><div class='vr'><span>天台宗</span><span>真言宗</span></div><div class='vr'><span>延暦寺（比叡山）</span><span>金剛峯寺（高野山）・東寺</span></div><div class='vr'><span>台密</span><span>東密</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  },
+  {
+   "no": "08",
+   "navTitle": "密教の広がりと密教芸術",
+   "title": "祈れば、願いがかなう",
+   "unitLink": "弘仁貞観文化",
+   "theme": "加持祈禱の現世利益で貴族に広まった密教。一木造の仏像、両界曼荼羅、三筆の書。修験道の源流もここにある。",
+   "html": "<p><span class='kw'><ruby>天台宗<rt>てんだいしゅう</rt></ruby></span>・<span class='kw'><ruby>真言宗<rt>しんごんしゅう</rt></ruby></span>は、どちらも国家と社会の安泰を祈ったが、とくに<span class='kw'><ruby>加持祈禱<rt>かじきとう</rt></ruby></span>（仏の力を借りるための呪法やお祈り）によって災いを避け、幸せを追い求めるという<b><span class='kw'><ruby>現世利益<rt>げんぜりやく</rt></ruby></span></b>の面から、皇族や貴族たちの支持を集めた。病気を治したい、子どもがほしい、出世したい。そんな願いに、<span class='kw'><ruby>密教<rt>みっきょう</rt></ruby></span>の祈りは直接こたえてくれたのだ。</p><p>8世紀ごろから、神社の境内に神宮寺を建てたり、寺の境内に守り神の神（鎮守）をまつって神の前でお経を読んだりする<span class='kw'><ruby>神仏習合<rt>しんぶつしゅうごう</rt></ruby></span>の風潮が見られたが、平安時代に入ると、この傾向はさらに広まった。</p><div class='recall'><span class='bx-tag'>ここで思い出そう</span>古代③で、奈良時代に「仏と神はもともと同じものだ」とする<b><span class='kw'>神仏習合</span></b>の思想がおこった、と言ったよね。平安時代にはそれがさらに広まり、古代⑤では「神は仏が仮の姿で現れたもの」とする<b><span class='kw'><ruby>本地垂迹説<rt>ほんじすいじゃくせつ</rt></ruby></span></b>として理論化される。そして中世③の<span class='kw'><ruby>伊勢神道<rt>いせしんとう</rt></ruby></span>、中世⑥の<span class='kw'><ruby>唯一神道<rt>ゆいいつしんとう</rt></ruby></span>で、それがひっくり返されていく。</div><p><span class='kw'>天台宗</span>・<span class='kw'>真言宗</span>は、奈良時代の仏教と違って、<b>山の中</b>に伽<ruby>藍<rt>あい</rt></ruby>を営み、山の中を修行の場としたので、昔からの山岳信仰とも結びついて、<span class='kw'><ruby>修験道<rt>しゅげんどう</rt></ruby></span>の源流になった。<span class='kw'>修験道</span>は、山伏に見られるように、山にこもる修行によって呪力を身につけるという、実践的な宗教だ。山岳信仰の対象だった奈良県<span class='kw'><ruby>吉野<rt>よしの</rt></ruby></span>の大峰山や、北陸の白山などの山々が、その舞台になった。</p><details class='qcheck'><summary><span class='qmk'>？</span><span>天台・<span class='kw'>真言宗</span>が、皇族や貴族に支持されたのはなぜ？</span><span class='tp'>タップで確認</span></summary><div class='qa'><b><span class='kw'>加持祈禱</span></b>によって災いを避け、幸せを得るという<b><span class='kw'>現世利益</span></b>にこたえたから。病気の回復や出世など、目の前の願いを祈ってくれたのだ。</div></details><p>天台・<span class='kw'>真言宗</span>がさかんになると、神秘的な<span class='kw'><ruby>密教芸術<rt>みっきょうげいじゅつ</rt></ruby></span>が新しく発展した。建築では、それまでの形式にとらわれない伽藍配置で、山の中に寺のお堂や塔がつくられるようになった。<span class='kw'><ruby>室生寺<rt>むろうじ</rt></ruby></span>の金堂などがその代表で、山地を切り開いて寺を建てた平安時代初期の特色がうかがえる、数少ない建物だ。</p><div class='deep'><span class='bx-tag'>難関＋</span>天平の美術が国家仏教の壮大さ・端正さを示したのに対し、弘仁貞観の<span class='kw'>密教</span>美術は神秘的で力強い。</div><p>彫刻では、<span class='kw'>密教</span>と関わりのある<span class='kw'>如意輪観音</span>や<span class='kw'>不動明王</span>などの仏像が多くつくられた。これらの仏像は、1本の木から全身を彫り出す<span class='kw'><ruby>一木造<rt>いちぼくづくり</rt></ruby></span>で、量感あふれる表現のものが多い。<span class='kw'>室生寺</span>の弥勒堂に伝わった<ruby>釈迦<rt>しゃか</rt></ruby>如来坐像は、ふくよかな体と表情、鋭い衣のしわの表現（<span class='kw'><ruby>翻波式<rt>ほんぱしき</rt></ruby></span>）をもつ。大阪府の<span class='kw'><ruby>観心寺如意輪観音像<rt>かんしんじにょいりんかんのんぞう</rt></ruby></span>は、<span class='kw'>密教</span>と結びついた<span class='kw'>如意輪観音</span>像の代表作だ。また<span class='kw'>神仏習合</span>を反映して、神の姿を彫った神像彫刻もさかんになり、<span class='kw'>薬師寺</span>の<span class='kw'><ruby>僧形八幡神像<rt>そうぎょうはちまんしんぞう</rt></ruby></span>や神功皇后像などがある。</p><div class='deep'><span class='bx-tag'>難関＋</span><span class='kw'>一木造</span>の重量感、<span class='kw'>翻波式</span>の鋭い衣のひだ、<span class='kw'>不動明王</span>の怒りの表情、<span class='kw'>曼荼羅</span>の幾何学的な宇宙観——いずれも“見る者を圧倒し、<span class='kw'>加持祈祷</span>の世界へ引き込む”ための表現だった。</div><div class='deep'><span class='bx-tag'>難関＋</span><b>整理のツボ</b>　<span class='kw'>密教</span>美術＝<span class='kw'>室生寺金堂</span>(建築)、<span class='kw'>一木造</span>・<span class='kw'>翻波式</span>・<span class='kw'>如意輪観音</span>・<span class='kw'>不動明王</span>(彫刻)、<span class='kw'>両界曼荼羅</span>・黄不動(絵画)。天平(国家仏教)との対比で覚える。</div><div class='recall'><span class='bx-tag'>ここで思い出そう</span>仏像のつくり方の移り変わりを並べておこう。<b>飛鳥＝金銅像・木像</b>（古代②）、<b>天平＝<span class='kw'>塑像</span>・<span class='kw'>乾漆像</span></b>が加わる（古代③）、<b>弘仁・貞観＝<span class='kw'>一木造</span></b>（古代④）、<b><span class='kw'><ruby>国風文化<rt>こくふうぶんか</rt></ruby></span>＝<span class='kw'><ruby>寄木造<rt>よせぎづくり</rt></ruby></span></b>（古代⑤の<span class='kw'><ruby>定朝<rt>じょうちょう</rt></ruby></span>）、そして<b><span class='kw'>鎌倉</span>＝<span class='kw'>寄木造</span>で<span class='kw'><ruby>運慶<rt>うんけい</rt></ruby></span>・<span class='kw'><ruby>快慶<rt>かいけい</rt></ruby></span>の写実</b>（中世③）。一本の木から彫る<span class='kw'>一木造</span>は重くて大きさに限りがある。だから次の時代に、パーツを組み合わせる<span class='kw'>寄木造</span>が生まれるのだ。</div><p>絵画では、<span class='kw'><ruby>園城寺<rt>おんじょうじ</rt></ruby></span>の<span class='kw'><ruby>不動明王像<rt>ふどうみょうおうぞう</rt></ruby></span>（黄不動）のような、おごそかで神秘的な仏画が描かれたほか、<span class='kw'>神護寺</span>や<span class='kw'><ruby>教王護国寺<rt>きょうおうごこくじ</rt></ruby></span>の<span class='kw'><ruby>両界曼荼羅<rt>りょうかいまんだら</rt></ruby></span>など、<span class='kw'>密教</span>の世界観を表した<span class='kw'><ruby>曼荼羅<rt>まんだら</rt></ruby></span>が発達した。<span class='kw'>密教</span>の中心の仏は<span class='kw'><ruby>大日如来<rt>だいにちにょらい</rt></ruby></span>で、その知恵を表す<b><ruby>金剛<rt>こんごう</rt></ruby>界</b>と、慈悲を表す<b><span class='kw'>胎蔵界</span></b>という二つの仏の世界を、整然と図にしたのが<span class='kw'>曼荼羅</span>だ。</p><p>書道では、唐風の書が広まり、<span class='kw'><ruby>嵯峨天皇<rt>さがてんのう</rt></ruby></span>・<span class='kw'><ruby>空海<rt>くうかい</rt></ruby></span>・<span class='kw'><ruby>橘逸勢<rt>たちばなのはやなり</rt></ruby></span>らの書の名人が出て、のちに<span class='kw'><ruby>三筆<rt>さんぴつ</rt></ruby></span>と呼ばれた。<span class='kw'>空海</span>が<span class='kw'><ruby>最澄<rt>さいちょう</rt></ruby></span>に送った手紙<span class='kw'><ruby>風信帖<rt>ふうしんじょう</rt></ruby></span>は、書き出しが「風信雲書、天より翔臨す」（あなたからのお手紙が、天から舞いおりてきました）であることから、この名前がある。</p><div class='yodan'><span class='bx-tag'>ちょっと脱線</span><b>仲良しだった<span class='kw'>最澄</span>と<span class='kw'>空海</span>は、やがてけんか別れした。</b><span class='kw'>風信帖</span>は、<span class='kw'>空海</span>が<span class='kw'>最澄</span>に送った手紙だ。二人は同じ804年の<span class='kw'><ruby>遣唐使<rt>けんとうし</rt></ruby></span>で唐に渡り、帰国後もしばらくは親しくつき合った。<span class='kw'>最澄</span>は年下の<span class='kw'>空海</span>から<span class='kw'>密教</span>を学ぼうとして、お経を借りたり、弟子を<span class='kw'>空海</span>のもとに送ったりした。ところが、<span class='kw'>空海</span>が大事なお経の貸し出しを断ったり、<span class='kw'>最澄</span>の弟子が<span class='kw'>空海</span>のもとにとどまってしまったりして、二人の仲はしだいに冷えていったと伝えられる。</div><div class='nyushi'><span class='bx-tag'>入試ではこう出る</span><span class='kw'>密教</span>芸術は<b>写真問題</b>で出る。<b><span class='kw'>室生寺金堂</span>・<span class='kw'>室生寺</span>釈迦如来坐像（<span class='kw'>一木造</span>・<span class='kw'>翻波式</span>）・観心寺<span class='kw'>如意輪観音</span>像・<span class='kw'>薬師寺</span><span class='kw'>僧形八幡神像</span>・<span class='kw'>園城寺</span><span class='kw'>不動明王</span>像（黄不動）・<span class='kw'>教王護国寺</span><span class='kw'>両界曼荼羅</span></b>。<span class='kw'>三筆</span>＝<b><span class='kw'>嵯峨天皇</span>・<span class='kw'>空海</span>・<span class='kw'>橘逸勢</span></b>（<span class='kw'>国風文化</span>の<span class='kw'><ruby>三跡<rt>さんせき</rt></ruby></span>＝<span class='kw'><ruby>小野道風<rt>おののみちかぜ</rt></ruby></span>・<span class='kw'><ruby>藤原佐理<rt>ふじわらのすけまさ</rt></ruby></span>・<span class='kw'><ruby>藤原行成<rt>ふじわらのゆきなり</rt></ruby></span>と区別）。「平安初期の仏像は<span class='kw'>寄木造</span>」は誤り（<b><span class='kw'>一木造</span></b>）。</div>",
+   "visual": "<div class='viz'><div class='viz-cap'>図 ── 密教美術</div><div class='vrow'><div class='vnode'><span class='vt'>建築</span><span class='vs2'>室生寺金堂（山間）</span></div><div class='vnode'><span class='vt'>彫刻</span><span class='vs2'>一木造・翻波式・不動明王</span></div><div class='vnode'><span class='vt'>絵画</span><span class='vs2'>両界曼荼羅・黄不動</span></div></div></div>",
+   "colTitle": "",
+   "colHtml": "",
+   "exam": ""
+  }
+ ],
+ "quiz": [
+  {
+   "id": 1,
+   "unit": "桓武天皇",
+   "link": "01",
+   "q": "794年に平安京へ遷都し、律令政治の立て直しをはかった天皇は？",
+   "a": "桓武天皇",
+   "exp": "仏教政治の弊害を改めるため、まず784年に長岡京、次いで794年に平安京へ遷都した。",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 2,
+   "unit": "桓武天皇",
+   "link": "01",
+   "q": "794年、桓武天皇が都を移した先は？",
+   "a": "平安京",
+   "exp": "山背国は山城国と改められた。以後、鎌倉幕府成立まで約400年間を平安時代という。",
+   "d": 2,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 3,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "蝦夷征討のため桓武天皇が征夷大将軍に任じた人物は？",
+   "a": "坂上田村麻呂",
+   "exp": "胆沢城・志波城を築いて東北支配を前進させた。鎮守府を多賀城から胆沢城へ移した。",
+   "d": 3,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 4,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "802年に坂上田村麻呂が築き、阿弖流為を服属させた城は？",
+   "a": "胆沢城",
+   "exp": "翌803年には北上川上流に志波城も築かれた。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 5,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "坂上田村麻呂に服属した、蝦夷の族長は？",
+   "a": "阿弖流為",
+   "exp": "789年には紀古佐美の大軍を破ったが、802年に坂上田村麻呂に服属した。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 6,
+   "unit": "桓武天皇",
+   "link": "03",
+   "q": "桓武天皇が新設した、国司交替の事務引継ぎを監督する令外官は？",
+   "a": "勘解由使",
+   "exp": "解由状を審査した。地方政治の緩みをなくすための改革の一つ。",
+   "d": 3,
+   "i": 4,
+   "f": 4
+  },
+  {
+   "id": 7,
+   "unit": "桓武天皇",
+   "link": "03",
+   "q": "792年、軍団・兵士の廃止にかわって採用された、郡司の子弟らによる兵は？",
+   "a": "健児",
+   "exp": "東北・九州などを除いて軍団を廃止。少数精鋭の志願兵だった。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 8,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "805年、蝦夷征討と平安京造営の停止を決めた論争は？",
+   "a": "徳政相論",
+   "exp": "藤原緒嗣が軍事と造作の停止を主張し、桓武がこれを採用した。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 9,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "810年、平城太上天皇と嵯峨天皇が対立した事件は？",
+   "a": "薬子の変",
+   "exp": "嵯峨側が勝利し、藤原薬子は自殺、藤原仲成は射殺された。平城太上天皇の変ともいう。",
+   "d": 3,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 10,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "薬子の変の際、天皇の命令を太政官に伝えるために設けられた秘書官長は？",
+   "a": "蔵人頭",
+   "exp": "やがて蔵人は天皇の側近として宮廷で重要な役割を果たすようになった。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 11,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "最初の蔵人頭に任じられた人物は？",
+   "a": "藤原冬嗣",
+   "exp": "藤原北家。子孫が摂関政治を担うことになる。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 12,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "嵯峨天皇が設けた、平安京内の警察に当たる令外官は？",
+   "a": "検非違使",
+   "exp": "のちには裁判もおこない、京の統治を担う重要な職となった。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 13,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "弘仁格式・貞観格式・延喜格式の総称は？",
+   "a": "三代格式",
+   "exp": "格は律令の補足・修正、式は施行細則。令義解（公式解釈）・令集解（私的注釈）も編まれた。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 14,
+   "unit": "弘仁貞観文化",
+   "link": "06",
+   "q": "文芸によって国家の繁栄をめざす、弘仁貞観文化の思想は？",
+   "a": "文章経国",
+   "exp": "この思想のもと漢文学が栄え、凌雲集など勅撰漢詩集が編まれた。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 15,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "唐風の書にすぐれた嵯峨天皇・空海・橘逸勢の3人の総称は？",
+   "a": "三筆",
+   "exp": "空海が最澄に送った書状『風信帖』が有名。",
+   "d": 3,
+   "i": 4,
+   "f": 4
+  },
+  {
+   "id": 16,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "最澄が比叡山に開き、のちに仏教教学の中心地となった寺は？",
+   "a": "延暦寺",
+   "exp": "最澄は天台宗を開き、大乗戒壇の設立をめざした。鎌倉新仏教の開祖の多くがここで学んだ。",
+   "d": 3,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 17,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "空海が高野山に開いた、真言宗の寺は？",
+   "a": "金剛峯寺",
+   "exp": "空海は嵯峨天皇から与えられた教王護国寺（東寺）も密教の根本道場とした。",
+   "d": 3,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 18,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "大日如来を中心に密教の世界観を図にした、金剛界・胎蔵界からなる絵は？",
+   "a": "曼荼羅",
+   "exp": "神護寺・教王護国寺の両界曼荼羅が代表。園城寺の不動明王像（黄不動）も密教絵画の名作。",
+   "d": 3,
+   "i": 4,
+   "f": 3
+  },
+  {
+   "id": 19,
+   "unit": "桓武天皇",
+   "link": "01",
+   "q": "渡来系氏族の血を引く桓武天皇の母は？",
+   "a": "高野新笠",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 20,
+   "unit": "桓武天皇",
+   "link": "01",
+   "q": "784年に遷都された山背国の都は？",
+   "a": "長岡京",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 21,
+   "unit": "桓武天皇",
+   "link": "01",
+   "q": "長岡京造営の中心で、785年に暗殺された人物は？",
+   "a": "藤原種継",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 22,
+   "unit": "桓武天皇",
+   "link": "01",
+   "q": "藤原種継暗殺事件の首謀者とされた桓武天皇の弟は？",
+   "a": "早良親王",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 23,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "780年に反乱をおこし、多賀城を焼いた蝦夷の豪族は？",
+   "a": "伊治呰麻呂",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 24,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "803年に北上川上流に築かれた城柵は？",
+   "a": "志波城",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 25,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "胆沢城に移された、東北の軍事を統轄する機関は？",
+   "a": "鎮守府",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 26,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "服属して関東以西に移住させられた蝦夷を何という？",
+   "a": "俘囚",
+   "exp": "",
+   "d": 2,
+   "i": 4,
+   "f": 4
+  },
+  {
+   "id": 27,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "805年、軍事と造作の停止を主張した人物は？",
+   "a": "藤原緒嗣",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 28,
+   "unit": "桓武天皇",
+   "link": "02",
+   "q": "805年、軍事と造作の継続を主張した人物は？",
+   "a": "菅野真道",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 29,
+   "unit": "桓武天皇",
+   "link": "03",
+   "q": "前任国司に与えられる、引継ぎに問題がないことを示す文書は？",
+   "a": "解由状",
+   "exp": "",
+   "d": 2,
+   "i": 4,
+   "f": 4
+  },
+  {
+   "id": 30,
+   "unit": "桓武天皇",
+   "link": "03",
+   "q": "負担の少ない女性の登録を増やすなどの戸籍の偽りは？",
+   "a": "偽籍",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 31,
+   "unit": "桓武天皇",
+   "link": "03",
+   "q": "桓武天皇が班田を12年に1回に改めたことは？",
+   "a": "一紀一班",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 32,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "810年、平城京への再遷都をめぐっておこった政変は？",
+   "a": "平城太上天皇の変",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 33,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "平城太上天皇の変で自殺した、太上天皇に寵愛された女性は？",
+   "a": "藤原薬子",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 34,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "律令の補足・修正法を何という？",
+   "a": "格",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 35,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "律令の施行細則を何という？",
+   "a": "式",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 36,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "833年に清原夏野らが編んだ、令の公式な解釈書は？",
+   "a": "令義解",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 37,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "惟宗直本が編んだ令の注釈集は？",
+   "a": "令集解",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 38,
+   "unit": "嵯峨天皇",
+   "link": "05",
+   "q": "823年に大宰府管内に設けられた直営田は？",
+   "a": "公営田",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 39,
+   "unit": "嵯峨天皇",
+   "link": "05",
+   "q": "879年に畿内に設けられた直営田は？",
+   "a": "元慶官田",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 40,
+   "unit": "嵯峨天皇",
+   "link": "05",
+   "q": "天皇が公費で開墾した田は？",
+   "a": "勅旨田",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 41,
+   "unit": "嵯峨天皇",
+   "link": "05",
+   "q": "天皇と近い関係にあり、私的に土地を集めた少数の皇族・貴族は？",
+   "a": "院宮王臣家",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 42,
+   "unit": "弘仁貞観文化",
+   "link": "06",
+   "q": "814年に編まれた最初の勅撰漢詩集は？",
+   "a": "凌雲集",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 43,
+   "unit": "弘仁貞観文化",
+   "link": "06",
+   "q": "827年に編まれた勅撰漢詩集は？",
+   "a": "経国集",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 44,
+   "unit": "弘仁貞観文化",
+   "link": "06",
+   "q": "藤原氏が設けた大学別曹は？",
+   "a": "勧学院",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 45,
+   "unit": "弘仁貞観文化",
+   "link": "06",
+   "q": "空海が創設した、庶民にも開かれた教育施設は？",
+   "a": "綜芸種智院",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 46,
+   "unit": "弘仁貞観文化",
+   "link": "06",
+   "q": "中国の歴史・文学を学ぶ大学の学科は？",
+   "a": "紀伝道",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 47,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "最澄が大乗戒壇の設立を求めて著した書物は？",
+   "a": "顕戒論",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 48,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "空海が儒教・道教に対する仏教の優位を論じた書物は？",
+   "a": "三教指帰",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 49,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "空海が嵯峨天皇から与えられた平安京の寺は？",
+   "a": "教王護国寺",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 50,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "最澄の後継者で、『入唐求法巡礼行記』を著した僧は？",
+   "a": "円仁",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 51,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "円仁が唐での日々を記録した旅行記は？",
+   "a": "入唐求法巡礼行記",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 52,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "園城寺に拠った円珍の門流を何という？",
+   "a": "寺門派",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 53,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "災いを避け幸福を追求する密教の呪法・祈りを何という？",
+   "a": "加持祈禱",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 54,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "山岳修行によって呪力を得る、天台・真言を源流の一つとする宗教は？",
+   "a": "修験道",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 55,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "1本の木から仏像の全身を彫り出す技法は？",
+   "a": "一木造",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 56,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "室生寺釈迦如来坐像などに見られる衣文の表現は？",
+   "a": "翻波式",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 57,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "金剛界と胎蔵界を図化した密教の絵画は？",
+   "a": "両界曼荼羅",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 58,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "空海が最澄に送った書状は？",
+   "a": "風信帖",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 59,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "天台宗を開いた僧は？",
+   "a": "最澄",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 60,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "真言宗を開いた僧は？",
+   "a": "空海",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 61,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "最澄が設立をめざした、東大寺戒壇とは別の独自の戒壇は？",
+   "a": "大乗戒壇",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 62,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "蔵人頭や検非違使を置いた天皇は？",
+   "a": "嵯峨天皇",
+   "exp": "",
+   "d": 1,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 63,
+   "unit": "嵯峨天皇",
+   "link": "04",
+   "q": "平城京への再遷都をはかった、嵯峨天皇の兄の上皇は？",
+   "a": "平城太上天皇",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 64,
+   "unit": "弘仁貞観文化",
+   "link": "08",
+   "q": "密教の中心の仏は？",
+   "a": "大日如来",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  },
+  {
+   "id": 65,
+   "unit": "弘仁貞観文化",
+   "link": "07",
+   "q": "円仁の門流を何という？",
+   "a": "山門派",
+   "exp": "",
+   "d": 2,
+   "i": 5,
+   "f": 4
+  }
+ ],
+ "terms": [
+  {
+   "term": "平安京",
+   "reading": "へいあんきょう",
+   "tag": "都城",
+   "desc": "794年に桓武天皇が遷都した都。以後約400年間を平安時代という。"
+  },
+  {
+   "term": "長岡京",
+   "reading": "ながおかきょう",
+   "tag": "都城",
+   "desc": "784年に桓武天皇が遷都した都。藤原種継暗殺事件などで完成が遅れ、平安京に移った。"
+  },
+  {
+   "term": "早良親王",
+   "reading": "さわらしんのう",
+   "tag": "人物",
+   "desc": "桓武天皇の弟。藤原種継暗殺の首謀者とされ廃太子・憤死。その怨霊が平安遷都の一因とされた。"
+  },
+  {
+   "term": "坂上田村麻呂",
+   "reading": "さかのうえのたむらまろ",
+   "tag": "人物",
+   "desc": "桓武天皇に征夷大将軍に任じられ、胆沢城を築いて阿弖流為を服属させた。"
+  },
+  {
+   "term": "阿弖流為",
+   "reading": "あてるい",
+   "tag": "人物",
+   "desc": "蝦夷の族長。紀古佐美の大軍を破ったが、802年に坂上田村麻呂に服属した。"
+  },
+  {
+   "term": "勘解由使",
+   "reading": "かげゆし",
+   "tag": "令外官",
+   "desc": "桓武天皇が新設。国司交替の際の解由状を審査し、引継ぎを監督した。"
+  },
+  {
+   "term": "健児",
+   "reading": "こんでい",
+   "tag": "制度",
+   "desc": "792年、軍団・兵士にかわって採用された、郡司の子弟・有力農民による少数精鋭の兵。"
+  },
+  {
+   "term": "徳政相論",
+   "reading": "とくせいそうろん",
+   "tag": "事件",
+   "desc": "805年、藤原緒嗣の主張により蝦夷征討と平安京造営を停止した論争。"
+  },
+  {
+   "term": "薬子の変",
+   "reading": "くすこのへん",
+   "tag": "事件",
+   "desc": "810年、平城太上天皇と嵯峨天皇の対立。嵯峨が勝ち、藤原薬子は自殺した。"
+  },
+  {
+   "term": "蔵人頭",
+   "reading": "くろうどのとう",
+   "tag": "令外官",
+   "desc": "嵯峨天皇が薬子の変の際に設けた天皇の秘書官長。藤原冬嗣らが任じられた。"
+  },
+  {
+   "term": "検非違使",
+   "reading": "けびいし",
+   "tag": "令外官",
+   "desc": "嵯峨天皇が設けた平安京内の警察。のちに裁判も担った。"
+  },
+  {
+   "term": "令外官",
+   "reading": "りょうげのかん",
+   "tag": "制度",
+   "desc": "令に定めのない官職。勘解由使・蔵人頭・検非違使など。"
+  },
+  {
+   "term": "三代格式",
+   "reading": "さんだいきゃくしき",
+   "tag": "法令",
+   "desc": "弘仁・貞観・延喜の格式の総称。格は律令の補足修正、式は施行細則。"
+  },
+  {
+   "term": "天台宗",
+   "reading": "てんだいしゅう",
+   "tag": "仏教",
+   "desc": "最澄が開いた宗派。比叡山延暦寺が拠点。密教（台密）も取り入れた。"
+  },
+  {
+   "term": "真言宗",
+   "reading": "しんごんしゅう",
+   "tag": "仏教",
+   "desc": "空海が開いた密教（東密）の宗派。高野山金剛峯寺・東寺が拠点。"
+  },
+  {
+   "term": "密教",
+   "reading": "みっきょう",
+   "tag": "仏教",
+   "desc": "秘密の呪法の伝授で悟りを開く教え。加持祈祷による現世利益が貴族に支持された。"
+  }
+ ],
+ "goro": [
+  {
+   "phrase": "鳴くよ（794）ウグイス平安京",
+   "ans": "794年 ── 平安京遷都",
+   "note": "桓武天皇。"
+  },
+  {
+   "phrase": "最澄＝天台宗＝延暦寺（比叡山）／空海＝真言宗＝金剛峯寺（高野山）・教王護国寺（東寺）",
+   "ans": "まとめ ── 平安仏教の二宗",
+   "note": ""
+  },
+  {
+   "phrase": "嵯峨天皇・空海・橘逸勢",
+   "ans": "まとめ ── 三筆（唐風の書）",
+   "note": "国風文化の三跡と区別。"
+  },
+  {
+   "phrase": "凌雲集 → 文華秀麗集 → 経国集",
+   "ans": "まとめ ── 勅撰漢詩集（この順）",
+   "note": ""
+  }
+ ],
+ "figures": {
+  "title": "平安初期の人びと",
+  "nodes": [
+   {
+    "id": "kanmu",
+    "name": "桓武天皇",
+    "role": "平安遷都・律令再建",
+    "x": 30,
+    "y": 16
+   },
+   {
+    "id": "saga",
+    "name": "嵯峨天皇",
+    "role": "薬子の変・格式",
+    "x": 70,
+    "y": 16
+   },
+   {
+    "id": "heizei",
+    "name": "平城太上天皇",
+    "role": "嵯峨と対立",
+    "x": 82,
+    "y": 44
+   },
+   {
+    "id": "kusuko",
+    "name": "藤原薬子",
+    "role": "平城方・自殺",
+    "x": 82,
+    "y": 74
+   },
+   {
+    "id": "fuyutsugu",
+    "name": "藤原冬嗣",
+    "role": "嵯峨方・蔵人頭",
+    "x": 52,
+    "y": 40
+   },
+   {
+    "id": "tamuramaro",
+    "name": "坂上田村麻呂",
+    "role": "征夷大将軍",
+    "x": 20,
+    "y": 44
+   },
+   {
+    "id": "saicho",
+    "name": "最澄",
+    "role": "天台宗・延暦寺",
+    "x": 26,
+    "y": 80
+   },
+   {
+    "id": "kukai",
+    "name": "空海",
+    "role": "真言宗・金剛峯寺",
+    "x": 60,
+    "y": 82
+   }
+  ],
+  "links": [
+   {
+    "from": "kanmu",
+    "to": "saga",
+    "label": "父子",
+    "kind": "mentor"
+   },
+   {
+    "from": "kanmu",
+    "to": "tamuramaro",
+    "label": "征夷大将軍に任命",
+    "kind": "ally"
+   },
+   {
+    "from": "heizei",
+    "to": "saga",
+    "label": "兄弟・薬子の変で対立",
+    "kind": "rival"
+   },
+   {
+    "from": "heizei",
+    "to": "kusuko",
+    "label": "寵愛",
+    "kind": "ally"
+   },
+   {
+    "from": "saga",
+    "to": "kusuko",
+    "label": "薬子の変で倒す",
+    "kind": "rival"
+   },
+   {
+    "from": "saga",
+    "to": "fuyutsugu",
+    "label": "蔵人頭に任命",
+    "kind": "ally"
+   },
+   {
+    "from": "kanmu",
+    "to": "saicho",
+    "label": "新仏教を支持",
+    "kind": "ally"
+   },
+   {
+    "from": "kanmu",
+    "to": "kukai",
+    "label": "新仏教を支持",
+    "kind": "ally"
+   },
+   {
+    "from": "saga",
+    "to": "kukai",
+    "label": "東寺を与える",
+    "kind": "ally"
+   }
+  ],
+  "dramas": [
+   {
+    "tag": "ミニドラマ",
+    "title": "なぜ都を二度も移した？ ── 長岡京から平安京へ",
+    "cast": "桓武天皇 × 早良親王（桓武の弟・皇太子）",
+    "lines": [
+     {
+      "who": "桓武天皇",
+      "say": "奈良の大寺院は政治に口を出しすぎる。道鏡みたいなことは二度とごめんだ。寺は置いていって、新しい都で天皇の力を立て直す（長岡京、784年）。"
+     },
+     {
+      "who": "語り",
+      "say": "ところが翌年、都づくりの責任者だった藤原種継が暗殺された。"
+     },
+     {
+      "who": "桓武天皇",
+      "say": "弟の早良親王が関わっていたらしい。皇太子からおろして、流罪だ！"
+     },
+     {
+      "who": "早良親王",
+      "say": "わたしは無実だ！ ……（食事をとらずに抗議を続け、流される途中で死んでしまう）"
+     },
+     {
+      "who": "桓武天皇",
+      "say": "そのあと、母も后も次々に亡くなり、息子も病気になった。洪水まで起きて、長岡京はちっともできあがらない……。早良のたたりだ。もうこの都は捨てる！"
+     },
+     {
+      "who": "語り",
+      "say": "794年、桓武天皇は平安京に都を移した。"
+     }
+    ],
+    "note": "平安遷都の理由＝①奈良の大寺院の政治への影響から離れる ②藤原種継暗殺・早良親王の死（怨霊）と長岡京造営の難航。784長岡京 → 794平安京。"
+   },
+   {
+    "tag": "ミニドラマ",
+    "title": "蝦夷との戦いは、なぜ打ち切られた？ ── 阿弖流為と徳政相論",
+    "cast": "阿弖流為（蝦夷のリーダー）× 坂上田村麻呂（征夷大将軍）× 藤原緒嗣・菅野真道",
+    "lines": [
+     {
+      "who": "阿弖流為",
+      "say": "ここ胆沢は、われら蝦夷の土地だ。朝廷の大軍（紀古佐美の軍）が来たが、たたきのめしてやった（789年）。"
+     },
+     {
+      "who": "坂上田村麻呂",
+      "say": "征夷大将軍として来た。今度はそうはいかん。胆沢に城を築いて、ここを朝廷の拠点にする（胆沢城、802年）。"
+     },
+     {
+      "who": "阿弖流為",
+      "say": "……これ以上戦えば、仲間がみんな死ぬ。降伏しよう。"
+     },
+     {
+      "who": "語り",
+      "say": "阿弖流為は降伏して都に連れていかれ、処刑された（田村麻呂は命を助けるよう願ったが、聞き入れられなかった）。翌年には、さらに北に志波城が築かれた。"
+     },
+     {
+      "who": "藤原緒嗣",
+      "say": "天皇、民は蝦夷との戦い（軍事）と平安京づくり（造作）で苦しんでいます。どちらもやめましょう！"
+     },
+     {
+      "who": "菅野真道",
+      "say": "いや、続けるべきです。"
+     },
+     {
+      "who": "桓武天皇",
+      "say": "……緒嗣の言うとおりにしよう。二つの大事業は打ち切りだ（徳政相論、805年）。"
+     }
+    ],
+    "note": "桓武天皇の二大事業＝蝦夷征討（坂上田村麻呂・胆沢城802・阿弖流為の降伏）と平安京造営。民の負担が重く、徳政相論（805・藤原緒嗣×菅野真道）で両方とも停止。"
+   },
+   {
+    "tag": "ミニドラマ",
+    "title": "藤原北家は、なぜ出世の糸口をつかんだ？ ── 薬子の変",
+    "cast": "平城太上天皇（兄）・藤原薬子 × 嵯峨天皇（弟）",
+    "lines": [
+     {
+      "who": "平城太上天皇",
+      "say": "病気で弟の嵯峨に位をゆずったけど、元気になってきた。やっぱり政治はわたしがやりたい。都も昔の平城京に戻そう！"
+     },
+     {
+      "who": "藤原薬子",
+      "say": "そうですとも。兄の仲成とわたしがついております。"
+     },
+     {
+      "who": "嵯峨天皇",
+      "say": "兄上が勝手に命令を出すので、朝廷が二つに割れている（二所朝廷）。……こちらの命令がもれないように、天皇の秘書の役所をつくる（蔵人所）。トップ（蔵人頭）には、信用できる藤原冬嗣を置く。"
+     },
+     {
+      "who": "語り",
+      "say": "810年、嵯峨天皇は先手を打って兵を出した。平城太上天皇は出家し、薬子は自殺、仲成は射殺された（薬子の変・平城太上天皇の変）。"
+     },
+     {
+      "who": "嵯峨天皇",
+      "say": "都の警察と裁判もしっかりさせる（検非違使）。法律も時代に合わせて整える（弘仁格式）。"
+     },
+     {
+      "who": "語り",
+      "say": "このとき嵯峨天皇の信頼を得た藤原冬嗣の北家が、のちに摂関家として大きな力をもっていく（古代⑤）。"
+     }
+    ],
+    "note": "薬子の変（810）＝平城太上天皇・藤原薬子・仲成 × 嵯峨天皇。嵯峨は蔵人所を設け、藤原冬嗣を蔵人頭に。のち検非違使・弘仁格式。冬嗣の北家台頭のきっかけ。"
+   }
+  ]
+ },
+ "cloze": [
+  {
+   "title": "桓武天皇の政治",
+   "text": "光仁天皇のあとを継いだ[[桓武天皇]]は、仏教政治の弊害を改めるため、784年に山背国の[[長岡京]]に遷都した。しかし造営を主導した[[藤原種継]]が暗殺され、首謀者とされた皇太子の[[早良親王]]が退けられた。親王の怨霊への恐れなどから、794年に再び[[平安京]]に遷都した。東北では780年に[[伊治呰麻呂]]が反乱をおこして多賀城を焼き、789年には紀古佐美の軍が族長[[阿弖流為]]に大敗した。その後、[[征夷大将軍]]となった[[坂上田村麻呂]]は802年に[[胆沢城]]を築き、鎮守府を多賀城から移した。805年、天皇は蝦夷との戦争と造都を続けるべきかを議論させ（[[徳政相論]]）、二大事業の停止を主張する[[藤原緒嗣]]の意見を採用した。地方政治の立て直しのため、天皇は国司交替の事務引継ぎを監督する[[勘解由使]]を置いた。これは律令に規定のない[[令外官]]の一つである。また792年には東北や九州などを除いて軍団を廃止し、郡司の子弟などを[[健児]]として採用した。班田の期間は12年に1回に改められた（[[一紀一班]]）。"
+  },
+  {
+   "title": "嵯峨天皇の政治と9世紀の社会",
+   "text": "前代の改革方針は、平城天皇・嵯峨天皇に受け継がれた。810年、平城京への再遷都をはかる平城太上天皇と嵯峨天皇が対立すると、嵯峨天皇側がすばやく兵を出し、太上天皇に寵愛された[[藤原薬子]]は自殺した。この際、天皇の命令をすみやかに太政官に伝えるため[[蔵人頭]]が置かれ、[[藤原冬嗣]]らが任じられた。また京内の警察にあたる[[検非違使]]も置かれた。法制面では、律令を補足・修正する法と施行細則が編集されて弘仁格式がつくられ、のちの貞観・延喜の格式とあわせて[[三代格式]]と呼ばれる。833年には令の公式注釈書である『[[令義解]]』が編まれた。一方、9世紀には負担を逃れるため戸籍に女性を多く登録する[[偽籍]]が増え、班田の実施は困難になった。政府は823年に大宰府管内に[[公営田]]を、879年に畿内に元慶官田を設けて財源の確保をはかった。天皇も公費で開墾した[[勅旨田]]をもち、天皇と近い関係にある少数の皇族・貴族は[[院宮王臣家]]と呼ばれて私的に土地を集積した。"
+  },
+  {
+   "title": "弘仁・貞観文化",
+   "text": "平安遷都から9世紀末ごろまでの文化を、嵯峨・清和天皇の時代の年号から弘仁・貞観文化という。文芸を中心として国家の繁栄をめざす[[文章経国]]の思想が広まり、814年の『[[凌雲集]]』をはじめとする勅撰漢詩集が編まれた。有力貴族は一族の子弟のために大学別曹を設け、藤原氏は[[勧学院]]を置いた。また庶民にも門戸を開いた[[綜芸種智院]]も創設された。仏教では、804年に入唐した[[最澄]]が天台宗を開き、東大寺の戒壇とは別に[[大乗戒壇]]の設立をめざして『[[顕戒論]]』を著した。同じく入唐した[[空海]]は、長安で密教を学んで帰国し、高野山に[[金剛峯寺]]を建てて真言宗を開いた。天台宗の開祖の後継者である[[円仁]]は唐での見聞を『[[入唐求法巡礼行記]]』に記し、天台宗にも密教が本格的に取り入れられた。天台・真言の両宗は[[加持祈禱]]による現世利益の面から皇族・貴族の支持を集め、山岳信仰と結びついて[[修験道]]の源流となった。密教芸術では、室生寺金堂などの寺院建築や、1本の木から彫り出す[[一木造]]の仏像がつくられ、密教の世界観を表した[[両界曼荼羅]]も描かれた。書道では嵯峨天皇らとともに[[橘逸勢]]が三筆と称された。"
+  }
+ ],
+ "ronjutsu": [
+  {
+   "q": "桓武天皇がおこなった政治改革を説明せよ。",
+   "hint": "遷都／勘解由使・健児／一紀一班・雑徭半減／蝦夷征討と徳政相論。",
+   "points": [
+    "仏教勢力の強い平城京を離れ、784年に<b>長岡京</b>、794年に<b>平安京</b>に遷都した",
+    "国司の交替を監督する<b>勘解由使</b>を置き、地方政治を引きしめた",
+    "792年に東北・九州などを除いて軍団を廃止し、郡司の子弟などを<b>健児</b>とした",
+    "班田を12年に1回（<b>一紀一班</b>）とし、雑徭を年30日に半減した",
+    "<b>坂上田村麻呂</b>を征夷大将軍として蝦夷を攻めたが、805年の<b>徳政相論</b>で軍事と造作を中止した"
+   ],
+   "chars": "200字",
+   "level": "難易度 ★★★（最重要）",
+   "comment": "「造作（都づくり）と軍事」が二大事業だったことを軸にする。"
+  },
+  {
+   "q": "嵯峨天皇の時代に令外官が設けられた理由と、その内容を説明せよ。",
+   "hint": "平城太上天皇の変／蔵人所／検非違使／弘仁格式。",
+   "points": [
+    "810年の<b>平城太上天皇の変</b>（薬子の変）で、天皇と太上天皇の対立がおきた",
+    "天皇の命令をすばやく伝えるため、<b>蔵人所</b>を置き、<b>藤原冬嗣</b>らを<b>蔵人頭</b>に任じた",
+    "京の治安を守る<b>検非違使</b>を置いた",
+    "律令に規定のないこれらの官職を<b>令外官</b>という。また律令を補う<b>弘仁格式</b>が編纂された"
+   ],
+   "chars": "150字",
+   "level": "難易度 ★★",
+   "comment": "令外官は「律令の外に必要に応じて置いた官職」と定義を書く。"
+  }
+ ]
+}
