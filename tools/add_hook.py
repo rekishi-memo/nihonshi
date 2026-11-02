@@ -1,3 +1,4 @@
+import sys; sys.exit("add_hook.py は使わない（型どおりの問いは授業を平坦にした。2026-11-02 に declutter.py で消した）")
 # 古い授業に「冒頭の問い」「答えの段落」「まとめ（point）」を足す。データは hook_old.py の HOOK。
 #   python3 add_hook.py ../app/source.html ../app/source.html
 # すでに足してあるものは足さない（問いの書き出しで判定）。

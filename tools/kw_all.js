@@ -15,7 +15,7 @@ for(const w of fs.readFileSync('kw_extra.txt','utf8').split(/\s+/)) if(w.length>
 for(const s of STOP) G.delete(s);
 const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 function vocabFor(pid){ const V=new Set(G); for(const x of local[pid]) if(!STOP.has(x)||LOCAL_OK.has(x)) V.add(x); return [...V].sort((a,b)=>b.length-a.length); }
-const BLOCK=new Set(['蘭学階梯','文人画家','宇治殿','伴大納言','熊野三山','後冷泉天皇','梁塵秘抄口伝集','中山道','宮内大臣','小学校令','中学校令','師範学校令','小作人','小作農','小作地','硫黄島','資本家','小作料','宇治川電気','主義政党','改正法案','為替相場','村役人','三浦半島','大人気','清国人','上人語録','修正法','山田寺','狗奴国','近畿中央部','島原城','大都市','近畿地方','金閣寺』','中国人','外国人','韓国人','異国人','立憲国民党','国民党','日本進歩党','北朝鮮','自民党','民主自由党','歌謡曲']);
+const BLOCK=new Set(['考古学','蘭学階梯','文人画家','宇治殿','伴大納言','熊野三山','後冷泉天皇','梁塵秘抄口伝集','中山道','宮内大臣','小学校令','中学校令','師範学校令','小作人','小作農','小作地','硫黄島','資本家','小作料','宇治川電気','主義政党','改正法案','為替相場','村役人','三浦半島','大人気','清国人','上人語録','修正法','山田寺','狗奴国','近畿中央部','島原城','大都市','近畿地方','金閣寺』','中国人','外国人','韓国人','異国人','立憲国民党','国民党','日本進歩党','北朝鮮','自民党','民主自由党','歌謡曲']);
 function procHtml(html,V){ V=[...new Set([...V,...BLOCK])].sort((a,b)=>b.length-a.length);
   const re=new RegExp(V.map(esc).join('|'),'g');
   const seen=new Set(); let out=''; let i=0; const stack=[]; // span stack: true if no-touch
