@@ -43,6 +43,7 @@ notes/drive_page_ids.txt  教科書ページの Google Drive ファイルID（�
 | kinsei〜kinsei3 | 近世①〜③ | 作り直し済み・穴埋めあり |
 | kinsei4 | 近世④（幕藩社会の構造）教科書p.167〜176 | 新規作成済み・穴埋めあり |
 | kinsei5 | 近世⑤（幕政の安定と経済の発展）p.176〜187 | 新規作成済み・穴埋めあり |
+| kinsei6 | 近世⑥（元禄文化）教科書p.187〜191 | 新規作成済み（2026-11-02・5授業・82問：元禄文化の特色と西鶴・芭蕉／近松と歌舞伎／儒学の諸派／諸学問／元禄の美術）・穴埋めあり（空欄25）。`WRITING_GUIDE.md` の基準で書いた。データは `tools/kinsei6_data.py`、ビルドは汎用の `tools/newpack.py kinsei6_data`→`post.py`→`apply_rank.py`→`add_maps.py`。次は近世⑦（享保〜寛政・宝暦天明文化 p.192〜）|
 | bakumatsu | 近代（開国と幕末）教科書p.220〜231 | 新規作成済み（7授業・102問、第11章すべて：ペリー来航〜戊辰戦争・政体書・幕末の社会と文化）・穴埋めあり（空欄46）・地図3枚。ビルドは `tools/baku_a.py`→`build_baku.py`→`post.py`→`add_maps.py`。問題は末尾に足す |
 | kindai | 近代（明治前期）教科書p.236〜250 | 作り直し済み（9授業・118問、第12章1と2の前半：版籍奉還〜激化事件）・穴埋めあり（空欄47）・地図2枚。一問一答 id1〜15 は旧版の問題をそのまま残した（`mark` で授業の太字と照合）。ビルドは `tools/kindai_a.py`→`build_kindai.py`→`post.py`→`add_maps.py` |
 | rikken | 近代（立憲国家の成立）教科書p.250〜257 | 新規作成済み（6授業・57問：大同団結〜憲法・法典・初期議会・条約改正）・穴埋めあり（空欄41）。ビルドは `tools/rikken_a.py`→`build_rikken.py`→`post.py`→`add_maps.py` |
