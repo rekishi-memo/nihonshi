@@ -23,7 +23,11 @@ for l in p['lessons']:
     assert '{VIZ}' not in h, l['no']
     l['html']=h
     if d.get('title'): l['title']=d['title']
-    l['colHtml']=''; l['colTitle']=''
+    l['colHtml']=''; l['colTitle']=''; l.pop('keepCol',None)
+    if d.get('col'):  # 難関私大レベルは本文に入れず、授業の下の「深掘り」欄にまとめる（2026-11-03 のユーザーの指示）
+        l['colTitle']=d.get('colTitle','難関私大レベル（標準〜頻出）')
+        l['colHtml']=rub(re.sub(r'《([^》]+)》',r"<span class='kw'>\1</span>",''.join(f"<p><b>■ {t}</b>　{x}</p>" for t,x in d['col'])))
+        l['keepCol']=True
 print('rewritten',[k for k in T.L])
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
 open(out,'w',encoding='utf-8').write(s)

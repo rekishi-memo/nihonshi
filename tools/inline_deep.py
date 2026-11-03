@@ -16,6 +16,7 @@ def terms(h):
     t|=set(re.findall(r'[一-龥ァ-ヶー]{2,}',plain(h)))
     return {x for x in t if len(x)>=2}
 def convert(l):
+    if l.get('keepCol'): return False  # 深掘り欄に残す授業は本文に移さない
     col=l.get('colHtml') or ''
     if not col: return False
     h=l['html']; paras=list(re.finditer(r'<p>[\s\S]*?</p>',h))
