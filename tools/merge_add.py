@@ -4,6 +4,7 @@
 #                               q=[("問い","答え","ひとこと解説"),...]), ...}
 # 1) 本文の段落は、その授業の「入試ではこう出る」（N(...)）の直前に P(...) として差しこむ
 # 2) col は深掘り欄の末尾に足す
+# t は表（[(見出し,[(左,右),...],(左見出し,右見出し))]）。本文の「入試ではこう出る」の直前に入る
 # 3) 一問一答はセットの末尾に、今の最大 id の次から足す（既存の id は変えない）。同じ答え＋同じ問いは足さない
 # このあと rewrite_lessons.py → post.py → add_maps.py → apply_rank.py → pack_out.py を通す。
 import json,re,sys,runpy
@@ -29,6 +30,16 @@ for no,d in A.items():
         assert k>=0,no
         k+=1  # 「N(」の直前に入れる
         b=b[:k]+ins+b[k:]
+    for tb in d.get('t',[]):  # 表：(見出し, [(左,右),...], (左の見出し,右の見出し))。授業の「入試ではこう出る」の直前に入れる
+        cap,rows,hd=(list(tb)+[('項目','内容')])[:3]
+        html="<div class='viz vtab'><div class='viz-cap'>表 ── "+cap+"</div><div class='vs'><div class='vh'><span>"+hd[0]+"</span><span>"+hd[1]+"</span></div>"+''.join(f"<div class='vr'><span>{x}</span><span>{y}</span></div>" for x,y in rows)+"</div></div>"
+        if cap in b: continue
+        ins=json.dumps(html,ensure_ascii=False)+'+\n'
+        for pat in ('\nN(','+N(','\nPT(','+PT('):
+            k=b.rfind(pat)
+            if k>=0: break
+        assert k>=0,no
+        b=b[:k+1]+ins+b[k+1:]
     cols=[c for c in d.get('col',[]) if c[1] not in b]
     if cols:
         add=''.join(f"\n({json.dumps(a,ensure_ascii=False)},{json.dumps(x,ensure_ascii=False)})," for a,x in cols)
