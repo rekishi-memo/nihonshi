@@ -34,4 +34,10 @@ for l in p['lessons']:
         if (b and K.match(b)) or (a and K.match(a)): emb.add(b+'['+mm.group(1)+']'+a)
 print('embedded:',' '.join(sorted(emb)))
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
+# ふりがなの誤り（熟語の途中にかかったルビ・読みの誤り）を全体で直す
+from fix_ruby import fix as _fixruby
+while True:
+    s2,_u,_r=_fixruby(s)
+    if s2==s: break
+    s=s2
 open(out,'w',encoding='utf-8').write(s)

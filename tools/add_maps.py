@@ -18,7 +18,8 @@ for p in packs:
 
 bad=[]
 for mp in MAPS:
-    l=[x for x in P[mp['pack']]['lessons'] if x['no']==mp['no']][0]
+    from buildpack import locate
+    _,l=locate(list(P.values()),mp['pack'],mp['no'])
     h=l['html']; pos=None
     for mm in re.finditer(r'<p[^>]*>[\s\S]*?</p>',h):
         if mp['after'] in plain(mm.group(0)): pos=mm.end(); break

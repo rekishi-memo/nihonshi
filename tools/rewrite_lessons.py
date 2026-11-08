@@ -3,16 +3,14 @@
 #   そのあと post.py → add_maps.py → pack_out.py
 # 本文中の {VIZ} は、元の授業にあった図（<div class='viz'>…）に置きかえる。
 import json,re,sys,importlib
-from buildpack import load_rd,rubify_fn,SINGLE
+from buildpack import load_rd,rubify_fn,SINGLE,locate
 pid,mod,src,out=sys.argv[1:5]
 T=importlib.import_module(mod)
 rub=rubify_fn(load_rd(getattr(T,'EXTRA_RD','')))
 s=open(src,encoding='utf-8').read()
 m=re.search(r'const DEFAULT_PACKS = (\[[\s\S]*?\n\]);',s); packs=json.loads(m.group(1))
-p=[x for x in packs if x['id']==pid][0]
-for l in p['lessons']:
-    d=T.L.get(l['no'])
-    if not d: continue
+for no0,d in T.L.items():
+    _,l=locate(packs,pid,no0)
     old=l['html']
     vizs=re.findall(r"<div class='viz'>[\s\S]*?</svg></div></div>",old)
     qs=re.findall(r"<details class='qcheck'>[\s\S]*?</details>",old)

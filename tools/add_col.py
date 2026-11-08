@@ -93,7 +93,7 @@ m=re.search(r'const DEFAULT_PACKS = (\[[\s\S]*?\n\]);',s); packs=json.loads(m.gr
 n=0
 for p in packs:
     for l in p['lessons']:
-        k=(p['id'],l['no'])
+        k=tuple(l['src'].split('-',1)) if l.get('src') else (p['id'],l['no'])
         if k in C and not l.get('colHtml'):
             c=col(C[k]); c=rubify(re.sub(r'《([^》]+)》',r"<span class='kw'>\1</span>",c))
             l['colHtml']=c; l['colTitle']='難関私大レベル（教科書の外も）'; n+=1

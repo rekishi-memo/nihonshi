@@ -52,15 +52,16 @@ for no,d in A.items():
 open(modf,'w',encoding='utf-8').write(t)
 s=open(src,encoding='utf-8').read()
 m=re.search(r'const DEFAULT_PACKS = (\[[\s\S]*?\n\]);',s); packs=json.loads(m.group(1))
-p=[x for x in packs if x['id']==pid][0]
-have={(q['q'],q['a']) for q in p['quiz']}; ans={q['a'] for q in p['quiz']}
+from buildpack import locate,next_id
 n=0
 for no,d in A.items():
-    unit=next((q['unit'] for q in p['quiz'] if q['link']==no),p['lessons'][int(no)-1]['navTitle'])
+    p,l=locate(packs,pid,no)  # 並べ替え後も、もとの番号で授業を探す
+    ans={q['a'] for q in p['quiz']}
+    unit=next((q['unit'] for q in p['quiz'] if q['link']==l['no']),l['navTitle'])
     for qq in d.get('q',[]):
         q,a,e=(list(qq)+[''])[:3]
-        if (q,a) in have or a in ans: continue
-        p['quiz'].append(dict(id=max(x['id'] for x in p['quiz'])+1,unit=unit,link=no,q=q,a=a,exp=e,d=3,i=3,f=3)); n+=1; ans.add(a)
+        if a in ans: continue
+        p['quiz'].append(dict(id=next_id(p),unit=unit,link=l['no'],q=q,a=a,exp=e,d=3,i=3,f=3)); n+=1; ans.add(a)
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
 open(src,'w',encoding='utf-8').write(s)
 print('merged',pid,'quiz+',n)

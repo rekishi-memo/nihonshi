@@ -8,13 +8,23 @@ def load_rd(extra=''):
         for l in open(f,encoding='utf-8').read().strip().split('\n'):
             a,b=l.split(':'); rd[a]=b
     # 成功は「じょうごう（売官）」と「せいこう」で読みが変わるので外す。売官の意味のときは各ビルドの追加辞書で指定する
-    for bad in ['三浦','藩','元','聖','講','西軍','東軍','大都','ナウマンゾウ','成功']: rd.pop(bad,None)
+    for bad in ['三浦','藩','元','聖','講','西軍','東軍','大都','ナウマンゾウ','成功','名','結','館','座']: rd.pop(bad,None)
     src=open(os.path.join(HERE,'build1.py'),encoding='utf-8').read()
     ex=re.search(r'extra="([^"]*)"',src).group(1)+' '+extra
     for kv in ex.split():
         a,b=kv.split(':',1); rd[a]=b
     rd.pop('ナウマンゾウ',None)
     return rd
+def locate(packs,pid,no):
+    # 授業を「もとの場所」（src＝'セットid-番号'）で探す。並べ替え（reorder.py）のあとも *_text.py などの番号がそのまま使える
+    key=f'{pid}-{no}'
+    for p in packs:
+        for l in p['lessons']:
+            if l.get('src')==key: return p,l
+    p=[x for x in packs if x['id']==pid][0]
+    return p,[l for l in p['lessons'] if l['no']==no][0]
+def next_id(p):
+    return max([q['id'] for q in p['quiz']]+[p.get('idMax',0)])+1
 def rubify_fn(rd):
     keys=sorted(rd,key=len,reverse=True); pat=re.compile('|'.join(map(re.escape,keys)))
     def rubify(html):
@@ -84,7 +94,7 @@ def addquiz(base,pid,adds):
     p=[x for x in packs if x['id']==pid][0]
     plain=lambda t: re.sub(r'<[^>]+>','',re.sub(r'<rt>[^<]*</rt>','',t))
     txt={L['no']:plain(L['html']) for L in p['lessons']}
-    have={q['a'] for q in p['quiz']}; nid=max(q['id'] for q in p['quiz'])+1
+    have={q['a'] for q in p['quiz']}; nid=next_id(p)
     for no,q,a,d,i in adds:
         if a in have or a not in txt[no]: continue
         p['quiz'].append({"id":nid,"unit":[x for x in p['lessons'] if x['no']==no][0]['unitLink'],"link":no,"q":q,"a":a,"exp":"","d":d,"i":i,"f":4}); nid+=1
