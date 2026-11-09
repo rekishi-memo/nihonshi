@@ -33,6 +33,8 @@ for l in p['lessons']:
         b=h[mm.start()-1:mm.start()]; a=h[mm.end():mm.end()+1]
         if (b and K.match(b)) or (a and K.match(a)): emb.add(b+'['+mm.group(1)+']'+a)
 print('embedded:',' '.join(sorted(emb)))
+from apply_flow import apply as _flow
+_flow(packs)
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
 # ふりがなの誤り（熟語の途中にかかったルビ・読みの誤り）を全体で直す
 from fix_ruby import fix as _fixruby
