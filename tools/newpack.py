@@ -21,7 +21,11 @@ for L in D.LESSONS:
     h=rub(kw(L['html'].replace('\n','')))
     for w,r in SINGLE.items(): h=h.replace(f"<span class='kw'>{w}</span>",f"<span class='kw'><ruby>{w}<rt>{r}</rt></ruby></span>",1)
     if '{Q}' in h: h=h.replace('{Q}',Q(*D.QS[L['no']]))
-    lessons.append({"no":L['no'],"navTitle":L['nav'],"title":L['title'],"unitLink":L['unit'],"theme":L['theme'],"html":h,"visual":L.get('vis',''),"colTitle":"","colHtml":"","exam":L.get('exam','')})
+    ct,ch='',''
+    if L.get('col'):  # 深掘り欄（難関私大レベル）
+        ct='難関私大レベル（標準〜頻出）'
+        ch=rub(kw(''.join(f"<p><b>■ {t}</b>　{x}</p>" for t,x in L['col'])))
+    lessons.append({"no":L['no'],"navTitle":L['nav'],"title":L['title'],"unitLink":L['unit'],"theme":L['theme'],"html":h,"visual":L.get('vis',''),"colTitle":ct,"colHtml":ch,"exam":L.get('exam',''),"src":f"{D.PACK['id']}-{L['no']}"})
 plain=lambda t: re.sub(r'<[^>]+>','',re.sub(r'<rt>[^<]*</rt>','',t))
 txt={L['no']:plain(L['html']) for L in lessons}
 quiz=[]; miss=[]
