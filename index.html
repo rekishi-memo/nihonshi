@@ -229,33 +229,31 @@
   .confirm-btn{width:100%;font-family:var(--gothic);font-size:14px;font-weight:700;letter-spacing:.05em;padding:13px;border:none;border-radius:11px;background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:#1a140a;cursor:pointer;transition:.15s;}
   .confirm-btn:active{transform:translateY(1px);}
   .navbtns{display:flex;gap:9px;margin-top:9px;}
-  /* ---- 整理する：付箋のようなカード（明るい紙に、黒と赤の字） ---- */
-  #lBody .mm{background:#d7ebf5;color:#1b2230;border-radius:5px;padding:14px 13px 13px;margin:18px 0;box-shadow:3px 4px 0 rgba(0,0,0,.4);font-family:var(--gothic);font-size:13.5px;line-height:1.7;scroll-margin-top:70px;}
-  #lBody .mm.g{background:#dcefd0;} #lBody .mm.y{background:#f5edc0;}
-  #lBody .mm h4{font-size:15.5px;font-weight:800;margin:0 0 10px;padding-bottom:6px;border-bottom:2px solid #1b2230;color:#1b2230;letter-spacing:.02em;}
-  #lBody .mm .k{color:#c0281f;font-weight:700;}
-  #lBody .mm p{margin:7px 0;color:#1b2230;font-size:13px;line-height:1.7;}
-  #lBody .mm .sm{font-size:11.5px;color:#3d4960;}
-  #lBody .mm .pp{border-left:3px solid #c0281f;padding-left:8px;}
-  #lBody .mm .lb{display:inline-block;background:#1b2230;color:#fff;border-radius:4px;padding:0 7px;font-size:11.5px;font-weight:700;margin-right:7px;}
-  #lBody .mm .lbp{margin-top:11px;}
+  /* ---- 整理する：カード（ほかの画面と同じ色。金が大事な語） ---- */
+  #lBody .mm{background:var(--bg-2);color:var(--ivory);border:1px solid var(--line);border-radius:13px;padding:15px 14px 14px;margin:18px 0;font-family:var(--gothic);font-size:13.5px;line-height:1.7;scroll-margin-top:70px;}
+  #lBody .mm h4{font-size:15.5px;font-weight:700;margin:0 0 10px;padding-bottom:7px;border-bottom:1px solid var(--gold);color:var(--gold-bright);letter-spacing:.02em;}
+  #lBody .mm .k{color:var(--gold-bright);font-weight:700;}
+  #lBody .mm p{margin:7px 0;color:var(--ivory);font-size:13px;line-height:1.7;}
+  #lBody .mm .sm{font-size:11.5px;color:var(--ash);}
+  #lBody .mm .pp{border-left:2px solid var(--gold);padding-left:9px;color:var(--ivory-dim);}
+  #lBody .mm .lb{display:inline-block;background:var(--gold);color:#1a140a;border-radius:4px;padding:0 7px;font-size:11.5px;font-weight:700;margin-right:7px;}
+  #lBody .mm .lbp{margin-top:12px;}
   #lBody .mm .vch{display:flex;flex-direction:column;align-items:stretch;gap:2px;margin:7px 0;}
   #lBody .mm .hch{display:flex;flex-wrap:wrap;align-items:center;gap:4px 5px;margin:7px 0;}
-  #lBody .mm .bx{border:1.5px solid #1b2230;border-radius:7px;padding:4px 9px;background:rgba(255,255,255,.5);font-size:13px;line-height:1.55;}
-  #lBody .mm .ar{color:#c0281f;font-size:11.5px;font-weight:700;padding:0 4px;}
+  #lBody .mm .bx{border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:var(--card-2);font-size:13px;line-height:1.55;}
+  #lBody .mm .ar{color:var(--gold);font-size:11.5px;font-weight:600;padding:0 4px;}
   #lBody .mm .vch .ar{padding:1px 12px;}
-  #lBody .mm .rt{font-weight:700;margin-top:9px;}
-  #lBody .mm .tr{margin:4px 0 8px 7px;border-left:2px solid #c0281f;}
+  #lBody .mm .rt{font-weight:700;margin-top:10px;color:var(--ivory);}
+  #lBody .mm .tr{margin:4px 0 8px 7px;border-left:1px solid var(--gold);}
   #lBody .mm .tr>div{position:relative;padding:3px 0 3px 24px;font-size:13px;line-height:1.6;}
-  #lBody .mm .tr>div:before{content:"→";position:absolute;left:3px;top:3px;color:#c0281f;font-weight:700;}
+  #lBody .mm .tr>div:before{content:"→";position:absolute;left:4px;top:3px;color:var(--gold);}
   #lBody .mm .tw{overflow-x:auto;margin:7px 0;}
   #lBody .mm table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.5;}
-  #lBody .mm th,#lBody .mm td{border:1px solid rgba(27,34,48,.6);padding:4px 6px;vertical-align:top;text-align:left;color:#1b2230;}
-  #lBody .mm th{background:rgba(27,34,48,.12);font-weight:700;white-space:nowrap;}
+  #lBody .mm th,#lBody .mm td{border:1px solid var(--line);padding:5px 7px;vertical-align:top;text-align:left;color:var(--ivory);}
+  #lBody .mm th{background:var(--card-2);color:var(--ivory-dim);font-weight:600;white-space:nowrap;}
   #lBody .mm td:first-child{font-weight:700;min-width:4.3em;}
-  #lBody .mm.hl-jump{outline:3px solid var(--gold-bright);outline-offset:3px;background-image:none;animation:none;}
+  #lBody .mm.hl-jump{outline:2px solid var(--gold-bright);outline-offset:3px;background-image:none;animation:none;}
   #lBody .mm .mm-go{margin-top:10px;text-align:right;}
-  #lBody .mm .jump{border-color:#1b2230;color:#1b2230;background:rgba(255,255,255,.55);}
   .seiri-intro{font-size:12.5px;color:var(--ash);}
   .jump{display:inline-block;margin:8px 6px 0 0;font-family:var(--gothic);font-size:12px;font-weight:600;line-height:1.4;text-align:left;color:var(--gold-bright);background:transparent;border:1px solid var(--line);border-radius:9px;padding:7px 10px;cursor:pointer;}
   .jump:active{filter:brightness(.85);}
