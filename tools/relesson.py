@@ -41,10 +41,16 @@ J=lambda s: json.dumps(s,ensure_ascii=False)
 bad=False
 for no,lines in blocks.items():
     head=f"L['{no}']=dict(html="
-    i=t.index(head)+len(head)
-    nxt=t.find("\nL['",i); nxt=len(t) if nxt<0 else nxt
-    k=t.find(",\ncol=",i,nxt)
-    if k<0: k=t.rindex(')',i,nxt)
+    if head in t:
+        i=t.index(head)+len(head)
+        nxt=t.find("\nL['",i); nxt=len(t) if nxt<0 else nxt
+        k=t.find(",\ncol=",i,nxt)
+        if k<0: k=t.rindex(')',i,nxt)
+    else:  # データ型のセット（gendai4_data.py など）：L01=( … ) の形
+        head=f"L{no}=("
+        i=t.index(head)+len(head)
+        m2=re.compile(r"\nL\d\d=\(|\nLESSONS=\[").search(t,i)
+        k=t.rindex(')',i,m2.start())
     old=t[i:k]
     items=split_top(old)
     others=[x for x in items if not re.match(r'(P|R|Y)\(',x)]
