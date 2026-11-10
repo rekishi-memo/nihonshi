@@ -7,7 +7,7 @@
 
 ## 0. まず全体像
 
-- アプリは **1ファイルの HTML**。GitHub Pages で公開している（https://shiraishibmx1021-dotcom.github.io/nihonshi/ 、iPhone のホーム画面に追加して使う。`sw.js` でオフラインでも動く）。
+- アプリは **1ファイルの HTML**。GitHub Pages で公開している（https://rekishi-memo.github.io/nihonshi/ 、iPhone のホーム画面に追加して使う。`sw.js` でオフラインでも動く）。
 - 中身のデータは、HTML 内の JavaScript 定数 `const DEFAULT_PACKS = [...]` に全部入っている。1つの「セット」＝1つの pack（例：`kodai`＝古代①、`kinsei5`＝近世⑤）。
 - **作業用の元ファイル**は `app/source.html`（データが圧縮されていない状態）。ここを編集する。
 - **公開するファイル**は、リポジトリ直下の `index.html`。`tools/pack_out.py` で source.html のデータを圧縮してつくる。
@@ -468,7 +468,7 @@ open('source.html','w',encoding='utf-8').write(s)
 ## 学習記録の引っこし（2026-11-10 ユーザーが公開リンクを変えたい：GitHub のユーザー名にメールアドレスの一部が入っているため）
 - 「⚙ データ」の中に「学習記録の引っこし」を足した（`tools/patch_backup.py`）。①書き出す（文字をコピー、またはファイルで保存）→ ②新しいリンクや端末で貼って読みこむ。中身は `_v2` の4つのキーをまるごと。
 - 記録はリンク（オリジン）ごとに端末の中にあるので、リンクを変えると何もしなければ空になる。**ユーザー名を変える前に、古いリンクで書き出しておくこと。**
-- ユーザー名を変えたら、`CLAUDE.md` と `HANDOVER.md` §1 の公開URLを書きかえる。
+- 2026-11-10、GitHub のユーザー名を `rekishi-memo` に変えた。公開URLは https://rekishi-memo.github.io/nihonshi/ 。`CLAUDE.md` と §1 も書きかえた。
 - 最初の2つのコミットの作者に Gmail のアドレスが残っている。消すなら履歴の書きかえが必要（ユーザーの判断待ち）。
 
 ## 見直しメモ（2026-10-31）
