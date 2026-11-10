@@ -40,7 +40,7 @@ from note_cloze import apply as _ncloze
 _ncloze(packs,report=True)
 # 過去問に出た回数を一問一答に入れる（apply_freq.py）
 from apply_freq import apply as _freq
-print('freq [なし,1回,2回以上]:',_freq(packs))
+print('freq [なし,1回,頻出(2〜3回),最頻出(4回以上)]:',_freq(packs))
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
 # ふりがなの誤り（熟語の途中にかかったルビ・読みの誤り）を全体で直す
 from fix_ruby import fix as _fixruby
