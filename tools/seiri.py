@@ -110,7 +110,7 @@ def apply(packs):
                 go="<div class='mm-go'>"+btn(pid,src,mark,'授業で読む：'+lab+' →')+"</div>"
             hs.append(f"<div class='mm {c['color']}' data-card='{c['id']}'><h4>{esc(c['title'])}</h4>"+''.join(block(b) for b in c['blocks'])+go+"</div>")
         lessons.append(dict(no=g['no'],navTitle=g['nav'],title=g['title'],theme=g['theme'],html=''.join(hs),src=f"{PID}-{g['no']}"))
-    pack=dict(id=PID,title='テーマ史：整理する（まぎらわしい所のまとめ）',subtitle='似た語・似た制度・人物のしたことを、付箋のように見てわかる形で',order=9.9,
+    pack=dict(id=PID,title='テーマ史：整理する',subtitle='似た語・似た制度・人物のしたことを、付箋のように見てわかる形で',order=9.9,
               range='時代をまたいで、わかりにくい所だけを集めた。授業の「整理する」ボタンからも飛べる。',timeline=[],lessons=lessons,quiz=[],terms=[],goro=[],ronjutsu=[],cloze=None)
     i=next((k for k,p in enumerate(packs) if p.get('order',99)>9.9),len(packs))
     packs.insert(i,pack)
