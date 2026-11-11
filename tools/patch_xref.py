@@ -25,7 +25,7 @@ function lessonPlain(pid,i){ const k=pid+"|"+i; let t=_plainCache.get(k);
 function packByLabel(lb){ return packOrder.find(id=>packsById[id].title.indexOf(lb)===0)||null; }
 function xrefTarget(pid,no,ctx){ const p=packsById[pid]; if(!p||!p.lessons.length) return null;
   if(no){ const i=p.lessons.findIndex(l=>String(l.no)===no); return i<0?null:{i:i,m:""}; }
-  const ws=(ctx.match(/[一-龥々ァ-ヶー]{3,}/g)||[]).slice(-7); let best=0,bs=0,bm="";
+  const ws=(ctx.match(/[一-龥々ァ-ヶー]{3,}/g)||[]).slice(-12); let best=0,bs=0,bm="";
   p.lessons.forEach((l,i)=>{ const t=lessonPlain(pid,i); let sc=0,m="";
     ws.forEach((w,k)=>{ if(t.indexOf(w)>=0){ sc+=1+k*0.15+w.length*0.05; m=w; } }); if(sc>bs){bs=sc;best=i;bm=m;} });
   return {i:best,m:bm}; }
@@ -33,14 +33,14 @@ function linkRefs(body){
   const XRE=/(古代|中世|近世|近代|現代)([①-⑩])((?:・[①-⑩])*)(?:[・ 　の]*授業(\\d{2}))?|テーマ史[：〈]([^（）〉・、。]+)〉?|授業(\\d{2})((?:・\\d{2})*)/g;
   const w=document.createTreeWalker(body,NodeFilter.SHOW_TEXT,null), nodes=[]; let n, cnt=0;
   while(n=w.nextNode()){ if(n.parentNode.closest("button,rt,h4,.mm,svg")) continue; XRE.lastIndex=0; if(XRE.test(n.nodeValue)) nodes.push(n); }
-  nodes.forEach(node=>{ const s=node.nodeValue, frag=document.createDocumentFragment(); let last=0,m,pre="";
-    try{ const blk=node.parentNode.closest("p,li,div")||body, rg=document.createRange(); rg.setStart(blk,0); rg.setEnd(node,0); pre=rg.toString().slice(-70); }catch(e){}
+  nodes.forEach(node=>{ const s=node.nodeValue, frag=document.createDocumentFragment(); let last=0,m,pre="",post="";
+    try{ const blk=node.parentNode.closest("p,li,div")||body, rg=document.createRange(); rg.setStart(blk,0); rg.setEnd(node,0); pre=rg.toString().slice(-70); const r2=document.createRange(); r2.setStart(node,s.length); r2.setEnd(blk,blk.childNodes.length); post=r2.toString().slice(0,90); }catch(e){}
     const tx=t=>frag.appendChild(document.createTextNode(t));
     const mk=(txt,pid,no,ctx)=>{ const t=pid?xrefTarget(pid,no,ctx):null; if(!t){tx(txt);return;}
       const b=document.createElement("button"), L=packsById[pid].lessons[t.i]; b.type="button"; b.className="xref"; b.textContent=txt;
       b.dataset.p=pid; b.dataset.i=t.i; b.dataset.m=t.m||""; b.setAttribute("aria-label",txt+"「"+(L.title||"")+"」へ飛ぶ"); frag.appendChild(b); cnt++; };
     XRE.lastIndex=0;
-    while(m=XRE.exec(s)){ tx(s.slice(last,m.index)); const ctx=pre+s.slice(0,m.index);
+    while(m=XRE.exec(s)){ tx(s.slice(last,m.index)); const ctx=(s.slice(m.index+m[0].length)+post).slice(0,90)+" "+(pre+s.slice(0,m.index)).slice(-70);
       if(m[1]){ const pid=packByLabel(m[1]+m[2]);
         if(m[4]) mk(m[0],pid,m[4],ctx);
         else { mk(m[1]+m[2],pid,null,ctx); (m[3]||"").split("・").filter(Boolean).forEach(c=>{ tx("・"); mk(c,packByLabel(m[1]+c),null,ctx); }); } }
