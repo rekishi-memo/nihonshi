@@ -35,6 +35,9 @@ for l in p['lessons']:
 print('embedded:',' '.join(sorted(emb)))
 from apply_flow import apply as _flow
 _flow(packs)
+# 通史の授業の内閣の表を、テーマ史：内閣史への案内に置きかえる（naikaku_link.py）
+from naikaku_link import apply as _klink
+print('naikaku_link:',_klink(packs))
 # 教科書の注・図の説明からつくった穴埋め（note_cloze.py）
 from note_cloze import apply as _ncloze
 _ncloze(packs,report=True)
