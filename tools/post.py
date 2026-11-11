@@ -38,6 +38,9 @@ _flow(packs)
 # 通史の授業の内閣の表を、テーマ史：内閣史への案内に置きかえる（naikaku_link.py）
 from naikaku_link import apply as _klink
 print('naikaku_link:',_klink(packs))
+# 通史の授業に、テーマ史：為政者の表への案内を足す（iseisha_link.py）
+from iseisha_link import apply as _ilink
+print('iseisha_link:',_ilink(packs))
 # 教科書の注・図の説明からつくった穴埋め（note_cloze.py）
 from note_cloze import apply as _ncloze
 _ncloze(packs,report=True)

@@ -18,7 +18,7 @@ def apply(packs):
     plain=[(l['no'],_txt(l['html'])) for l in th[0]['lessons']]
     n=0
     for p in packs:
-        if p['id']=='theme_naikaku': continue
+        if p['id'].startswith('theme_'): continue   # テーマ史の表（内閣史・為政者の表）はそのまま
         for l in p['lessons']:
             h=l['html']
             while OPEN in h:
