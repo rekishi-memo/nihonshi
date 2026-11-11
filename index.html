@@ -708,8 +708,12 @@ const SRS=[1,3,7,14,30,60], NEW_PER_DAY=20, DUE_MAX=80;
 let today=false, todayOff=false; /* todayOff＝「ふつうの一問一答へ」を押したあと（開き直すまで自動では出さない） */
 function DAY(){ const d=new Date(); return Math.floor((d.getTime()-d.getTimezoneOffset()*60000)/864e5); }
 function qScore(q){ return Math.min(q.x||0,6)*10+(q.f||0); }
+function todaySt(){ const day=DAY(); let st=prog._today;
+  if(!st||st.day!==day){ const h=(st&&st.hist)||[]; if(st&&st.n) h.push([st.day,st.n,st.ok||0]); st={day:day,nw:[],n:0,ok:0,hist:h.slice(-90)}; prog._today=st; }
+  if(st.n==null){st.n=0;st.ok=0;} if(!st.hist)st.hist=[]; return st; }
+function dayLabel(d){ const t=new Date(d*864e5); return (t.getUTCMonth()+1)+"/"+t.getUTCDate(); }
 function todayItems(more){
-  const day=DAY(); let st=prog._today; if(!st||st.day!==day) st={day:day,nw:[]};
+  const day=DAY(); const st=todaySt();
   const due=[], fresh=[], inNw=new Set(st.nw.map(x=>x[0]+"|"+x[1]));
   packOrder.forEach(pid=>{ const p=packsById[pid], pp=prog[pid]||{};
     p.quiz.forEach(q=>{ const r=pp[q.id];
@@ -724,7 +728,8 @@ function todayItems(more){
   return {due:dueCut,dueAll:due.length,nw:nw};
 }
 function todayCount(){ const t=todayItems(false), n=t.dueAll+t.nw.length;
-  document.getElementById("todayCnt").textContent=today?"今日のぶん（全範囲から）":(n?`今日のぶん：復習 ${t.dueAll}・新しい ${t.nw.length}`:"今日のぶんは終わり ✓");
+  const st=todaySt(), dn=st.n?`（今日 ${st.n}問すみ）`:"";
+  document.getElementById("todayCnt").textContent=today?`今日のぶん：${st.n}問すみ・のこり ${Math.max(0,queue.length-pos)}`:(n?`今日のぶん：復習 ${t.dueAll}・新しい ${t.nw.length}${dn}`:`今日のぶんは終わり ✓${dn}`);
   document.getElementById("todayExit").textContent=today?"ふつうの一問一答へ":(n?"今日のぶんへ →":"あと20問やる →"); return n; }
 function startToday(more){
   const t=todayItems(more); sSet(PROG_KEY,prog);
@@ -877,7 +882,8 @@ function showCard(){
   document.getElementById("card").classList.remove("hidden"); document.getElementById("donePanel").classList.add("hidden");
   const it=qItem(pos), q=it.q;
   document.getElementById("cUnit").textContent=today?(it.p.title.replace(/（.*$/,"")+"｜"+(q.unit||"")):(q.unit||"");
-  document.getElementById("cNo").textContent=`${pos+1} / ${queue.length}`;
+  document.getElementById("cNo").textContent=today?`今日 ${todaySt().n+1}問目・のこり ${queue.length-pos}`:`${pos+1} / ${queue.length}`;
+  if(today) todayCount();
   document.getElementById("cRatings").innerHTML=`<span class="rate"><em>難易度</em><span class="stars">${starHtml(q.d)}</span></span><span class="rate"><em>重要度</em><span class="stars">${starHtml(q.i)}</span></span><span class="rate"><em>頻度</em><span class="stars">${starHtml(q.f)}</span></span>`+(q.x?`<span class="rate"><em>過去問</em><span class="kx">${q.x>=4?"最頻出・":(q.x>=2?"頻出・":"")}${q.x}回</span></span>`:"");
   document.getElementById("cQ").textContent=q.q; document.getElementById("cA").textContent=q.a; document.getElementById("cExp").textContent=q.exp||"";
   revealed=false; document.getElementById("answer").classList.remove("show"); document.getElementById("revealBtn").classList.remove("hidden");
@@ -891,6 +897,7 @@ function stamp(){const s=document.getElementById("seal");s.classList.remove("pop
 async function judge(ok){ if(!revealed)return; const it=qItem(pos), id=it.q.id, r=Object.assign({},rec(id,it.p.id));
   if(ok){r.c++;r.last="○";run.correct++;stamp(); const k=SRS.indexOf(r.iv); r.iv=SRS[Math.min(k+1,SRS.length-1)]; r.d=DAY()+r.iv; }
   else{r.w++;r.last="×"; r.iv=0; r.d=DAY()+1; if(today&&!queue[pos].again) queue.push({p:it.p.id,id:id,again:1}); }
+  if(today){ const st=todaySt(); st.n++; if(ok) st.ok++; }
   await setRec(id,r,it.p.id); run.total++;
   setTimeout(next,ok?360:90); }
 function next(){ pos++; if(pos>=queue.length){showDone();return;} showCard(); }
@@ -901,7 +908,10 @@ function showDone(empty){
   else{dp.querySelector("h2").textContent=today?"今日のぶん、おわり":"このまわり、おわり";const rate=run.total?Math.round(run.correct/run.total*100):0;
     document.getElementById("doneRate").textContent=rate+"%";document.getElementById("doneSub").textContent=`${run.total}問中 ${run.correct}問 正解`;
     document.getElementById("againWeak").style.display=(run.correct<run.total)?"":"none";}
-  if(today){ document.getElementById("againWeak").style.display="none"; if(empty){dp.querySelector("h2").textContent="今日のぶんは終わり";document.getElementById("doneSub").textContent="復習するものも、今日の新しい問題も残っていない。";} todayCount(); }
+  if(today){ const st=todaySt(); if(st.n){ document.getElementById("doneRate").textContent=Math.round(st.ok/st.n*100)+"%";
+      const h=st.hist.slice(-5).reverse().map(x=>`${dayLabel(x[0])} ${x[1]}問`).join("・");
+      document.getElementById("doneSub").textContent=`今日は ${st.n}問やって ${st.ok}問 正解`+(h?`（これまで：${h}）`:""); }
+    document.getElementById("againWeak").style.display="none"; if(empty&&!st.n){dp.querySelector("h2").textContent="今日のぶんは終わり";document.getElementById("doneSub").textContent="復習するものも、今日の新しい問題も残っていない。";} todayCount(); }
   document.getElementById("againAll").textContent=today?"新しい問題をあと20問":"もう一周";
   updateStats();
 }
