@@ -56,4 +56,12 @@ while True:
     s2,_u,_r=_fixruby(s)
     if s2==s: break
     s=s2
+# 本文の「テーマ史：琉球・沖縄史」などの名前に色づけ・ふりがなが入ると、タップで飛べなくなる（linkRefs は文字のつながりで見る）。名前の中だけはずす。
+_tnames=[t.split('：',1)[1] for t in re.findall(r'"title": "(テーマ史：[^"]+)"',s)]
+def _plainref(mm):
+    t=re.sub(r"<rt>[^<]*</rt>|</?(?:span|ruby)[^>]*>","",mm.group(0))
+    return t if any(t=='テーマ史：'+n for n in _tnames) else mm.group(0)
+for _n in _tnames:
+    _pat='テーマ史：'+''.join('(?:<span[^>]*>|<ruby>|</span>|</ruby>|<rt>[^<]*</rt>)*'+re.escape(ch) for ch in _n)+'(?:</span>|</ruby>|<rt>[^<]*</rt>)*'
+    s=re.sub(_pat,_plainref,s)
 open(out,'w',encoding='utf-8').write(s)
