@@ -13,9 +13,12 @@ for(const p of packs){ const L=new Set(); for(const q of p.quiz||[]){addTo(L,q.a
 for(const f of ['ruby.txt','ruby2.txt','ruby3.txt','ruby4.txt','ruby5.txt','ruby6.txt','ruby7.txt','ruby8.txt','ruby9.txt','ruby10.txt','ruby11.txt','ruby12.txt']) for(const l of fs.readFileSync(f,'utf8').trim().split('\n')){const k=l.split(':')[0]; if(k.length>=2) G.add(k);}
 for(const w of fs.readFileSync('kw_extra.txt','utf8').split(/\s+/)) if(w.length>=2) G.add(w);
 for(const s of STOP) G.delete(s);
+// juyo.py の重要度で幹〜難関私大になった語は、STOP にあっても色をつける（apply_rank.py が書き出す）
+try{ for(const w of fs.readFileSync('kw_rank.txt','utf8').split(/\n/)) if(w.length>=2) G.add(w); }catch(e){}
 const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 function vocabFor(pid){ const V=new Set(G); for(const x of local[pid]) if(!STOP.has(x)||LOCAL_OK.has(x)) V.add(x); return [...V].sort((a,b)=>b.length-a.length); }
-const BLOCK=new Set(['修正法','考古学','蘭学階梯','文人画家','宇治殿','伴大納言','熊野三山','後冷泉天皇','梁塵秘抄口伝集','中山道','宮内大臣','小学校令','中学校令','師範学校令','小作人','小作農','小作地','硫黄島','資本家','小作料','宇治川電気','主義政党','改正法案','為替相場','村役人','三浦半島','大人気','清国人','上人語録','修正法','山田寺','狗奴国','近畿中央部','島原城','大都市','近畿地方','金閣寺』','中国人','外国人','韓国人','異国人','立憲国民党','国民党','日本進歩党','北朝鮮','自民党','民主自由党','歌謡曲','茶道具','上人像','春日権現験記','帝国大学令']);
+const BLOCK=new Set(['自民党','野田佳彦','佐渡島','2段階','北朝鮮','図書館','立花隆','山口良忠','吉野源三郎','上洛殿','茶道具','直訴状','山田美妙','笠懸村','社会主義政権','皇親政治','石井部隊','韓国人','帝国人造絹糸','修正法','考古学','蘭学階梯','文人画家','宇治殿','伴大納言','熊野三山','後冷泉天皇','梁塵秘抄口伝集','中山道','宮内大臣','小学校令','中学校令','師範学校令','小作人','小作農','小作地','硫黄島','資本家','小作料','宇治川電気','主義政党','改正法案','為替相場','村役人','三浦半島','大人気','清国人','上人語録','修正法','山田寺','狗奴国','近畿中央部','島原城','大都市','近畿地方','金閣寺』','中国人','外国人','韓国人','異国人','立憲国民党','国民党','日本進歩党','北朝鮮','自民党','民主自由党','歌謡曲','茶道具','上人像','春日権現験記','帝国大学令']);
+const SUF=/^(時代|期|派|氏|藩|軍|方|内閣|政権|体制|文化|側|領|系|流|風|様|像|門|王|天皇|上皇|法皇|公|卿|朝|国|県|郡|村|町|港|湾|半島|平野|地方|街道|一族|政治|政策|改革|事件|の)/;
 function procHtml(html,V){ V=[...new Set([...V,...BLOCK])].sort((a,b)=>b.length-a.length);
   const re=new RegExp(V.map(esc).join('|'),'g');
   const seen=new Set(); let out=''; let i=0; const stack=[]; // span stack: true if no-touch
@@ -27,6 +30,8 @@ function procHtml(html,V){ V=[...new Set([...V,...BLOCK])].sort((a,b)=>b.length-
       const j=html.indexOf('</ruby>',i); const whole=html.slice(i,j+7);
       const base=whole.replace(/<rt>[\s\S]*?<\/rt>/,'').replace(/<[^>]+>/g,'');
       let hit=null; if(!noTouch()){ for(const t of V){ if(t.length<=base.length && base.includes(t)){ hit=t; break; } } }
+      if(hit&&base.length<=3){ const vis=t=>t.replace(/<rt>[^<]*<\/rt>/g,'').replace(/<[^>]*>/g,''); const pv=vis(out.slice(-300)).slice(-1), rest=vis(html.slice(j+7,j+300)), K2=/[\u4e00-\u9fff々ヶ]/;
+        if((pv&&K2.test(pv))||(rest[0]&&K2.test(rest[0])&&!SUF.test(rest))) hit=null; }
       if(hit){ out+="<span class='kw'>"+whole+"</span>"; } else out+=whole;
       i=j+7; continue;
     }
@@ -41,7 +46,14 @@ function procHtml(html,V){ V=[...new Set([...V,...BLOCK])].sort((a,b)=>b.length-
     let j=html.indexOf('<',i); if(j<0) j=html.length;
     const text=html.slice(i,j);
     if(noTouch()) out+=text;
-    else out+=text.replace(re,w=>BLOCK.has(w)?w:"<span class='kw'>"+w+"</span>");
+    else { const vis=t=>t.replace(/<rt>[^<]*<\/rt>/g,'').replace(/<[^>]*>/g,'');
+      const pvSeg=vis(out.slice(-300)).slice(-1), nxSeg=vis(html.slice(j,j+300)).slice(0,6);
+      out+=text.replace(re,(w,off,str)=>{ if(BLOCK.has(w)||/^[\u3041-\u309f]+$/.test(w)) return w;
+      // 3文字以下の語は、長い語の途中に入りやすい。前が漢字・カタカナならつけない。後ろが漢字なら、よくある後ろの字（時代・氏・藩など）のときだけつける（2026-11-13）
+      if(w.length<=3){ const pv=off>0?str[off-1]:pvSeg, rest=str.slice(off+w.length)+(off+w.length>=str.length?nxSeg:''), nx=rest[0]||''; const KJ=/[\u4e00-\u9fff々ヶ\u30a0-\u30ff]/;
+        if(pv&&KJ.test(pv)&&!/^[\u30a0-\u30ff]/.test(w)) return w;
+        if(nx&&/[\u4e00-\u9fff々ヶ]/.test(nx)&&!SUF.test(rest)) return w; }
+      return "<span class='kw'>"+w+"</span>"; }); }
     i=j;
   }
   return out;

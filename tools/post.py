@@ -49,6 +49,8 @@ from seiri import apply as _seiri
 print('seiri:',_seiri(packs))
 from apply_freq import apply as _freq
 print('freq [なし,1回,頻出(2〜3回),最頻出(4回以上)]:',_freq(packs))
+from fix_ruby import fix_lessons as _fixles
+_fixles(packs)
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
 # ふりがなの誤り（熟語の途中にかかったルビ・読みの誤り）を全体で直す
 from fix_ruby import fix as _fixruby
