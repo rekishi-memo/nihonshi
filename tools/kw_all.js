@@ -13,7 +13,7 @@ for(const p of packs){ const L=new Set(); for(const q of p.quiz||[]){addTo(L,q.a
 for(const f of ['ruby.txt','ruby2.txt','ruby3.txt','ruby4.txt','ruby5.txt','ruby6.txt','ruby7.txt','ruby8.txt','ruby9.txt','ruby10.txt','ruby11.txt','ruby12.txt']) for(const l of fs.readFileSync(f,'utf8').trim().split('\n')){const k=l.split(':')[0]; if(k.length>=2) G.add(k);}
 for(const w of fs.readFileSync('kw_extra.txt','utf8').split(/\s+/)) if(w.length>=2) G.add(w);
 for(const s of STOP) G.delete(s);
-// juyo.py の重要度で幹〜難関私大になった語は、STOP にあっても色をつける（apply_rank.py が書き出す）
+// juyo.py の重要度で共テ必修〜難関私大になった語は、STOP にあっても色をつける（apply_rank.py が書き出す）
 try{ for(const w of fs.readFileSync('kw_rank.txt','utf8').split(/\n/)) if(w.length>=2) G.add(w); }catch(e){}
 const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 function vocabFor(pid){ const V=new Set(G); for(const x of local[pid]) if(!STOP.has(x)||LOCAL_OK.has(x)) V.add(x); return [...V].sort((a,b)=>b.length-a.length); }

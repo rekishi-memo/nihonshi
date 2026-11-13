@@ -74,7 +74,7 @@
   .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));border-radius:99px;transition:width .35s ease;}
 
   /* quiz controls */
-  .modes{display:flex;gap:7px;flex-wrap:wrap;}
+  .modes{display:grid;gap:7px;grid-template-columns:repeat(3,1fr);}
   .modes button{flex:1;font-family:var(--gothic);font-size:12.5px;font-weight:500;padding:10px 4px;border:1px solid var(--line);
     background:var(--card);color:var(--ivory-dim);border-radius:10px;cursor:pointer;transition:.15s;}
   .modes button[aria-pressed="true"]{background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:#1a140a;border-color:transparent;font-weight:700;}
@@ -548,10 +548,10 @@
       <div class="today-bar" id="todayBar"><span id="todayCnt">今日のぶん</span><button id="todayExit">ふつうの一問一答へ</button></div>
       <div class="modes" role="group">
         <button data-mode="all" aria-pressed="true">全部</button>
-        <button data-mode="kan" aria-pressed="false">幹</button>
-        <button data-mode="eda" aria-pressed="false">幹＋枝</button>
-        <button data-mode="nan" aria-pressed="false">難関</button>
-        <button data-mode="freq" aria-pressed="false">頻出</button>
+        <button data-mode="kan" aria-pressed="false">共テ必修</button>
+        <button data-mode="eda" aria-pressed="false">私大頻出</button>
+        <button data-mode="nan" aria-pressed="false">難関私大</button>
+        <button data-mode="freq" aria-pressed="false">過去問</button>
         <button data-mode="weak" aria-pressed="false">苦手だけ</button>
       </div>
       <div class="row2">
@@ -603,7 +603,7 @@
   <!-- GORO -->
   <section class="sec" id="sec-cloze">
     <div class="cz-q" id="czQ">次の文章を読み、空欄に入る最も適当な語句を答えよ。</div>
-    <div class="cz-rk" id="czRk"><button class="ghost" data-m="A">幹だけ</button><button class="ghost" data-m="AB">幹・枝</button><button class="ghost" data-m="ABCX" aria-pressed="true">葉まで</button><button class="ghost" data-m="ABCXD">難関私大まで</button></div>
+    <div class="cz-rk" id="czRk"><button class="ghost" data-m="A">共テ必修</button><button class="ghost" data-m="AB">私大頻出まで</button><button class="ghost" data-m="ABCX" aria-pressed="true">私大まで</button><button class="ghost" data-m="ABCXD">難関私大まで</button></div>
     <div class="cz-bar"><button class="ghost" id="czHideAll">全部かくす</button><button class="ghost" id="czShowAll">全部めくる</button><span class="cz-count" id="czCount">0 / 0</span></div>
     <div id="czBody"></div>
     <div class="empty-note hidden" id="czEmpty"></div>
@@ -72212,7 +72212,7 @@ function showCard(){
   document.getElementById("cUnit").textContent=today?(it.p.title.replace(/（.*$/,"")+"｜"+(q.unit||"")):(q.unit||"");
   document.getElementById("cNo").textContent=today?(()=>{const L=todaySt().list||[];return `今日 ${L.filter(x=>x[2]).length+1} / ${L.length}問目`;})():`${pos+1} / ${queue.length}`;
   if(today) todayCount();
-  document.getElementById("cRatings").innerHTML=`<span class="rate"><em>難易度</em><span class="stars">${starHtml(q.d)}</span></span><span class="rate"><em>重要度</em><span class="stars">${starHtml(q.i)}</span> ${({5:"幹",4:"枝",3:"葉",2:"難関私大"})[q.i]||""}</span><span class="rate"><em>頻度</em><span class="stars">${starHtml(q.f)}</span></span>`+(q.x?`<span class="rate"><em>過去問</em><span class="kx">${q.x>=4?"最頻出・":(q.x>=2?"頻出・":"")}${q.x}回</span></span>`:"");
+  document.getElementById("cRatings").innerHTML=`<span class="rate"><em>難易度</em><span class="stars">${starHtml(q.d)}</span></span><span class="rate"><em>重要度</em><span class="stars">${starHtml(q.i)}</span> ${({5:"共テ必修",4:"私大頻出",3:"私大",2:"難関私大"})[q.i]||""}</span><span class="rate"><em>頻度</em><span class="stars">${starHtml(q.f)}</span></span>`+(q.x?`<span class="rate"><em>過去問</em><span class="kx">${q.x>=4?"最頻出・":(q.x>=2?"頻出・":"")}${q.x}回</span></span>`:"");
   document.getElementById("cQ").textContent=q.q; document.getElementById("cA").textContent=q.a; document.getElementById("cExp").textContent=q.exp||"";
   revealed=false; document.getElementById("answer").classList.remove("show"); document.getElementById("revealBtn").classList.remove("hidden");
   const tl=findLessonForAnswer(q,it.p), tb=document.getElementById("toLessonBtn");
@@ -72374,7 +72374,7 @@ function rankOf(p,text){
   const G=globalRank(); if(G[text]) return G[text];
   return "X";
 }
-const RK_NAME={A:"幹",B:"枝",C:"葉",D:"難関私大",X:"＋α"};
+const RK_NAME={A:"共テ必修",B:"私大頻出",C:"私大",D:"難関私大",X:""};
 function applyRanks(root,p){
   const seenC=new Set();
   root.querySelectorAll(".kw").forEach(el=>{ if(el.closest(".yodan")){el.classList.remove("rk-A","rk-B","rk-C","rk-D","rk-X");return;} const c=el.cloneNode(true); c.querySelectorAll("rt,.rtx").forEach(r=>r.remove());
@@ -72384,7 +72384,7 @@ function applyRanks(root,p){
     if(r==="A"||r==="B"){ const blk=el.closest("p,li,.vr,div"); const key=t; if(blk){ blk._rk=blk._rk||new Set(); if(blk._rk.has(key)){ el.classList.add("rk-dup"); return; } blk._rk.add(key); } }
     el.classList.add("rk-"+r); });
   if(!root.querySelector(".rk-legend")){ const lg=document.createElement("div"); lg.className="rk-legend";
-    lg.innerHTML='<span class="a"><b>太い金＝幹</b> 共テの土台</span><span class="b"><b>金＝枝</b> 共テ・私大の標準</span><span class="c"><b>うすい色＝葉</b> 私大の細かめ</span><span class="d"><b>紫＝難関私大</b> 本文では色なし。下の枠で</span>';
+    lg.innerHTML='<span class="a"><b>太い金＝共テ必修</b> 共テ・私大どちらでも土台</span><span class="b"><b>金＝私大頻出</b> 共テでも出ることがある</span><span class="c"><b>うすい色＝私大</b> 細かめの語</span><span class="d"><b>紫＝難関私大</b> 本文は色なし。下の枠で</span>';
     root.insertBefore(lg,root.firstChild); }
 }
 /* ---- render: cloze（穴埋め・入試形式・付箋） ---- */

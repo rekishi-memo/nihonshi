@@ -1,4 +1,4 @@
-# 重要度を「幹・枝・葉・難関私大・＋α」の5段にする（2026-11-13 ユーザーの指示）。アプリの表示を直す一回きりのパッチ。何度かけても同じ。
+# 重要度を5段（共テ必修・私大頻出・私大・難関私大・色なし）にする（2026-11-13）。ボタンや凡例の名前は patch_rank6.py で付け直した。アプリの表示を直す一回きりのパッチ。何度かけても同じ。
 #   python3 patch_rank5.py ../app/source.html ../app/source.html
 import re,sys
 src,out=sys.argv[1:3]; s=open(src,encoding='utf-8').read()
@@ -61,7 +61,7 @@ rep("""<span class="rate"><em>重要度</em><span class="stars">${starHtml(q.i)}
 """<span class="rate"><em>重要度</em><span class="stars">${starHtml(q.i)}</span> ${({5:"幹",4:"枝",3:"葉",2:"難関私大"})[q.i]||""}</span>""")
 rep("""        if(rk==="C"||used.has(w)||(prev&&KJ.test(prev))||(nxt&&KJ.test(nxt))) return w;""",
 """        if((rk!=="A"&&rk!=="B")||used.has(w)||(prev&&KJ.test(prev))||(nxt&&KJ.test(nxt))) return w;""")
-# 幹・枝は、同じ段落の2回目からはふつうの文字にする（アイヌ史の「アイヌ」のように何度も出る語で、太字だらけにならないように）
+# 共テ必修・私大頻出は、同じ段落の2回目からはふつうの文字にする（アイヌ史の「アイヌ」のように何度も出る語で、太字だらけにならないように）
 rep("""    if(r==="C"){ if(seenC.has(t)){ el.classList.add("rk-dup"); return; } seenC.add(t); }""",
 """    if(r==="C"){ if(seenC.has(t)){ el.classList.add("rk-dup"); return; } seenC.add(t); }
     if(r==="A"||r==="B"){ const blk=el.closest("p,li,.vr,div"); const key=t; if(blk){ blk._rk=blk._rk||new Set(); if(blk._rk.has(key)){ el.classList.add("rk-dup"); return; } blk._rk.add(key); } }""")
