@@ -1200,7 +1200,7 @@ function xrefTarget(pid,no,ctx){ const p=packsById[pid]; if(!p||!p.lessons.lengt
     ws.forEach((w,k)=>{ if(t.indexOf(w)>=0){ sc+=1+k*0.15+w.length*0.05; m=w; } }); if(sc>bs){bs=sc;best=i;bm=m;} });
   return {i:best,m:bm}; }
 function linkRefs(body){
-  const XRE=/(古代|中世|近世|近代|現代)([①-⑩])((?:・[①-⑩])*)(?:[・ 　の]*授業(\d{2}))?|テーマ史[：〈]([^（）〉・、。 　]+)〉?(?:[ 　の]*授業(\d{2}))?|授業(\d{2})((?:・\d{2})*)/g;
+  const XRE=/(古代|中世|近世|近代|現代)([①-⑩])((?:・[①-⑩])*)(?:[・ 　の]*授業(\d{2}))?|テーマ史[：〈]([^（）〉、。 　]+)〉?(?:[ 　の]*授業(\d{2}))?|授業(\d{2})((?:・\d{2})*)/g;
   const w=document.createTreeWalker(body,NodeFilter.SHOW_TEXT,null), nodes=[]; let n, cnt=0;
   while(n=w.nextNode()){ if(n.parentNode.closest("button,rt,h4,.mm,svg")) continue; XRE.lastIndex=0; if(XRE.test(n.nodeValue)) nodes.push(n); }
   nodes.forEach(node=>{ const s=node.nodeValue, frag=document.createDocumentFragment(); let last=0,m,pre="",post="";
@@ -1214,7 +1214,7 @@ function linkRefs(body){
       if(m[1]){ const pid=packByLabel(m[1]+m[2]);
         if(m[4]) mk(m[0],pid,m[4],ctx);
         else { mk(m[1]+m[2],pid,null,ctx); (m[3]||"").split("・").filter(Boolean).forEach(c=>{ tx("・"); mk(c,packByLabel(m[1]+c),null,ctx); }); } }
-      else if(m[5]) mk(m[0],packByLabel("テーマ史："+m[5]),m[6]||null,ctx);
+      else if(m[5]){ let lab=m[5], pid=packByLabel("テーマ史："+lab); if(!pid){ const l2=lab.replace(/[へにのでをと]+$/,""); if(l2!==lab&&packByLabel("テーマ史："+l2)){ lab=l2; pid=packByLabel("テーマ史："+l2); } } while(!pid&&lab.indexOf("・")>0){ lab=lab.slice(0,lab.lastIndexOf("・")); pid=packByLabel("テーマ史："+lab); } mk(m[0],pid,m[6]||null,ctx); }
       else { mk("授業"+m[7],activeId,m[7],ctx); (m[8]||"").split("・").filter(Boolean).forEach(c=>{ tx("・"); mk(c,activeId,c,ctx); }); }
       last=m.index+m[0].length; }
     tx(s.slice(last)); node.parentNode.replaceChild(frag,node); });
