@@ -40,7 +40,7 @@ def split_top(expr):
 J=lambda s: json.dumps(s,ensure_ascii=False)
 bad=False
 for no,lines in blocks.items():
-    mh=re.search(r"L\['"+re.escape(no)+r"'\]=dict\((?:title=\"[^\"]*\",)?html=",t)
+    mh=re.search(r"L\['"+re.escape(no)+r"'\]=dict\((?:title=(?:\"[^\"]*\"|'[^']*'),)?html=",t)
     if mh:
         i=mh.end()
         nxt=t.find("\nL['",i); nxt=len(t) if nxt<0 else nxt
