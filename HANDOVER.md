@@ -555,3 +555,4 @@ open('source.html','w',encoding='utf-8').write(s)
 - 作り方は newpack（データファイル1つ）：`python3 newpack.py <データ> ../app/source.html ../app/source.html` → `apply_rank.py` → `post.py ... <id>` → `add_maps.py` → `apply_rank.py` → `pack_out.py`。
 - 事実は通史の各授業（教科書から書いたもの）とつき合わせた。教科書（Drive）は今回読み直していない。
 - テーマ史：税と財政（id `theme_zaisei`、order 10.05、貨幣史の次）：`tools/theme_zaisei_data.py`。10授業（律令の税／人から土地へ／荘園の年貢と鎌倉幕府／室町幕府と戦国大名／石高と年貢／幕府の財政と改革／地租改正と秩禄処分／戦争と増税／恐慌と戦争の財政／戦後の税制）、一問一答59、穴埋め3題42空欄。ものさしは「だれに、何をもとに税をかけたか」。
+- テーマ史：商業と流通（id `theme_shogyo`、order 10.15、土地制度史の次）：`tools/theme_shogyo_data.py`。10授業（古代の市と交易／鎌倉の市と座／室町の市・座・運送／楽市と豪商／街道と海運／三都と大商人／株仲間と在郷商人／開港と政商／百貨店・財閥・統制／闇市から流通革命へ）、一問一答69、穴埋め3題41空欄。ものさしは「だれが、何を、どこで売り買いし、物はどうやって運ばれたか」。
