@@ -1491,7 +1491,7 @@ const VV={man:null,audio:null,blobs:new Map(),cur:"",unlocked:false,switching:fa
 function vvItems(){ return ttsCollect(true); }
 function vvHash(items){ let h=0x811c9dc5; const t=items.map(x=>(x.box?"#":"")+x.sents.join("|")).join("\n");
   for(let i=0;i<t.length;i++){ h^=t.charCodeAt(i); h=Math.imul(h,16777619)>>>0; } return h.toString(16); }
-function vvLoadMan(){ try{ fetch("audio/voices.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{ if(j&&j.lessons){ VV.man=j; if(tts.st==="idle") ttsRender(); } }).catch(()=>{}); }catch(e){} }
+function vvLoadMan(){ if(location.protocol==="file:") return; try{ fetch("audio/voices.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).then(j=>{ if(j&&j.lessons){ VV.man=j; if(tts.st==="idle") ttsRender(); } }).catch(()=>{}); }catch(e){} }
 function vvLesson(){ return VV.man?VV.man.lessons[activeId+":"+lIdx]||null:null; }
 /* この授業で使えるキャラの声（原稿が音声と同じときだけ） */
 function vvAvail(){ const e=vvLesson(); if(!e) return []; if(e._ok==null){ try{ e._ok=vvHash(vvItems())===e.hash; }catch(err){ e._ok=false; } }
