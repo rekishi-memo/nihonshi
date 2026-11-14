@@ -584,3 +584,12 @@ open('source.html','w',encoding='utf-8').write(s)
 - Playwright のテストは、ガイドが前に出るので、先に閉じる（`#gX` を押すか、localStorage に `nihonshi_guide`＝"hide" を入れる）。
 - Chromium では声が出ないので、にせの speechSynthesis で、再生・一時停止・速さ・声・枠・段落タップ・授業やタブを切りかえたときの停止を確かめた。iPhone の実際の声、ダウンロードした「拡張」の声がメニューに出るかは確かめていない。
 - 作業環境の都合：VOICEVOX（キャラクターの声）を作業環境で動かすのは安全装置に止められた。ネットの音声合成サービスも検討したが、ユーザーの判断で端末の声のままにした。
+
+### 2026-11-14 キャラクターの声（VOICEVOX）で授業を聞く
+- ユーザーの指示：iPhone の Web アプリが使える端末の声は Kyoko だけだった（O-ren・Otoya をダウンロードしても出てこない）。無料で声を変えたい → VOICEVOX で前もって音声ファイルを作り、アプリで再生する。キャラは「たくさん入れて選ばせる」。
+- **1ファイル構成の例外**（ユーザー了承）：音声だけは別ファイル。`audio/<pack id>/<授業の番号2桁>/<声のID>.m4a`（AAC 40kbps・モノラル）と `audio/voices.json`（声の一覧・クレジット・授業ごとの原稿ハッシュ・文ごとの開始時刻）。同じサイトの中のファイルで、外のサイトからは何も読み込まない。`sw.js` は変えていない（今の sw.js がネットから取ったものをキャッシュするので、一度聞いた授業はオフラインでも聞ける）。
+- 大きさ：1つの声で授業1つ約1MB。全授業×1声で300〜400MB。GitHub Pages は1GBまでなので、全授業ぶん作るのは1〜2声にしぼる（ユーザーが試しの授業で聞き比べて決める）。
+- 作り方：`node tools/vv_dump.js /tmp/vv_in.json kodai:0 …`（アプリの ttsCollect と同じ文の区切り・読みで原稿を出す）→ `<VOICEVOX の venv>/bin/python tools/vv_make.py <VOICEVOX のフォルダ> /tmp/vv_in.json [声のID…]`。声の一覧とクレジットは `tools/vv_voices.json`。VOICEVOX CORE 0.16.0（Python wheel・onnxruntime 1.17.3・open_jtalk 辞書・voicevox_vvm 0.16.0 の vvm）は GitHub の Releases から直接取る（公式のダウンロードツールは api.github.com を使うので、この作業環境では動かない）。
+- 利用規約（https://github.com/VOICEVOX/voicevox_vvm の README）：2026-11-14 ユーザーが同意。個人・非商用は全キャラ可、クレジット「VOICEVOX:キャラ名」が必須。アプリでは、再生中の声のクレジットを読み上げバーに、全キャラのクレジットを使い方ガイドの「声のえらび方」に出す。
+- アプリ（`tools/patch_vv.py`、patch_tts → patch_guide → patch_vv の順に当てる）：「声：」に「キャラクターの声（VOICEVOX）」と「端末の声」を並べる。キャラの声がない授業、または授業の文を直して原稿のハッシュが合わない授業は、端末の声で読む（案内を出す）。再生は <audio>（blob URL）。iPhone は最初のタップで無音を鳴らして再生できる状態にしておく。速さは playbackRate。段落タップでその文の時刻へ。枠も読む：オフなら枠の時刻をとばす。キャラの声は画面を消しても止めない。ロック画面に授業名とクレジット（Media Session）。
+- **授業の文を直したら**、その授業の音声を作りなおす（作りなおさないと、その授業は端末の声に戻る）。
