@@ -1,13 +1,15 @@
-# 授業の読み上げ（試し：古代① 授業01 だけ）を入れる。2026-11-14 ユーザーの指示。
+# 授業の読み上げを入れる（はじめは古代① 授業01 だけで試し、2026-11-14 に全授業へ広げた）。2026-11-14 ユーザーの指示。
 #   python3 patch_tts.py ../app/source.html ../app/source.html
 # しくみ：端末の声（Web Speech API の speechSynthesis）を使う。外から何も読み込まないので、オフラインでも動く。
 #  - ふりがなのある語は、ふりがな（カタカナにして）だけを読む。漢字とふりがなを二重に読まない。
 #  - 2回目からふりがなが付いていない語も、授業の中や全セットのふりがなから読みを引いて読む（読みが一つに決まる語だけ）。
 #  - 「（古代② 授業03）」のような参照、問いのカード、表、難関私大の欄は読まない。
-#  - 広げるときは TTS_TRIAL に pack の id と授業の番号（0から）を足す。全授業にするなら ttsAllowed を true にする。
+#  - 本文の段落がある授業ならどれでも出る（ttsAllowed）。「▶ …」の案内行・思い出そう・整理するのリンク・表・図は読まない。
 import sys
 src,dst=sys.argv[1],sys.argv[2]
 s=open(src,encoding='utf-8').read()
+import os,json
+KEEP=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'tts_keep.txt'),encoding='utf-8').read().split()
 if 'id="ttsBar"' in s:
     print('already'); sys.exit(0)
 
@@ -19,6 +21,7 @@ CSS=r'''
   .tts-bar button.tts-main{background:var(--gold);color:#1a140a;border-color:var(--gold);}
   .tts-bar select.tts-sub{font-family:var(--gothic);font-size:12.5px;font-weight:500;padding:7px 12px;border-radius:999px;border:1px solid var(--line,rgba(255,255,255,.18));background:transparent;color:var(--ivory-dim);-webkit-appearance:none;appearance:none;}
   .tts-bar select.tts-sub option{color:#1a140a;}
+  .tts-bar select.tts-voice{max-width:100%;}
   .tts-bar button.tts-sub{border-color:var(--line,rgba(255,255,255,.18));color:var(--ivory-dim);font-weight:500;}
   .tts-bar .tts-hint{flex-basis:100%;font-size:11.5px;color:var(--ash);line-height:1.6;}
   #lBody .tts-cur{background:rgba(201,162,74,.13);border-radius:8px;box-shadow:0 0 0 6px rgba(201,162,74,.13);transition:background .2s;}
@@ -38,22 +41,29 @@ assert s.count(a)==1; s=s.replace(a,'  else cb.style.display="none";\n  ttsRende
 a='function switchSec(k){ '
 assert s.count(a)==1; s=s.replace(a,'function switchSec(k){ if(k!=="lesson") ttsStop(); ')
 
-JS=r'''/* ---- 授業の読み上げ（試し：古代① 授業01 だけ）。端末の声（Web Speech API）を使うので、オフラインでも動く ---- */
-const TTS_TRIAL={kodai:[0]};          // 読み上げを出す授業（pack の id → 授業の番号。0 から）
+JS=r'''/* ---- 授業の読み上げ（全授業）。端末の声（Web Speech API）を使うので、オフラインでも動く ---- */
 const TTS_KEY="nihonshi_tts";          // 速さ・枠を読むかの設定だけ（学習記録とは別）
 const TTS_RATES=[0.8,1,1.2,1.3,1.4,1.5];
 const tts={st:"idle",items:[],k:0,s:0,gen:0,voice:null,cfg:Object.assign({rate:1,box:true},lsGet(TTS_KEY)||{})};
 if(!TTS_RATES.includes(+tts.cfg.rate)) tts.cfg.rate=1; else tts.cfg.rate=+tts.cfg.rate;
 let _ttsDict=null;
+/* 漢字のまま読ませてよい語（tools/tts_yomi.py が決める）。これ以外のふりがな付きの語は、ふりがなの読みに置きかえて読む */
+const TTS_KEEP=new Set("@@KEEP@@".split(" "));
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
 const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
 function ttsApplyRd(t){ for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
 function ttsOK(){ return typeof window!=="undefined"&&"speechSynthesis" in window&&typeof SpeechSynthesisUtterance!=="undefined"; }
-function ttsAllowed(){ const a=TTS_TRIAL[activeId]; return !!(a&&a.includes(lIdx)); }
-function ttsPickVoice(){ try{ const vs=speechSynthesis.getVoices().filter(v=>/^ja/i.test(v.lang)); if(!vs.length) return null;
-  const sc=v=>(/premium|enhanced|拡張|プレミアム/i.test(v.name)?4:0)+(v.localService?2:0)+(/kyoko|o-ren|otoya|hattori/i.test(v.name)?1:0);
-  return vs.sort((a,b)=>sc(b)-sc(a))[0]; }catch(e){ return null; } }
-if(ttsOK()&&speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged",()=>{ tts.voice=ttsPickVoice(); });
+function ttsReadP(el){ return el.tagName==="P"&&!el.classList.contains("xhint")&&!el.classList.contains("more")&&!el.classList.contains("seiri-intro"); }
+/* 読み上げは全授業（本文の段落がある授業）で出す */
+function ttsAllowed(){ const b=document.getElementById("lBody"); return !!(b&&[...b.children].some(ttsReadP)); }
+/* 日本語の声の一覧。iPhone で「拡張」「プレミアム」の声をダウンロードすると、ここに増える */
+function ttsVoices(){ try{ return speechSynthesis.getVoices().filter(v=>/^ja/i.test(v.lang)); }catch(e){ return []; } }
+function ttsVLabel(v){ const u=(v.voiceURI||"")+" "+v.name; return v.name.replace(/\s*[（(].*[)）]\s*$/,"")+(/premium|プレミアム/i.test(u)?"（プレミアム）":/enhanced|拡張/i.test(u)?"（拡張）":""); }
+function ttsPickVoice(){ const vs=ttsVoices(); if(!vs.length) return null;
+  if(tts.cfg.voice){ const v=vs.find(x=>(x.voiceURI||x.name)===tts.cfg.voice); if(v) return v; }
+  const sc=v=>{ const u=(v.voiceURI||"")+" "+v.name; return (/premium|プレミアム/i.test(u)?5:/enhanced|拡張/i.test(u)?4:0)+(v.localService?2:0)+(/kyoko|o-ren|otoya|hattori/i.test(v.name)?1:0); };
+  return vs.slice().sort((a,b)=>sc(b)-sc(a))[0]; }
+if(ttsOK()&&speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged",()=>{ tts.voice=ttsPickVoice(); if(tts.st==="idle") ttsRender(); });
 const ttsKata=t=>t.replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60));
 const ttsIsKan=c=>!!c&&/[㐀-鿿々〆ヶ]/.test(c);
 /* 読みの辞書：ふりがなの「漢字 → 読み」。読みが一つに決まる語だけ使う（2字以上） */
@@ -61,25 +71,29 @@ function ttsPairs(h,into){ const RE=/<ruby>([^<]+)<rt>([^<]+)<\/rt><\/ruby>/g; l
   while(m=RE.exec(h||"")){ const b=m[1].trim(), r=m[2].trim(); if(b.length<2||!ttsIsKan(b[0])&&!ttsIsKan(b[b.length-1])) continue; (into[b]=into[b]||{})[r]=1; } return into; }
 function ttsGlobal(){ if(_ttsDict) return _ttsDict; const seen={};
   Object.keys(packsById).forEach(id=>(packsById[id].lessons||[]).forEach(l=>ttsPairs((l.html||"")+(l.colHtml||""),seen)));
-  _ttsDict={}; for(const b in seen){ const rs=Object.keys(seen[b]); if(rs.length===1) _ttsDict[b]=rs[0]; } return _ttsDict; }
+  _ttsDict={}; for(const b in seen){ const rs=Object.keys(seen[b]); if(rs.length===1&&!TTS_KEEP.has(b)) _ttsDict[b]=rs[0]; } return _ttsDict; }
 function ttsDictFor(l){ const d=Object.assign({},ttsGlobal()), loc=ttsPairs(l.html||"",{});
-  for(const b in loc){ const rs=Object.keys(loc[b]); if(rs.length===1) d[b]=rs[0]; } return d; }
+  for(const b in loc){ const rs=Object.keys(loc[b]); if(rs.length===1&&!TTS_KEEP.has(b)) d[b]=rs[0]; } return d; }
 /* 漢字の語を、前後が漢字でないところだけ読みに置きかえる（長い語から） */
 function ttsApplyDict(t,d){ const keys=Object.keys(d).filter(k=>t.indexOf(k)>=0).sort((a,b)=>b.length-a.length); if(!keys.length) return t;
   const re=new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g");
   return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; return (ttsIsKan(pv)||ttsIsKan(nx))?m:ttsKata(d[m]); }); }
 /* 記号を声にしやすく直す */
+const TTS_CIRC="①②③④⑤⑥⑦⑧⑨⑩";
 function ttsNorm(t){ return t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")
+  .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")
+  .replace(/([^\s、。（）「」＞]+)＞([^\s、。（）「」＞]+)/g,"$1が$2を上回り").replace(/＞/g,"より大きい").replace(/\s*\bvs\.?\s*/gi,"たい").replace(/[：:](?!\d)/g,"、").replace(/[―—]/g,"、")
   .replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
-  .replace(/[・／]/g,"、").replace(/[■▶▼★☆※◆●○]/g,"").replace(/[ 　\s]+/g," ").replace(/、\s*、/g,"、").replace(/^[、\s]+/,"").trim(); }
+  .replace(/[・／\/]/g,"、").replace(/＋/g,"と").replace(/[■▶▼★☆※◆●○]/g,"").replace(/[ 　\s]+/g," ").replace(/、\s*、/g,"、").replace(/^[、\s]+/,"").trim(); }
 /* 1つの段落・枠を、読む文字列にする（ふりがなは読みだけ、参照ボタン・問いのカードは読まない） */
 function ttsTextOf(el){ let out="";
   const walk=n=>{ if(n.nodeType===3){ out+=n.nodeValue; return; } if(n.nodeType!==1) return;
     const c=n.classList, tg=n.tagName;
     if(c.contains("rtx")||tg==="RT"||tg==="RP"||c.contains("xref")||tg==="BUTTON"||tg==="svg"||tg==="SVG"||c.contains("qcheck")) return;
-    if(c.contains("rbx")||tg==="RUBY"){ const r=n.querySelector(".rtx,rt"); if(r){ out+=ttsKata(r.textContent.trim()); return; } }
-    if(c.contains("bx-tag")||c.contains("yd-tag")){ out+=n.textContent.trim()+"。"; return; }
-    if(tg==="B"&&n.parentNode&&n.parentNode.classList&&n.parentNode.classList.contains("yodan")){ n.childNodes.forEach(walk); if(!/[。！？]$/.test(out)) out+="。"; return; }
+    if(c.contains("rbx")||tg==="RUBY"){ const r=n.querySelector(".rtx,rt"); if(r){ const base=[...n.childNodes].filter(x=>x!==r&&!(x.nodeType===1&&x.tagName==="RP")).map(x=>x.textContent).join("").trim();
+        out+=TTS_KEEP.has(base)?base:ttsKata(r.textContent.trim()); return; } }
+    if(c.contains("bx-tag")||c.contains("yd-tag")){ out+=n.textContent.trim().replace(/＋/g,"プラス")+"。"; return; }
+    if(tg==="B"&&n.parentNode&&n.parentNode.classList&&(n.parentNode.classList.contains("yodan")||n.parentNode.classList.contains("deep"))){ n.childNodes.forEach(walk); if(!/[。！？]$/.test(out)) out+="。"; return; }
     n.childNodes.forEach(walk); };
   walk(el); return out; }
 function ttsSplit(t){ const a=t.match(/[^。！？]*[。！？]+[」』）]*|[^。！？]+$/g)||[]; return a.map(x=>x.trim()).filter(x=>x&&/[^\s。、」』）]/.test(x)); }
@@ -87,8 +101,9 @@ function ttsCollect(){ const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=
   const add=(el,raw)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d)); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss}); };
   const ti=document.getElementById("lTitle"); add(ti,"授業"+(+(l.no||lIdx+1))+"。"+ttsTextOf(ti)+"。");
   [...document.getElementById("lBody").children].forEach(el=>{
-    if(el.tagName==="P"&&!el.classList.contains("xhint")) add(el,ttsTextOf(el));
-    else if(tts.cfg.box&&el.classList.contains("yodan")) add(el,ttsTextOf(el));
+    if(ttsReadP(el)) add(el,ttsTextOf(el));
+    else if(el.classList.contains("flow")) add(el,ttsTextOf(el));
+    else if(tts.cfg.box&&(el.classList.contains("yodan")||el.classList.contains("deep"))) add(el,ttsTextOf(el));
     else if(tts.cfg.box&&el.classList.contains("nyushi")) add(el,ttsTextOf(el));
     else if(tts.cfg.box&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el)); });
   return items; }
@@ -111,12 +126,15 @@ function ttsStop(){ const was=tts.st!=="idle"; tts.st="idle"; tts.gen++; tts.ite
   if(was&&ttsOK()){ try{speechSynthesis.cancel();}catch(e){} } document.querySelectorAll(".tts-cur").forEach(x=>x.classList.remove("tts-cur")); }
 function ttsJump(el){ const i=tts.items.findIndex(x=>x.el===el); if(i<0) return; tts.k=i; tts.s=0; tts.st="pause"; ttsPlay(); }
 function ttsSave(){ lsSet(TTS_KEY,tts.cfg); }
+function ttsVoiceSel(){ const vs=ttsVoices(); if(!vs.length) return ""; if(!tts.voice) tts.voice=ttsPickVoice(); const cu=tts.voice?(tts.voice.voiceURI||tts.voice.name):"";
+  const seen={}; return `<select class="tts-sub tts-voice" aria-label="読み上げの声">${vs.map(v=>{ let lb=ttsVLabel(v); seen[lb]=(seen[lb]||0)+1; if(seen[lb]>1) lb+=" "+seen[lb]; const k=v.voiceURI||v.name;
+    return `<option value="${k.replace(/"/g,"&quot;")}"${k===cu?" selected":""}>声：${lb}</option>`; }).join("")}</select>`; }
 function ttsRender(){ const bar=document.getElementById("ttsBar"); if(!bar) return;
   if(!ttsOK()||!ttsAllowed()){ bar.hidden=true; bar.innerHTML=""; return; } bar.hidden=false;
   const main=tts.st==="play"?"⏸ 一時停止":(tts.st==="pause"?"▶ つづきから":"▶ 読み上げ");
   bar.innerHTML=`<button type="button" class="tts-main" data-a="main">${main}</button>`+(tts.st!=="idle"?`<button type="button" data-a="stop">■ 停止</button>`:"")+
-    `<select class="tts-sub tts-rate" aria-label="読み上げの速さ">${TTS_RATES.map(r=>`<option value="${r}"${r===tts.cfg.rate?" selected":""}>速さ ${r}倍</option>`).join("")}</select><button type="button" class="tts-sub" data-a="box">枠も読む：${tts.cfg.box?"オン":"オフ"}</button>`+
-    `<span class="tts-hint">${tts.st==="idle"?"授業を声で読みます（ためし）。ふりがなの読みで読みます。":"段落をタップすると、そこから読みます。"}</span>`; }
+    `<select class="tts-sub tts-rate" aria-label="読み上げの速さ">${TTS_RATES.map(r=>`<option value="${r}"${r===tts.cfg.rate?" selected":""}>速さ ${r}倍</option>`).join("")}</select>${ttsVoiceSel()}<button type="button" class="tts-sub" data-a="box">枠も読む：${tts.cfg.box?"オン":"オフ"}</button>`+
+    `<span class="tts-hint">${tts.st==="idle"?"授業を声で読みます。ふりがなの読みで読みます。":"段落をタップすると、そこから読みます。"}</span>`; }
 document.addEventListener("click",e=>{ const b=e.target.closest("#ttsBar button"); if(b){ e.preventDefault(); const a=b.dataset.a;
     if(a==="main"){ tts.st==="play"?ttsPause():ttsPlay(); }
     else if(a==="stop"){ ttsStop(); ttsRender(); }
@@ -126,12 +144,18 @@ document.addEventListener("click",e=>{ const b=e.target.closest("#ttsBar button"
         tts.k=Math.max(0,i); if(wasPlay){ tts.st="pause"; ttsPlay(); } } ttsRender(); }
     return; }
   if(tts.st==="idle") return; if(e.target.closest("button,a,summary,details,.kw,.xref,input,select")) return;
-  const el=e.target.closest("#lBody > p, #lBody > .yodan, #lBody > .nyushi, #lBody > .point, #lTitle"); if(el) ttsJump(el); });
-document.addEventListener("change",e=>{ const sel=e.target.closest("#ttsBar .tts-rate"); if(!sel) return; const r=+sel.value; if(!TTS_RATES.includes(r)) return;
+  const el=e.target.closest("#lBody > p, #lBody > .flow, #lBody > .yodan, #lBody > .deep, #lBody > .nyushi, #lBody > .point, #lTitle"); if(el) ttsJump(el); });
+document.addEventListener("change",e=>{ const vsel=e.target.closest("#ttsBar .tts-voice"); if(vsel){ const v=ttsVoices().find(x=>(x.voiceURI||x.name)===vsel.value); if(!v) return;
+    tts.voice=v; tts.cfg.voice=vsel.value; ttsSave();
+    if(tts.st==="play"){ tts.gen++; speechSynthesis.cancel(); setTimeout(()=>{ if(tts.st==="play") ttsSpeak(); },80); }
+    else if(tts.st==="idle"){ try{ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance("この声で読みます。"); u.lang="ja-JP"; u.voice=v; u.rate=tts.cfg.rate; speechSynthesis.speak(u); }catch(err){} }
+    return; }
+  const sel=e.target.closest("#ttsBar .tts-rate"); if(!sel) return; const r=+sel.value; if(!TTS_RATES.includes(r)) return;
   tts.cfg.rate=r; ttsSave(); if(tts.st==="play"){ tts.gen++; speechSynthesis.cancel(); setTimeout(()=>{ if(tts.st==="play") ttsSpeak(); },80); } });
 document.addEventListener("visibilitychange",()=>{ if(document.hidden) ttsPause(); });
 
 '''
+JS=JS.replace('@@KEEP@@',' '.join(KEEP).replace('\\','').replace('"',''))
 a="/* ふりがなの置きかえ */"
 assert s.count(a)==1; s=s.replace(a,JS+a)
 open(dst,'w',encoding='utf-8').write(s); print('ok')
