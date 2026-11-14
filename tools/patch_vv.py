@@ -43,7 +43,7 @@ function ttsJump(el){ const i=tts.items.findIndex(x=>x.el===el); if(i<0) return;
 function ttsPause(){ if(tts.st!=="play") return; tts.st="pause"; tts.gen++;
   if(tts.mode==="vv"){ if(VV.audio) VV.audio.pause(); } else { try{speechSynthesis.cancel();}catch(e){} } ttsRender(); }
 function ttsStop(){ const was=tts.st!=="idle"; tts.st="idle"; tts.gen++; tts.items=[]; tts.k=0; tts.s=0;
-  if(VV.audio&&!VV.audio.paused){ VV.switching=true; VV.audio.pause(); VV.switching=false; }
+  VV.cur=""; if(VV.audio&&!VV.audio.paused){ VV.switching=true; VV.audio.pause(); VV.switching=false; }   // cur を空に：あとから届く pause の知らせを無視する
   if(was&&ttsOK()){ try{speechSynthesis.cancel();}catch(e){} } document.querySelectorAll(".tts-cur").forEach(x=>x.classList.remove("tts-cur")); }
 function ttsJump(el){ const i=tts.items.findIndex(x=>x.el===el); if(i<0) return; tts.k=i; tts.s=0;
   if(tts.mode==="vv"){ const T=tts.vvT; if(VV.audio&&T&&T[i]&&VV.audio.src===VV.cur){ VV.audio.currentTime=T[i][0]; ttsMark(el); if(VV.audio.paused){ tts.st="play"; VV.audio.play().catch(()=>{}); ttsRender(); } return; }
