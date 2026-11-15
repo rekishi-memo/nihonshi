@@ -13,7 +13,7 @@ VV,INP=sys.argv[1],sys.argv[2]; ONLY=set(int(x) for x in sys.argv[3:])
 VOICES=json.load(open(os.path.join(HERE,'vv_voices.json'),encoding='utf-8'))
 if ONLY: VOICES=[v for v in VOICES if v['id'] in ONLY]
 SR=24000; GAP_S=0.12; GAP_P=0.45   # 文と文のあいだ・段落と段落のあいだ（秒）
-BR=os.environ.get('VV_BR','20k')   # 音質。20k で1授業およそ0.7MB（全授業×1声で約270MB）。GitHub Pages は1GBまで
+BR=os.environ.get('VV_BR','32k')   # 音質。32k で1授業およそ1.6MB（全授業×1声で約650MB）。GitHub Pages は1GBまで（2026-11-15 ユーザーの指示で20k→32k）
 ort=Onnxruntime.load_once(filename=os.path.join(VV,'voicevox_onnxruntime-linux-x64-1.17.3/lib/libvoicevox_onnxruntime.so.1.17.3'))
 syn=Synthesizer(ort,OpenJtalk(os.path.join(VV,'open_jtalk_dic_utf_8-1.11')),cpu_num_threads=os.cpu_count() or 4)
 loaded=set()

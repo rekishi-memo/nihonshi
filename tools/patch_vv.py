@@ -17,16 +17,16 @@ def rep(a,b,n=1):
     assert s.count(a)==n,(s.count(a),a[:80]); s=s.replace(a,b)
 
 # 1) ttsCollect に「枠も全部入れる」(all) と、枠かどうか (box) を足す
-rep('''function ttsCollect(){ const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[];
+rep('''function ttsCollect(){ _ttsAlt=0; const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[];
   const add=(el,raw)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d)); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss}); };''',
-'''function ttsCollect(all){ const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[], bx=all||tts.cfg.box;
-  const add=(el,raw,box)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d)); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss,box:!!box}); };''')
+'''function ttsCollect(all){ _ttsAlt=0; const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[], bx=all||tts.cfg.box;
+  const add=(el,raw,box,plain)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d),plain); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss,box:!!box}); };''')
 rep('''    else if(tts.cfg.box&&(el.classList.contains("yodan")||el.classList.contains("deep"))) add(el,ttsTextOf(el));
     else if(tts.cfg.box&&el.classList.contains("nyushi")) add(el,ttsTextOf(el));
     else if(tts.cfg.box&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el)); });''',
 '''    else if(bx&&(el.classList.contains("yodan")||el.classList.contains("deep"))) add(el,ttsTextOf(el),1);
-    else if(bx&&el.classList.contains("nyushi")) add(el,ttsTextOf(el),1);
-    else if(bx&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el),1); });''')
+    else if(bx&&el.classList.contains("nyushi")) add(el,ttsTextOf(el),1,1);
+    else if(bx&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el),1,1); });''')
 
 # 2) 再生・一時停止・停止・段落タップをキャラの声にも対応させる
 rep('''function ttsPlay(){ if(!ttsOK()) return; if(tts.st==="idle"){ tts.items=ttsCollect(); tts.k=0; tts.s=0; }

@@ -495,6 +495,7 @@
   .tts-bar select.tts-sub option{color:#1a140a;}
   .tts-bar select.tts-voice{max-width:100%;}
   .tts-bar button.tts-sub{border-color:var(--line,rgba(255,255,255,.18));color:var(--ivory-dim);font-weight:500;}
+  .tts-bar button.tts-sub.tts-on{border-color:var(--gold-deep);color:var(--gold);font-weight:600;}
   .tts-bar .tts-hint{flex-basis:100%;font-size:11.5px;color:var(--ash);line-height:1.6;}
   #lBody .tts-cur{background:rgba(201,162,74,.13);border-radius:8px;box-shadow:0 0 0 6px rgba(201,162,74,.13);transition:background .2s;}
   #lTitle.tts-cur{background:rgba(201,162,74,.13);border-radius:6px;}
@@ -728,7 +729,7 @@
 <div class="guide" id="guide" role="dialog" aria-modal="true" aria-label="使い方">
   <div class="g-card">
     <div class="g-head"><span class="g-step" id="gStep">1 / 7</span><button class="g-x" id="gX" aria-label="閉じる">✕</button></div>
-    <div class="g-body" id="gBody"><section class='g-slide' data-i='0'><div class='g-ico'>📚</div><h3>ようこそ。このアプリでできること</h3><div class='g-tabs'><span>授業</span><span>一問一答</span><span>穴埋め</span><span>論述</span><span>用語</span><span>語呂</span><span>人物</span></div><ul class='g-list dot'><li><b>授業</b>を読む・<b>声で聞く</b></li><li><b>一問一答</b>と<b>穴埋め</b>で覚えたか確かめる</li><li><b>論述</b>・<b>用語</b>・<b>語呂</b>・<b>人物</b>で整理する</li><li>通史（古代〜現代）と<b>テーマ史</b>のセットがある</li></ul><div class='g-note'>次へ進むと、使い方を順に説明します。あとから右上の <span class='g-ui sub'>？</span> ボタンでいつでも開けます。</div></section><section class='g-slide' data-i='1'><div class='g-ico'>🗂</div><h3>セットとタブの切りかえ</h3><ol class='g-list'><li>いちばん上の<b>セットの選択</b>で、時代（古代①・中世③…）やテーマ史を選ぶ</li><li>その下の<b>タブ</b>で「授業」「一問一答」などを切りかえる</li><li>授業は<b>番号のチップ</b>（01・02…）で選ぶ。左右にスクロールできる</li><li>授業のいちばん下の <span class='g-ui sub'>次の授業 →</span> で次へ。セットの最後なら次のセットへ進む</li></ol></section><section class='g-slide' data-i='2'><div class='g-ico'>🎨</div><h3>授業の読み方（色とリンク）</h3><div class='g-colors'><div><em style='color:var(--gold);font-weight:800'>太い金</em>共テ必修。まずここ</div><div><em style='color:var(--gold);font-weight:600'>金</em>私大頻出</div><div><em style='color:#c7b98f'>うすい色</em>私大で出る細かめの語</div><div><em style='color:#cdb2ff'>紫（下の枠）</em>難関私大。本文では色なし</div></div><ol class='g-list'><li><b>金色の点線</b>の「授業06」「中世③」などをタップすると、その授業に飛ぶ。<span class='g-ui sub'>← もとの授業にもどる</span> で帰れる</li><li><b>？</b>のカードはタップすると答えが出る</li><li>下の<b>難関私大</b>の枠の紫の語をタップすると、本文のその場所が光る</li></ol></section><section class='g-slide' data-i='3'><div class='g-ico'>✅</div><h3>一問一答・今日のぶん・穴埋め</h3><ol class='g-list'><li><b>今日のぶん</b>：一問一答タブの上の <span class='g-ui'>今日のぶんへ →</span> で、その日の問題（復習＋新しい問題）にとりくむ</li><li>上のボタンで出す問題をしぼれる：<span class='g-ui sub'>共テ必修</span> <span class='g-ui sub'>私大頻出</span> <span class='g-ui sub'>難関私大</span> <span class='g-ui sub'>過去問</span> <span class='g-ui sub'>苦手だけ</span></li><li><span class='g-ui sub'>答えを見る</span> で答えを出し、<span class='g-ui sub'>○ できた</span> か <span class='g-ui sub'>× まちがえた</span> を押す。まちがえた問題は「苦手だけ」や今日のぶんの復習に出てくる</li><li><b>穴埋め</b>は、空欄をタップすると答えが出る</li></ol></section><section class='g-slide' data-i='4'><div class='g-ico'>🔊</div><h3>授業を声で聞く（読み上げ）</h3><ol class='g-list'><li>授業の題の下の <span class='g-ui main'>▶ 読み上げ</span> を押す。読んでいる段落が光って、自動でスクロールする</li><li><span class='g-ui main'>⏸ 一時停止</span> → <span class='g-ui main'>▶ つづきから</span>。やめるときは <span class='g-ui'>■ 停止</span></li><li>読んでいる途中で<b>段落をタップ</b>すると、そこから読む</li><li><span class='g-ui sub'>速さ 1倍</span> で 0.8〜1.5倍を選べる</li><li><span class='g-ui sub'>声：… ›</span> を押すと、設定の声の欄が開く（次のページ）</li><li>右上の <span class='g-ui sub'>⚙ 設定</span> で「枠も読む」をオフにすると、「入試ではこう出る」「まとめ」などの枠をとばす</li></ol><div class='g-note'>ふりがなのある語は、ふりがなの読みで読みます（漢字とふりがなを二重には読みません）。<br>キャラクターの声は、画面を消しても続きます。端末の声は、画面を消すと止まるので、もどったら「▶ つづきから」。</div></section><section class='g-slide' data-i='5'><div class='g-ico'>🎙</div><h3>声のえらび方</h3><ol class='g-list'><li>右上の <span class='g-ui sub'>⚙ 設定</span>（または授業の <span class='g-ui sub'>声：… ›</span>）を押す</li><li>「読み上げの声」の <b>▶</b> で試しに聞く</li><li>気に入った声の<b>名前をタップ</b>すると、その声になる（✓が付く）</li><li><b>キャラクターの声</b>は前もって作った音声で、<b>まだ一部の授業にしかありません</b>（「音声のある授業」の数を見てね）。ない授業では、自動で端末の声で読みます</li><li>ネットにつないで一度聞いた授業は、オフラインでもキャラクターの声で聞ける</li></ol><div class='g-note'><b>端末の声について</b>：iPhone では、このアプリが使える端末の声は <b>Kyoko だけ</b>です（iPhone の制限）。設定で O-ren や Otoya をダウンロードしても、このアプリには出てきません。</div><div class='g-note' id='gCredits'>キャラクターの声：VOICEVOX</div></section><section class='g-slide' data-i='6'><div class='g-ico'>📶</div><h3>オフラインと学習記録</h3><ol class='g-list'><li>Safari で開いて <b>共有ボタン</b> →<b>「ホーム画面に追加」</b>すると、アプリのように使える。ネットがなくても動く</li><li>学習記録は、この iPhone の中に保存される</li><li>機種変更のときは <span class='g-ui sub'>⚙ 設定</span> →「データ」→「記録を書き出す」で保存して、新しい iPhone で読みこむ</li></ol><div class='g-note'>この説明は、右上の <span class='g-ui sub'>？</span> ボタンでいつでも見られます。</div></section></div>
+    <div class="g-body" id="gBody"><section class='g-slide' data-i='0'><div class='g-ico'>📚</div><h3>ようこそ。このアプリでできること</h3><div class='g-tabs'><span>授業</span><span>一問一答</span><span>穴埋め</span><span>論述</span><span>用語</span><span>語呂</span><span>人物</span></div><ul class='g-list dot'><li><b>授業</b>を読む・<b>声で聞く</b></li><li><b>一問一答</b>と<b>穴埋め</b>で覚えたか確かめる</li><li><b>論述</b>・<b>用語</b>・<b>語呂</b>・<b>人物</b>で整理する</li><li>通史（古代〜現代）と<b>テーマ史</b>のセットがある</li></ul><div class='g-note'>次へ進むと、使い方を順に説明します。あとから右上の <span class='g-ui sub'>？</span> ボタンでいつでも開けます。</div></section><section class='g-slide' data-i='1'><div class='g-ico'>🗂</div><h3>セットとタブの切りかえ</h3><ol class='g-list'><li>いちばん上の<b>セットの選択</b>で、時代（古代①・中世③…）やテーマ史を選ぶ</li><li>その下の<b>タブ</b>で「授業」「一問一答」などを切りかえる</li><li>授業は<b>番号のチップ</b>（01・02…）で選ぶ。左右にスクロールできる</li><li>授業のいちばん下の <span class='g-ui sub'>次の授業 →</span> で次へ。セットの最後なら次のセットへ進む</li></ol></section><section class='g-slide' data-i='2'><div class='g-ico'>🎨</div><h3>授業の読み方（色とリンク）</h3><div class='g-colors'><div><em style='color:var(--gold);font-weight:800'>太い金</em>共テ必修。まずここ</div><div><em style='color:var(--gold);font-weight:600'>金</em>私大頻出</div><div><em style='color:#c7b98f'>うすい色</em>私大で出る細かめの語</div><div><em style='color:#cdb2ff'>紫（下の枠）</em>難関私大。本文では色なし</div></div><ol class='g-list'><li><b>金色の点線</b>の「授業06」「中世③」などをタップすると、その授業に飛ぶ。<span class='g-ui sub'>← もとの授業にもどる</span> で帰れる</li><li><b>？</b>のカードはタップすると答えが出る</li><li>下の<b>難関私大</b>の枠の紫の語をタップすると、本文のその場所が光る</li></ol></section><section class='g-slide' data-i='3'><div class='g-ico'>✅</div><h3>一問一答・今日のぶん・穴埋め</h3><ol class='g-list'><li><b>今日のぶん</b>：一問一答タブの上の <span class='g-ui'>今日のぶんへ →</span> で、その日の問題（復習＋新しい問題）にとりくむ</li><li>上のボタンで出す問題をしぼれる：<span class='g-ui sub'>共テ必修</span> <span class='g-ui sub'>私大頻出</span> <span class='g-ui sub'>難関私大</span> <span class='g-ui sub'>過去問</span> <span class='g-ui sub'>苦手だけ</span></li><li><span class='g-ui sub'>答えを見る</span> で答えを出し、<span class='g-ui sub'>○ できた</span> か <span class='g-ui sub'>× まちがえた</span> を押す。まちがえた問題は「苦手だけ」や今日のぶんの復習に出てくる</li><li><b>穴埋め</b>は、空欄をタップすると答えが出る</li></ol></section><section class='g-slide' data-i='4'><div class='g-ico'>🔊</div><h3>授業を声で聞く（読み上げ）</h3><ol class='g-list'><li>授業の題の下の <span class='g-ui main'>▶ 読み上げ</span> を押す。読んでいる段落が光って、自動でスクロールする</li><li><span class='g-ui main'>⏸ 一時停止</span> → <span class='g-ui main'>▶ つづきから</span>。やめるときは <span class='g-ui'>■ 停止</span></li><li>読んでいる途中で<b>段落をタップ</b>すると、そこから読む</li><li><span class='g-ui sub'>自動で次へ</span> をオンにすると、授業を読み終えたら<b>次の授業へ進んで読み続ける</b>（画面も進む）</li><li><span class='g-ui sub'>速さ 1倍</span> で 0.8〜1.5倍を選べる</li><li><span class='g-ui sub'>声：… ›</span> を押すと、設定の声の欄が開く（次のページ）</li><li>右上の <span class='g-ui sub'>⚙ 設定</span> で「枠も読む」をオフにすると、「入試ではこう出る」「まとめ」などの枠をとばす</li></ol><div class='g-note'>ふりがなのある語は、ふりがなの読みで読みます（漢字とふりがなを二重には読みません）。<br>キャラクターの声は、画面を消しても続きます。端末の声は、画面を消すと止まるので、もどったら「▶ つづきから」。</div></section><section class='g-slide' data-i='5'><div class='g-ico'>🎙</div><h3>声のえらび方</h3><ol class='g-list'><li>右上の <span class='g-ui sub'>⚙ 設定</span>（または授業の <span class='g-ui sub'>声：… ›</span>）を押す</li><li>「読み上げの声」の <b>▶</b> で試しに聞く</li><li>気に入った声の<b>名前をタップ</b>すると、その声になる（✓が付く）</li><li><b>キャラクターの声</b>は前もって作った音声で、<b>まだ一部の授業にしかありません</b>（「音声のある授業」の数を見てね）。ない授業では、自動で端末の声で読みます</li><li>ネットにつないで一度聞いた授業は、オフラインでもキャラクターの声で聞ける</li></ol><div class='g-note'><b>端末の声について</b>：iPhone では、このアプリが使える端末の声は <b>Kyoko だけ</b>です（iPhone の制限）。設定で O-ren や Otoya をダウンロードしても、このアプリには出てきません。</div><div class='g-note' id='gCredits'>キャラクターの声：VOICEVOX</div></section><section class='g-slide' data-i='6'><div class='g-ico'>📶</div><h3>オフラインと学習記録</h3><ol class='g-list'><li>Safari で開いて <b>共有ボタン</b> →<b>「ホーム画面に追加」</b>すると、アプリのように使える。ネットがなくても動く</li><li>学習記録は、この iPhone の中に保存される</li><li>機種変更のときは <span class='g-ui sub'>⚙ 設定</span> →「データ」→「記録を書き出す」で保存して、新しい iPhone で読みこむ</li></ol><div class='g-note'>この説明は、右上の <span class='g-ui sub'>？</span> ボタンでいつでも見られます。</div></section></div>
     <div class="g-foot"><div class="g-dots" id="gDots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <div class="g-nav"><button id="gPrev">← もどる</button><button class="g-next" id="gNext">次へ →</button></div>
       <button class="g-hide" id="gHide">今後は表示しない</button></div>
@@ -740,6 +741,7 @@
     <div class="st-sec" id="stVoiceSec"><h4>読み上げの声</h4><p class="st-sub">▶ で試しに聞けます。名前をタップすると、その声にします。<br>キャラクターの声は、音声のある授業だけ。ない授業は端末の声で読みます。</p><div id="stVoices"></div></div>
     <div class="st-sec"><h4>読み上げの速さ</h4><div class="st-seg" id="stRates"></div></div>
     <div class="st-sec"><h4>読み上げの枠</h4><div class="st-row"><span>枠も読む<small>「入試ではこう出る」「まとめ」「ちょっと脱線」など</small></span><button class="st-sw" id="stBox" aria-label="枠も読む"></button></div></div>
+    <div class="st-sec"><h4>自動で次へ</h4><div class="st-row"><span>授業を読み終えたら、次の授業へ進む<small>画面も次の授業に移り、読み上げが続きます</small></span><button class="st-sw" id="stAuto" aria-label="自動で次へ"></button></div></div>
     <div class="st-sec"><h4>使い方ガイド</h4><div class="st-row"><span>アプリを開いたときに表示する</span><button class="st-sw" id="stGuide" aria-label="アプリを開いたときに使い方を表示する"></button></div><button class="st-btn" id="stGuideNow">使い方を見る ›</button></div>
     <div class="st-sec"><h4>データ</h4><button class="st-btn" id="stData">学習記録の書き出し・読みこみ、セットの取りこみ ›</button></div>
     <div class="st-sec"><h4>クレジット</h4><p class="st-credit" id="stCredit">キャラクターの声：VOICEVOX</p></div>
@@ -81456,7 +81458,34 @@ function ttsApplyDict(t,d){ const keys=Object.keys(d).filter(k=>t.indexOf(k)>=0)
   return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; return (ttsIsKan(pv)||ttsIsKan(nx))?m:ttsKata(d[m]); }); }
 /* 記号を声にしやすく直す */
 const TTS_CIRC="①②③④⑤⑥⑦⑧⑨⑩";
-function ttsNorm(t){ return t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")
+/* かっこ（　）の中身を、授業らしく読む（2026-11-15 ユーザーの指示）。
+   語句の言いかえ →「、すなわち◯◯」「。つまり、◯◯だ」／年 →「527年の磐井の乱」「。643年のことだ」
+   「のちの」「いまの」→「、のちの◯◯」／説明の文 → 前後に区切って、そのまま読む */
+const TTS_YR=/^(?:紀元前)?[0-9０-９]{1,4}(?:年|世紀|年代)?(?:ごろ|頃)?(?:\s*(?:[〜～\-]|から)\s*[0-9０-９]{1,4}(?:年|世紀)?(?:ごろ|頃)?)?$/;
+let _ttsAlt=0; const ttsConj=()=>(_ttsAlt++%2?"つまり":"すなわち");
+function ttsYear(y){ y=y.replace(/\s*[〜～\-]\s*/g,"から"); return /(年|世紀|ごろ|頃|年代)$/.test(y)?y:y+"年"; }
+function ttsParen(t,plain){ let out="", rest=t, g=0;
+  while(g++<60){ const m=/（([^（）]{1,140})）/.exec(rest); if(!m){ out+=rest; break; }
+    let pre=out+rest.slice(0,m.index); const y=m[1].trim(), post=rest.slice(m.index+m[0].length), nx=post.charAt(0);
+    const end=/^\s*([。！？」』]|$)/.test(post), ptc=/^[をはがにでともへのやだか]/.test(nx), sep=ptc||/^[、。！？」』]/.test(nx)?"":"、";
+    let ins="";
+    if(!y){ ins=""; }
+    else if(plain){ ins=(TTS_YR.test(y)?"、"+ttsYear(y):"、"+y)+(end?"":sep); }   // まとめ・入試の枠：区切って読むだけ
+    else if(TTS_YR.test(y)){ const yy=ttsYear(y), mm=/[一-鿿々ァ-ヶーＡ-Ｚａ-ｚA-Za-z0-9０-９・]+(?:の[一-鿿々ァ-ヶーＡ-Ｚａ-ｚA-Za-z0-9０-９・]+)*$/.exec(pre);
+      if(mm&&mm[0].length<=24&&!/^[0-9０-９]/.test(mm[0])){ if(end) ins="。"+yy+"のことだ"; else pre=pre.slice(0,mm.index)+yy+"の"+mm[0]; }
+      else ins=end?"。"+yy+"のことだ":"、"+yy+sep; }
+    else if(/^(のちの|のちに|後の|いまの|今の|現在の|もとの|もと|旧)/.test(y)){
+      if(/^(のちに)/.test(y)||y.length>16) ins=end?"。これは"+y:"、これは"+y+"、"; else ins=end?"、"+y+"だ":"、"+y+sep; }
+    else if(y.length>18||(/[をはがにでと]/.test(y)&&/[るたいだうすくむれ]$/.test(y))||(/[をはがで]/.test(y)&&y.length>=6)||(y.length<=4&&/[るたうくすむ]$/.test(y)&&!/[ァ-ヶ一-鿿]$/.test(y))){
+      ins=end?"。"+y+(/[るたいだうすくむれ。]$/.test(y)?"":"だ"):"、"+y+"、"; }
+    else { const it=y.split(/、/).map(x=>x.trim()).filter(Boolean), yr=it.filter(x=>TTS_YR.test(x)); let body;
+      if(it.length===2&&yr.length===1){ body=ttsYear(yr[0])+"の"+it.find(x=>!TTS_YR.test(x)); }
+      else if(it.length>1&&it.every(x=>x.length<=12&&!/[0-9０-９]/.test(x)&&!/[とやにをはがで]$/.test(x))) body=it.join("や");
+      else body=it.join("、");
+      const c=ttsConj(); ins=end?"。"+c+"、"+body+"だ":"、"+c+body+sep; }
+    out=pre+ins; rest=post; }
+  return out.replace(/[（）]/g,"、").replace(/、\s*、/g,"、").replace(/、([。！？」』])/g,"$1").replace(/。\s*。/g,"。").replace(/^[、。\s]+/,""); }
+function ttsNorm(t,plain){ return ttsParen(t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,""),plain)
   .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")
   .replace(/([^\s、。（）「」＞]+)＞([^\s、。（）「」＞]+)/g,"$1が$2を上回り").replace(/＞/g,"より大きい").replace(/\s*\bvs\.?\s*/gi,"たい").replace(/[：:](?!\d)/g,"、").replace(/[―—]/g,"、")
   .replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
@@ -81473,21 +81502,21 @@ function ttsTextOf(el){ let out="";
     n.childNodes.forEach(walk); };
   walk(el); return out; }
 function ttsSplit(t){ const a=t.match(/[^。！？]*[。！？]+[」』）]*|[^。！？]+$/g)||[]; return a.map(x=>x.trim()).filter(x=>x&&/[^\s。、」』）]/.test(x)); }
-function ttsCollect(all){ const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[], bx=all||tts.cfg.box;
-  const add=(el,raw,box)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d)); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss,box:!!box}); };
+function ttsCollect(all){ _ttsAlt=0; const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[], bx=all||tts.cfg.box;
+  const add=(el,raw,box,plain)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d),plain); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss,box:!!box}); };
   const ti=document.getElementById("lTitle"); add(ti,"授業"+(+(l.no||lIdx+1))+"。"+ttsTextOf(ti)+"。");
   [...document.getElementById("lBody").children].forEach(el=>{
     if(ttsReadP(el)) add(el,ttsTextOf(el));
     else if(el.classList.contains("flow")) add(el,ttsTextOf(el));
     else if(bx&&(el.classList.contains("yodan")||el.classList.contains("deep"))) add(el,ttsTextOf(el),1);
-    else if(bx&&el.classList.contains("nyushi")) add(el,ttsTextOf(el),1);
-    else if(bx&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el),1); });
+    else if(bx&&el.classList.contains("nyushi")) add(el,ttsTextOf(el),1,1);
+    else if(bx&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el),1,1); });
   return items; }
 function ttsMark(el){ document.querySelectorAll(".tts-cur").forEach(x=>x.classList.remove("tts-cur")); if(!el) return; el.classList.add("tts-cur");
   const r=el.getBoundingClientRect(), vh=window.innerHeight; if(r.top<70||r.top>vh*0.6) window.scrollTo(0,Math.max(0,r.top+window.scrollY-110)); }
 function ttsSpeak(){ const my=++tts.gen;
   while(tts.k<tts.items.length&&tts.s>=tts.items[tts.k].sents.length){ tts.k++; tts.s=0; }
-  const it=tts.items[tts.k]; if(!it){ ttsStop(); toast("読み上げおわり"); return; }
+  const it=tts.items[tts.k]; if(!it){ ttsDone(); return; }
   if(tts.s===0||!it.el.classList.contains("tts-cur")) ttsMark(it.el);
   const u=new SpeechSynthesisUtterance(it.sents[tts.s]); u.lang="ja-JP"; if(!tts.voice) tts.voice=ttsPickVoice(); if(tts.voice) u.voice=tts.voice;
   u.rate=tts.cfg.rate; u.pitch=1;
@@ -81532,7 +81561,7 @@ function vvSilent(){ const n=2400, b=new ArrayBuffer(44+n*2), d=new DataView(b),
   return URL.createObjectURL(new Blob([b],{type:"audio/wav"})); }
 function vvEl(){ if(VV.audio) return VV.audio; const a=new Audio(); a.preload="auto"; a.setAttribute("playsinline",""); try{ a.preservesPitch=true; a.webkitPreservesPitch=true; }catch(e){}
   a.addEventListener("timeupdate",vvTick);
-  a.addEventListener("ended",()=>{ if(tts.mode==="vv"&&tts.st!=="idle"&&a.src===VV.cur){ ttsStop(); ttsRender(); toast("読み上げおわり"); } });
+  a.addEventListener("ended",()=>{ if(tts.mode==="vv"&&tts.st!=="idle"&&a.src===VV.cur){ ttsDone(); } });
   a.addEventListener("pause",()=>{ if(!VV.switching&&tts.mode==="vv"&&tts.st==="play"&&a.src===VV.cur&&!a.ended){ tts.st="pause"; ttsRender(); } });
   a.addEventListener("play",()=>{ if(!VV.switching&&tts.mode==="vv"&&tts.st==="pause"&&a.src===VV.cur){ tts.st="play"; ttsRender(); } });
   VV.audio=a; return a; }
@@ -81556,7 +81585,7 @@ function vvTick(){ if(tts.mode!=="vv"||tts.st!=="play") return; const a=VV.audio
   let k=0; for(let i=0;i<T.length;i++){ if(T[i][0]<=ct+0.05) k=i; else break; }
   const it=tts.items[k];
   if(it&&it.box&&!tts.cfg.box){ let j=k+1; while(j<tts.items.length&&tts.items[j].box) j++;
-    if(j<T.length){ a.currentTime=T[j][0]; k=j; } else { ttsStop(); ttsRender(); toast("読み上げおわり"); return; } }
+    if(j<T.length){ a.currentTime=T[j][0]; k=j; } else { ttsDone(); return; } }
   if(tts.items[k]&&(k!==tts.k||!tts.items[k].el.classList.contains("tts-cur"))){ tts.k=k; ttsMark(tts.items[k].el); } }
 function vvMedia(v){ if(!("mediaSession" in navigator)) return; try{ const p=cur(), l=p.lessons[lIdx];
   navigator.mediaSession.metadata=new MediaMetadata({title:"授業"+(l.no||lIdx+1)+"　"+(l.title||""),artist:v.credit,album:p.title});
@@ -81579,7 +81608,7 @@ function ttsRender(){ const bar=document.getElementById("ttsBar"); if(!bar) retu
   if(!ttsAllowed()||(!ttsOK()&&!vvAvail().length)){ bar.hidden=true; bar.innerHTML=""; return; } bar.hidden=false;
   const main=tts.st==="play"?"⏸ 一時停止":(tts.st==="pause"?"▶ つづきから":"▶ 読み上げ");
   bar.innerHTML=`<button type="button" class="tts-main" data-a="main">${main}</button>`+(tts.st!=="idle"?`<button type="button" data-a="stop">■ 停止</button>`:"")+
-    `<select class="tts-sub tts-rate" aria-label="読み上げの速さ">${TTS_RATES.map(r=>`<option value="${r}"${r===tts.cfg.rate?" selected":""}>速さ ${r}倍</option>`).join("")}</select><button type="button" class="tts-sub" data-a="voice">声：${ttsVoiceName()} ›</button>`+
+    `<select class="tts-sub tts-rate" aria-label="読み上げの速さ">${TTS_RATES.map(r=>`<option value="${r}"${r===tts.cfg.rate?" selected":""}>速さ ${r}倍</option>`).join("")}</select><button type="button" class="tts-sub" data-a="voice">声：${ttsVoiceName()} ›</button><button type="button" class="tts-sub${tts.cfg.auto?" tts-on":""}" data-a="auto">自動で次へ：${tts.cfg.auto?"オン":"オフ"}</button>`+
     `<span class="tts-hint">${ttsHint()}</span>`; }
 function ttsHint(){ const vc=(tts.st!=="idle"&&tts.mode==="vv")?tts.vvV:vvCur(), want=vvWanted();
   let h=VV.loading?"音声を読みこんでいます…":(tts.st==="idle"?"授業を声で読みます。ふりがなの読みで読みます。":"段落をタップすると、そこから読みます。");
@@ -81590,6 +81619,7 @@ document.addEventListener("click",e=>{ const b=e.target.closest("#ttsBar button"
     if(a==="main"){ tts.st==="play"?ttsPause():ttsPlay(); }
     else if(a==="stop"){ ttsStop(); ttsRender(); }
     else if(a==="voice"){ stOpen(true); }
+    else if(a==="auto"){ tts.cfg.auto=!tts.cfg.auto; ttsSave(); ttsRender(); toast(tts.cfg.auto?"読み終えたら、次の授業へ進みます":"自動で次へ：オフ"); }
     else if(a==="box"){ tts.cfg.box=!tts.cfg.box; ttsSave(); if(tts.st!=="idle"&&tts.mode==="vv"){ vvTick(); ttsRender(); return; } if(tts.st!=="idle"){ const curEl=(tts.items[tts.k]||{}).el, wasPlay=tts.st==="play";
         tts.gen++; speechSynthesis.cancel(); tts.items=ttsCollect(); let i=tts.items.findIndex(x=>x.el===curEl);
         if(i<0&&curEl){ i=tts.items.findIndex(x=>curEl.compareDocumentPosition(x.el)&Node.DOCUMENT_POSITION_FOLLOWING); if(i<0) i=tts.items.length; tts.s=0; }
@@ -81633,6 +81663,15 @@ document.getElementById("gHide").addEventListener("click",()=>{ try{localStorage
   b.addEventListener("touchend",e=>{ if(x0==null) return; const dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>60) guideShow(gIdx+(dx<0?1:-1)); },{passive:true}); }
 { let hide=null; try{ hide=localStorage.getItem(GUIDE_KEY); }catch(e){} if(hide!=="hide") guideOpen(0); }
 
+/* ---- 自動で次へ：読み終えたら次の授業へ進んで読み続ける ---- */
+function ttsDone(){ if(!tts.cfg.auto){ ttsStop(); ttsRender(); toast("読み上げおわり"); return; }
+  (async()=>{ for(let n=0;n<60;n++){ const p=cur();
+      if(lIdx<p.lessons.length-1) showLesson(lIdx+1);
+      else { const nx=nextPackId(1); if(!nx){ ttsStop(); ttsRender(); toast("最後の授業まで読みました"); return; } await goPack(nx,0); }
+      if(ttsAllowed()) break; }
+    toLessonTop(); const l=cur().lessons[lIdx]; toast("次へ："+cur().title.replace(/（.*$/,"")+" 授業"+(l.no||lIdx+1));
+    setTimeout(()=>{ if(tts.st==="idle") ttsPlay(); },500); })(); }
+
 /* ---- 設定画面 ---- */
 function ttsVoiceName(){ const v=(tts.st!=="idle"&&tts.mode==="vv")?tts.vvV:vvCur(); if(v) return vvLabel(v);
   if(!tts.voice) tts.voice=ttsPickVoice(); return tts.voice?ttsVLabel(tts.voice):"端末の声"; }
@@ -81648,7 +81687,7 @@ function stRender(){ const box=document.getElementById("stVoices"); if(!box) ret
   box.innerHTML=(ch?`<div class="st-grp">キャラクターの声（VOICEVOX）</div><div class="st-list">${ch}</div>`:(location.protocol==="file:"?"":`<div class="st-grp">キャラクターの声は、ネットにつないでいるときに読みこみます。</div>`))+
     (dev?`<div class="st-grp">端末の声（iPhone で使えるのは Kyoko だけ）</div><div class="st-list">${dev}</div>`:"");
   document.getElementById("stRates").innerHTML=TTS_RATES.map(r=>`<button type="button" data-r="${r}" class="${r===tts.cfg.rate?"on":""}">${r}倍</button>`).join("");
-  document.getElementById("stBox").classList.toggle("on",!!tts.cfg.box);
+  document.getElementById("stBox").classList.toggle("on",!!tts.cfg.box); document.getElementById("stAuto").classList.toggle("on",!!tts.cfg.auto);
   let gh=null; try{ gh=localStorage.getItem(GUIDE_KEY); }catch(e){} document.getElementById("stGuide").classList.toggle("on",gh!=="hide");
   const cr=VV.man?[...new Set(VV.man.voices.map(v=>v.credit))]:[]; document.getElementById("stCredit").textContent="キャラクターの声："+(cr.length?cr.join("、"):"VOICEVOX"); }
 function stOpen(voice){ stRender(); document.getElementById("setModal").classList.add("open");
@@ -81673,6 +81712,7 @@ document.getElementById("setModal").addEventListener("click",e=>{ if(e.target.id
   const row=e.target.closest(".st-voice"); if(row){ stChoose(row.dataset.v); return; }
   const r=e.target.closest("#stRates button"); if(r){ const v=+r.dataset.r; tts.cfg.rate=v; ttsSave(); if(tts.mode==="vv"&&VV.audio){ VV.audio.playbackRate=v; VV.audio.defaultPlaybackRate=v; } else if(tts.st==="play"){ tts.gen++; speechSynthesis.cancel(); setTimeout(()=>{ if(tts.st==="play") ttsSpeak(); },80); } if(ST.audio) ST.audio.playbackRate=v; stRender(); ttsRender(); return; }
   if(e.target.id==="stBox"){ tts.cfg.box=!tts.cfg.box; ttsSave(); if(tts.st!=="idle"){ if(tts.mode==="vv") vvTick(); else ttsRestartAt((tts.items[tts.k]||{}).el); } stRender(); ttsRender(); return; }
+  if(e.target.id==="stAuto"){ tts.cfg.auto=!tts.cfg.auto; ttsSave(); stRender(); ttsRender(); return; }
   if(e.target.id==="stGuide"){ let h=null; try{ h=localStorage.getItem(GUIDE_KEY); localStorage.setItem(GUIDE_KEY,h==="hide"?"show":"hide"); }catch(err){} stRender(); return; }
   if(e.target.id==="stGuideNow"){ stClose(); guideOpen(0); return; }
   if(e.target.id==="stData"){ stClose(); openModal(); return; } });

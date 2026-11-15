@@ -80,7 +80,34 @@ function ttsApplyDict(t,d){ const keys=Object.keys(d).filter(k=>t.indexOf(k)>=0)
   return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; return (ttsIsKan(pv)||ttsIsKan(nx))?m:ttsKata(d[m]); }); }
 /* 記号を声にしやすく直す */
 const TTS_CIRC="①②③④⑤⑥⑦⑧⑨⑩";
-function ttsNorm(t){ return t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")
+/* かっこ（　）の中身を、授業らしく読む（2026-11-15 ユーザーの指示）。
+   語句の言いかえ →「、すなわち◯◯」「。つまり、◯◯だ」／年 →「527年の磐井の乱」「。643年のことだ」
+   「のちの」「いまの」→「、のちの◯◯」／説明の文 → 前後に区切って、そのまま読む */
+const TTS_YR=/^(?:紀元前)?[0-9０-９]{1,4}(?:年|世紀|年代)?(?:ごろ|頃)?(?:\s*(?:[〜～\-]|から)\s*[0-9０-９]{1,4}(?:年|世紀)?(?:ごろ|頃)?)?$/;
+let _ttsAlt=0; const ttsConj=()=>(_ttsAlt++%2?"つまり":"すなわち");
+function ttsYear(y){ y=y.replace(/\s*[〜～\-]\s*/g,"から"); return /(年|世紀|ごろ|頃|年代)$/.test(y)?y:y+"年"; }
+function ttsParen(t,plain){ let out="", rest=t, g=0;
+  while(g++<60){ const m=/（([^（）]{1,140})）/.exec(rest); if(!m){ out+=rest; break; }
+    let pre=out+rest.slice(0,m.index); const y=m[1].trim(), post=rest.slice(m.index+m[0].length), nx=post.charAt(0);
+    const end=/^\s*([。！？」』]|$)/.test(post), ptc=/^[をはがにでともへのやだか]/.test(nx), sep=ptc||/^[、。！？」』]/.test(nx)?"":"、";
+    let ins="";
+    if(!y){ ins=""; }
+    else if(plain){ ins=(TTS_YR.test(y)?"、"+ttsYear(y):"、"+y)+(end?"":sep); }   // まとめ・入試の枠：区切って読むだけ
+    else if(TTS_YR.test(y)){ const yy=ttsYear(y), mm=/[一-鿿々ァ-ヶーＡ-Ｚａ-ｚA-Za-z0-9０-９・]+(?:の[一-鿿々ァ-ヶーＡ-Ｚａ-ｚA-Za-z0-9０-９・]+)*$/.exec(pre);
+      if(mm&&mm[0].length<=24&&!/^[0-9０-９]/.test(mm[0])){ if(end) ins="。"+yy+"のことだ"; else pre=pre.slice(0,mm.index)+yy+"の"+mm[0]; }
+      else ins=end?"。"+yy+"のことだ":"、"+yy+sep; }
+    else if(/^(のちの|のちに|後の|いまの|今の|現在の|もとの|もと|旧)/.test(y)){
+      if(/^(のちに)/.test(y)||y.length>16) ins=end?"。これは"+y:"、これは"+y+"、"; else ins=end?"、"+y+"だ":"、"+y+sep; }
+    else if(y.length>18||(/[をはがにでと]/.test(y)&&/[るたいだうすくむれ]$/.test(y))||(/[をはがで]/.test(y)&&y.length>=6)||(y.length<=4&&/[るたうくすむ]$/.test(y)&&!/[ァ-ヶ一-鿿]$/.test(y))){
+      ins=end?"。"+y+(/[るたいだうすくむれ。]$/.test(y)?"":"だ"):"、"+y+"、"; }
+    else { const it=y.split(/、/).map(x=>x.trim()).filter(Boolean), yr=it.filter(x=>TTS_YR.test(x)); let body;
+      if(it.length===2&&yr.length===1){ body=ttsYear(yr[0])+"の"+it.find(x=>!TTS_YR.test(x)); }
+      else if(it.length>1&&it.every(x=>x.length<=12&&!/[0-9０-９]/.test(x)&&!/[とやにをはがで]$/.test(x))) body=it.join("や");
+      else body=it.join("、");
+      const c=ttsConj(); ins=end?"。"+c+"、"+body+"だ":"、"+c+body+sep; }
+    out=pre+ins; rest=post; }
+  return out.replace(/[（）]/g,"、").replace(/、\s*、/g,"、").replace(/、([。！？」』])/g,"$1").replace(/。\s*。/g,"。").replace(/^[、。\s]+/,""); }
+function ttsNorm(t,plain){ return ttsParen(t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,""),plain)
   .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")
   .replace(/([^\s、。（）「」＞]+)＞([^\s、。（）「」＞]+)/g,"$1が$2を上回り").replace(/＞/g,"より大きい").replace(/\s*\bvs\.?\s*/gi,"たい").replace(/[：:](?!\d)/g,"、").replace(/[―—]/g,"、")
   .replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
@@ -97,7 +124,7 @@ function ttsTextOf(el){ let out="";
     n.childNodes.forEach(walk); };
   walk(el); return out; }
 function ttsSplit(t){ const a=t.match(/[^。！？]*[。！？]+[」』）]*|[^。！？]+$/g)||[]; return a.map(x=>x.trim()).filter(x=>x&&/[^\s。、」』）]/.test(x)); }
-function ttsCollect(){ const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[];
+function ttsCollect(){ _ttsAlt=0; const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[];
   const add=(el,raw)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d)); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss}); };
   const ti=document.getElementById("lTitle"); add(ti,"授業"+(+(l.no||lIdx+1))+"。"+ttsTextOf(ti)+"。");
   [...document.getElementById("lBody").children].forEach(el=>{
