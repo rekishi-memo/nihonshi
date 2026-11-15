@@ -9,7 +9,8 @@ import sys
 src,dst=sys.argv[1],sys.argv[2]
 s=open(src,encoding='utf-8').read()
 import os,json
-KEEP=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'tts_keep.txt'),encoding='utf-8').read().split()
+_fp=os.path.join(os.path.dirname(os.path.abspath(__file__)),'tts_force.json')
+FORCE=json.load(open(_fp,encoding='utf-8')) if os.path.exists(_fp) else {'g':{},'l':{}}
 if 'id="ttsBar"' in s:
     print('already'); sys.exit(0)
 
@@ -47,8 +48,9 @@ const TTS_RATES=[0.8,1,1.2,1.3,1.4,1.5];
 const tts={st:"idle",items:[],k:0,s:0,gen:0,voice:null,cfg:Object.assign({rate:1,box:true},lsGet(TTS_KEY)||{})};
 if(!TTS_RATES.includes(+tts.cfg.rate)) tts.cfg.rate=1; else tts.cfg.rate=+tts.cfg.rate;
 let _ttsDict=null;
-/* 漢字のまま読ませてよい語（tools/tts_yomi.py が決める）。これ以外のふりがな付きの語は、ふりがなの読みに置きかえて読む */
-const TTS_KEEP=new Set("@@KEEP@@".split(" "));
+/* 読みの置きかえ：音声エンジンに全授業を読ませて確かめ、読みまちがえた語だけを正しい読み（ふりがな・用語集のよみ）に置きかえる。
+   tools/tts_check.py が作る tools/tts_force.json（g＝全授業、l＝その授業だけ）。それ以外の語は漢字のまま読ませる */
+let TTS_FORCE=@@FORCE@@; let _ttsCurD=null;
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
 const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
 function ttsApplyRd(t){ for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
@@ -71,9 +73,8 @@ function ttsPairs(h,into){ const RE=/<ruby>([^<]+)<rt>([^<]+)<\/rt><\/ruby>/g; l
   while(m=RE.exec(h||"")){ const b=m[1].trim(), r=m[2].trim(); if(b.length<2||!ttsIsKan(b[0])&&!ttsIsKan(b[b.length-1])) continue; (into[b]=into[b]||{})[r]=1; } return into; }
 function ttsGlobal(){ if(_ttsDict) return _ttsDict; const seen={};
   Object.keys(packsById).forEach(id=>(packsById[id].lessons||[]).forEach(l=>ttsPairs((l.html||"")+(l.colHtml||""),seen)));
-  _ttsDict={}; for(const b in seen){ const rs=Object.keys(seen[b]); if(rs.length===1&&!TTS_KEEP.has(b)) _ttsDict[b]=rs[0]; } return _ttsDict; }
-function ttsDictFor(l){ const d=Object.assign({},ttsGlobal()), loc=ttsPairs(l.html||"",{});
-  for(const b in loc){ const rs=Object.keys(loc[b]); if(rs.length===1&&!TTS_KEEP.has(b)) d[b]=rs[0]; } return d; }
+  _ttsDict={}; for(const b in seen){ const rs=Object.keys(seen[b]); if(rs.length===1) _ttsDict[b]=rs[0]; } return _ttsDict; }
+function ttsDictFor(l){ const d=Object.assign({},TTS_FORCE.g||{},(TTS_FORCE.l||{})[activeId+":"+lIdx]||{}); _ttsCurD=d; return d; }
 /* 漢字の語を、前後が漢字でないところだけ読みに置きかえる（長い語から） */
 function ttsApplyDict(t,d){ const keys=Object.keys(d).filter(k=>t.indexOf(k)>=0).sort((a,b)=>b.length-a.length); if(!keys.length) return t;
   const re=new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g");
@@ -130,7 +131,7 @@ function ttsTextOf(el){ let out="";
     const c=n.classList, tg=n.tagName;
     if(c.contains("rtx")||tg==="RT"||tg==="RP"||c.contains("xref")||tg==="BUTTON"||tg==="svg"||tg==="SVG"||c.contains("qcheck")) return;
     if(c.contains("rbx")||tg==="RUBY"){ const r=n.querySelector(".rtx,rt"); if(r){ const base=[...n.childNodes].filter(x=>x!==r&&!(x.nodeType===1&&x.tagName==="RP")).map(x=>x.textContent).join("").trim();
-        out+=TTS_KEEP.has(base)?base:ttsKata(r.textContent.trim()); return; } }
+        out+=(_ttsCurD&&_ttsCurD[base]!=null)?ttsKata(r.textContent.trim()):base; return; } }
     if(c.contains("bx-tag")||c.contains("yd-tag")){ const tg=n.textContent.trim(); out+=(TTS_TAGS[tg]||tg.replace(/＋/g,"プラス"))+"。"; return; }
     if(tg==="B"&&n.parentNode&&n.parentNode.classList&&(n.parentNode.classList.contains("yodan")||n.parentNode.classList.contains("deep"))){ n.childNodes.forEach(walk); if(!/[。！？]$/.test(out)) out+="。"; return; }
     n.childNodes.forEach(walk); };
@@ -194,7 +195,7 @@ document.addEventListener("change",e=>{ const vsel=e.target.closest("#ttsBar .tt
 document.addEventListener("visibilitychange",()=>{ if(document.hidden) ttsPause(); });
 
 '''
-JS=JS.replace('@@KEEP@@',' '.join(KEEP).replace('\\','').replace('"',''))
+JS=JS.replace('@@FORCE@@',json.dumps(FORCE,ensure_ascii=False,separators=(',',':')))
 a="/* ふりがなの置きかえ */"
 assert s.count(a)==1; s=s.replace(a,JS+a)
 open(dst,'w',encoding='utf-8').write(s); print('ok')
