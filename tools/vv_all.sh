@@ -12,6 +12,7 @@ await p.goto('file://'+require('path').resolve('../index.html'));await p.waitFor
 console.log((await p.evaluate(()=>packOrder.filter(id=>packsById[id].lessons.length&&id!=='seiri').map(id=>id+'\t'+packsById[id].title))).join('\n'));await b.close();})();")
 echo "$PACKS" | while IFS=$'\t' read -r pid title; do
   [ -z "$pid" ] && continue
+  if [ -n "${ONLY_PACKS:-}" ] && ! echo " $ONLY_PACKS " | grep -q " $pid "; then continue; fi   # ONLY_PACKS="kodai kodai2" で、そのセットだけ
   echo "== $pid $title"
   node vv_dump.js "$T/in.json" "$pid:*" || { echo "dump failed $pid"; continue; }
   "$PY" vv_make.py "$VV" "$T/in.json" $IDS 2>&1 | grep -v WARNING

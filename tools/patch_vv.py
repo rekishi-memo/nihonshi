@@ -20,7 +20,7 @@ def rep(a,b,n=1):
 rep('''function ttsCollect(){ _ttsAlt=0; const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[];
   const add=(el,raw)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d)); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss}); };''',
 '''function ttsCollect(all){ _ttsAlt=0; const p=cur(), l=p.lessons[lIdx], d=ttsDictFor(l), items=[], bx=all||tts.cfg.box;
-  const add=(el,raw,box,plain)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(raw),d),plain); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss,box:!!box}); };''')
+  const add=(el,raw,box,plain)=>{ const t=ttsNorm(ttsApplyDict(ttsApplyRd(ttsScript(raw)),d),plain); const ss=ttsSplit(t); if(ss.length) items.push({el,sents:ss,box:!!box}); };''')
 rep('''    else if(tts.cfg.box&&(el.classList.contains("yodan")||el.classList.contains("deep"))) add(el,ttsTextOf(el));
     else if(tts.cfg.box&&el.classList.contains("nyushi")) add(el,ttsTextOf(el));
     else if(tts.cfg.box&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el)); });''',

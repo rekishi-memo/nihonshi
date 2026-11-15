@@ -24,13 +24,14 @@ def norm(s):
         elif c=='イ' and o and V.get(o[-1])=='エ': c='エ'
         o.append(c)
     return ''.join(o)
+H=set(w for l in open(os.path.join(HERE,'tts_homograph.txt'),encoding='utf-8') if not l.startswith('#') for w in l.split())   # 場面で読みが変わる語は点検しない（台本で決める）
 isK=lambda c: bool(c) and bool(re.match(r'[一-鿿々〆ヶ]',c))
 D=json.load(open(INP,encoding='utf-8'))
 G=D['g']
 bad=collections.defaultdict(list); n=0; nwords=0
 for L in D['L']:
     loc=L['loc']
-    words={w:(loc.get(w) or G.get(w)) for w in set(list(G)+list(loc))}
+    words={w:(loc.get(w) or G.get(w)) for w in set(list(G)+list(loc)) if w not in H}
     for s in L['s']:
         hits=[w for w in words if w in s]
         if not hits: continue

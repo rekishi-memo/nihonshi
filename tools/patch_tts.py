@@ -9,6 +9,8 @@ import sys
 src,dst=sys.argv[1],sys.argv[2]
 s=open(src,encoding='utf-8').read()
 import os,json
+_sp=os.path.join(os.path.dirname(os.path.abspath(__file__)),'tts_script.json')
+SCRIPT=json.load(open(_sp,encoding='utf-8')) if os.path.exists(_sp) else {}
 _fp=os.path.join(os.path.dirname(os.path.abspath(__file__)),'tts_force.json')
 FORCE=json.load(open(_fp,encoding='utf-8')) if os.path.exists(_fp) else {'g':{},'l':{}}
 if 'id="ttsBar"' in s:
@@ -51,6 +53,9 @@ let _ttsDict=null;
 /* 読みの置きかえ：音声エンジンに全授業を読ませて確かめ、読みまちがえた語だけを正しい読み（ふりがな・用語集のよみ）に置きかえる。
    tools/tts_check.py が作る tools/tts_force.json（g＝全授業、l＝その授業だけ）。それ以外の語は漢字のまま読ませる */
 let TTS_FORCE=@@FORCE@@; let _ttsCurD=null;
+/* 読み上げの台本（tools/tts_script.json）：かっこや記号のある文・まとめの枠を、文ごとに考えて書いた読み方。{"pack:授業":[[元の文,読む文],…]}。元の文が見つからなければ、ふつうのルールで読む */
+const TTS_SCRIPT=@@SCRIPT@@;
+function ttsScript(raw){ const L=TTS_SCRIPT[activeId+":"+lIdx]; if(!L) return raw; raw=ttsRefStrip(raw); for(const [a,b] of L){ if(a&&raw.indexOf(a)>=0) raw=raw.split(a).join(b); } return raw; }
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
 const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
 function ttsApplyRd(t){ for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
@@ -120,7 +125,10 @@ function ttsSym(t){
   t=t.replace(/\s*[→⇒]\s*/g,"、そして");
   t=t.replace(/(^|[、。\s「（は])([^、。・\s「」（）]{1,12})・([^、。・\s「」（）]{1,12})(?=[、。\s」）はがをにでの]|$)/g,(m,a,x,y)=>(/^[ァ-ヶー]+$/.test(x)&&/^[ァ-ヶー]+$/.test(y))?m:a+x+"と"+y);
   return t; }
-function ttsNorm(t,plain){ return ttsParen(ttsSym(t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")),plain)
+/* かっこの中の授業リンクだけを外す（説明の文は残す）。中身がリンクだけなら空のかっこになり、あとで消える */
+function ttsRefStrip(t){ return t.replace(/（([^（）]*)）/g,(m,x)=>x.indexOf("〔")<0?m:"（"+x.replace(/〔[^〔〕]*〕/g,"").replace(/^[\s。、・]+|[\s。、・]+$/g,"")+"）"); }
+function ttsRef(x){ return x.replace(/授業\s*0?(\d+)/g,"授業$1").replace(/([古中近現][代世])([①-⑩])/g,(m,a,b)=>a+"の"+(TTS_CIRC.indexOf(b)+1)).replace(/テーマ史[：〈]/,"テーマ史の").replace(/[〉]/g,""); }
+function ttsNorm(t,plain){ return ttsParen(ttsSym(ttsRefStrip(t).replace(/〔([^〔〕]*)〕/g,(m,x)=>ttsRef(x)).replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")),plain)
   .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")
   .replace(/([^\s、。（）「」＞]+)＞([^\s、。（）「」＞]+)/g,"$1が$2を上回り").replace(/＞/g,"より大きい").replace(/\s*\bvs\.?\s*/gi,"たい").replace(/[：:](?!\d)/g,"、").replace(/[―—]/g,"、")
   .replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
@@ -129,9 +137,10 @@ function ttsNorm(t,plain){ return ttsParen(ttsSym(t.replace(/（[^（）]*授業
 function ttsTextOf(el){ let out="";
   const walk=n=>{ if(n.nodeType===3){ out+=n.nodeValue; return; } if(n.nodeType!==1) return;
     const c=n.classList, tg=n.tagName;
-    if(c.contains("rtx")||tg==="RT"||tg==="RP"||c.contains("xref")||tg==="BUTTON"||tg==="svg"||tg==="SVG"||c.contains("qcheck")) return;
+    if(c.contains("xref")){ out+="〔"+n.textContent.trim()+"〕"; return; }   // 授業へのリンク：かっこの中なら読まない、文の中なら「授業9」などと読む
+    if(c.contains("rtx")||tg==="RT"||tg==="RP"||tg==="BUTTON"||tg==="svg"||tg==="SVG"||c.contains("qcheck")) return;
     if(c.contains("rbx")||tg==="RUBY"){ const r=n.querySelector(".rtx,rt"); if(r){ const base=[...n.childNodes].filter(x=>x!==r&&!(x.nodeType===1&&x.tagName==="RP")).map(x=>x.textContent).join("").trim();
-        out+=(_ttsCurD&&_ttsCurD[base]!=null)?ttsKata(r.textContent.trim()):base; return; } }
+        out+=base; return; } }   // 読みの置きかえは、あとで tts_force.json の辞書でまとめてする（台本と照らし合わせやすいよう、ここでは漢字のまま）
     if(c.contains("bx-tag")||c.contains("yd-tag")){ const tg=n.textContent.trim(); out+=(TTS_TAGS[tg]||tg.replace(/＋/g,"プラス"))+"。"; return; }
     if(tg==="B"&&n.parentNode&&n.parentNode.classList&&(n.parentNode.classList.contains("yodan")||n.parentNode.classList.contains("deep"))){ n.childNodes.forEach(walk); if(!/[。！？]$/.test(out)) out+="。"; return; }
     n.childNodes.forEach(walk); };
@@ -195,7 +204,7 @@ document.addEventListener("change",e=>{ const vsel=e.target.closest("#ttsBar .tt
 document.addEventListener("visibilitychange",()=>{ if(document.hidden) ttsPause(); });
 
 '''
-JS=JS.replace('@@FORCE@@',json.dumps(FORCE,ensure_ascii=False,separators=(',',':')))
+JS=JS.replace('@@FORCE@@',json.dumps(FORCE,ensure_ascii=False,separators=(',',':'))).replace('@@SCRIPT@@',json.dumps(SCRIPT,ensure_ascii=False,separators=(',',':')))
 a="/* ふりがなの置きかえ */"
 assert s.count(a)==1; s=s.replace(a,JS+a)
 open(dst,'w',encoding='utf-8').write(s); print('ok')
