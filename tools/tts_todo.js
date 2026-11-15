@@ -11,6 +11,6 @@ const {chromium}=require('playwright');const path=require('path');
        if(!(ttsReadP(el)||/flow|yodan|deep/.test(c)||box)) return;
        let raw=(/point/.test(c)?"では、まとめよう。":"")+ttsTextOf(el); raw=ttsRefStrip(raw).replace(/\s+/g,' ').trim();
        if(box){ out.push([i,c.split(' ')[0],raw]); return; }
-       raw.split(/(?<=。)/).forEach(s=>{ s=s.trim(); if(/[（＝→：〔]/.test(s.replace(/（）/g,''))) out.push([i,'p',s]); else if(H.some(w=>s.includes(w))) out.push([i,'h',s]); }); }); }
+       (function(t){ const o=[]; let d=0,cur=''; for(const ch of t){ cur+=ch; if(ch==='（') d++; else if(ch==='）') d=Math.max(0,d-1); else if(ch==='。'&&d===0){ o.push(cur); cur=''; } } if(cur.trim()) o.push(cur); return o; })(raw).forEach(s=>{ s=s.trim(); if(/[（＝→：〔]/.test(s.replace(/（）/g,''))) out.push([i,'p',s]); else if(H.some(w=>s.includes(w))) out.push([i,'h',s]); }); }); }
    return out; },[pid,H]);
  r.forEach(x=>console.log(x.join(" | "))); await b.close();})();
