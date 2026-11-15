@@ -26,7 +26,7 @@ rep('''    else if(tts.cfg.box&&(el.classList.contains("yodan")||el.classList.co
     else if(tts.cfg.box&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el)); });''',
 '''    else if(bx&&(el.classList.contains("yodan")||el.classList.contains("deep"))) add(el,ttsTextOf(el),1);
     else if(bx&&el.classList.contains("nyushi")) add(el,ttsTextOf(el),1,1);
-    else if(bx&&el.classList.contains("point")) add(el,"まとめ。"+ttsTextOf(el),1,1); });''')
+    else if(bx&&el.classList.contains("point")) add(el,"では、まとめよう。"+ttsTextOf(el),1,1); });''')
 
 # 2) 再生・一時停止・停止・段落タップをキャラの声にも対応させる
 rep('''function ttsPlay(){ if(!ttsOK()) return; if(tts.st==="idle"){ tts.items=ttsCollect(); tts.k=0; tts.s=0; }

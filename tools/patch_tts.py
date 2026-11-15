@@ -92,7 +92,9 @@ function ttsParen(t,plain){ let out="", rest=t, g=0;
     const end=/^\s*([。！？」』]|$)/.test(post), ptc=/^[をはがにでともへのやだか]/.test(nx), sep=ptc||/^[、。！？」』]/.test(nx)?"":"、";
     let ins="";
     if(!y){ ins=""; }
-    else if(plain){ ins=(TTS_YR.test(y)?"、"+ttsYear(y):"、"+y)+(end?"":sep); }   // まとめ・入試の枠：区切って読むだけ
+    else if(plain&&/[一-鿿々ァ-ヶーA-Za-z0-9０-９」』]$/.test(pre)&&(end||/^[、・]/.test(nx))){   // まとめ・入試の枠：「増鏡（公家）」→「増鏡は公家」
+      const it=y.split(/、/).map(x=>x.trim()).filter(Boolean), body=TTS_YR.test(y)?ttsYear(y):(it.length>1&&it.every(x=>x.length<=12&&!/[とやにをはがで]$/.test(x))?it.join("と"):it.join("、"));
+      ins="は"+(y.length>18?"、":"")+body; }
     else if(TTS_YR.test(y)){ const yy=ttsYear(y), mm=/[一-鿿々ァ-ヶーＡ-Ｚａ-ｚA-Za-z0-9０-９・]+(?:の[一-鿿々ァ-ヶーＡ-Ｚａ-ｚA-Za-z0-9０-９・]+)*$/.exec(pre);
       if(mm&&mm[0].length<=24&&!/^[0-9０-９]/.test(mm[0])){ if(end) ins="。"+yy+"のことだ"; else pre=pre.slice(0,mm.index)+yy+"の"+mm[0]; }
       else ins=end?"。"+yy+"のことだ":"、"+yy+sep; }
@@ -107,7 +109,17 @@ function ttsParen(t,plain){ let out="", rest=t, g=0;
       const c=ttsConj(); ins=end?"。"+c+"、"+body+"だ":"、"+c+body+sep; }
     out=pre+ins; rest=post; }
   return out.replace(/[（）]/g,"、").replace(/、\s*、/g,"、").replace(/、([。！？」』])/g,"$1").replace(/。\s*。/g,"。").replace(/^[、。\s]+/,""); }
-function ttsNorm(t,plain){ return ttsParen(t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,""),plain)
+/* 枠の見出しを、講師の話し方にする */
+const TTS_TAGS={"入試ではこう出る":"入試では、こう出るよ","ちょっと脱線":"ちょっと脱線するね","前の授業から":"まず、前の授業のふり返りから","次の授業へ":"では、次の授業へつなげよう","難関＋":"難関大学をめざす人へ、もう一歩"};
+/* 記号を、講師がしゃべるように：＝はイコール、「A：B」は「Aは、B」、「A→B」は「AからBへ」（長いときは「A、そしてB」）、「A・B」の2つ並びは「AとB」 */
+function ttsSym(t){
+  t=t.replace(/\s*[＝=]\s*/g,"イコール");
+  t=t.replace(/([^\s、。：:「」（）]{1,14})[：:](?!\d)\s*/g,"$1は、").replace(/[：:](?!\d)/g,"、");
+  t=t.replace(/(^|[、。\s「（])([^、。・\s→⇒「」（）]{1,12})[→⇒]([^、。・\s→⇒「」（）]{1,12})(?=[、。・\s」）]|$)/g,(m,a,x,y)=>a+x+"から"+y+"へ");
+  t=t.replace(/\s*[→⇒]\s*/g,"、そして");
+  t=t.replace(/(^|[、。\s「（は])([^、。・\s「」（）]{1,12})・([^、。・\s「」（）]{1,12})(?=[、。\s」）はがをにでの]|$)/g,(m,a,x,y)=>(/^[ァ-ヶー]+$/.test(x)&&/^[ァ-ヶー]+$/.test(y))?m:a+x+"と"+y);
+  return t; }
+function ttsNorm(t,plain){ return ttsParen(ttsSym(t.replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")),plain)
   .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")
   .replace(/([^\s、。（）「」＞]+)＞([^\s、。（）「」＞]+)/g,"$1が$2を上回り").replace(/＞/g,"より大きい").replace(/\s*\bvs\.?\s*/gi,"たい").replace(/[：:](?!\d)/g,"、").replace(/[―—]/g,"、")
   .replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
@@ -119,7 +131,7 @@ function ttsTextOf(el){ let out="";
     if(c.contains("rtx")||tg==="RT"||tg==="RP"||c.contains("xref")||tg==="BUTTON"||tg==="svg"||tg==="SVG"||c.contains("qcheck")) return;
     if(c.contains("rbx")||tg==="RUBY"){ const r=n.querySelector(".rtx,rt"); if(r){ const base=[...n.childNodes].filter(x=>x!==r&&!(x.nodeType===1&&x.tagName==="RP")).map(x=>x.textContent).join("").trim();
         out+=TTS_KEEP.has(base)?base:ttsKata(r.textContent.trim()); return; } }
-    if(c.contains("bx-tag")||c.contains("yd-tag")){ out+=n.textContent.trim().replace(/＋/g,"プラス")+"。"; return; }
+    if(c.contains("bx-tag")||c.contains("yd-tag")){ const tg=n.textContent.trim(); out+=(TTS_TAGS[tg]||tg.replace(/＋/g,"プラス"))+"。"; return; }
     if(tg==="B"&&n.parentNode&&n.parentNode.classList&&(n.parentNode.classList.contains("yodan")||n.parentNode.classList.contains("deep"))){ n.childNodes.forEach(walk); if(!/[。！？]$/.test(out)) out+="。"; return; }
     n.childNodes.forEach(walk); };
   walk(el); return out; }
