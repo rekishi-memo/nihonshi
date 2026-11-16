@@ -46,7 +46,7 @@ assert s.count(a)==1; s=s.replace(a,'function switchSec(k){ if(k!=="lesson") tts
 
 JS=r'''/* ---- 授業の読み上げ（全授業）。端末の声（Web Speech API）を使うので、オフラインでも動く ---- */
 const TTS_KEY="nihonshi_tts";          // 速さ・枠を読むかの設定だけ（学習記録とは別）
-const TTS_RATES=[0.8,1,1.2,1.3,1.4,1.5];
+const TTS_RATES=[1,1.5];
 const tts={st:"idle",items:[],k:0,s:0,gen:0,voice:null,cfg:Object.assign({rate:1,box:true},lsGet(TTS_KEY)||{})};
 if(!TTS_RATES.includes(+tts.cfg.rate)) tts.cfg.rate=1; else tts.cfg.rate=+tts.cfg.rate;
 let _ttsDict=null;
@@ -83,7 +83,7 @@ function ttsDictFor(l){ const d=Object.assign({},TTS_FORCE.g||{},(TTS_FORCE.l||{
 /* 漢字の語を、前後が漢字でないところだけ読みに置きかえる（長い語から） */
 function ttsApplyDict(t,d){ const keys=Object.keys(d).filter(k=>t.indexOf(k)>=0).sort((a,b)=>b.length-a.length); if(!keys.length) return t;
   const re=new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g");
-  return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; return (ttsIsKan(pv)||ttsIsKan(nx))?m:ttsKata(d[m]); }); }
+  return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; return (ttsIsKan(pv)||ttsIsKan(nx))?m:(d[m][0]==="~"?d[m].slice(1):ttsKata(d[m])); }); }   /* 「~」で始まる読みは、ひらがなのまま渡す（カタカナだと外来語あつかいで読みがくずれる語：サンギョウ→サンギヨウ など） */
 /* 記号を声にしやすく直す */
 const TTS_CIRC="①②③④⑤⑥⑦⑧⑨⑩";
 /* かっこ（　）の中身を、授業らしく読む（2026-11-15 ユーザーの指示）。
@@ -116,7 +116,7 @@ function ttsParen(t,plain){ let out="", rest=t, g=0;
     out=pre+ins; rest=post; }
   return out.replace(/[（）]/g,"、").replace(/、\s*、/g,"、").replace(/、([。！？」』])/g,"$1").replace(/。\s*。/g,"。").replace(/^[、。\s]+/,""); }
 /* 枠の見出しを、講師の話し方にする */
-const TTS_TAGS={"入試ではこう出る":"入試では、こう出るよ","ちょっと脱線":"ちょっと脱線するね","前の授業から":"まず、前の授業のふり返りから","次の授業へ":"では、次の授業へつなげよう","難関＋":"難関大学をめざす人へ、もう一歩"};
+const TTS_TAGS={"入試ではこう出る":"入試では、こう出るよ","ちょっと脱線":"ちょっと脱線するね","前の授業から":"まず、前の授業のふりかえりから","次の授業へ":"では、次の授業へつなげよう","難関＋":"難関大学をめざす人へ、もう一歩"};
 /* 記号を、講師がしゃべるように：＝はイコール、「A：B」は「Aは、B」、「A→B」は「AからBへ」（長いときは「A、そしてB」）、「A・B」の2つ並びは「AとB」 */
 function ttsSym(t){
   t=t.replace(/\s*[＝=]\s*/g,"イコール");

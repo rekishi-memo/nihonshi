@@ -7,6 +7,7 @@ import sys,os,json,re,collections
 from voicevox_core.blocking import Onnxruntime, OpenJtalk, Synthesizer, VoiceModelFile
 HERE=os.path.dirname(os.path.abspath(__file__))
 VV,INP=sys.argv[1],sys.argv[2]; WRITE='--write' in sys.argv
+if WRITE: sys.exit('--write は使わない（2026-11-16）：ふりがな自体のまちがい（藤原氏＝ふじわらうじ など）をそのまま登録してしまう。tts_review.py で目で確かめて、tts_force.json に手で入れる。')
 ort=Onnxruntime.load_once(filename=os.path.join(VV,'voicevox_onnxruntime-linux-x64-1.17.3/lib/libvoicevox_onnxruntime.so.1.17.3'))
 syn=Synthesizer(ort,OpenJtalk(os.path.join(VV,'open_jtalk_dic_utf_8-1.11')))
 with VoiceModelFile.open(os.path.join(VV,'models','1.vvm')) as m: syn.load_voice_model(m)
