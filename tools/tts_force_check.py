@@ -13,7 +13,7 @@ V={}
 for row,v in [('アカサタナハマヤラワガザダバパァャヮ','ア'),('イキシチニヒミリギジヂビピィ','イ'),('ウクスツヌフムユルグズヅブプゥュヴ','ウ'),('エケセテネヘメレゲゼデベペェ','エ'),('オコソトノホモヨロヲゴゾドボポォョ','オ')]:
     for c in row: V[c]=v
 def norm(s):
-    s=kata(s).replace('ヂ','ジ').replace('ヅ','ズ').replace('ヲ','オ').replace('ハ','ワ').replace('ヘ','エ')
+    s=kata(s).replace('ヂ','ジ').replace('ヅ','ズ').replace('ヲ','オ')   # ハ・ヘ は区別する（ヘ→エ のくずれを見逃さない）
     s=re.sub(r'[^ァ-ヶー]','',s); o=[]
     for c in s:
         if c=='ー' and o: c=V.get(o[-1],c)
@@ -25,21 +25,23 @@ def say(t):
     try: return norm(''.join(m.text for a in syn.create_accent_phrases(t,14) for m in a.moras))
     except Exception: return '?'
 fp=os.path.join(HERE,'tts_force.json'); F=json.load(open(fp,encoding='utf-8'))
+# 単独だけでなく文の中でも確かめる（2026-11-16：「タイヘイキ」は単独ではよいが文の中で「タイエイキ」、「タイギャクザイ」は「タイギヤクザイ」になった）
+FRAMES=['{}。','これは{}の話','{}を見る','、{}は']
+def ok(t,want): return all(want in say(f.format(t)) for f in FRAMES)
 fixed=0; bad=[]
 for scope,d in [('g',F['g'])]+[(k,v) for k,v in F['l'].items()]:
     for w,r in list(d.items()):
         r=r.lstrip('!'); hira=r[1:] if r.startswith('~') else r
-        want=norm(hira)
+        want=norm(kata(hira))
+        if re.search(r'[一-鿿々]',hira): continue   # かなと漢字をまぜた読み（~タイヘイ記 など）は人が確かめたもの
         if r.startswith('~'):
-            if say(hira+'。')!=want: bad.append((scope,w,r,say(hira+'。')))
+            if not ok(hira,want): bad.append((scope,w,r,say(hira+'。')))
             continue
-        k=say(kata(hira)+'。')
-        if k==want: continue
-        h=say(hira+'。')
-        if h==want:
-            fixed+=1; print('hira',scope,w,r,k)
+        if ok(kata(hira),want): continue
+        if ok(hira,want):
+            fixed+=1; print('hira',scope,w,r,say('これは'+kata(hira)+'の話'))
             if WRITE: d[w]=('!' if d[w].startswith('!') else '')+'~'+hira
-        else: bad.append((scope,w,r,k+' / '+h))
+        else: bad.append((scope,w,r,say('これは'+kata(hira)+'の話')+' / '+say('これは'+hira+'の話')))
 for b in bad: print('BAD',*b)
 print('kata→hira',fixed,'bad',len(bad))
-if WRITE: json.dump(F,open(fp,'w',encoding='utf-8'),ensure_ascii=False,indent=0,sort_keys=True)
+if WRITE: json.dump(F,open(fp,'w',encoding='utf-8'),ensure_ascii=False,indent=0,sort_keys=True); open(fp,'a').write('\n')
