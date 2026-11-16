@@ -58,7 +58,21 @@ const TTS_SCRIPT=@@SCRIPT@@;
 function ttsScript(raw){ const L=TTS_SCRIPT[activeId+":"+lIdx]; if(!L) return raw; raw=ttsRefStrip(raw); for(const [a,b] of L){ if(a&&raw.indexOf(a)>=0) raw=raw.split(a).join(b); } return raw; }
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
 const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
-function ttsApplyRd(t){ t=t.replace(/([ァ-ヶー])[＝=]([ァ-ヶー])/g,"$1・$2").replace(/([0-9]{2})([0-9]{2})\s*[〜～]\s*([0-9]{2})年/g,"$1$2年から$1$3年").replace(/(1[0-9]{3})\.([0-9]{1,2})(?![0-9])/g,"$1年$2月").replace(/(^|[^0-9０-９今])年(?=[0-9０-９]+(?![0-9０-９]|年)|平均)/g,"$1ねん");   /* 「年10％」「年平均」は ねん（とし と読まない） */   /* 「1914.6」は「1914年6月」 */   /* 「1904〜05年」は「1904年から1905年」と読む（2026-11-16） */   /* 外国人の名前の「＝」（ガスパル＝ヴィレラ）はイコールと読まない（2026-11-16） */
+/* 「1万石」「100石」などの石は「こく」。エンジンは「イチマンゼキ」「ヒャッセキ」と読むので、数ごとかなにする（2026-11-16） */
+function ttsKoku(m,a,man,b){ const D=["","いち","に","さん","よん","ご","ろく","なな","はち","きゅう"];
+  let n=man?parseInt(a,10)*10000+(b?parseInt(b,10):0):parseInt(a,10); if(!(n>0)||n>=1e8) return m;
+  const u=x=>{ let s="",l=""; const th=Math.floor(x/1000),h=Math.floor(x/100)%10,te=Math.floor(x/10)%10,o=x%10;
+    if(th){ s+=th==1?"せん":th==3?"さんぜん":th==8?"はっせん":D[th]+"せん"; l="s"; }
+    if(h){ s+=h==1?"ひゃく":h==3?"さんびゃく":h==6?"ろっぴゃく":h==8?"はっぴゃく":D[h]+"ひゃく"; l="h"; }
+    if(te){ s+=(te==1?"":D[te])+"じゅう"; l="j"; }
+    if(o){ s+=D[o]; l="o"+o; } return [s,l]; };
+  const mn=Math.floor(n/10000),r=n%10000; let pre=mn?u(mn)[0]+"まん":"";
+  if(!r) return pre+"ごく";
+  let [s,l]=u(r);
+  if(l==="s") s+="ごく"; else if(l==="h") s=s.slice(0,-1)+"っこく"; else if(l==="j") s=s.slice(0,-3)+"じっこく";
+  else if(l==="o1"||l==="o6"||l==="o8") s=s.slice(0,-1)+"っこく"; else if(l==="o3") s+="ごく"; else s+="こく";
+  return pre+s; }
+function ttsApplyRd(t){ t=t.replace(/([0-9]+)(万)?([0-9]*)石(?![積器油炭灰高垣碑室棺鏃版像材段])/g,ttsKoku).replace(/([ァ-ヶー])[＝=]([ァ-ヶー])/g,"$1・$2").replace(/([0-9０-９])[mｍ](?![A-Za-zＡ-Ｚａ-ｚ])/g,"$1メートル").replace(/([0-9]{2})([0-9]{2})\s*[〜～]\s*([0-9]{2})年/g,"$1$2年から$1$3年").replace(/([0-9]{2})([0-9]{2})年から([0-9]{2})年/g,"$1$2年から$1$3年").replace(/([0-9]{2})([0-9]{2})\s*[〜～]\s*([0-9]{2})(?![0-9年])/g,"$1$2から$1$3").replace(/(1[0-9]{3}|20[0-9]{2})\.([0-9]{1,2})\.([0-9]{1,2})(?![0-9])/g,"$1年$2月$3日").replace(/(1[0-9]{3}|20[0-9]{2})\.([0-9]{1,2})(?![0-9])/g,"$1年$2月").replace(/(^|[^0-9０-９一-鿿々])年(?=[0-9０-９]+(?![0-9０-９]|年)|平均)/g,"$1ねん");   /* 「年10％」「年平均」は ねん（とし と読まない） */   /* 「1914.6」は「1914年6月」 */   /* 「1904〜05年」は「1904年から1905年」と読む（2026-11-16） */   /* 外国人の名前の「＝」（ガスパル＝ヴィレラ）はイコールと読まない（2026-11-16） */
   for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
 function ttsOK(){ return typeof window!=="undefined"&&"speechSynthesis" in window&&typeof SpeechSynthesisUtterance!=="undefined"; }
 function ttsReadP(el){ return el.tagName==="P"&&!el.classList.contains("xhint")&&!el.classList.contains("more")&&!el.classList.contains("seiri-intro"); }
@@ -92,7 +106,7 @@ const TTS_CIRC="①②③④⑤⑥⑦⑧⑨⑩";
    「のちの」「いまの」→「、のちの◯◯」／説明の文 → 前後に区切って、そのまま読む */
 const TTS_YR=/^(?:紀元前)?[0-9０-９]{1,4}(?:年|世紀|年代)?(?:ごろ|頃)?(?:\s*(?:[〜～\-]|から)\s*[0-9０-９]{1,4}(?:年|世紀)?(?:ごろ|頃)?)?$/;
 let _ttsAlt=0; const ttsConj=()=>(_ttsAlt++%2?"つまり":"すなわち");
-function ttsYear(y){ y=y.replace(/\s*[〜～\-]\s*/g,"から"); return /(年|世紀|ごろ|頃|年代)$/.test(y)?y:y+"年"; }
+function ttsYear(y){ y=y.replace(/([0-9]{2})([0-9]{2})\s*[〜～\-]\s*([0-9]{2})(?![0-9])/g,"$1$2〜$1$3").replace(/\s*[〜～\-]\s*/g,"から"); return /(年|世紀|ごろ|頃|年代)$/.test(y)?y:y+"年"; }
 function ttsParen(t,plain){ let out="", rest=t, g=0;
   while(g++<60){ const m=/（([^（）]{1,140})）/.exec(rest); if(!m){ out+=rest; break; }
     let pre=out+rest.slice(0,m.index); const y=m[1].trim(), post=rest.slice(m.index+m[0].length), nx=post.charAt(0);
@@ -124,7 +138,7 @@ function ttsSym(t){
   t=t.replace(/([^\s、。：:「」（）]{1,14})[：:](?!\d)\s*/g,"$1は、").replace(/[：:](?!\d)/g,"、");
   t=t.replace(/(^|[、。\s「（])([^、。・\s→⇒「」（）]{1,12})[→⇒]([^、。・\s→⇒「」（）]{1,12})(?=[、。・\s」）]|$)/g,(m,a,x,y)=>a+x+"から"+y+"へ");
   t=t.replace(/\s*[→⇒]\s*/g,"、そして");
-  t=t.replace(/(^|[、。\s「（は])([^、。・\s「」（）]{1,12})・([^、。・\s「」（）]{1,12})(?=[、。\s」）はがをにでの]|$)/g,(m,a,x,y)=>(/[ァ-ヶー]$/.test(x)&&/^[ァ-ヶー]/.test(y))?m:a+x+"と"+y);   /* カタカナどうしの「・」（ジョン・ヘイ）はそのまま */
+  t=t.replace(/(^|[、。\s「（は])([^、。・\s「」（）]{1,12})・([^、。・\s「」（）]{1,12})(?=[、。\s」）はがをにでの]|$)/g,(m,a,x,y)=>((/[ァ-ヶー]$/.test(x)&&/^[ァ-ヶー]/.test(y))||/(協定|協約|条約|会談|内閣|文化|間|期|像|休業法|新幹線)$/.test(y))?m:a+x+"と"+y);   /* カタカナどうしの「・」（ジョン・ヘイ）と、ひとつの名前（樺太・千島交換条約、石井・ランシング協定、弘仁・貞観文化、無著・世親像）は「と」にせず、間をおく */
   return t; }
 /* かっこの中の授業リンクだけを外す（説明の文は残す）。中身がリンクだけなら空のかっこになり、あとで消える */
 function ttsRefStrip(t){ return t.replace(/（([^（）]*)）/g,(m,x)=>{ if(x.indexOf("〔")<0) return m; let y=x.replace(/〔[^〔〕]*〕/g,"").replace(/^[\s。、・]+|[\s。、・]+$/g,""); if(/^[0-9０-９・、\s]*$/.test(y)) y="";   /* 「授業08・09」の残りの「09」を年と読まない（2026-11-16） */
@@ -133,7 +147,7 @@ function ttsRef(x){ return x.replace(/授業\s*0?(\d+)/g,"授業$1").replace(/([
 function ttsNorm(t,plain){ return ttsParen(ttsSym(ttsRefStrip(t).replace(/〔([^〔〕]*)〕/g,(m,x)=>ttsRef(x)).replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")),plain)
   .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")
   .replace(/([^\s、。（）「」＞]+)＞([^\s、。（）「」＞]+)/g,"$1が$2を上回り").replace(/＞/g,"より大きい").replace(/\s*\bvs\.?\s*/gi,"たい").replace(/[：:](?!\d)/g,"、").replace(/[―—]/g,"、")
-  .replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
+  .replace(/([0-9]{2})([0-9]{2})(年?)\s*[〜～]\s*([0-9]{2})(?![0-9])/g,"$1$2$3から$1$4").replace(/(\d)\s*[〜～]\s*(\d)/g,"$1から$2").replace(/[〜～]/g,"から").replace(/[→⇒]/g,"、").replace(/[＝=]/g,"、").replace(/×/g,"と")
   .replace(/[・／\/]/g,"、").replace(/＋/g,"と").replace(/[■▶▼★☆※◆●○]/g,"").replace(/[ 　\s]+/g," ").replace(/、\s*、/g,"、").replace(/^[、\s]+/,"").trim(); }
 /* 1つの段落・枠を、読む文字列にする（ふりがなは読みだけ、参照ボタン・問いのカードは読まない） */
 function ttsTextOf(el){ let out="";
