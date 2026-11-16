@@ -58,7 +58,8 @@ const TTS_SCRIPT=@@SCRIPT@@;
 function ttsScript(raw){ const L=TTS_SCRIPT[activeId+":"+lIdx]; if(!L) return raw; raw=ttsRefStrip(raw); for(const [a,b] of L){ if(a&&raw.indexOf(a)>=0) raw=raw.split(a).join(b); } return raw; }
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
 const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
-function ttsApplyRd(t){ for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
+function ttsApplyRd(t){ t=t.replace(/([ァ-ヶー])[＝=]([ァ-ヶー])/g,"$1・$2").replace(/([0-9]{2})([0-9]{2})\s*[〜～]\s*([0-9]{2})年/g,"$1$2年から$1$3年").replace(/(1[0-9]{3})\.([0-9]{1,2})(?![0-9])/g,"$1年$2月");   /* 「1914.6」は「1914年6月」 */   /* 「1904〜05年」は「1904年から1905年」と読む（2026-11-16） */   /* 外国人の名前の「＝」（ガスパル＝ヴィレラ）はイコールと読まない（2026-11-16） */
+  for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
 function ttsOK(){ return typeof window!=="undefined"&&"speechSynthesis" in window&&typeof SpeechSynthesisUtterance!=="undefined"; }
 function ttsReadP(el){ return el.tagName==="P"&&!el.classList.contains("xhint")&&!el.classList.contains("more")&&!el.classList.contains("seiri-intro"); }
 /* 読み上げは全授業（本文の段落がある授業）で出す */
@@ -83,7 +84,7 @@ function ttsDictFor(l){ const d=Object.assign({},TTS_FORCE.g||{},(TTS_FORCE.l||{
 /* 漢字の語を、前後が漢字でないところだけ読みに置きかえる（長い語から） */
 function ttsApplyDict(t,d){ const keys=Object.keys(d).filter(k=>t.indexOf(k)>=0).sort((a,b)=>b.length-a.length); if(!keys.length) return t;
   const re=new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g");
-  return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; return (ttsIsKan(pv)||ttsIsKan(nx))?m:(d[m][0]==="~"?d[m].slice(1):ttsKata(d[m])); }); }   /* 「~」で始まる読みは、ひらがなのまま渡す（カタカナだと外来語あつかいで読みがくずれる語：サンギョウ→サンギヨウ など） */
+  return t.replace(re,(m,i,all)=>{ const pv=all[i-1], nx=all[i+m.length]; let v=d[m]; const any=v[0]==="!"; if(any) v=v.slice(1); if(!any&&((ttsIsKan(m[0])&&ttsIsKan(pv))||(ttsIsKan(m[m.length-1])&&ttsIsKan(nx)))) return m;   /* 前後の漢字を見るのは、キーの端が漢字のときだけ（「明の僧」の「明の」は置きかえる） */ return v[0]==="~"?v.slice(1):ttsKata(v); }); }   /* 「!」で始まる読みは前後が漢字でも置きかえる（日本史・日本軍の「日本」）   /* 「~」で始まる読みは、ひらがなのまま渡す（カタカナだと外来語あつかいで読みがくずれる語：サンギョウ→サンギヨウ など） */
 /* 記号を声にしやすく直す */
 const TTS_CIRC="①②③④⑤⑥⑦⑧⑨⑩";
 /* かっこ（　）の中身を、授業らしく読む（2026-11-15 ユーザーの指示）。
@@ -123,10 +124,11 @@ function ttsSym(t){
   t=t.replace(/([^\s、。：:「」（）]{1,14})[：:](?!\d)\s*/g,"$1は、").replace(/[：:](?!\d)/g,"、");
   t=t.replace(/(^|[、。\s「（])([^、。・\s→⇒「」（）]{1,12})[→⇒]([^、。・\s→⇒「」（）]{1,12})(?=[、。・\s」）]|$)/g,(m,a,x,y)=>a+x+"から"+y+"へ");
   t=t.replace(/\s*[→⇒]\s*/g,"、そして");
-  t=t.replace(/(^|[、。\s「（は])([^、。・\s「」（）]{1,12})・([^、。・\s「」（）]{1,12})(?=[、。\s」）はがをにでの]|$)/g,(m,a,x,y)=>(/^[ァ-ヶー]+$/.test(x)&&/^[ァ-ヶー]+$/.test(y))?m:a+x+"と"+y);
+  t=t.replace(/(^|[、。\s「（は])([^、。・\s「」（）]{1,12})・([^、。・\s「」（）]{1,12})(?=[、。\s」）はがをにでの]|$)/g,(m,a,x,y)=>(/[ァ-ヶー]$/.test(x)&&/^[ァ-ヶー]/.test(y))?m:a+x+"と"+y);   /* カタカナどうしの「・」（ジョン・ヘイ）はそのまま */
   return t; }
 /* かっこの中の授業リンクだけを外す（説明の文は残す）。中身がリンクだけなら空のかっこになり、あとで消える */
-function ttsRefStrip(t){ return t.replace(/（([^（）]*)）/g,(m,x)=>x.indexOf("〔")<0?m:"（"+x.replace(/〔[^〔〕]*〕/g,"").replace(/^[\s。、・]+|[\s。、・]+$/g,"")+"）"); }
+function ttsRefStrip(t){ return t.replace(/（([^（）]*)）/g,(m,x)=>{ if(x.indexOf("〔")<0) return m; let y=x.replace(/〔[^〔〕]*〕/g,"").replace(/^[\s。、・]+|[\s。、・]+$/g,""); if(/^[0-9０-９・、\s]*$/.test(y)) y="";   /* 「授業08・09」の残りの「09」を年と読まない（2026-11-16） */
+    return "（"+y+"）"; }); }
 function ttsRef(x){ return x.replace(/授業\s*0?(\d+)/g,"授業$1").replace(/([古中近現][代世])([①-⑩])/g,(m,a,b)=>a+"の"+(TTS_CIRC.indexOf(b)+1)).replace(/テーマ史[：〈]/,"テーマ史の").replace(/[〉]/g,""); }
 function ttsNorm(t,plain){ return ttsParen(ttsSym(ttsRefStrip(t).replace(/〔([^〔〕]*)〕/g,(m,x)=>ttsRef(x)).replace(/（[^（）]*授業\s*\d{2}[^（）]*）/g,"").replace(/（[\s、・,]*）/g,"")),plain)
   .replace(/(\d{3,4})\.(\d{1,2})\.(\d{1,2})/g,"$1年$2月$3日").replace(/[①-⑩]/g,c=>(TTS_CIRC.indexOf(c)+1)+"、")

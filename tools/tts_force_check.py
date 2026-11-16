@@ -28,7 +28,7 @@ fp=os.path.join(HERE,'tts_force.json'); F=json.load(open(fp,encoding='utf-8'))
 fixed=0; bad=[]
 for scope,d in [('g',F['g'])]+[(k,v) for k,v in F['l'].items()]:
     for w,r in list(d.items()):
-        hira=r[1:] if r.startswith('~') else r
+        r=r.lstrip('!'); hira=r[1:] if r.startswith('~') else r
         want=norm(hira)
         if r.startswith('~'):
             if say(hira+'。')!=want: bad.append((scope,w,r,say(hira+'。')))
@@ -38,7 +38,7 @@ for scope,d in [('g',F['g'])]+[(k,v) for k,v in F['l'].items()]:
         h=say(hira+'。')
         if h==want:
             fixed+=1; print('hira',scope,w,r,k)
-            if WRITE: d[w]='~'+hira
+            if WRITE: d[w]=('!' if d[w].startswith('!') else '')+'~'+hira
         else: bad.append((scope,w,r,k+' / '+h))
 for b in bad: print('BAD',*b)
 print('kata→hira',fixed,'bad',len(bad))
