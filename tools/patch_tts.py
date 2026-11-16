@@ -58,7 +58,7 @@ const TTS_SCRIPT=@@SCRIPT@@;
 function ttsScript(raw){ const L=TTS_SCRIPT[activeId+":"+lIdx]; if(!L) return raw; raw=ttsRefStrip(raw); for(const [a,b] of L){ if(a&&raw.indexOf(a)>=0) raw=raw.split(a).join(b); } return raw; }
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
 const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
-function ttsApplyRd(t){ t=t.replace(/([ァ-ヶー])[＝=]([ァ-ヶー])/g,"$1・$2").replace(/([0-9]{2})([0-9]{2})\s*[〜～]\s*([0-9]{2})年/g,"$1$2年から$1$3年").replace(/(1[0-9]{3})\.([0-9]{1,2})(?![0-9])/g,"$1年$2月");   /* 「1914.6」は「1914年6月」 */   /* 「1904〜05年」は「1904年から1905年」と読む（2026-11-16） */   /* 外国人の名前の「＝」（ガスパル＝ヴィレラ）はイコールと読まない（2026-11-16） */
+function ttsApplyRd(t){ t=t.replace(/([ァ-ヶー])[＝=]([ァ-ヶー])/g,"$1・$2").replace(/([0-9]{2})([0-9]{2})\s*[〜～]\s*([0-9]{2})年/g,"$1$2年から$1$3年").replace(/(1[0-9]{3})\.([0-9]{1,2})(?![0-9])/g,"$1年$2月").replace(/(^|[^0-9０-９今])年(?=[0-9０-９]+(?![0-9０-９]|年)|平均)/g,"$1ねん");   /* 「年10％」「年平均」は ねん（とし と読まない） */   /* 「1914.6」は「1914年6月」 */   /* 「1904〜05年」は「1904年から1905年」と読む（2026-11-16） */   /* 外国人の名前の「＝」（ガスパル＝ヴィレラ）はイコールと読まない（2026-11-16） */
   for(const k in TTS_RD) t=t.split(k).join(TTS_RD[k]); return t; }
 function ttsOK(){ return typeof window!=="undefined"&&"speechSynthesis" in window&&typeof SpeechSynthesisUtterance!=="undefined"; }
 function ttsReadP(el){ return el.tagName==="P"&&!el.classList.contains("xhint")&&!el.classList.contains("more")&&!el.classList.contains("seiri-intro"); }
