@@ -57,7 +57,7 @@ let TTS_FORCE=@@FORCE@@; let _ttsCurD=null;
 const TTS_SCRIPT=@@SCRIPT@@;
 function ttsScript(raw){ const L=TTS_SCRIPT[activeId+":"+lIdx]; if(!L) return raw; raw=ttsRefStrip(raw); for(const [a,b] of L){ if(a&&raw.indexOf(a)>=0) raw=raw.split(a).join(b); } return raw; }
 /* 機械が読みまちがえやすい語の読み（声のためだけ。画面のふりがなは変えない）。授業を足すたびに、読み上げの文字列を確かめて足す */
-const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳":"はたち","白滝遺跡群":"しらたきいせきぐん"};
+const TTS_RD={"ナイフ形石器":"ナイフがたせっき","笠懸村":"かさかけむら","第四紀":"だいよんき","槍先形":"やりさきがた","柄のみぞ":"えのみぞ","洞穴":"ほらあな","20歳の青年":"はたちの青年","20歳の中大兄":"はたちの中大兄","白滝遺跡群":"しらたきいせきぐん"};
 /* 「1万石」「100石」などの石は「こく」。エンジンは「イチマンゼキ」「ヒャッセキ」と読むので、数ごとかなにする（2026-11-16） */
 function ttsKoku(m,a,man,b){ const D=["","いち","に","さん","よん","ご","ろく","なな","はち","きゅう"];
   let n=man?parseInt(a,10)*10000+(b?parseInt(b,10):0):parseInt(a,10); if(!(n>0)||n>=1e8) return m;
