@@ -2,7 +2,8 @@
 #   python3 add_maps.py ../app/source.html ../app/source.html
 import re,json,sys
 from jmap import jmap
-from maps_def import MAPS
+from maps_def import MAPS, PLANS
+import miyako
 
 src,out=sys.argv[1],sys.argv[2]
 s=open(src,encoding='utf-8').read()
@@ -17,15 +18,15 @@ for p in packs:
         l['html']=re.sub(r'<!--jm:[^>]*-->[\s\S]*?<!--/jm-->','',l['html'])
 
 bad=[]
-for mp in MAPS:
+for mp in MAPS+PLANS:
     from buildpack import locate
     _,l=locate(list(P.values()),mp['pack'],mp['no'])
     h=l['html']; pos=None
     for mm in re.finditer(r'<p[^>]*>[\s\S]*?</p>',h):
         if mp['after'] in plain(mm.group(0)): pos=mm.end(); break
     if pos is None: bad.append(mp['id']); continue
-    block=f"<!--jm:{mp['id']}-->"+jmap(**mp['map'])+"<!--/jm-->"
+    block=f"<!--jm:{mp['id']}-->"+(getattr(miyako,mp['fn'])() if 'fn' in mp else jmap(**mp['map']))+"<!--/jm-->"
     l['html']=h[:pos]+block+h[pos:]
-print('maps',len(MAPS)-len(bad),'not-found',bad)
+print('maps',len(MAPS)+len(PLANS)-len(bad),'not-found',bad)
 s=s[:m.start(1)]+json.dumps(packs,ensure_ascii=False,indent=1)+s[m.end(1):]
 open(out,'w',encoding='utf-8').write(s)

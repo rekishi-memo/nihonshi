@@ -125,19 +125,29 @@ def _plain(h):
 def _tw(t,fs):
     return sum(fs*(0.62 if ord(c)<0x2E80 else 1.0) for c in t)
 
+# 都の範囲（経度・緯度の四角：西・南・東・北）。地図の上で5px以上になるときは点ではなく四角で描く。
+#   大きさ：藤原京 約5.3km四方（大藤原京説、宮は中央）／平城京 東西約4.3km・南北約4.8km＋外京（東へ約1.6km）／
+#   長岡京 東西約4.3km・南北約5.3km／平安京 東西約4.5km・南北約5.2km。位置は宮・朱雀大路の跡から決めた（おおよそ）
+MIYAKO={
+ '藤原京':[(135.7787,34.4786,135.8363,34.5264)],
+ '平城京':[(135.7721,34.6475,135.8191,34.6940),(135.8191,34.6750,135.8366,34.6940)],
+ '長岡京':[(135.6809,34.8980,135.7279,34.9460)],
+ '平安京':[(135.7184,34.9825,135.7677,35.0300)],
+}
 POS={'r':(1,0),'l':(-1,0),'t':(0,-1),'b':(0,1),'tr':(1,-1),'br':(1,1),'tl':(-1,-1),'bl':(-1,1)}
 FS2=9.5   # 2行目（説明）の文字の大きさ
 def _lines(t):
     a,_,b=t.partition('|'); return a.strip(),b.strip()
-def _box(x,y,t,fs,pos,gap=5.5):
+def _box(x,y,t,fs,pos,gap=5.5,hw=0,hh=0):
+    # hw・hh：都の四角のときの半分の幅・高さ（点のときは0）
     if pos.endswith('2'): pos=pos[:-1]; gap=22   # 「2」は、少し離して置き、点と線で結ぶ
     a,b=_lines(t)
     w=max(_tw(a,fs),_tw(b,FS2) if b else 0); h=fs*1.15+(FS2*1.2 if b else 0); dx,dy=POS[pos]
-    if dx>0: x0=x+gap
-    elif dx<0: x0=x-gap-w
+    if dx>0: x0=x+hw+gap
+    elif dx<0: x0=x-hw-gap-w
     else: x0=x-w/2
-    if dy<0: y0=y-gap-h+(2 if dx else 0)
-    elif dy>0: y0=y+gap-(2 if dx else 0)
+    if dy<0: y0=y-hh-gap-h+(2 if dx else 0)
+    elif dy>0: y0=y+hh+gap-(2 if dx else 0)
     else: y0=y-h/2
     return (x0,y0,x0+w,y0+h)
 
@@ -166,9 +176,19 @@ def jmap(title,bbox,points=(),routes=(),areas=(),note='',legend_cols=None,base=N
         el.append(f"<path d='{d}' style='fill:none;stroke-linejoin:round;stroke-linecap:round;{st}'{mk}/>")
     # 置いた文字・点の四角（重なりを避ける）
     boxes=[]
-    dots=[]
-    for p in points:
-        x,y=pr(p[2],p[3]); dots.append((x,y)); boxes.append((x-3.5,y-3.5,x+3.5,y+3.5))
+    dots=[]; half=[]; rect_el=[]
+    for i,p in enumerate(points):
+        t=(labels[i] if labels and i<len(labels) and labels[i] else _plain(p[1]))
+        R=MIYAKO.get(_lines(t)[0])
+        if R:
+            P=[(pr(w,n),pr(e,sth)) for w,sth,e,n in R]
+            if P[0][1][0]-P[0][0][0]>=5:   # 都の本体が地図の上で5px以上あるときだけ、四角で描く（外京は本体にそえる）
+                (x0,y0),(x1,y1)=P[0]
+                for k,((a0,b0),(a1,b1)) in enumerate(P):
+                    rect_el.append(f"<rect x='{_f(a0)}' y='{_f(b0)}' width='{_f(a1-a0)}' height='{_f(b1-b0)}' style='fill:rgba(224,122,95,{.55 if k==0 else .35});stroke:#E07A5F;stroke-width:1;'/>")
+                X0=min(a[0] for a,b in P); X1=max(b[0] for a,b in P); Y0=min(a[1] for a,b in P); Y1=max(b[1] for a,b in P)
+                dots.append(((X0+X1)/2,(Y0+Y1)/2)); half.append(((X1-X0)/2,(Y1-Y0)/2)); boxes.append((X0,Y0,X1,Y1)); continue
+        x,y=pr(p[2],p[3]); dots.append((x,y)); half.append(None); boxes.append((x-3.5,y-3.5,x+3.5,y+3.5))
     txt=[]
     for name,lon,lat in areas:
         x,y=pr(lon,lat); w=_tw(name,11)+2
@@ -184,7 +204,8 @@ def jmap(title,bbox,points=(),routes=(),areas=(),note='',legend_cols=None,base=N
         cands=[fixed] if fixed else ['r','l','t','b','tr','br','tl','bl']
         best=None
         for k,c in enumerate(cands):
-            b=_box(x,y,t,FS,c)
+            hw,hh=half[i] or (0,0)
+            b=_box(x,y,t,FS,c,hw=hw,hh=hh)
             s=sum(_ov(b,o) for o in boxes)*10
             out=max(0,-b[0])+max(0,b[2]-W)+max(0,-b[1])+max(0,b[3]-H)
             s+=out*200+k*0.5
@@ -197,7 +218,7 @@ def jmap(title,bbox,points=(),routes=(),areas=(),note='',legend_cols=None,base=N
         if c.endswith('2') or sx or sy:   # 離して置いたときは、点から字へ細い線を引く
             cx=min(max(x,b[0]),b[2]); cy=min(max(y,b[1]),b[3])
             if math.hypot(cx-x,cy-y)>7: lines_el.append(f"<line x1='{_f(x)}' y1='{_f(y)}' x2='{_f(cx)}' y2='{_f(cy)}' style='stroke:#C9B98F;stroke-width:.8;'/>")
-    dot_el=[f"<circle cx='{_f(x)}' cy='{_f(y)}' r='3.3' style='fill:#E07A5F;stroke:{SEA};stroke-width:1.2;'/>" for x,y in dots]
+    dot_el=rect_el+[f"<circle cx='{_f(x)}' cy='{_f(y)}' r='3.3' style='fill:#E07A5F;stroke:{SEA};stroke-width:1.2;'/>" for (x,y),h in zip(dots,half) if not h]
     halo=f"paint-order:stroke;stroke:{SEA};stroke-width:3px;stroke-linejoin:round;"
     for t,b,c in [l for l in lab if l]:
         a,d=_lines(t); y1=b[1]+FS*0.93

@@ -405,6 +405,8 @@ for _m in MAPS:
 
 # 点が集まって字が重なる所は、置き場所を決める（名前 → 'r' 'l' 't' 'b' 'tr' 'br' 'tl' 'bl'）。2026-11-17 画像で1枚ずつ見て決めた
 POSFIX={
+'kodai4-01':{'平安京':'r','長岡京':'l'},
+'kodai3-04':{'藤原京':'l','飛鳥':'r'},
 'kodai-07':{'大仙陵古墳':'bl2','箸墓古墳':'tr','誉田御廟山古墳':'br2'},
 'kodai5-11':{'大宰府':'tr','博多':'b2','日振島':'br'},
 'kodai2-05':{'大宰府':'tr2','大野城':'tl2','水城':'r','基肄城':'bl2'},
@@ -419,3 +421,8 @@ for _m in MAPS:
     if _m['id'] in POSFIX: _m['map']['pos']=POSFIX[_m['id']]
     if _m['id']=='kinsei3-06':   # 行き先は点の説明（長崎＝オランダ・中国 など）に書いたので、重なる矢印の先の文字は消す
         _m['map']['areas']=[a for a in _m['map'].get('areas',[]) if a[0]=='蝦夷地']
+
+# 都の配置図（miyako.py）。地図と同じく、after の段落の後ろに入れる
+PLANS=[dict(id='plan-fujiwara',pack='kodai2',no='06',after='藤原京は、天皇の住まいと役所が集まる',fn='fujiwara'),
+       dict(id='plan-heijo',pack='kodai3',no='02',after='左京と右京には、国が開く東市と西市があり',fn='heijo'),
+       dict(id='plan-heian',pack='kodai4',no='01',after='平安京は東西約4.5キロ',fn='heian')]
