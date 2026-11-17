@@ -581,16 +581,13 @@
   .kw .rtx{color:var(--gold-deep);-webkit-text-fill-color:var(--gold-deep);}
   b .rtx{color:inherit;-webkit-text-fill-color:currentColor;opacity:.65;}
 /*AN3CSS-BEGIN*/
-  .an3-entry{display:flex;align-items:center;gap:12px;width:100%;margin:0 0 12px;padding:11px 14px;background:linear-gradient(135deg,rgba(212,189,130,.10),rgba(212,189,130,.02));border:1px solid rgba(212,189,130,.45);border-radius:12px;color:var(--ivory);text-align:left;cursor:pointer;font-family:inherit;}
-  .an3-entry[hidden]{display:none;}
-  .an3-e-play{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;padding-left:2px;}
-  .an3-e-t b{display:block;font-family:var(--mincho);font-size:14px;letter-spacing:.06em;color:var(--gold);font-weight:700;}
-  .an3-e-t small{display:block;margin-top:2px;font-size:11px;color:var(--ivory-dim);}
-  body.an3-open{overflow:hidden;}
-  .an3-modal{position:fixed;inset:0;z-index:9999;background:rgba(4,7,14,.95);display:flex;align-items:center;justify-content:center;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);}
-  .an3-mbox{width:100%;max-width:520px;max-height:100%;overflow:auto;padding:10px 10px 14px;}
-  .an3-mhead{display:flex;align-items:center;justify-content:space-between;margin:0 2px 8px;font-family:var(--mincho);color:var(--gold);font-size:13px;letter-spacing:.1em;}
-  .an3-x{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ivory);font-size:20px;line-height:1;cursor:pointer;}
+  .an3-head{margin:2px 2px 12px;}
+  .an3-head b{display:block;font-family:var(--mincho);font-size:16px;letter-spacing:.08em;color:var(--gold);}
+  .an3-head small{display:block;margin-top:4px;font-size:11.5px;line-height:1.6;color:var(--ivory-dim);}
+  .an3-none{padding:22px 16px;border:1px solid var(--line);border-radius:12px;color:var(--ivory-dim);font-size:13px;}
+  .an3-none b{display:block;color:var(--ivory);margin-bottom:6px;}
+  .an3-none p{margin:0 0 8px;}
+  .an3-go{display:inline-block;margin:0 6px 6px 0;padding:6px 12px;border:1px solid var(--gold);border-radius:14px;background:none;color:var(--gold);font-family:inherit;font-size:12px;cursor:pointer;}
   .an3-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:74vh;border-radius:12px;overflow:hidden;border:1px solid rgba(212,189,130,.28);background:#070b16;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;}
   .an3-stage canvas{position:absolute;left:0;top:0;display:block;}
   .an3-btn{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;border:1px solid var(--gold);background:rgba(7,11,22,.6);color:var(--gold);font-size:22px;line-height:58px;text-align:center;padding:0 0 0 3px;pointer-events:none;transition:opacity .3s;}
@@ -667,6 +664,7 @@
   </section>
 
   <!-- QUIZ -->
+  <section class="sec" id="sec-video"><div id="an3Video"></div></section>
   <section class="sec" id="sec-quiz">
     <div class="stats">
       <div class="stat"><b id="sProg">0/0</b><span>このまわり</span></div>
@@ -81718,7 +81716,7 @@ const DEFAULT_PACKS = [
 /* 授業をほかのセットへ移したときの一問一答の学習記録の引き継ぎ（[旧セット,旧id,新セット,新id]） */
 const QMOVES=[["chusei6", 1, "chusei4", 90], ["chusei6", 2, "chusei4", 91], ["chusei6", 3, "chusei4", 92], ["chusei6", 4, "chusei4", 93], ["chusei6", 5, "chusei4", 94], ["chusei6", 6, "chusei4", 95], ["chusei6", 7, "chusei4", 96], ["chusei6", 8, "chusei4", 97], ["chusei6", 9, "chusei4", 98], ["chusei6", 10, "chusei4", 99], ["chusei6", 11, "chusei4", 100], ["chusei6", 12, "chusei4", 101], ["chusei6", 13, "chusei4", 102], ["chusei6", 14, "chusei4", 103], ["chusei6", 15, "chusei4", 104], ["chusei6", 28, "chusei4", 105], ["chusei6", 74, "chusei4", 106], ["chusei6", 75, "chusei4", 107], ["chusei6", 87, "chusei4", 108], ["chusei6", 16, "chusei5", 75], ["chusei6", 17, "chusei5", 76], ["chusei6", 18, "chusei5", 77], ["chusei6", 19, "chusei5", 78], ["chusei6", 20, "chusei5", 79], ["chusei6", 21, "chusei5", 80], ["chusei6", 22, "chusei5", 81], ["chusei6", 23, "chusei5", 82], ["chusei6", 24, "chusei5", 83], ["chusei6", 25, "chusei5", 84], ["chusei6", 26, "chusei5", 85], ["chusei6", 27, "chusei5", 86], ["chusei6", 29, "chusei5", 87], ["chusei6", 30, "chusei5", 88], ["chusei6", 31, "chusei5", 89], ["chusei6", 32, "chusei5", 90], ["chusei6", 33, "chusei5", 91], ["chusei6", 34, "chusei5", 92], ["chusei6", 35, "chusei5", 93], ["chusei6", 36, "chusei5", 94], ["chusei6", 37, "chusei5", 95], ["chusei6", 38, "chusei5", 96], ["chusei6", 39, "chusei5", 97], ["chusei6", 40, "chusei5", 98], ["chusei6", 41, "chusei5", 99], ["chusei6", 42, "chusei5", 100], ["chusei6", 43, "chusei5", 101], ["chusei6", 44, "chusei5", 102], ["chusei6", 76, "chusei5", 103], ["chusei6", 77, "chusei5", 104], ["chusei6", 78, "chusei5", 105], ["chusei6", 79, "chusei5", 106], ["chusei6", 80, "chusei5", 107], ["chusei6", 88, "chusei5", 108], ["kinsei2", 1, "kinsei", 82], ["kinsei2", 2, "kinsei", 83], ["kinsei2", 3, "kinsei", 84], ["kinsei2", 4, "kinsei", 85], ["kinsei2", 5, "kinsei", 86], ["kinsei2", 6, "kinsei", 87], ["kinsei2", 7, "kinsei", 88], ["kinsei2", 8, "kinsei", 89], ["kinsei2", 9, "kinsei", 90], ["kinsei2", 10, "kinsei", 91], ["kinsei2", 11, "kinsei", 92], ["kinsei2", 12, "kinsei", 93], ["kinsei2", 13, "kinsei", 94], ["kinsei2", 14, "kinsei", 95], ["kinsei2", 15, "kinsei", 96], ["kinsei2", 16, "kinsei", 97], ["kinsei2", 17, "kinsei", 98], ["kinsei2", 18, "kinsei", 99], ["kinsei2", 19, "kinsei", 100], ["kinsei2", 66, "kinsei", 101], ["kinsei2", 67, "kinsei", 102], ["kinsei2", 68, "kinsei", 103], ["kinsei2", 69, "kinsei", 104], ["kinsei2", 70, "kinsei", 105], ["kinsei2", 81, "kinsei", 106], ["kinsei2", 82, "kinsei", 107], ["gendai2", 26, "gendai", 72], ["gendai2", 27, "gendai", 73], ["gendai2", 28, "gendai", 74], ["gendai2", 29, "gendai", 75], ["gendai2", 30, "gendai", 76], ["gendai2", 31, "gendai", 77], ["gendai2", 32, "gendai", 78], ["gendai2", 33, "gendai", 79], ["gendai2", 68, "gendai", 80], ["gendai2", 78, "gendai", 81], ["gendai2", 79, "gendai", 82]];
 const PK_KEY="nihonshi_packs_v2", ACT_KEY="nihonshi_active_v2", PROG_KEY="nihonshi_prog_v2", SEC_KEY="nihonshi_sec_v2";
-const SECTIONS=[{k:"lesson",l:"授業"},{k:"quiz",l:"一問一答"},{k:"cloze",l:"穴埋め"},{k:"ronjutsu",l:"論述"},{k:"terms",l:"用語"},{k:"goro",l:"語呂"},{k:"figures",l:"人物"}];
+const SECTIONS=[{k:"lesson",l:"授業"},{k:"video",l:"動画"},{k:"quiz",l:"一問一答"},{k:"cloze",l:"穴埋め"},{k:"ronjutsu",l:"論述"},{k:"terms",l:"用語"},{k:"goro",l:"語呂"},{k:"figures",l:"人物"}];
 let packsById={}, packOrder=[], activeId=null, prog={}, activeSec="lesson";
 let curTag="", lIdx=0, mode="all", unitFilter="", doShuffle=true, queue=[], pos=0, revealed=false, run={correct:0,total:0}, activeNode=null;
 
@@ -81825,7 +81823,7 @@ function switchSec(k){ if(k!=="lesson") ttsStop(); { const nb=document.getElemen
   activeSec=k; sSet(SEC_KEY,k);
   document.querySelectorAll(".sectab").forEach(b=>b.setAttribute("aria-selected",b.dataset.k===k?"true":"false"));
   document.querySelectorAll(".sec").forEach(s=>s.classList.remove("active"));
-  document.getElementById("sec-"+k).classList.add("active");
+  document.getElementById("sec-"+k).classList.add("active"); if(window.an3Sec) an3Sec(k);
   if(k==="quiz"&&!today&&!todayOff&&activeId!=="seiri"&&todayCount()>0) startToday(false);  /* 一問一答を開いたら、まず今日のぶん */
   window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -83001,22 +82999,29 @@ function drawIcon(g,i,x,y,s,col,a){ g.save(); g.globalAlpha=a; g.translate(x,y);
   }
   g.restore(); g.globalAlpha=1; }
 
-const A3={list:[]};
+const A3={list:[],pid:null};
 function data(){ return window.AN3_DATA||null; }
-function openModal(pid){ const D=data(); if(!D||!D.packs[pid]) return; closeModal();
-  const m=document.createElement("div"); m.className="an3-modal"; m.innerHTML=`<div class="an3-mbox"><div class="an3-mhead"><span>${D.packs[pid].title}</span><button class="an3-x" aria-label="とじる">×</button></div><div class="an3"></div></div>`;
-  document.body.appendChild(m); document.body.classList.add("an3-open");
-  m.addEventListener("click",e=>{ if(e.target===m) closeModal(); }); m.querySelector(".an3-x").addEventListener("click",closeModal);
-  const p=new Player(m.querySelector(".an3"),D.packs[pid],D); A3.list.push(p); A3.modal=m; }
-function closeModal(){ A3.list.forEach(p=>p.stop()); A3.list=[]; if(A3.modal){ A3.modal.remove(); A3.modal=null; } document.body.classList.remove("an3-open"); }
-// 授業のタブの上に、そのセットの動く図の入口を出す
-window.an3Mount=function(){ const D=data(), nav=document.getElementById("lessonNav"); if(!nav) return;
-  let b=document.getElementById("an3Entry");
-  if(!b){ b=document.createElement("button"); b.id="an3Entry"; b.className="an3-entry"; nav.parentNode.insertBefore(b,nav); b.addEventListener("click",()=>openModal(b.dataset.pid)); }
-  const pid=(typeof activeId!=="undefined")?activeId:null, S=D&&pid&&D.packs[pid];
-  if(S){ b.hidden=false; b.dataset.pid=pid; b.innerHTML=`<span class="an3-e-play">▶</span><span class="an3-e-t"><b>${S.title}を、動く図で</b><small>このまとまりを約${Math.round(S.dur/60)}分で。政治も文化も、流れで</small></span>`; }
-  else b.hidden=true; };
-window.an3Open=openModal; window.an3Close=closeModal; window.an3Debug=A3;
+function stopAll(){ A3.list.forEach(p=>p.stop()); A3.list=[]; A3.pid=null; }
+// 「動画」タブの中身。そのセットの動画があれば再生器を置き、なければ、ある動画の一覧を出す
+function render(){ const box=document.getElementById("an3Video"); if(!box) return;
+  const sec=document.getElementById("sec-video"), on=sec&&sec.classList.contains("active");
+  if(!on){ if(A3.list.length){ stopAll(); box.innerHTML=""; } return; }
+  const D=data(), pid=(typeof activeId!=="undefined")?activeId:null;
+  if(A3.pid===pid&&A3.list.length) return;
+  stopAll();
+  const S=D&&pid&&D.packs[pid];
+  if(!S){ const have=D?Object.keys(D.packs).map(k=>`<button class="an3-go" data-p="${k}">${D.packs[k].title}</button>`).join(""):"";
+    box.innerHTML=`<div class="an3-none"><b>このまとまりの動画は、まだありません</b><p>いま見られる動画：</p>${have}</div>`;
+    box.querySelectorAll(".an3-go").forEach(b=>b.addEventListener("click",async()=>{ if(typeof goPack==="function"){ await goPack(b.dataset.p,0); } if(typeof switchSec==="function") switchSec("video"); render(); }));
+    return; }
+  box.innerHTML=`<div class="an3-head"><b>${S.title}</b><small>このまとまりを約${Math.round(S.dur/60)}分で。政治も文化も、流れで。画面をタップで再生・一時停止、下の章で飛べる。位置・人数・形はおおよそ</small></div><div class="an3"></div>`;
+  A3.list.push(new Player(box.querySelector(".an3"),S,D)); A3.pid=pid; }
+window.an3Sec=function(){ render(); };
+window.an3Mount=function(){ render(); };
+// 最初の表示がこの読みこみより先に終わっていることがある（iPhone）。読みこんだら一度、自分でも描く
+render(); window.addEventListener("load",render);
+document.addEventListener("visibilitychange",()=>{ if(document.hidden) A3.list.forEach(p=>{ if(p.play) p.toggle(); }); });
+window.an3Debug=A3;
 })();
 /*AN3-END*/</script>
 </body>

@@ -279,21 +279,28 @@ function drawIcon(g,i,x,y,s,col,a){ g.save(); g.globalAlpha=a; g.translate(x,y);
   }
   g.restore(); g.globalAlpha=1; }
 
-const A3={list:[]};
+const A3={list:[],pid:null};
 function data(){ return window.AN3_DATA||null; }
-function openModal(pid){ const D=data(); if(!D||!D.packs[pid]) return; closeModal();
-  const m=document.createElement("div"); m.className="an3-modal"; m.innerHTML=`<div class="an3-mbox"><div class="an3-mhead"><span>${D.packs[pid].title}</span><button class="an3-x" aria-label="とじる">×</button></div><div class="an3"></div></div>`;
-  document.body.appendChild(m); document.body.classList.add("an3-open");
-  m.addEventListener("click",e=>{ if(e.target===m) closeModal(); }); m.querySelector(".an3-x").addEventListener("click",closeModal);
-  const p=new Player(m.querySelector(".an3"),D.packs[pid],D); A3.list.push(p); A3.modal=m; }
-function closeModal(){ A3.list.forEach(p=>p.stop()); A3.list=[]; if(A3.modal){ A3.modal.remove(); A3.modal=null; } document.body.classList.remove("an3-open"); }
-// 授業のタブの上に、そのセットの動く図の入口を出す
-window.an3Mount=function(){ const D=data(), nav=document.getElementById("lessonNav"); if(!nav) return;
-  let b=document.getElementById("an3Entry");
-  if(!b){ b=document.createElement("button"); b.id="an3Entry"; b.className="an3-entry"; nav.parentNode.insertBefore(b,nav); b.addEventListener("click",()=>openModal(b.dataset.pid)); }
-  const pid=(typeof activeId!=="undefined")?activeId:null, S=D&&pid&&D.packs[pid];
-  if(S){ b.hidden=false; b.dataset.pid=pid; b.innerHTML=`<span class="an3-e-play">▶</span><span class="an3-e-t"><b>${S.title}を、動く図で</b><small>このまとまりを約${Math.round(S.dur/60)}分で。政治も文化も、流れで</small></span>`; }
-  else b.hidden=true; };
-window.an3Open=openModal; window.an3Close=closeModal; window.an3Debug=A3;
+function stopAll(){ A3.list.forEach(p=>p.stop()); A3.list=[]; A3.pid=null; }
+// 「動画」タブの中身。そのセットの動画があれば再生器を置き、なければ、ある動画の一覧を出す
+function render(){ const box=document.getElementById("an3Video"); if(!box) return;
+  const sec=document.getElementById("sec-video"), on=sec&&sec.classList.contains("active");
+  if(!on){ if(A3.list.length){ stopAll(); box.innerHTML=""; } return; }
+  const D=data(), pid=(typeof activeId!=="undefined")?activeId:null;
+  if(A3.pid===pid&&A3.list.length) return;
+  stopAll();
+  const S=D&&pid&&D.packs[pid];
+  if(!S){ const have=D?Object.keys(D.packs).map(k=>`<button class="an3-go" data-p="${k}">${D.packs[k].title}</button>`).join(""):"";
+    box.innerHTML=`<div class="an3-none"><b>このまとまりの動画は、まだありません</b><p>いま見られる動画：</p>${have}</div>`;
+    box.querySelectorAll(".an3-go").forEach(b=>b.addEventListener("click",async()=>{ if(typeof goPack==="function"){ await goPack(b.dataset.p,0); } if(typeof switchSec==="function") switchSec("video"); render(); }));
+    return; }
+  box.innerHTML=`<div class="an3-head"><b>${S.title}</b><small>このまとまりを約${Math.round(S.dur/60)}分で。政治も文化も、流れで。画面をタップで再生・一時停止、下の章で飛べる。位置・人数・形はおおよそ</small></div><div class="an3"></div>`;
+  A3.list.push(new Player(box.querySelector(".an3"),S,D)); A3.pid=pid; }
+window.an3Sec=function(){ render(); };
+window.an3Mount=function(){ render(); };
+// 最初の表示がこの読みこみより先に終わっていることがある（iPhone）。読みこんだら一度、自分でも描く
+render(); window.addEventListener("load",render);
+document.addEventListener("visibilitychange",()=>{ if(document.hidden) A3.list.forEach(p=>{ if(p.play) p.toggle(); }); });
+window.an3Debug=A3;
 })();
 /*AN3-END*/

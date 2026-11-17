@@ -1,14 +1,11 @@
 /*AN3CSS-BEGIN*/
-  .an3-entry{display:flex;align-items:center;gap:12px;width:100%;margin:0 0 12px;padding:11px 14px;background:linear-gradient(135deg,rgba(212,189,130,.10),rgba(212,189,130,.02));border:1px solid rgba(212,189,130,.45);border-radius:12px;color:var(--ivory);text-align:left;cursor:pointer;font-family:inherit;}
-  .an3-entry[hidden]{display:none;}
-  .an3-e-play{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;padding-left:2px;}
-  .an3-e-t b{display:block;font-family:var(--mincho);font-size:14px;letter-spacing:.06em;color:var(--gold);font-weight:700;}
-  .an3-e-t small{display:block;margin-top:2px;font-size:11px;color:var(--ivory-dim);}
-  body.an3-open{overflow:hidden;}
-  .an3-modal{position:fixed;inset:0;z-index:9999;background:rgba(4,7,14,.95);display:flex;align-items:center;justify-content:center;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);}
-  .an3-mbox{width:100%;max-width:520px;max-height:100%;overflow:auto;padding:10px 10px 14px;}
-  .an3-mhead{display:flex;align-items:center;justify-content:space-between;margin:0 2px 8px;font-family:var(--mincho);color:var(--gold);font-size:13px;letter-spacing:.1em;}
-  .an3-x{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ivory);font-size:20px;line-height:1;cursor:pointer;}
+  .an3-head{margin:2px 2px 12px;}
+  .an3-head b{display:block;font-family:var(--mincho);font-size:16px;letter-spacing:.08em;color:var(--gold);}
+  .an3-head small{display:block;margin-top:4px;font-size:11.5px;line-height:1.6;color:var(--ivory-dim);}
+  .an3-none{padding:22px 16px;border:1px solid var(--line);border-radius:12px;color:var(--ivory-dim);font-size:13px;}
+  .an3-none b{display:block;color:var(--ivory);margin-bottom:6px;}
+  .an3-none p{margin:0 0 8px;}
+  .an3-go{display:inline-block;margin:0 6px 6px 0;padding:6px 12px;border:1px solid var(--gold);border-radius:14px;background:none;color:var(--gold);font-family:inherit;font-size:12px;cursor:pointer;}
   .an3-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:74vh;border-radius:12px;overflow:hidden;border:1px solid rgba(212,189,130,.28);background:#070b16;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;}
   .an3-stage canvas{position:absolute;left:0;top:0;display:block;}
   .an3-btn{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;border:1px solid var(--gold);background:rgba(7,11,22,.6);color:var(--gold);font-size:22px;line-height:58px;text-align:center;padding:0 0 0 3px;pointer-events:none;transition:opacity .3s;}
