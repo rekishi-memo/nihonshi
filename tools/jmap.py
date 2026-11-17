@@ -1,83 +1,214 @@
-# 授業に入れる日本地図（ベクター）をつくる。
-# 海岸線はアプリ本体の <g id='jpmap'>（vecmap.py で作った path）を <use> で使い回すので、
-# 1枚の地図は点・線・文字だけになり、軽い。
+# 授業に入れる地図（ベクター）をつくる。2026-11-17 作り直し（ユーザーの指摘「地図汚いから丁寧に作って欲しい」
+#   「丸数字を書いて外に地名を書くのはやめて、書けるなら地図の上に書いちゃって」）。
+#
+# 海岸線：日本は地球地図日本（国土地理院、1:100万。出典：地球地図日本）の tools/geo_japan.json、
+#   朝鮮半島・中国などは Natural Earth 1:10m（パブリックドメイン）から東アジアだけ切り出した tools/geo_eastasia.json。
+#   地図ごとに範囲で切りぬいて、画面の0.35pxより細かい折れ目を間引いた線を、その地図の SVG にそのまま入れる。
+#   （前は日本の白地図の画像をなぞった線を全地図で使い回していたので、粗かった）
+# 地名：番号の札と外の一覧はやめ、点のとなりに直接書く。ほかの地名・点・地図のふちと重ならない置き場所を、
+#   点のまわり8方向から選ぶ（ひとつずつ目で確かめて、だめなら maps_def.py の pos で決める）。
 #
 #   from jmap import jmap
 #   html = jmap('源平の争乱', (129.5,141,31,38),
-#               points=[(1,'一の谷',135.10,34.65,0,-28), ...],   # (番号, 凡例, 経度, 緯度, 番号札のずらし x, y［画面px］)
-#               routes=[([(lon,lat),...],'sea')],                  # 'road' 実線 / 'sea' 点線 / 'arrow' 矢印つき点線
-#               areas=[('加賀',136.6,36.4)],                       # 地域名（うすい文字）
-#               note='赤い点＝実際の場所')
-#
-# 凡例は HTML なので、ふりがな（<ruby>）や kw をそのまま書ける。
-import numpy as np, os
-_C=np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)),'calib.npy')); _cx,_cy=_C[:3],_C[3:]
-def px(lon,lat): return (_cx[0]*lon+_cx[1]*lat+_cx[2], _cy[0]*lon+_cy[1]*lat+_cy[2])
+#               points=[(1,'一の谷',135.10,34.65), ...],   # (番号, 名前, 経度, 緯度[, ずらしx, ずらしy[, 置き場所]])
+#               routes=[([(lon,lat),...],'sea')],           # 'road' 実線 / 'road2' 青の実線 / 'sea' 点線 / 'arrow' 矢印つき点線
+#               areas=[('加賀',136.6,36.4)],                # 地域名（うすい文字）
+#               note='…')
+#   名前は「── 」より前だけを地図に書く（後ろの説明は本文で読む）。（　）の中も書かない。ふりがなは書かない。
+#   置き場所は 'r' 'l' 't' 'b' 'tr' 'br' 'tl' 'bl'。番号とずらしは、前の形のなごり（使わない）。
+import hashlib, json, math, os, re
+HERE=os.path.dirname(os.path.abspath(__file__))
+_G=None
+def _geo():
+    global _G
+    if _G is None:
+        ea=json.load(open(os.path.join(HERE,'geo_eastasia.json'),encoding='utf-8'))
+        jp=json.load(open(os.path.join(HERE,'geo_japan.json'),encoding='utf-8'))
+        _G={'land':ea['land'],'jp':jp['land'],'lake':ea['lake']}
+    return _G
 
-SCREEN=330   # スマホでの地図の幅（px）のめやす。文字や点の大きさをこれに合わせる
+W=330.0          # 画面での地図の幅（px）。文字・点・線の太さはこれに合わせる
+FS=11.5          # 地名の文字の大きさ
+SEA='#0F1626'; LAND='#263250'; COAST='#A88E4E'
+FONT="font-family:'Hiragino Sans','Noto Sans JP',system-ui,sans-serif;"
 
 def _f(v): return f"{v:.1f}".rstrip('0').rstrip('.')
 
-def jmap(title,bbox,points=(),routes=(),areas=(),note='',legend_cols=2,base='jp'):
-    lon0,lon1,lat0,lat1=bbox
-    xs,ys=zip(*[px(a,b) for a in (lon0,lon1) for b in (lat0,lat1)])
-    X,Y,W,H=min(xs),min(ys),max(xs)-min(xs),max(ys)-min(ys)
-    u=W/SCREEN                       # 画面1pxが地図の何単位か
-    if base=='kinki':   # 近畿の拡大図：白地図の画像では粗すぎるので、海と湖を緯度経度から描く
-        el=[f"<rect x='{_f(X)}' y='{_f(Y)}' width='{_f(W)}' height='{_f(H)}' style='fill:#263250;'/>"]
-        for poly,fill in [(OSAKA_BAY,'#0F1626'),(AWAJI,'#263250'),(ISE_BAY,'#0F1626'),(ENSHU,'#0F1626'),(WAKASA,'#0F1626'),(BIWA,'#0F1626')]:
-            d='M'+' L'.join(f"{_f(px(*p)[0])} {_f(px(*p)[1])}" for p in poly)+'Z'
-            el.append(f"<path d='{d}' style='fill:{fill};stroke:#A88E4E;stroke-width:{_f(1*u)};stroke-linejoin:round;'/>")
-    else:
-        el=[f"<rect x='{_f(X)}' y='{_f(Y)}' width='{_f(W)}' height='{_f(H)}' style='fill:#0F1626;'/>",
-            "<use href='#jpmap'/>"]
-    for name,lon,lat in areas:
-        x,y=px(lon,lat)
-        el.append(f"<text x='{_f(x)}' y='{_f(y)}' text-anchor='middle' style='fill:#8E9AB8;font-size:{_f(11*u)}px;letter-spacing:.1em;'>{name}</text>")
+def _merc(lat): return math.log(math.tan(math.pi/4+math.radians(lat)/2))
+
+class _Proj:
+    def __init__(s,bbox):
+        s.lon0,s.lon1,s.lat0,s.lat1=bbox
+        s.k=W/math.radians(s.lon1-s.lon0)
+        s.y1=_merc(s.lat1)
+        s.H=(s.y1-_merc(s.lat0))*s.k
+    def __call__(s,lon,lat): return (math.radians(lon-s.lon0)*s.k, (s.y1-_merc(lat))*s.k)
+
+def _clip(poly,x0,y0,x1,y1):
+    # Sutherland–Hodgman で四角に切りぬく
+    def cut(P,inside,inter):
+        out=[]
+        for i in range(len(P)):
+            a,b=P[i-1],P[i]
+            if inside(b):
+                if not inside(a): out.append(inter(a,b))
+                out.append(b)
+            elif inside(a): out.append(inter(a,b))
+        return out
+    def ix(a,b,x): t=(x-a[0])/(b[0]-a[0]); return (x,a[1]+t*(b[1]-a[1]))
+    def iy(a,b,y): t=(y-a[1])/(b[1]-a[1]); return (a[0]+t*(b[0]-a[0]),y)
+    P=poly
+    for inside,inter in ((lambda p:p[0]>=x0,lambda a,b:ix(a,b,x0)),(lambda p:p[0]<=x1,lambda a,b:ix(a,b,x1)),
+                         (lambda p:p[1]>=y0,lambda a,b:iy(a,b,y0)),(lambda p:p[1]<=y1,lambda a,b:iy(a,b,y1))):
+        if not P: break
+        P=cut(P,inside,inter)
+    return P
+
+def _dp(P,tol):
+    # Douglas–Peucker（閉じた線は2つに分けて）
+    if len(P)<4: return P
+    keep=[False]*len(P); keep[0]=keep[-1]=True; st=[(0,len(P)-1)]
+    while st:
+        a,b=st.pop(); ax,ay=P[a]; bx,by=P[b]; dx,dy=bx-ax,by-ay; L=math.hypot(dx,dy)
+        best,bi=-1,-1
+        for i in range(a+1,b):
+            px,py=P[i]
+            d=abs(dy*(px-ax)-dx*(py-ay))/L if L else math.hypot(px-ax,py-ay)
+            if d>best: best,bi=d,i
+        if best>tol: keep[bi]=True; st+=[(a,bi),(bi,b)]
+    return [p for p,k in zip(P,keep) if k]
+
+def _path(rings):
+    # 相対座標（前の点からの差）で書いて、データを小さくする。誤差がたまらないよう、丸めたあとの位置から差をとる
+    out=[]
+    for R in rings:
+        px,py=round(R[0][0],1),round(R[0][1],1); seg=[f"M{_f(px)} {_f(py)}l"]
+        nums=[]
+        for x,y in R[1:]:
+            x,y=round(x,1),round(y,1); dx,dy=round(x-px,1),round(y-py,1)
+            if dx==0 and dy==0: continue
+            nums.append(f"{_f(dx)} {_f(dy)}"); px,py=x,y
+        seg.append(' '.join(nums).replace(' -','-')); out.append(''.join(seg)+'z')
+    return ''.join(out)
+
+def _chaikin(R,n=2):
+    for _ in range(n):
+        Q=[]
+        for i in range(len(R)):
+            a,b=R[i],R[(i+1)%len(R)]
+            Q+=[(0.75*a[0]+0.25*b[0],0.75*a[1]+0.25*b[1]),(0.25*a[0]+0.75*b[0],0.25*a[1]+0.75*b[1])]
+        R=Q
+    return R
+
+def _shapes(pr,key,tol=0.35,minarea=0.6):
+    m=6; res=[]
+    for ring in _geo()[key]:
+        if key=='lake': ring=_chaikin([tuple(p) for p in ring])   # 湖は点が少ない（Natural Earth）ので、角をまるめる
+        xs=[p[0] for p in ring]; ys=[p[1] for p in ring]
+        if max(xs)<pr.lon0-1 or min(xs)>pr.lon1+1 or max(ys)<pr.lat0-1 or min(ys)>pr.lat1+1: continue
+        P=[pr(x,y) for x,y in ring]
+        P=_clip(P,-m,-m,W+m,pr.H+m)
+        if len(P)<3: continue
+        P=_dp(P+[P[0]],tol)[:-1]
+        if len(P)<3: continue
+        a=abs(sum(P[i-1][0]*P[i][1]-P[i][0]*P[i-1][1] for i in range(len(P))))/2
+        if a<minarea: continue
+        res.append(P)
+    return res
+
+def _plain(h):
+    h=re.sub(r'<rt>[\s\S]*?</rt>','',h); h=re.sub(r'<[^>]+>','',h)
+    h=h.split('──')[0]
+    h=re.sub(r'（[^）]*）','',h)
+    return h.strip()
+
+def _tw(t,fs):
+    return sum(fs*(0.62 if ord(c)<0x2E80 else 1.0) for c in t)
+
+POS={'r':(1,0),'l':(-1,0),'t':(0,-1),'b':(0,1),'tr':(1,-1),'br':(1,1),'tl':(-1,-1),'bl':(-1,1)}
+FS2=9.5   # 2行目（説明）の文字の大きさ
+def _lines(t):
+    a,_,b=t.partition('|'); return a.strip(),b.strip()
+def _box(x,y,t,fs,pos,gap=5.5):
+    if pos.endswith('2'): pos=pos[:-1]; gap=22   # 「2」は、少し離して置き、点と線で結ぶ
+    a,b=_lines(t)
+    w=max(_tw(a,fs),_tw(b,FS2) if b else 0); h=fs*1.15+(FS2*1.2 if b else 0); dx,dy=POS[pos]
+    if dx>0: x0=x+gap
+    elif dx<0: x0=x-gap-w
+    else: x0=x-w/2
+    if dy<0: y0=y-gap-h+(2 if dx else 0)
+    elif dy>0: y0=y+gap-(2 if dx else 0)
+    else: y0=y-h/2
+    return (x0,y0,x0+w,y0+h)
+
+def _ov(a,b):
+    return max(0,min(a[2],b[2])-max(a[0],b[0]))*max(0,min(a[3],b[3])-max(a[1],b[1]))
+
+def jmap(title,bbox,points=(),routes=(),areas=(),note='',legend_cols=None,base=None,labels=None,pos=None):
+    pr=_Proj(bbox); H=pr.H
+    el=[f"<rect x='0' y='0' width='{_f(W)}' height='{_f(H)}' style='fill:{SEA};'/>"]
+    tol=0.45 if bbox[1]-bbox[0]>3 else 0.8   # 狭い範囲は、埋め立ての細かい凸凹を目立たせない
+    land=_shapes(pr,'land',tol); jp=_shapes(pr,'jp',tol); lake=_shapes(pr,'lake',minarea=2)
+    if land: el.append(f"<path d='{_path(land)}' style='fill:{LAND};stroke:{COAST};stroke-width:.8;stroke-linejoin:round;'/>")
+    if jp:  # 日本は都道府県ごとの形なので、太い線で描いてから中をぬりなおし、県境を消して海岸線だけ残す
+        d=_path(jp); jid='jm'+hashlib.md5(repr((title,bbox)).encode()).hexdigest()[:8]   # 同じ形を2回使うので、1回だけ定義する
+        el.append(f"<defs><path id='{jid}' d='{d}'/></defs>")
+        el.append(f"<use href='#{jid}' style='fill:{LAND};stroke:{COAST};stroke-width:2.2;stroke-linejoin:round;'/>")
+        el.append(f"<use href='#{jid}' style='fill:{LAND};stroke:{LAND};stroke-width:1;stroke-linejoin:round;'/>")
+    if lake: el.append(f"<path d='{_path(lake)}' style='fill:{SEA};stroke:{COAST};stroke-width:.7;stroke-linejoin:round;'/>")
     for pts,kind in routes:
-        P=[px(*p) for p in pts]; d='M'+' L'.join(f"{_f(x)} {_f(y)}" for x,y in P)
-        if kind=='road': st=f"stroke:#E07A5F;stroke-width:{_f(2.6*u)};"
-        elif kind=='road2': st=f"stroke:#7FB3D5;stroke-width:{_f(2.6*u)};"
-        elif kind=='sea': st=f"stroke:#7FB3D5;stroke-width:{_f(2.2*u)};stroke-dasharray:{_f(6*u)} {_f(4*u)};"
-        else: st=f"stroke:#E07A5F;stroke-width:{_f(2.4*u)};stroke-dasharray:{_f(6*u)} {_f(4*u)};"
+        P=[pr(*p) for p in pts]; d='M'+' L'.join(f"{_f(x)} {_f(y)}" for x,y in P)
+        if kind=='road': st="stroke:#E07A5F;stroke-width:2.4;"
+        elif kind=='road2': st="stroke:#7FB3D5;stroke-width:2.4;"
+        elif kind=='sea': st="stroke:#7FB3D5;stroke-width:2;stroke-dasharray:6 4;"
+        else: st="stroke:#E07A5F;stroke-width:2.2;stroke-dasharray:6 4;"
         mk=" marker-end='url(#jm-ah)'" if kind=='arrow' else ''
         el.append(f"<path d='{d}' style='fill:none;stroke-linejoin:round;stroke-linecap:round;{st}'{mk}/>")
-    badges=[]
+    # 置いた文字・点の四角（重なりを避ける）
+    boxes=[]
+    dots=[]
     for p in points:
-        n,lab,lon,lat=p[:4]; dx,dy=(p[4],p[5]) if len(p)>5 else (0,0)
-        x0,y0=px(lon,lat); x,y=x0+dx*u,y0+dy*u
-        el.append(f"<circle cx='{_f(x0)}' cy='{_f(y0)}' r='{_f(3.2*u)}' style='fill:#E07A5F;stroke:#0F1626;stroke-width:{_f(1*u)};'/>")
-        if dx or dy: el.append(f"<line x1='{_f(x0)}' y1='{_f(y0)}' x2='{_f(x)}' y2='{_f(y)}' style='stroke:#D4BD82;stroke-width:{_f(1*u)};'/>")
-        badges.append(f"<circle cx='{_f(x)}' cy='{_f(y)}' r='{_f(8.5*u)}' style='fill:#D4BD82;stroke:#0F1626;stroke-width:{_f(1.4*u)};'/>"
-                      f"<text x='{_f(x)}' y='{_f(y+3.8*u)}' text-anchor='middle' style='fill:#10141C;font-size:{_f(11*u)}px;font-weight:800;font-family:system-ui,sans-serif;'>{n}</text>")
-    defs=(f"<defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'>"
+        x,y=pr(p[2],p[3]); dots.append((x,y)); boxes.append((x-3.5,y-3.5,x+3.5,y+3.5))
+    txt=[]
+    for name,lon,lat in areas:
+        x,y=pr(lon,lat); w=_tw(name,11)+2
+        x=min(max(x,w/2+3),W-w/2-3); y=min(max(y,13),H-4)   # 地図のふちからはみ出さない
+        b=(x-w/2,y-9,x+w/2,y+3); boxes.append(b)
+        txt.append(f"<text x='{_f(x)}' y='{_f(y)}' text-anchor='middle' style='fill:#8E9AB8;font-size:11px;letter-spacing:.12em;{FONT}'>{name}</text>")
+    # 点の多いところから置く
+    order=sorted(range(len(points)),key=lambda i:-sum(1 for j in range(len(points)) if j!=i and math.hypot(dots[i][0]-dots[j][0],dots[i][1]-dots[j][1])<60))
+    lab=[None]*len(points); lines_el=[]
+    for i in order:
+        p=points[i]; x,y=dots[i]; t=(labels[i] if labels and i<len(labels) and labels[i] else _plain(p[1]))
+        fixed=(pos or {}).get(_lines(t)[0]) or (p[6] if len(p)>6 else None)
+        cands=[fixed] if fixed else ['r','l','t','b','tr','br','tl','bl']
+        best=None
+        for k,c in enumerate(cands):
+            b=_box(x,y,t,FS,c)
+            s=sum(_ov(b,o) for o in boxes)*10
+            out=max(0,-b[0])+max(0,b[2]-W)+max(0,-b[1])+max(0,b[3]-H)
+            s+=out*200+k*0.5
+            if best is None or s<best[0]: best=(s,c,b)
+        _,c,b=best
+        # 地図のふちからはみ出したら、内側へ寄せる
+        sx=max(0,2-b[0])-max(0,b[2]-(W-2)); sy=max(0,2-b[1])-max(0,b[3]-(H-2))
+        b=(b[0]+sx,b[1]+sy,b[2]+sx,b[3]+sy)
+        boxes.append(b); lab[i]=(t,b,c)
+        if c.endswith('2') or sx or sy:   # 離して置いたときは、点から字へ細い線を引く
+            cx=min(max(x,b[0]),b[2]); cy=min(max(y,b[1]),b[3])
+            if math.hypot(cx-x,cy-y)>7: lines_el.append(f"<line x1='{_f(x)}' y1='{_f(y)}' x2='{_f(cx)}' y2='{_f(cy)}' style='stroke:#C9B98F;stroke-width:.8;'/>")
+    dot_el=[f"<circle cx='{_f(x)}' cy='{_f(y)}' r='3.3' style='fill:#E07A5F;stroke:{SEA};stroke-width:1.2;'/>" for x,y in dots]
+    halo=f"paint-order:stroke;stroke:{SEA};stroke-width:3px;stroke-linejoin:round;"
+    for t,b,c in [l for l in lab if l]:
+        a,d=_lines(t); y1=b[1]+FS*0.93
+        c=c.rstrip('2')
+        if c in ('t','b'): xa,anc=(b[0]+b[2])/2,'middle'      # 上下に置いたら中央そろえ
+        elif c in ('l','tl','bl'): xa,anc=b[2],'end'           # 左に置いたら、点の側（右）にそろえる
+        else: xa,anc=b[0],'start'
+        txt.append(f"<text x='{_f(xa)}' y='{_f(y1)}' text-anchor='{anc}' style='fill:#F3E9CF;font-size:{FS}px;font-weight:600;{FONT}{halo}'>{a}</text>")
+        if d: txt.append(f"<text x='{_f(xa)}' y='{_f(y1+FS2*1.2)}' text-anchor='{anc}' style='fill:#C9B98F;font-size:{FS2}px;{FONT}{halo}'>{d}</text>")
+    defs=("<defs><marker id='jm-ah' viewBox='0 0 10 10' refX='7' refY='5' markerWidth='4' markerHeight='4' orient='auto'>"
           "<path d='M0,0 L10,5 L0,10 z' style='fill:#E07A5F;'/></marker></defs>")
-    svg=(f"<svg viewBox='{_f(X)} {_f(Y)} {_f(W)} {_f(H)}' width='100%' role='img' aria-label='{title}'>"
-         +defs+''.join(el)+''.join(badges)+"</svg>")
-    leg=''.join(f"<li><b>{p[0]}</b><span>{p[1]}</span></li>" for p in points)
+    svg=(f"<svg viewBox='0 0 {_f(W)} {_f(H)}' width='100%' role='img' aria-label='{title}'>"+defs+''.join(el)+''.join(lines_el)+''.join(dot_el)+''.join(txt)+"</svg>")
     cap=f"地図 ── {title}"+(f"（{note}）" if note else '')
-    return (f"<div class='viz jm'><div class='viz-cap'>{cap}</div><div class='mapwrap'>{svg}</div>"
-            +(f"<ol class='jm-leg c{legend_cols}'>{leg}</ol>" if leg else '')+"</div>")
-
-# アプリ本体に入れる、海岸線と琵琶湖の定義（source.html の <body> の直後に1回だけ置く）
-BIWA=[(136.17,35.53),(136.22,35.47),(136.27,35.40),(136.26,35.33),(136.22,35.26),(136.15,35.18),(136.07,35.12),
-      (135.98,35.06),(135.93,35.01),(135.90,34.98),(135.87,35.01),(135.89,35.07),(135.95,35.15),(136.00,35.27),
-      (136.04,35.37),(136.09,35.46)]
-# 近畿の拡大図に使う海（おおよその海岸線）
-OSAKA_BAY=[(134.60,34.64),(134.99,34.645),(135.11,34.64),(135.19,34.68),(135.30,34.72),(135.40,34.70),(135.43,34.66),(135.47,34.61),
-           (135.46,34.57),(135.42,34.52),(135.37,34.47),(135.30,34.40),(135.22,34.35),(135.15,34.32),(135.07,34.27),(135.05,33.9),(134.6,33.9)]
-AWAJI=[(135.02,34.60),(134.95,34.53),(134.88,34.45),(134.80,34.38),(134.72,34.28),(134.68,34.20),(134.75,34.16),(134.85,34.20),
-       (134.90,34.30),(134.93,34.38),(134.98,34.47),(135.03,34.56)]
-ISE_BAY=[(136.85,35.08),(136.69,35.06),(136.63,34.96),(136.59,34.85),(136.53,34.72),(136.57,34.60),(136.72,34.50),(136.84,34.48),
-         (137.01,34.58),(137.10,34.66),(137.25,34.72),(137.31,34.77),(137.22,34.82),(137.05,34.83),(136.95,34.89),(136.98,34.70),
-         (136.88,34.75),(136.85,34.85),(136.87,34.98)]
-ENSHU=[(136.88,34.40),(137.01,34.58),(137.30,34.62),(137.60,34.67),(137.90,34.69),(138.2,34.62),(138.2,34.0),(136.88,34.0)]
-WAKASA=[(134.9,35.62),(135.20,35.55),(135.38,35.47),(135.55,35.49),(135.75,35.50),(135.95,35.60),(136.06,35.65),(136.02,35.75),
-        (136.00,35.95),(136.10,36.3),(134.9,36.3)]
-
-def symbol_html(path_d):
-    b='M'+' L'.join(f"{_f(px(*p)[0])} {_f(px(*p)[1])}" for p in BIWA)+'Z'
-    return ("<svg width='0' height='0' style='position:absolute;width:0;height:0;overflow:hidden' aria-hidden='true'><defs><g id='jpmap'>"
-            f"<path d='{path_d}' style='fill:#263250;stroke:#A88E4E;stroke-width:1;vector-effect:non-scaling-stroke;stroke-linejoin:round;'/>"
-            f"<path d='{b}' style='fill:#0F1626;stroke:#A88E4E;stroke-width:1;vector-effect:non-scaling-stroke;'/>"
-            "</g></defs></svg>")
+    return f"<div class='viz jm'><div class='viz-cap'>{cap}</div><div class='mapwrap'>{svg}</div><div class='jm-src'>出典：地球地図日本（国土地理院）・Natural Earth</div></div>"
