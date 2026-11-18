@@ -751,3 +751,9 @@ open('source.html','w',encoding='utf-8').write(s)
 ### 2026-11-18 読み上げに2倍速（ユーザー「2倍速作って」）
 - `tools/patch_tts.py` の `TTS_RATES` を [1,1.5,2] に。使い方の説明（`patch_guide.py`）も「1倍・1.5倍・2倍を選ぶ」に。
 - キャラの声（VOICEVOX）は再生の速さ（playbackRate）を変えるだけなので、音声ファイルは作り直していない。端末の声は SpeechSynthesis の rate。
+
+### 2026-11-18 「新しい版があります。タップで更新」を出す
+- ユーザーが「（読み上げの）2倍が選択肢にない」。公開ページには出ていたので、iPhone のホーム画面のアプリが閉じずに古い版のまま続いていたのが原因。
+- `tools/patch_update.py`：`<meta name="app-build" content="__APP_BUILD__">` と、確かめるしくみを土台に入れる。`tools/pack_out.py` が中身から番号（md5の頭10字）をつくって置きかえる。アプリは開いて4秒後と、アプリに戻ったとき（5分に1回まで）に、公開中の index.html の頭（2KB）だけ読み、番号がちがえば画面の下に知らせる。押すと読みこみ直す。
+- `sw.js`：「build-check」の問い合わせは保存しない。CACHE を nihonshi-v3 に上げた。
+- ローカルのサーバーで、同じ版なら出ない・新しい版なら出る・押すと新しい版になる、を確かめた。

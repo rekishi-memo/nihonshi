@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="app-build" content="d14bfe5d90">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#0E1422">
@@ -623,6 +624,10 @@
   .an3-chips span{font-size:10.5px;padding:3px 8px;border:1px solid var(--line);border-radius:12px;color:var(--ivory-dim);cursor:pointer;}
   .an3-chips span.on{border-color:var(--gold);color:var(--gold);}
 /*AN3CSS-END*/
+/*UPDCSS-BEGIN*/
+  #updBar{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:10001;padding:11px 18px;border-radius:24px;border:1px solid var(--gold);background:#141c30;color:var(--ivory);font-family:inherit;font-size:13px;white-space:nowrap;box-shadow:0 12px 32px rgba(0,0,0,.55);cursor:pointer;}
+  #updBar b{color:var(--gold);margin-left:4px;}
+/*UPDCSS-END*/
 </style>
 </head>
 <body>
@@ -2199,5 +2204,23 @@ document.addEventListener("visibilitychange",()=>{ if(document.hidden) A3.list.f
 window.an3Debug=A3;
 })();
 /*AN3-END*/</script>
+<script>/*UPD-BEGIN*/
+(function(){ "use strict";
+  if(location.protocol==="file:") return;
+  const mine=((document.querySelector('meta[name="app-build"]')||{}).content)||"";
+  let last=0, shown=false;
+  async function check(force){ const now=Date.now(); if(shown||(!force&&now-last<5*60000)) return; last=now;
+    try{ const r=await fetch("index.html?build-check",{cache:"no-store",headers:{Range:"bytes=0-2047"}}); if(!r.ok) return;
+      const rd=r.body.getReader(), dec=new TextDecoder(); let txt="";
+      while(txt.length<2000){ const x=await rd.read(); if(x.done) break; txt+=dec.decode(x.value,{stream:true}); }
+      rd.cancel().catch(()=>{});
+      const m=txt.match(/name="app-build" content="([^"]+)"/);
+      if(m&&mine&&m[1]!==mine&&m[1].indexOf("APP_BUILD")<0) show(); }catch(e){} }
+  function show(){ shown=true; const b=document.createElement("button"); b.id="updBar"; b.type="button"; b.innerHTML="新しい版があります。<b>タップで更新</b>"; b.addEventListener("click",()=>location.reload()); document.body.appendChild(b); }
+  setTimeout(()=>check(true),4000);
+  document.addEventListener("visibilitychange",()=>{ if(!document.hidden) check(false); });
+  window.addEventListener("pageshow",e=>{ if(e.persisted) check(true); });
+})();
+/*UPD-END*/</script>
 </body>
 </html>

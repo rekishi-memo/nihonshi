@@ -13,5 +13,8 @@ t=s[:m.start()]+repl+s[m.end():]
 # insert pako before the main app script (the one holding DEFAULT_PACKS)
 i=t.rfind('<script>',0,m.start())
 t=t[:i]+'<script>'+pako+'</script>\n'+t[i:]
+# 版の番号（中身から決まる。同じ中身なら同じ番号）。アプリはこれを見て「新しい版があります」を出す（patch_update.py）
+import hashlib
+t=t.replace('__APP_BUILD__',hashlib.md5(t.encode('utf-8')).hexdigest()[:10],1)
 open(out,'w',encoding='utf-8').write(t)
 print('raw',len(raw),'b64',len(b64),'out',len(t.encode()))
