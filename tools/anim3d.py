@@ -359,7 +359,9 @@ TREES=trees(JPF)
 
 def build():
     B=[*P(BBOX[0],BBOX[2]),*P(BBOX[1],BBOX[3])]
-    return dict(board=[round(v) for v in B],gstep=450,ground=FILLS,coast=COASTS,packs=dict(kodai=kodai()))
+    import anim3d_theme
+    packs=dict(kodai=kodai()); packs.update(anim3d_theme.packs())
+    return dict(board=[round(v) for v in B],gstep=450,ground=FILLS,coast=COASTS,packs=packs)
 
 if __name__=='__main__':
     D=build(); js=json.dumps(D,ensure_ascii=False,separators=(',',':'))

@@ -114,7 +114,7 @@ class Player{
     const items=[];
     for(const o of S.objs){ if(!inR(o.on,t)) continue; const k=o.k;
       if(k==="plate") this.plate(o,t,items); else if(k==="box") this.boxO(o,t,items); else if(k==="bldg") this.bldg(o,t,items);
-      else if(k==="hut") this.hut(o,t,items); else if(k==="mound") this.mound(o,t,items); else if(k==="mounds") this.mounds(o,t,items); else if(k==="field") this.field(o,t,items);
+      else if(k==="hut") this.hut(o,t,items); else if(k==="pagoda") this.pagoda(o,t,items); else if(k==="castle") this.castle(o,t,items); else if(k==="mound") this.mound(o,t,items); else if(k==="mounds") this.mounds(o,t,items); else if(k==="field") this.field(o,t,items);
       else if(k==="moat") this.moat(o,t,items); else if(k==="crowd") this.crowd(o,t,items); else if(k==="icon") this.icon(o,t,items);
       else if(k==="icons") this.icons(o,t,items); else if(k==="pin") this.pin(o,t,items); }
     items.sort((a,b)=>b.z-a.z); for(const it of items) it.d();
@@ -171,6 +171,15 @@ class Player{
     this.face([[X0,Y,Z1],[x-w*0.6,T,z],[X0,Y,Z0]],o.r,items); this.face([[X1,Y,Z0],[x+w*0.6,T,z],[X1,Y,Z1]],o.r,items);
     if(o.lift){ const pw=Math.min(w,d)*0.12; for(const [px,pz] of [[x-w*0.8,z-d*0.8],[x+w*0.8,z-d*0.8],[x+w*0.8,z+d*0.8],[x-w*0.8,z+d*0.8]]) this.prism([[px-pw,pz-pw],[px+pw,pz-pw],[px+pw,pz+pw],[px-pw,pz+pw]],y-o.lift,y,"#6b5038",items); }
     this._alpha=null; }
+  pagoda(o,t,items){ const a=this.vis(o,t); if(a<=0) return; const [x,z]=this.pos(o); let y=this.base(o); this._alpha=a; const w=o.w, n=o.n||5, th=o.h/n;
+    for(let k=0;k<n;k++){ const s=w*(1-k*0.1); this.prism([[x-s*0.32,z-s*0.32],[x+s*0.32,z-s*0.32],[x+s*0.32,z+s*0.32],[x-s*0.32,z+s*0.32]],y,y+th*0.55,o.c||"#8a3a2a",items);
+      const r=s*0.62; this.prism([[x-r,z-r],[x+r,z-r],[x+r,z+r],[x-r,z+r]],y+th*0.55,y+th*0.7,o.r||"#3a3f4a",items); y+=th*0.7; }
+    this.prism([[x-w*0.05,z-w*0.05],[x+w*0.05,z-w*0.05],[x+w*0.05,z+w*0.05],[x-w*0.05,z+w*0.05]],y,y+th*1.2,"#c9a24a",items); this._alpha=null; }
+  castle(o,t,items){ const a=this.vis(o,t); if(a<=0) return; const [x,z]=this.pos(o); let y=this.base(o); this._alpha=a; const w=o.w;
+    this.prism([[x-w*0.6,z-w*0.5],[x+w*0.6,z-w*0.5],[x+w*0.6,z+w*0.5],[x-w*0.6,z+w*0.5]],y,y+w*0.35,"#8d8a82",items); y+=w*0.35;
+    for(let k=0;k<3;k++){ const s=1-k*0.25; this.prism([[x-w*0.42*s,z-w*0.34*s],[x+w*0.42*s,z-w*0.34*s],[x+w*0.42*s,z+w*0.34*s],[x-w*0.42*s,z+w*0.34*s]],y,y+w*0.22,"#efeae0",items);
+      const r=1.25; this.prism([[x-w*0.42*s*r,z-w*0.34*s*r],[x+w*0.42*s*r,z-w*0.34*s*r],[x+w*0.42*s*r,z+w*0.34*s*r],[x-w*0.42*s*r,z+w*0.34*s*r]],y+w*0.22,y+w*0.28,"#3a3f4a",items); y+=w*0.28; }
+    this._alpha=null; }
   hut(o,t,items){ const a=this.vis(o,t); if(a<=0) return; const [x,z]=this.pos(o),y=this.base(o),r=o.r,h=o.h; this._alpha=a;
     this.lathe(x,y,z,[[r,0],[r*0.96,h*0.12],[r*0.12,h*0.92],[0,h]],8,o.c||"#8a6a42",items); this._alpha=null; }
   // 前方後円墳：丸い部分と四角い部分を段に重ねる
@@ -215,7 +224,7 @@ class Player{
     const f=this.P(x,this.base(o)+(o.float||0)+bob,z); if(!f) return; let s=o.s*this.F/f[2]*(0.5+0.5*pop); if(o.min) s=Math.max(s,o.min); if(o.max) s=Math.min(s,o.max); if(s<1) return;
     items.push({z:f[2]-(o.front?1e6:0),d:()=>drawIcon(this.g,o.i,f[0],f[1],s,o.c,a)}); }
   icons(o,t,items){ for(let k=0;k<o.list.length;k++){ const it=o.list[k], t0=o.on[0]+(o.stagger||0)*k; if(t<t0) continue;
-      this.icon({k:"icon",i:it[2]||o.i,at:[it[0],it[1]],s:o.s,c:it[3]||o.c,on:[t0,o.on[1]],pop:1,min:o.min,max:o.max,y:o.y,pl:o.pl,float:o.float},t,items); } }
+      this.icon({k:"icon",i:it[2]||o.i,at:o.pl?null:[it[0],it[1]],rel:o.pl?[it[0],it[1]]:null,s:o.s,c:it[3]||o.c,on:[t0,o.on[1]],pop:1,min:o.min,max:o.max,y:o.y,pl:o.pl,float:o.float},t,items); } }
   pin(o,t,items){ const a=this.vis(o,t); if(a<=0) return; const [x,z]=this.pos(o), y=this.base(o); const f=this.P(x,y,z); if(!f) return; const hgt=o.hp||26;
     items.push({z:f[2]-1e5,d:()=>{ const g=this.g; g.globalAlpha=a; g.strokeStyle=C.gold; g.lineWidth=1.4; g.beginPath(); g.moveTo(f[0],f[1]); g.lineTo(f[0],f[1]-hgt); g.stroke();
       g.fillStyle=o.c||C.red; g.beginPath(); g.arc(f[0],f[1]-hgt,5,0,7); g.fill(); g.globalAlpha=1; if(o.s) this.tag(f[0],f[1]-hgt,o.s,a,20); }}); }
@@ -272,6 +281,30 @@ function drawIcon(g,i,x,y,s,col,a){ g.save(); g.globalAlpha=a; g.translate(x,y);
   case "haji": P("M-8 0 Q-11 -7 -7 -13 L7 -13 Q11 -7 8 0 Z",col||"#c07a4e","#6a3a20",0.8); break;
   case "horse": P("M-12 0 L-11 -9 L4 -10 L8 -16 L12 -14 L9 -8 L9 0 L6 0 L6 -5 L-8 -5 L-8 0 Z",col||"#6a4a32"); P("M-11 -9 l-3 4",null,col||"#6a4a32",1.5); break;
   case "tooth": P("M-5 -16 Q0 -19 5 -16 L4 -6 L2 -2 L0 -7 L-2 -2 L-4 -6 Z",col||"#f1ecdf","#9a9384",0.8); break;
+  case "coin": P("M0 -10 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0",col||"#b8864a","#5e4020",1); P("M-2.6 -12.6 h5.2 v5.2 h-5.2 Z","#3a2814"); break;
+  case "koban": P("M0 -11 m-6.5 0 a6.5 10 0 1 0 13 0 a6.5 10 0 1 0 -13 0",col||"#e2c25a","#8a6a1c",1); P("M-4 -15 h8 M-4 -11 h8 M-4 -7 h8",null,"#b8952e",0.8); break;
+  case "silver": P("M-8 0 Q-9 -6 -5 -9 Q0 -11 5 -9 Q9 -6 8 0 Z",col||"#c9cdd2","#6c7076",1); break;
+  case "satsu": P("M-11 -15 h22 v12 h-22 Z",col||"#d9c99a","#7a6a42",1); P("M0 -9 m-3.5 0 a3.5 3.5 0 1 0 7 0 a3.5 3.5 0 1 0 -7 0",null,"#7a6a42",0.8); P("M-8 -12 h4 M4 -6 h4",null,"#7a6a42",0.8); break;
+  case "book": P("M-9 -16 h8 q1 1 1 1 q0 -1 1 -1 h8 v14 h-8 q-1 0 -1 1 q0 -1 -1 -1 h-8 Z",col||"#c9b99a","#5a4a2a",0.9); P("M0 -15 v13",null,"#5a4a2a",0.8); break;
+  case "torii": P("M-11 -17 h22 l-1 2 h-20 Z M-9 -13 h18 v1.6 h-18 Z M-7 -15 h2 v15 h-2 Z M5 -15 h2 v15 h-2 Z",col||"#c8483a"); break;
+  case "pagoda": P("M-1 -22 h2 v3 h-2 Z M-8 -19 h16 l-3 2 h-10 Z M-5 -17 h10 v3 h-10 Z M-9 -14 h18 l-3 2 h-12 Z M-5 -12 h10 v3 h-10 Z M-10 -9 h20 l-3 2 h-14 Z M-6 -7 h12 v7 h-12 Z",col||"#7a4a3a","#2a1a12",0.6); break;
+  case "ship": P("M-12 -4 L12 -4 L8 0 L-9 0 Z",col||"#6a4a32"); P("M-1 -4 V-20",null,"#3a2a1a",1); P("M-1 -19 L9 -8 L-1 -8 Z",col?"#e9e0c8":"#e9e0c8"); break;
+  case "steamer": P("M-13 -4 L13 -4 L9 0 L-10 0 Z",col||"#2e3440"); P("M-8 -9 h14 v5 h-14 Z","#c9c2b0"); P("M-2 -15 h4 v6 h-4 Z","#8a3a2a"); P("M0 -17 q3 -3 7 -2",null,"rgba(200,200,200,.8)",1.6); break;
+  case "train": P("M-13 -10 h9 v8 h-9 Z M-3 -9 h7 v7 h-7 Z M5 -9 h7 v7 h-7 Z",col||"#2e3440"); P("M-12 -14 h3 v4 h-3 Z","#2e3440"); P("M-11 -1 a1.6 1.6 0 1 0 0.1 0 M-6 -1 a1.6 1.6 0 1 0 0.1 0 M0 -1 a1.6 1.6 0 1 0 0.1 0 M8 -1 a1.6 1.6 0 1 0 0.1 0","#111"); P("M-11 -16 q2 -3 6 -3",null,"rgba(220,220,220,.8)",1.6); break;
+  case "letter": P("M-10 -14 h20 v12 h-20 Z",col||"#efe6d0","#7a6a4a",1); P("M-10 -14 L0 -7 L10 -14",null,"#7a6a4a",1); break;
+  case "fire": P("M0 -20 Q7 -12 5 -5 Q4 0 0 0 Q-4 0 -5 -5 Q-6 -11 0 -20 Z",col||"#e8743a"); P("M0 -11 Q3 -7 2 -3 Q1 0 0 0 Q-2 0 -2 -3 Q-2 -6 0 -11 Z","#f4c95a"); break;
+  case "wave": P("M-12 0 Q-12 -12 -2 -14 Q6 -15 8 -9 Q3 -11 0 -7 Q4 -6 6 -3 Q2 -4 0 0 Z",col||"#5f9ccf","#2d5a85",0.8); break;
+  case "quake": P("M-12 -6 l4 -6 l4 10 l4 -12 l4 12 l4 -8 l4 4",null,col||"#e07a5f",2); break;
+  case "flag": P("M-6 0 V-20",null,"#5a5a5a",1.2); P("M-6 -20 h14 v9 h-14 Z",col||"#f1ece0","#999",0.6); P("M1 -15.5 m-2.6 0 a2.6 2.6 0 1 0 5.2 0 a2.6 2.6 0 1 0 -5.2 0","#c8483a"); break;
+  case "cross": P("M-1.6 -20 h3.2 v20 h-3.2 Z M-7 -15 h14 v3 h-14 Z",col||"#e9e0c8"); break;
+  case "bank": P("M-11 0 h22 v-2 h-22 Z M-9 -2 h2 v-9 h-2 Z M-3.5 -2 h2 v-9 h-2 Z M1.5 -2 h2 v-9 h-2 Z M7 -2 h2 v-9 h-2 Z M-11 -11 h22 L0 -18 Z",col||"#d9d2c0","#6a6458",0.6); break;
+  case "smoke": P("M0 0 q-4 -4 0 -8 q4 -4 0 -9 q-3 -3 1 -6",null,col||"rgba(200,200,200,.7)",2.4); break;
+  case "sick": P("M0 -20 a3.5 3.5 0 1 0 0.01 0 Z M-6 0 Q-7 -8 -4 -12 L4 -12 Q7 -8 6 0 Z",col||"#8a8f98"); P("M5 -19 q3 -2 5 1",null,"#7fb3d5",1.2); break;
+  case "scale": P("M0 -20 v18 M-9 -16 h18 M-6 0 h12",null,col||"#d4bd82",1.6); P("M-9 -16 l-4 7 h8 Z M9 -16 l-4 7 h8 Z",col||"#d4bd82"); break;
+  case "crown": P("M-9 -2 L-10 -14 L-5 -8 L0 -16 L5 -8 L10 -14 L9 -2 Z",col||"#e2b84a","#8a6a1c",0.8); break;
+  case "bell": P("M-6 -16 Q-7 -6 -9 0 L9 0 Q7 -6 6 -16 Q0 -20 -6 -16 Z",col||"#8a7a5a","#3a2e1a",0.8); break;
+  case "woman": P("M0 -20 a3.6 3.6 0 1 0 0.01 0 Z M-7 0 Q-6 -9 -3 -12 L3 -12 Q6 -9 7 0 Z",col||"#c8483a"); P("M-3.6 -20 q-2 5 -1 9 M3.6 -20 q2 5 1 9",null,"#2a2420",1.6); break;
+  case "factory": P("M-12 0 V-9 L-6 -13 V-9 L0 -13 V-9 L6 -13 V0 Z",col||"#8a4a3a"); P("M7 0 V-20 h3 V0 Z","#6a3a2a"); P("M8.5 -21 q-3 -3 1 -6",null,"rgba(210,210,210,.7)",2); break;
   case "en": P("M-10 0 Q-10 -9 0 -9 Q10 -9 10 0 Z",col||"#7aa060","#3e5a30",0.8); break;
   case "bale": P("M-8 0 Q-10 -6 -8 -12 L8 -12 Q10 -6 8 0 Z",col||"#d8c27a","#7a6a3a",0.8); P("M-9 -4 h18 M-9 -8 h18",null,"#7a6a3a",0.8); break;
   case "q": g.font="700 20px "+FONT; g.fillStyle=col||"#f1ece0"; g.textAlign="center"; g.textBaseline="alphabetic"; g.fillText("？",0,0); break;
