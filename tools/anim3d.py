@@ -7,7 +7,9 @@ import json,math,os
 from jmap import _geo,_clip,_dp
 
 O=(136.0,36.0); KX=111.32*math.cos(math.radians(O[1])); KY=110.95
-def P(lon,lat): return [round((lon-O[0])*KX,2),round((lat-O[1])*KY,2)]
+def P(lon,lat):
+    if lon<-25: lon+=360   # 西半球は東へ（日本中心の世界地図）
+    return [round((lon-O[0])*KX,2),round((lat-O[1])*KY,2)]
 BBOX=(108.0,150.0,22.0,49.0)
 
 def ground(bbox=BBOX,tol=1.6,ctol=4.0,minarea=3):
@@ -361,7 +363,14 @@ def build():
     B=[*P(BBOX[0],BBOX[2]),*P(BBOX[1],BBOX[3])]
     import anim3d_theme
     packs=dict(kodai=kodai()); packs.update(anim3d_theme.packs())
-    return dict(board=[round(v) for v in B],gstep=450,ground=FILLS,coast=COASTS,packs=packs)
+    return dict(board=[round(v) for v in B],gstep=450,ground=FILLS,coast=COASTS,world=world(),packs=packs)
+
+def world():
+    """世界地図（あらい）。盤（日本のまわりのこまかい地図）の外に描く。geo_world.json は mk_world.py でつくる"""
+    W=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'geo_world.json'),encoding='utf-8'))['land']
+    g=[[round(v) for lon,lat in R for v in P(lon,lat)] for R in W]
+    B=[*P(-24.0,-56.0),*P(334.0,78.0)]
+    return dict(board=[round(v) for v in B],ground=g)
 
 if __name__=='__main__':
     D=build(); js=json.dumps(D,ensure_ascii=False,separators=(',',':'))

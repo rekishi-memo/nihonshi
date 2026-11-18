@@ -27,7 +27,7 @@ class Story:
         s._year(t0+0.6,year,sub); s._caps(t0,caps,dur)
         if fn: fn(t0,t0+dur)
         s.prev=('map',lon,lat); s.t=round(t0+dur,2)
-    def plate(s,lon,lat,caps,build,year=None,sub=None,dur=None,c='#7d8a5a',side='#4a3a2c',yaw=-10,p=32,fn=None):
+    def plate(s,lon,lat,caps,build,year=None,sub=None,dur=None,c='#7d8a5a',side='#4a3a2c',yaw=-10,p=32,fn=None,timed=False):
         """展示台の場面。build(add,win)：add(k=…, rel=[x,z], …) で台の上に置く（大きさは km。台の半径は6）"""
         dur=dur or dur_for(caps,1.4); t0=s.t; s.np+=1; pid=f'q{s.np}'
         if s.prev and s.prev[0]=='plate':
@@ -39,7 +39,11 @@ class Story:
         win=[round(t0+1.8,2),round(t0+dur-0.6,2)]
         def add(**k):
             k['pl']=pid; k.setdefault('on',win); s.objs.append(k); return k
-        build(add,win)
+        if timed:   # 字幕の出る時刻（_caps と同じ計算）を渡して、動きを字幕にそろえる
+            w=[max(3.0,len(c)*0.12) for c in caps]; kk=(dur-0.6-0.5)/sum(w); ct=[]; tt=t0+0.9
+            for wi in w: ct.append(round(tt,2)); tt+=wi*kk
+            build(add,win,ct)
+        else: build(add,win)
         s._year(t0+1.2,year,sub); s._caps(t0+0.6,caps,dur-0.6)
         if fn: fn(t0,t0+dur)
         s.prev=('plate',lon,lat); s.t=round(t0+dur,2)
@@ -59,6 +63,12 @@ class Story:
         return s.ob(k='crowd',n=n,r=r,h=h,max=k.pop('max',12),c=c,seed=k.pop('seed',len(s.objs)+1),at=P(*lonlat),on=[round(t0,2),round(t1,2)],**k)
     def move(s,path,t0,t1,n=8,r=25,h=30,c='#7a6a52',**k):
         return s.ob(k='crowd',n=n,r=r,h=h,max=k.pop('max',12),c=c,seed=k.pop('seed',len(s.objs)+1),path=[P(*q) for q in path],move=[round(t0,2),round(t1-0.4,2)],on=[round(t0,2),round(t1,2)],**k)
+    def route(s,pts,t0,t1,dur=3.0,i='ship',c='#d4bd82',n=1,**k):
+        """航路：線を引きながら、船（など）が進む。pts は（経度,緯度）の列。西半球は P が東へ回す"""
+        return s.ob(k='route',path=[P(*q) for q in pts],draw=[round(t0,2),round(t0+dur,2)],on=[round(t0,2),round(t1,2)],i=i,c=c,n=n,**k)
+    def flee(s,add,rel_from,rel_to,t0,t1,n=4,c='#8a6a4a',**k):
+        """展示台の上で、人が移っていく（逃げる・集まる）"""
+        add(k='crowd',n=n,r=0.5,h=0.6,c=c,seed=k.pop('seed',n*3+7),relpath=[list(rel_from),list(rel_to)],move=[round(t0,2),round(t1,2)],on=[round(t0-0.2,2),round(t1+0.6,2)],fo=0.6,**k)
     def done(s):
         if s.eras: s.eras[-1][1]=round(s.t,2)
         last=s.cam[-1]; cam=s.cam+[[round(s.t+1.0,2),*last[1:]]]

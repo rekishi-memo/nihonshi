@@ -46,6 +46,7 @@ class Player{
   }
   prep(){ const S=this.S; this.byId={};
     for(const o of S.objs){ if(o.id) this.byId[o.id]=o;
+      if(o.relpath&&o.pl&&this.byId[o.pl]){ const pa=this.byId[o.pl].at; o.path=o.relpath.map(q=>[pa[0]+q[0],pa[1]+q[1]]); }
       if(o.path) o._L=pathLen(o.path);
       if(o.k==="crowd"){ const R=rnd(o.seed||1),pts=[];
         for(let i=0;i<o.n;i++){ if(o.form==="rows"){ const cols=Math.ceil(Math.sqrt(o.n*1.6)), c=i%cols, r=Math.floor(i/cols); pts.push([(c-(cols-1)/2)*o.r*3.2/cols,r*o.r*0.45,R()]); continue; }
@@ -85,12 +86,20 @@ class Player{
   draw(){ const g=this.g,W=this.W,H=this.H,S=this.S,G=this.G,t=this.t; if(!W) return;
     this.setCam(t);
     const bg=g.createRadialGradient(W/2,H*0.42,H*0.1,W/2,H*0.5,H*0.9); bg.addColorStop(0,C.bg1); bg.addColorStop(1,C.bg0); g.fillStyle=bg; g.fillRect(0,0,W,H);
-    // 盤（海）：厚みのある板
-    const B=G.board, th=Math.max(this.cd*0.05,8), items0=[];
-    const corners=[[B[0],B[1]],[B[2],B[1]],[B[2],B[3]],[B[0],B[3]]];
+    // 盤（海）：厚みのある板。世界地図があるときは、世界の板がいちばん外側になる
+    this.far=!!G.world&&this.cd>12000;   // とても遠いときは、日本のまわりのこまかい地図を描かない（世界のあらい地図だけ）
+    const WB=G.world?G.world.board:G.board, th=Math.max(this.cd*0.05,8), items0=[];
+    const corners=[[WB[0],WB[1]],[WB[2],WB[1]],[WB[2],WB[3]],[WB[0],WB[3]]];
     for(let i=0;i<4;i++){ const a=corners[i],b=corners[(i+1)%4]; this.face([[a[0],0,a[1]],[a[0],-th,a[1]],[b[0],-th,b[1]],[b[0],0,b[1]]],C.board,items0,1); }
     items0.sort((a,b)=>b.z-a.z); items0.forEach(it=>it.d());
-    const top=this.clip(corners.map(q=>this.tc(q[0],0,q[1]))); if(top.length>2){ const sg=g.createLinearGradient(0,0,0,H); sg.addColorStop(0,C.sea2); sg.addColorStop(1,C.sea); g.fillStyle=sg; this.fillP(top); }
+    const seaG=g.createLinearGradient(0,0,0,H); seaG.addColorStop(0,C.sea2); seaG.addColorStop(1,C.sea);
+    const top=this.clip(corners.map(q=>this.tc(q[0],0,q[1]))); if(top.length>2){ g.fillStyle=seaG; this.fillP(top); }
+    if(G.world){   // 世界の陸（平ら・あらい）。日本のまわりは、このあと、こまかい地図で上がきする
+      g.fillStyle=C.land; g.strokeStyle=C.land; g.lineWidth=1; const wr=[];
+      for(const R of G.world.ground){ const c=this.ring(R,0); if(!this.onScreen(c)&&R.length<400) continue; const pp=this.clip(c); if(pp.length>2){ g.beginPath(); this.pathP(pp); g.fill(); g.stroke(); wr.push(pp); } }
+      g.strokeStyle=C.coast; g.globalAlpha=0.55; g.lineWidth=0.8; for(const pp of wr){ g.beginPath(); this.pathP(pp); g.stroke(); } g.globalAlpha=1;
+      if(!this.far){ const B=G.board, bt=this.clip([[B[0],B[1]],[B[2],B[1]],[B[2],B[3]],[B[0],B[3]]].map(q=>this.tc(q[0],0,q[1]))); if(bt.length>2){ g.fillStyle=seaG; this.fillP(bt); } }
+    }
     this.grid();
     // 氷期の陸橋など（時間で出たり消えたりする陸）
     for(const o of S.objs) if(o.k==="shelf"){ const a=kf(o.a,t)[0]; if(a<=0.01) continue; g.globalAlpha=a; g.fillStyle=C.land; g.strokeStyle=C.land; g.lineWidth=1;
@@ -98,11 +107,11 @@ class Player{
     // 陸：側面（暗い色）→上面
     const lh=this.lh, tops=[];
     g.fillStyle=C.land2; g.strokeStyle=C.land2; g.lineWidth=1;
-    for(const R of G.ground){ const c=this.ring(R,0); if(!this.onScreen(c)&&R.length<400) continue; const pp=this.clip(c); if(pp.length>2){ g.beginPath(); this.pathP(pp); g.fill(); g.stroke(); } tops.push(R); }
+    for(const R of (this.far?[]:G.ground)){ const c=this.ring(R,0); if(!this.onScreen(c)&&R.length<400) continue; const pp=this.clip(c); if(pp.length>2){ g.beginPath(); this.pathP(pp); g.fill(); g.stroke(); } tops.push(R); }
     g.fillStyle=C.land; g.strokeStyle=C.land;
     for(const R of tops){ const pp=this.clip(this.ring(R,lh)); if(pp.length>2){ g.beginPath(); this.pathP(pp); g.fill(); g.stroke(); } }
     g.strokeStyle=C.coast; g.lineWidth=0.9; g.globalAlpha=0.7; g.beginPath();
-    for(const R of G.coast){ let prev=null; for(let i=0;i<R.length;i+=2){ const c=this.tc(R[i],lh,R[i+1]);
+    for(const R of (this.far?[]:G.coast)){ let prev=null; for(let i=0;i<R.length;i+=2){ const c=this.tc(R[i],lh,R[i+1]);
         if(prev&&prev[2]>this.near&&c[2]>this.near){ const p=this.sc(prev),q=this.sc(c); if(!((p[0]<0&&q[0]<0)||(p[0]>W&&q[0]>W)||(p[1]<0&&q[1]<0)||(p[1]>H&&q[1]>H))){ g.moveTo(p[0],p[1]); g.lineTo(q[0],q[1]); } }
         prev=c; } }
     g.stroke(); g.globalAlpha=1;
@@ -118,12 +127,13 @@ class Player{
       else if(k==="moat") this.moat(o,t,items); else if(k==="crowd") this.crowd(o,t,items); else if(k==="icon") this.icon(o,t,items);
       else if(k==="icons") this.icons(o,t,items); else if(k==="pin") this.pin(o,t,items); }
     items.sort((a,b)=>b.z-a.z); for(const it of items) it.d();
+    for(const o of S.objs) if(inR(o.on,t)&&o.k==="route") this.route(o,t);
     for(const o of S.objs) if(inR(o.on,t)&&o.k==="arc") this.arc(o,t);
     for(const o of S.objs) if(inR(o.on,t)&&o.k==="tag") this.tagO(o,t);
     this.fx(t); this.texts(t);
     this.q(".an3-prog i").style.width=(100*t/S.dur)+"%";
   }
-  grid(){ const g=this.g,B=this.G.board,st=this.G.gstep||400; g.strokeStyle="rgba(150,176,232,.07)"; g.lineWidth=1; g.beginPath();
+  grid(){ const g=this.g,B=this.G.world?this.G.world.board:this.G.board,st=this.cd>6000?1800:(this.G.gstep||400); g.strokeStyle="rgba(150,176,232,.07)"; g.lineWidth=1; g.beginPath();
     for(let x=Math.ceil(B[0]/st)*st;x<=B[2];x+=st){ const a=this.P(x,0,B[1]),b=this.P(x,0,B[3]); if(a&&b){ g.moveTo(a[0],a[1]); g.lineTo(b[0],b[1]); } }
     for(let z=Math.ceil(B[1]/st)*st;z<=B[3];z+=st){ const a=this.P(B[0],0,z),b=this.P(B[2],0,z); if(a&&b){ g.moveTo(a[0],a[1]); g.lineTo(b[0],b[1]); } }
     g.stroke(); }
@@ -228,6 +238,14 @@ class Player{
   pin(o,t,items){ const a=this.vis(o,t); if(a<=0) return; const [x,z]=this.pos(o), y=this.base(o); const f=this.P(x,y,z); if(!f) return; const hgt=o.hp||26;
     items.push({z:f[2]-1e5,d:()=>{ const g=this.g; g.globalAlpha=a; g.strokeStyle=C.gold; g.lineWidth=1.4; g.beginPath(); g.moveTo(f[0],f[1]); g.lineTo(f[0],f[1]-hgt); g.stroke();
       g.fillStyle=o.c||C.red; g.beginPath(); g.arc(f[0],f[1]-hgt,5,0,7); g.fill(); g.globalAlpha=1; if(o.s) this.tag(f[0],f[1]-hgt,o.s,a,20); }}); }
+  route(o,t){ const u=prog(o.draw,t), a=env(o.on,t,0.3,o.fo||0.6); if(u<=0||a<=0) return; const g=this.g, P=o.path, L=o._L, tot=L[L.length-1], s=ez(u)*tot;
+    const pts=[]; for(let i=0;i<P.length;i++){ if(L[i]<=s) pts.push(P[i]); else { const v=(s-L[i-1])/(L[i]-L[i-1]); pts.push([lerp(P[i-1][0],P[i][0],v),lerp(P[i-1][1],P[i][1],v)]); break; } }
+    const sp=pts.map(p=>this.P(p[0],this.lh,p[1])).filter(Boolean); if(sp.length<2) return;
+    g.globalAlpha=a; g.strokeStyle=o.c||C.gold; g.lineWidth=o.w||2; g.setLineDash(o.dash===0?[]:[6,4]); g.lineDashOffset=-t*18; g.beginPath(); g.moveTo(sp[0][0],sp[0][1]); for(const q of sp) g.lineTo(q[0],q[1]); g.stroke(); g.setLineDash([]);
+    const n=o.n||1, gap=tot*0.025;
+    for(let k=0;k<n;k++){ const sk=s-k*gap; if(sk<0) break; const h=pathAt(P,L,sk/tot), h2=pathAt(P,L,Math.max(0,sk-tot*0.01)/tot), q=this.P(h[0],this.lh,h[1]), q2=this.P(h2[0],this.lh,h2[1]); if(!q) continue;
+      const fl=q2&&q2[0]>q[0]?-1:1; g.save(); g.translate(q[0],q[1]); g.scale(fl,1); drawIcon(g,o.i||"ship",0,0,o.is||18,o.ic,a); g.restore(); }
+    g.globalAlpha=1; }
   arc(o,t){ const u=ez(prog(o.draw,t)), a=env(o.on,t,0.3,o.fo||0.5); if(u<=0||a<=0) return; const g=this.g, N=40, H=o.hgt||Math.hypot(o.b[0]-o.a[0],o.b[1]-o.a[1])*0.25;
     const pts=[]; for(let i=0;i<=N*u;i++){ const v=i/N; const q=this.P(lerp(o.a[0],o.b[0],v),this.lh+4*v*(1-v)*H,lerp(o.a[1],o.b[1],v)); if(q) pts.push(q); }
     if(pts.length<2) return; g.globalAlpha=a; g.strokeStyle=o.c||C.gold; g.lineWidth=o.w||1.8; g.setLineDash(o.dash?[5,4]:[]); g.beginPath(); g.moveTo(pts[0][0],pts[0][1]); for(const q of pts) g.lineTo(q[0],q[1]); g.stroke(); g.setLineDash([]);
