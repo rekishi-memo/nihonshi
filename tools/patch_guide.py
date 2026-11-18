@@ -81,7 +81,7 @@ SL=[
  "<ol class='g-list'><li><b>今日のぶん</b>：一問一答タブの上の <span class='g-ui'>今日のぶんへ →</span> で、その日の復習（間隔がきた問題・まちがえた問題）にとりくむ。新しい問題は、セットごとの一問一答で解く（解いた問題が次の日からの復習に入る）</li><li>上のボタンで出す問題をしぼれる：<span class='g-ui sub'>共テ必修</span> <span class='g-ui sub'>私大頻出</span> <span class='g-ui sub'>難関私大</span> <span class='g-ui sub'>過去問</span> <span class='g-ui sub'>苦手だけ</span></li><li><span class='g-ui sub'>答えを見る</span> で答えを出し、<span class='g-ui sub'>○ できた</span> か <span class='g-ui sub'>× まちがえた</span> を押す。まちがえた問題は「苦手だけ」や今日のぶんの復習に出てくる</li><li><b>穴埋め</b>は、空欄をタップすると答えが出る</li></ol>"),
 # 5
 ('🔊','授業を声で聞く（読み上げ）',
- "<ol class='g-list'><li>授業の題の下の <span class='g-ui main'>▶ 読み上げ</span> を押す。読んでいる段落が光って、自動でスクロールする</li><li><span class='g-ui main'>⏸ 一時停止</span> → <span class='g-ui main'>▶ つづきから</span>。やめるときは <span class='g-ui'>■ 停止</span></li><li>読んでいる途中で<b>段落をタップ</b>すると、そこから読む</li><li><span class='g-ui sub'>速さ 1倍</span> で 1倍と1.5倍を切りかえる</li><li><span class='g-ui sub'>声：Kyoko</span> で声を選べる（声の増やし方は次のページ）</li><li><span class='g-ui sub'>枠も読む</span> をオフにすると、「入試ではこう出る」「まとめ」などの枠をとばす</li></ol>"
+ "<ol class='g-list'><li>授業の題の下の <span class='g-ui main'>▶ 読み上げ</span> を押す。読んでいる段落が光って、自動でスクロールする</li><li><span class='g-ui main'>⏸ 一時停止</span> → <span class='g-ui main'>▶ つづきから</span>。やめるときは <span class='g-ui'>■ 停止</span></li><li>読んでいる途中で<b>段落をタップ</b>すると、そこから読む</li><li><span class='g-ui sub'>速さ 1倍</span> で 1倍・1.5倍・2倍を選ぶ</li><li><span class='g-ui sub'>声：Kyoko</span> で声を選べる（声の増やし方は次のページ）</li><li><span class='g-ui sub'>枠も読む</span> をオフにすると、「入試ではこう出る」「まとめ」などの枠をとばす</li></ol>"
  "<div class='g-note'>ふりがなのある語は、ふりがなの読みで読みます（漢字とふりがなを二重には読みません）。<br>画面を消したり、ほかのアプリに切りかえると止まります。もどったら「▶ つづきから」。</div>"),
 # 6
 ('📱','iPhone で声を変える',
