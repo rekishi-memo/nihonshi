@@ -6,7 +6,11 @@
   .an3-none b{display:block;color:var(--ivory);margin-bottom:6px;}
   .an3-none p{margin:0 0 8px;}
   .an3-go{display:inline-block;margin:0 6px 6px 0;padding:6px 12px;border:1px solid var(--gold);border-radius:14px;background:none;color:var(--gold);font-family:inherit;font-size:12px;cursor:pointer;}
-  .an3-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:74vh;border-radius:12px;overflow:hidden;border:1px solid rgba(212,189,130,.28);background:#070b16;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;}
+  /* 動画の大きさ：画面の高さにおさまるように（2026-11-18 ユーザー「iPad画面で横だと動画が見切れる」）。縦は3:4、横向きは4:3 */
+  .an3{width:100%;max-width:min(560px,calc((100vh - 230px) * 3 / 4));margin:0 auto;}
+  @media (orientation:landscape){.an3{max-width:calc((100vh - 150px) * 4 / 3);}.an3-stage{aspect-ratio:4/3!important;}}
+  @media (orientation:landscape) and (min-width:960px){.an3{max-width:calc((100vh / var(--z,1) - 150px) * 4 / 3);}}
+  .an3-stage{position:relative;width:100%;aspect-ratio:3/4;border-radius:12px;overflow:hidden;border:1px solid rgba(212,189,130,.28);background:#070b16;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;}
   .an3-stage canvas{position:absolute;left:0;top:0;display:block;}
   .an3-btn{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;border:1px solid var(--gold);background:rgba(7,11,22,.6);color:var(--gold);font-size:22px;line-height:58px;text-align:center;padding:0 0 0 3px;pointer-events:none;transition:opacity .3s;}
   .an3-btn.hide{opacity:0;}

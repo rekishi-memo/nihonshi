@@ -32,9 +32,11 @@
   ::selection{background:var(--gold);color:#1a140a;}
   .wrap{max-width:620px;margin:0 auto;padding:20px 16px 64px;}
   /* iPad などの横向き：画面を広く使い、文字も大きくする（縦向き・スマホはそのまま） */
-  @media (orientation:landscape) and (min-width:960px){.wrap{zoom:1.2;max-width:740px;}.modal-card,.toast{zoom:1.2;}}
-  @media (orientation:landscape) and (min-width:1150px){.wrap{zoom:1.3;max-width:780px;}.modal-card,.toast{zoom:1.3;}}
-  @media (orientation:landscape) and (min-width:1300px){.wrap{zoom:1.35;max-width:800px;}.modal-card,.toast{zoom:1.35;}}
+  /* iPad などの横向き：拡大して、横幅もほぼいっぱいに使う（2026-11-18 ユーザー「授業ももっと横ででかくできる」）。--z は拡大率（動画の大きさの計算に使う） */
+  @media (orientation:landscape) and (min-width:960px){.wrap{--z:1.25;zoom:1.25;max-width:min(1000px,calc(100vw / 1.25 - 40px));}.modal-card,.toast{zoom:1.25;}}
+  @media (orientation:landscape) and (min-width:1150px){.wrap{--z:1.35;zoom:1.35;max-width:min(1000px,calc(100vw / 1.35 - 48px));}.modal-card,.toast{zoom:1.35;}}
+  @media (orientation:landscape) and (min-width:1300px){.wrap{--z:1.4;zoom:1.4;max-width:min(1000px,calc(100vw / 1.4 - 56px));}.modal-card,.toast{zoom:1.4;}}
+  @media (orientation:landscape) and (min-width:960px){.jm .mapwrap,.jm .jm-leg,.jm-src{max-width:680px;}}
 
   /* header */
   header{margin-bottom:14px;}
@@ -588,7 +590,11 @@
   .an3-none b{display:block;color:var(--ivory);margin-bottom:6px;}
   .an3-none p{margin:0 0 8px;}
   .an3-go{display:inline-block;margin:0 6px 6px 0;padding:6px 12px;border:1px solid var(--gold);border-radius:14px;background:none;color:var(--gold);font-family:inherit;font-size:12px;cursor:pointer;}
-  .an3-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:74vh;border-radius:12px;overflow:hidden;border:1px solid rgba(212,189,130,.28);background:#070b16;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;}
+  /* 動画の大きさ：画面の高さにおさまるように（2026-11-18 ユーザー「iPad画面で横だと動画が見切れる」）。縦は3:4、横向きは4:3 */
+  .an3{width:100%;max-width:min(560px,calc((100vh - 230px) * 3 / 4));margin:0 auto;}
+  @media (orientation:landscape){.an3{max-width:calc((100vh - 150px) * 4 / 3);}.an3-stage{aspect-ratio:4/3!important;}}
+  @media (orientation:landscape) and (min-width:960px){.an3{max-width:calc((100vh / var(--z,1) - 150px) * 4 / 3);}}
+  .an3-stage{position:relative;width:100%;aspect-ratio:3/4;border-radius:12px;overflow:hidden;border:1px solid rgba(212,189,130,.28);background:#070b16;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;}
   .an3-stage canvas{position:absolute;left:0;top:0;display:block;}
   .an3-btn{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;border:1px solid var(--gold);background:rgba(7,11,22,.6);color:var(--gold);font-size:22px;line-height:58px;text-align:center;padding:0 0 0 3px;pointer-events:none;transition:opacity .3s;}
   .an3-btn.hide{opacity:0;}
@@ -82773,7 +82779,7 @@ class Player{
           if(o.form==="ring"){ const a=i/o.n*Math.PI*2; pts.push([Math.cos(a)*o.r,Math.sin(a)*o.r,R()]); continue; }
           const a=R()*Math.PI*2,d=Math.sqrt(R())*(o.r||0); pts.push([Math.cos(a)*d,Math.sin(a)*d*0.85,R()]); }
         o._p=pts; } } }
-  size(){ const st=this.q(".an3-stage"), w=st.clientWidth, h=st.clientHeight, dpr=Math.min(window.devicePixelRatio||1,2);
+  size(){ const st=this.q(".an3-stage"), w=st.clientWidth, h=st.clientHeight, zr=w?Math.max(1,st.getBoundingClientRect().width/w):1, dpr=Math.min((window.devicePixelRatio||1)*zr,3);   // 拡大（zoom）されているぶん、細かく描く
     this.W=w; this.H=h; this.cv.width=Math.round(w*dpr); this.cv.height=Math.round(h*dpr); this.cv.style.width=w+"px"; this.cv.style.height=h+"px"; this.g.setTransform(dpr,0,0,dpr,0,0); }
   toggle(){ this.play=!this.play; if(this.play){ if(this.t>=this.S.dur-0.05) this.t=0; this.last=performance.now(); this.loop(); } else cancelAnimationFrame(this.raf); this.ui(); }
   seek(t){ this.t=cl(t,0,this.S.dur); this.last=performance.now(); this.draw(); }

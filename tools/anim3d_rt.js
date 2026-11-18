@@ -53,7 +53,7 @@ class Player{
           if(o.form==="ring"){ const a=i/o.n*Math.PI*2; pts.push([Math.cos(a)*o.r,Math.sin(a)*o.r,R()]); continue; }
           const a=R()*Math.PI*2,d=Math.sqrt(R())*(o.r||0); pts.push([Math.cos(a)*d,Math.sin(a)*d*0.85,R()]); }
         o._p=pts; } } }
-  size(){ const st=this.q(".an3-stage"), w=st.clientWidth, h=st.clientHeight, dpr=Math.min(window.devicePixelRatio||1,2);
+  size(){ const st=this.q(".an3-stage"), w=st.clientWidth, h=st.clientHeight, zr=w?Math.max(1,st.getBoundingClientRect().width/w):1, dpr=Math.min((window.devicePixelRatio||1)*zr,3);   // 拡大（zoom）されているぶん、細かく描く
     this.W=w; this.H=h; this.cv.width=Math.round(w*dpr); this.cv.height=Math.round(h*dpr); this.cv.style.width=w+"px"; this.cv.style.height=h+"px"; this.g.setTransform(dpr,0,0,dpr,0,0); }
   toggle(){ this.play=!this.play; if(this.play){ if(this.t>=this.S.dur-0.05) this.t=0; this.last=performance.now(); this.loop(); } else cancelAnimationFrame(this.raf); this.ui(); }
   seek(t){ this.t=cl(t,0,this.S.dur); this.last=performance.now(); this.draw(); }
