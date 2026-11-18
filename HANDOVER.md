@@ -749,7 +749,7 @@ open('source.html','w',encoding='utf-8').write(s)
 - Playwright で iPad（1180×820・1080×810・820×1180）とスマホ（縦・横）を確かめた。動画は画面の中におさまる。Safari 実機は未確認。
 
 ### 2026-11-18 読み上げに2倍速（ユーザー「2倍速作って」）
-- `tools/patch_tts.py` の `TTS_RATES` を [1,1.5,2] に。使い方の説明（`patch_guide.py`）も「1倍・1.5倍・2倍を選ぶ」に。
+- `tools/patch_tts.py` の `TTS_RATES` を [1,1.5,2] に（同じ日に 1.25・1.75 も足して [1,1.25,1.5,1.75,2]）。使い方の説明（`patch_guide.py`）も「1倍・1.5倍・2倍を選ぶ」に。
 - キャラの声（VOICEVOX）は再生の速さ（playbackRate）を変えるだけなので、音声ファイルは作り直していない。端末の声は SpeechSynthesis の rate。
 
 ### 2026-11-18 「新しい版があります。タップで更新」を出す

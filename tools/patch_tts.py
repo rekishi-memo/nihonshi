@@ -46,7 +46,7 @@ assert s.count(a)==1; s=s.replace(a,'function switchSec(k){ if(k!=="lesson") tts
 
 JS=r'''/* ---- 授業の読み上げ（全授業）。端末の声（Web Speech API）を使うので、オフラインでも動く ---- */
 const TTS_KEY="nihonshi_tts";          // 速さ・枠を読むかの設定だけ（学習記録とは別）
-const TTS_RATES=[1,1.5,2];
+const TTS_RATES=[1,1.25,1.5,1.75,2];
 const tts={st:"idle",items:[],k:0,s:0,gen:0,voice:null,cfg:Object.assign({rate:1,box:true},lsGet(TTS_KEY)||{})};
 if(!TTS_RATES.includes(+tts.cfg.rate)) tts.cfg.rate=1; else tts.cfg.rate=+tts.cfg.rate;
 let _ttsDict=null;
